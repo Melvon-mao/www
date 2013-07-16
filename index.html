@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta property="wb:webmaster" content="fb1edc8630b78f50" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="Keywords" content="UI,UX,UED,UCD,网页,设计,前端,视觉设计,网页设计,前端设计,photoshop,dreamweaver,flash,illustrator,javascript,jquery,extjs, phonegap,xcode">
+    <meta name="description" content="UI,UX,UED,UCD,网页,设计,前端,视觉设计,网页设计,前端设计,photoshop,dreamweaver,flash,illustrator,javascript,jquery,extjs, phonegap,xcode">
+    <meta name="author" content="Melvon 毛旭峰">
+	<title>Melvon</title>
+    <!--[if IE]> 
+    <link rel="stylesheet" href="css/ie.css">
+    <div class="fuck_ie">
+    <h1>暂时拒绝IE家族</h1>
+    <p>IE公开践踏W3C标准，可是一样流行，所谓标准不过是人定义的东西。</p>
+    <span>强烈推荐：</span>
+    <a class="chrome" href="http://www.google.com/chrome/" target="_blank"><img src="images/browser_chrome.png">Chrome浏览器</a>
+    <a class="safari" href="http://www.apple.com.cn/safari/" target="_blank"><img src="images/browser_safari.png">Safari浏览器</a>
+    </div>
+    <![endif]-->
+    <!--[if !IE]><!-->
+    <link rel="shortcut icon" href="favicon.ico"> 
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/theme.css">
+	<script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/jquery.loader.js"></script>
+    <script>$(document).ready(function (){ $("body").queryLoader2({ }); });</script>
+    <!--<![endif]-->
+</head>
+<body style="overflow:hidden; background:#111;" id="port">
+		
+
+  		<!-- Navigation -->
+        <nav class="navbox">
+          <section class="navwrap clearfix">
+            <h1><a href="submenu_all.html" class="open"></a>Melvon.Studio<a href="#" class="linklogo"><img class="logo" src="images/logo.png"></a></h1>
+        	<a href="###" class="logoicon_tip"><img src="images/space.png"></a>
+            <ul id="nav">
+              <li><a href="index.html"><img src="images/icon_home.png"></a></li>
+              <li href="submenu_me.html" class="submenu" id="me_page">Me</li>
+              <li href="submenu_design.html" class="submenu" id="design_page">Play</li>
+              <li href="submenu_life.html" class="submenu" id="life_page">Life</li>
+              <li><a href="work.html">Work</a></li>
+              <li><a href="resources.html">Resources</a></li>
+              <li><a href="team.html">Team</a></li>
+              <li><a href="message.html">Message</a></li>
+            </ul>
+          </section>
+          <img class="parallax-layer" src="images/topbg_large.jpg" style="width:1680px; height:70px;" >
+        </nav>
+        <!-- Navigation End -->
+        
+        
+
+		<!-- Banner -->
+        <section class="banner">
+			<section id="jms-slideshow" class="jms-slideshow">
+            	<!-- Image 1 -->
+				<div class="step">
+					<div class="jms-content">
+						<img id="banner_01" src="images/banner/4_title.png">
+						<div class="jms-link"><img id="banner_txt_01" src="images/banner/4_info.png"></div>
+					</div>
+					<img src="images/banner/4.png">
+				</div>
+                <!-- Image 2 -->
+				<div class="step" data-y="900" data-rotate-x="90">
+					<div class="jms-content">
+						<img id="banner_02" src="images/banner/3_title.png">
+						<div class="jms-link"><img id="banner_txt_02" src="images/banner/3_info.png"></div>
+					</div>
+					<img src="images/banner/3.png">
+				</div>
+                <!-- Image 3 -->
+				<div class="step" data-x="-100" data-z="1500" data-rotate="170">
+					<div class="jms-content">
+						<img id="banner_03" src="images/banner/2_title.png">
+						<div class="jms-link"><img id="banner_txt_03" src="images/banner/2_info.png"/></div>
+					</div>
+					<img src="images/banner/2.png">
+				</div>
+                <!-- Image 4 -->
+				<div class="step" data-x="1000" data-z="2000" data-rotate="20">
+					<div class="jms-content">
+						<img id="banner_04" src="images/banner/1_title.png">
+						<div class="jms-link"><img id="banner_txt_04" src="images/banner/1_info.png"></div>
+					</div>
+					<img src="images/banner/1.png">
+				</div>
+			</section>
+        </section>
+        <!-- Banner End -->
+        
+        
+        
+        
+        <footer class="footer"> &copy;&nbsp;Melvon design 2013 </footer>
+		
+        
+       
+        <script type="text/javascript" src="cordova-2.7.0.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <!-- Slider幻灯片 plugin -->
+		<script src="js/jquery.jmpress.min.js"></script>
+		<script src="js/jquery.jmslideshow.js"></script>
+        <!-- pageslide -->
+		<script src="js/jquery.pageslide.js"></script>
+        <!-- 自定义 -->
+        <script src="js/jquery.parallax.js"></script>
+        <script src="js/melvon.js"></script>
+        <script>
+			
+			app.initialize();
+			
+			//Banner幻灯片
+			$(function() {
+				
+				var jmpressOpts	= { animation : { transitionDuration : '1.0s' } };
+				$( '#jms-slideshow' ).jmslideshow( $.extend( true, { jmpressOpts : jmpressOpts }, {
+					autoplay: true,
+					arrows	: true
+				}));
+				
+		
+			});
+			
+			
+		
+		</script>
+        
+        
+</body>
+</html>
