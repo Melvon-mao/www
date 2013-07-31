@@ -222,9 +222,9 @@ jQuery(document).ready(function(N) {
 	buttonsClass("div.social_button");
 	N("body").video_background({
 		format: "16:9",
-		mp4: "video/cloud_x264.mp4",
-		webm: "video/cloud_VP8.webm",
-		flv: "videos/cloud.flv",
+		mp4: "video/exponent.mp4",
+		webm: "video/exponent.ogv",
+		flv: "videos/exponent.flv",
 		formatMobile: "16:9",
 		mp4Mobile: "videos/armin/mobile/Armin van Buuren feat. Laura V - Drowning.mp4",
 		webmMobile: "videos/armin/mobile/Armin van Buuren feat. Laura V - Drowning.webm",
