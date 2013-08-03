@@ -10,7 +10,7 @@
 /* ---------------------------------------------------------------------- */
 /*                                 Content       		                  */
 /* ---------------------------------------------------------------------- */
-.banner			{ background:#1a6399; height:100%; margin-top:70px;}
+.banner			{ background:#1a6399; height:100%; padding-top:70px;}
 .life_content	{ background:url(../images/life_bg.png); margin-top:70px; }
 .me_content		{ position:relative; top:70px; overflow:hidden; min-height:100%;}
 

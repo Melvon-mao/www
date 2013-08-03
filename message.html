@@ -22,43 +22,146 @@
     <!--[if !IE]><!-->
     <link rel="shortcut icon" href="favicon.ico"> 
     <link rel="stylesheet" href="css/global.css">
-    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/message.css">
     <!--<![endif]-->
+    <script src="js/jquery-1.7.2.min.js"></script>
+    <script src="js/jquery.loader.js"></script>
+    <script>$(document).ready(function (){ $("body").queryLoader2({ }); });</script>
+    <script src="js/jquery.message.modernizr-2.5.2.min.js"></script>
+    <style>
+	body{ overflow:hidden;}
+	.viewport{background: whitesmoke; }
+	</style>
+    <script type="text/javascript">
+	function load()
+	{
+	window.status="Page is loaded"
+	}
+	</script>
 </head>
-<body id="port">
+<body onload="load()">
 
 
-    <!-- Navigation -->
-    <nav class="navbox">
-      <section class="navwrap clearfix">
-      	<h1><a href="submenu_all.html" class="open"></a>Melvon.Studio<a class="linklogo"><img class="logo" src="images/logo.png"></a></h1>
-        	<a href="###" class="logoicon_tip"><img src="images/space.png"></a>
-        <ul id="nav">
-          <li><a href="index.html"><img src="images/icon_home_default.png"></a></li>
-          <li href="submenu_me.html" class="submenu" id="me_page">Me</li>
-          <li href="submenu_design.html" class="submenu" id="design_page">Play</li>
-          <li href="submenu_life.html" class="submenu" id="life_page">Life</li>
-          <li><a href="work.html">Work</a></li>
-          <li><a href="resources.html">Resources</a></li>
-          <li><a href="team.html">Team</a></li>
-          <li><a href="message.html" class="nav_current">Message</a></li>
-        </ul>
-      </section>
-      <img  class="parallax-layer" src="images/topbg_large.jpg" style="width:1680px; height:70px;" >
-    </nav>
-    <!-- Navigation End -->
     
     
-    <script src="js/jquery-1.8.3.min.js"></script>
-    <!-- Video -->
-	<script type="text/javascript" src="video/swfobject.js"></script> 
-	<script type="text/javascript" src="video/video_team.js"></script> 
-	<script type="text/javascript" src="video/buttons.js"></script>
+    
+    
+    <div class="main">
+		<div class="viewport">
+			
+					  <!-- Navigation -->
+                    <nav class="navbox">
+                      <section class="navwrap clearfix">
+                        <h1><a href="submenu_all.html" class="open"></a>Melvon.Studio<a class="linklogo"><img class="logo" src="images/logo.png"></a></h1>
+                            <a href="#" class="logoicon_tip"><img src="images/space.png"></a>
+                        <ul id="nav">
+                          <li><a href="index.html"><img src="images/icon_home_default.png"></a></li>
+                          <li><a href="message.html" class="nav_current">GitHub Project</a></li>
+                          <li><a href="team.html">Team</a></li>
+                          <li href="submenu_me.html" class="submenu" id="me_page">Me</li>
+                          <li href="submenu_design.html" class="submenu" id="design_page">Play</li>
+                          <li href="submenu_life.html" class="submenu" id="life_page">Life</li>
+                          <li><a href="work.html">Work</a></li>
+                          <li><a href="resources.html">Resources</a></li>
+                        </ul>
+                      </section>
+                    </nav>
+                    <!-- Navigation End -->
+    
+                    <nav class="site-menu">
+                        <div>
+                            <a href="#" class="home">Who We do?</a>
+                            <a href="#who-we-are" class="home1">Who We Are?</a>
+                        </div>
+                    </nav>
+                    
+                    <!-- 背景空间 -->
+                    <article class="content"></article>
+
+                    <nav class="main-grid">
+                        <a id="" class="grid-1" data-title="Orcon Genius Go" data-type="project" href="projects/orcon-genius-go.aspx"><img src="images/baby/baby04.jpg" alt="" /></a>
+                        <a id="MainContent_HomePageTiles_1_Rpt_Btn_1" class="grid-2" data-title="Genesis Energy" data-type="project" href="projects/genesis-energy.aspx"><img src="images/baby/baby04.jpg" alt="" /></a>
+                        <a id="MainContent_HomePageTiles_1_Rpt_Btn_2" class="grid-3" data-title="McDonalds Monopoly" data-type="project" href="projects/mcdonalds-monopoly.aspx"><img src="images/baby/baby04.jpg" alt="" /></a>
+                        <a id="MainContent_HomePageTiles_1_Rpt_Btn_3" class="grid-4" data-title="Smiths - Mr Potato Head" data-type="project" href="projects/smiths-mr-potato-head.aspx"><img src="images/baby/baby04.jpg" alt="" /></a>
+                    		<a id="MainContent_HomePageTiles_1_Rpt_Btn_4" class="grid-5" data-title="DB Export 33" data-type="project" href="projects/db-export-33.aspx"><img src="images/baby/baby04.jpg" alt="" /></a>
+                        <a id="MainContent_HomePageTiles_1_Rpt_Btn_5" class="grid-6" data-title="Clare Burlinson" data-type="profile" href="profiles/clare-burlinson.aspx"><img src="images/baby/baby04.jpg" alt="" /></a>
+                        <a id="MainContent_HomePageTiles_1_Rpt_Btn_6" class="grid-7" data-title="Leoni Willis" data-type="profile" href="profiles/leoni-willis.aspx"><img src="images/baby/baby04.jpg" alt="" /></a>
+                        <a id="MainContent_HomePageTiles_1_Rpt_Btn_7" class="grid-8" data-title="V Energy" data-type="project" href="projects/v-energy.aspx"><img src="images/baby/baby04.jpg" alt="" /></a>
+                        <a id="MainContent_HomePageTiles_1_Rpt_Btn_8" class="grid-9" data-title="Andrew Brown" data-type="profile" href="profiles/andrew-brown.aspx"><img src="images/baby/baby04.jpg" alt="" /></a>
+                        <a id="MainContent_HomePageTiles_1_Rpt_Btn_9" class="grid-10" data-title="Toybox Animation" data-type="project" href="projects/toybox-animation.aspx"><img src="images/baby/baby04.jpg" alt="" /></a>
+                        <a id="MainContent_HomePageTiles_1_Rpt_Btn_10" class="grid-11" data-title="Chorus Fibre" data-type="project" href="projects/chorus-fibre.aspx"><img src="images/baby/baby04.jpg" alt="" /></a>
+                        <a id="MainContent_HomePageTiles_1_Rpt_Btn_11" class="grid-12" data-title="Wattyl Forestwood Armada" data-type="project" href="projects/wattyl-forestwood-armada.aspx"><img src="images/baby/baby04.jpg" alt="" /></a>
+                    </nav>
+			
+			
+					  <article id="who-we-are" class="static-content">
+					  	<h1 style="color:#333;">test...</h1>
+                      <p>test...</p>
+                      <p>test...</p>
+                      <p>test...</p>
+                      <p>test...</p>
+                      <p>test...</p>
+                      <p>test...</p>
+                      <p>test...</p>
+                      <p>test...</p>
+                      <p>test...</p>
+                      <p>test...</p>
+                      <p>test...</p>
+                      <p>test...</p>
+                      <p>test...</p>
+                      <p>test...</p>
+					</article>
+	
+
+
+
+			
+                    <div class="loading">
+                        <span class="cog-2"></span>
+                        <span class="cog-1"></span>
+                    </div>
+                    
+                    <h2 class="welcome">Welcome to <strong>Toybox.co.nz</strong> - feel free to explore.</h2>
+			 
+		</div>
+
+	</div>
+    
+    
+    
+	<div class="show-menu">
+    
+		<div class="icon">
+			<span></span><span></span><span class="last"></span>
+		</div>
+        
+		<nav class="full-nav">
+				
+					<a href="message.html" class="logo home">Click</a>
+                    
+					<h4>Projects</h4>
+					<a href="submenu_all.html">ITEM</a>	
+                  <a href="#">ITEM</a>	
+                  <a href="#">ITEM</a>	
+                  <a href="#">ITEM</a>	
+                  <a href="#">ITEM</a>	
+				</nav>
+	</div>
+    
+    
+    
+    
     <!-- pageslide -->
     <script src="js/jquery.pageslide.js"></script>
     <!-- 自定义 -->
-    <script src="js/jquery.parallax.js"></script>
     <script src="js/melvon.js"></script>
-        
+    <!-- Plugin -->
+    <script src="js/jquery.message.plugins.js"></script>
+	 <script src="js/jquery.message.script.js"></script>
+	 <script type="text/javascript">
+		jQuery(document).ready(function () {
+			bby_app.init();
+		});
+	</script>
 </body>
 </html>
