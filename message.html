@@ -161,7 +161,16 @@
 	 <script type="text/javascript">
 		jQuery(document).ready(function () {
 			bby_app.init();
+			
+			setTimeout(function(){
+				$('.home').trigger("click");
+			},1000)
+			
+			//setInterval('$(".home").trigger("click")',500);
 		});
+		
+		
+		
 	</script>
 </body>
 </html>
