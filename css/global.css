@@ -6,6 +6,8 @@
  * 开发维护：毛旭峰
  * 版本时间：v 2013.1.21
  */
+@import url('http://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900');
+
 @font-face {
   font-family: 'Dosis';
   font-style: normal;
@@ -37,7 +39,7 @@ time, mark, audio, video {
     border:0;
     outline:0;
 	font-size:100%;
-	font-family: 'pragmatica-web-condensed', Tahoma, "Microsoft YaHei", Arial,sans-serif;
+	font-family: 'Maven Pro', Tahoma, "Microsoft YaHei", Arial,sans-serif;
 	-webkit-user-select:none;
 	-moz-user-select:none;
 	-ms-user-select:none;
@@ -167,9 +169,14 @@ h6{ font-size:18px;}
   -moz-box-shadow: rgba(0, 0, 0, 0.4) 0px 7px 10px;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 7px 10px; }
   
-.navwrap		{ width:960px; height:70px; padding:0; margin:0 auto; position:relative;}
-.navwrap h1		{ float:left; position:relative; font-size:30px; color:#fff; line-height:1em; text-indent:-99999px; }
-.navwrap h1 .logo{ position:absolute; left:0; top:14px; z-index:1;}
+.navwrap		{ width:1000px; height:70px; padding:0; margin:0 auto; position:relative; overflow: hidden; 
+					moz-transition: all 0.3s ease-out; 
+						-o-transition: all 0.3s ease-out; 
+						-webkit-transition: all 0.3s ease-out; 
+						transition: all 0.3s ease-out;
+					}
+.navwrap h1		{ float:left; position:relative; font-size:30px; color:#fff; line-height:1em; }
+.navwrap .linklogo{ display: block; margin-top: 14px; }
 .navwrap .logoicon_tip{ position:absolute; left:210px; top:31px; z-index:2;}
 
 /* 主导航 */
@@ -177,13 +184,13 @@ ul#nav 					{ float:right; padding-left:0; list-style:none;}
 ul#nav:after 			{ content:"\0020"; display:block; height:0; clear:both; visibility:hidden; }
 ul#nav img				{ vertical-align:-2px;}
 .navwrap ul#nav li,
-.navwrap ul#nav li a 	{ float:left; color:#ccc; display:block; /*padding:26px 10px 19px;*/ height:70px; line-height:68px; font-size:16px; font-weight:normal; text-shadow:0px 1px 2px #000; cursor:pointer; text-decoration:none; background:url(../images/nav_current.png) center 90px no-repeat; 
-						-moz-transition: all 0.2s ease-in-out; 
-						-o-transition: all 0.2s ease-in-out; 
-						-webkit-transition: all 0.2s ease-in-out; 
-						transition: all 0.2s ease-in-out;
+.navwrap ul#nav li a 	{ float:left; color:#ccc; display:block; /*padding:26px 10px 19px;*/ height:70px; line-height:70px; font-size:18px; font-weight:500; text-shadow:0px 1px 2px #000; cursor:pointer; text-decoration:none; background:url(../images/nav_current.png) center 90px no-repeat; 
+						-moz-transition: all 0.2s ease-out; 
+						-o-transition: all 0.2s ease-out; 
+						-webkit-transition: all 0.2s ease-out; 
+						transition: all 0.2s ease-out;
 						}
-.navwrap ul#nav li	{ padding:0 14px;}
+.navwrap ul#nav li	{ padding:0 20px;}
 .navwrap ul#nav li:hover,
 .navwrap ul#nav li a:hover{ color:#fff; text-shadow:0 0 5px #fff,0 0 10px #fff; background:url(../images/nav_current.png) center 57px no-repeat;}
 
@@ -193,25 +200,21 @@ ul#nav img				{ vertical-align:-2px;}
 .navwrap ul#nav li a.nav_current{ color:#c0db7d; text-shadow:0px 1px 2px #000; /*background:url(../images/nav_current.png) center 57px no-repeat;*/}
 
 /* 响应式 open 按钮 */
-.navbox.open { display:none; float:left; width:40px; height:30px; margin-top:10px; background:url(../images/icon_menu.png) center center no-repeat; 
-		box-shadow:inset 0 0 3px #000; text-indent:-999999px; border:0; 
-		-moz-border-radius:8px; 
-		-webkit-border-radius:8px; 
-		-border-radius:8px; 
-		-moz-transition:all 0.3s ease-in-out;
-		-o-transition:all 0.3s ease-in-out;
-		-webkit-transition:all 0.3s ease-in-out;
-		transition:all 0.3s ease-in-out;
+.navbox .open { display:none; float:left; width:40px; height:30px; margin-top:20px; background:url(../images/icon_menu.png) center center no-repeat; text-indent:-999999px; border:0; border-radius:4px; 
+		-moz-transition:all 0.2s ease-out;
+		-o-transition:all 0.2s ease-out;
+		-webkit-transition:all 0.2s ease-out;
+		transition:all 0.2s ease-out;
 }
-.navbox.open:hover{ background-color:#444;}
+.navbox .open:hover{ background-color:#000;}
 
 /* 左侧 Mobile Nav */
-.nav_mobile_wrap{ position:absolute; width:100%; min-height:100%; overflow:hidden;}	
+.nav_mobile_wrap{ position:absolute; width:100%; min-height:100%; overflow:hidden; background:url(../images/apple_bg.jpg) repeat; box-shadow:inset -2px 0 4px rgba(0,0,0,0.2);}	
 #nav_mobile a	{ display:block; height:70px; font-size:18px; line-height:68px; color:#fff; border-bottom:1px solid rgba(0,0,0,0); text-shadow:0px 1px 2px #000;
-			-moz-transition:all 0.2s ease-in-out; 
-			-o-transition:all 0.2s ease-in-out; 
-			-webkit-transition:all 0.2s ease-in-out; 
-			transition:all 0.2s ease-in-out;
+			-moz-transition:all 0.2s ease-out; 
+			-o-transition:all 0.2s ease-out; 
+			-webkit-transition:all 0.2s ease-out; 
+			transition:all 0.2s ease-out;
 			}
 #nav_mobile a:hover,
 #nav_mobile a.nav_mobile_current{ border-bottom:1px solid rgba(255,255,255,0.3); background-color:rgba(0,0,0,0.35); text-decoration:none; text-shadow:0px 1px 2px #000,0px 1px 4px #000;
@@ -225,7 +228,9 @@ ul#nav img				{ vertical-align:-2px;}
 .m_freestyle,
 .m_resources,
 .m_life,
-.m_me				{ display:inline-block; margin:0 12px 0 10px; vertical-align:-14px; width:36px; height:36px; overflow:hidden; background:url(../images/mobile_nav_icon.png) no-repeat; }
+.m_me,
+.m_message,
+.m_team				{ display:inline-block; margin:0 12px 0 10px; vertical-align:-14px; width:36px; height:36px; overflow:hidden; background:url(../images/mobile_nav_icon.png) no-repeat; }
 
 .m_home				{ background-position:0px -346px;}
 .m_work				{ background-position:0px 0px;}
@@ -233,6 +238,8 @@ ul#nav img				{ vertical-align:-2px;}
 .m_resources		{ background-position:0px -142px;}
 .m_life				{ background-position:0px -211px;}
 .m_me				{ background-position:0px -281px;}
+.m_message			{ background-position:0px -546px;}
+.m_team				{ background-position:0px -632px;}
 
 .m_home:hover,
 .m_work:hover,
@@ -245,28 +252,27 @@ ul#nav img				{ vertical-align:-2px;}
 .mobile_goback:hover,
 .mobile_goback:active{ background-position:-1px -460px; }
 
- /* @media (min-width: 768px) and (max-width: 979px) { */
-@media only screen and (min-width: 961px) {
-	
+
+@media screen and (max-width: 1200px) {
+	.navwrap			{ width:900px;}
+	.navwrap ul#nav li	{ padding:0 10px;}
 }
 
-@media only screen and (max-width: 960px) {
-	.navwrap			{ width:748px;}
+@media screen and (max-width: 1000px) {
+	.navwrap			{ width:768px;}
 }
 
-@media only screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
 	.navwrap			{ width:400px;}
-	.navwrap h1			{ font-size:22px; line-height:30px; color:#fff; padding:10px; float:none; }
-	.navwrap h1 .logo	{ left:70px;}
+	.navwrap h1  		{ width: 100%;}
+	.navwrap .linklogo  { position: absolute; left: 0; right: 0; top: 14px; bottom: 0; margin:auto; width: 199px; height: 38px; overflow: hidden;}
 	.navwrap .logoicon_tip{ position:absolute; left:280px; top:31px; z-index:2;}
 	.navwrap ul#nav 	{ display:none; }
-    .open				{ display:block; }
+    .navbox .open		{ display:block !important; }
 }
 
-@media only screen and (max-width: 479px) {
+@media screen and (max-width: 479px) {
 	.navwrap			{ width:280px;}
-	.navwrap h1			{ font-size:18px; color:#6F6; }
-	.navwrap h1:after	{ content:'.studio'; color:#fff;}
 }
 
 
@@ -305,9 +311,7 @@ ul#nav img				{ vertical-align:-2px;}
 			box-shadow: inset 0 0 7px 0px #000;
 }
 /* h1 */
-.subnav_wrap h1.work,
 .subnav_wrap h1.freestyle,
-.subnav_wrap h1.resource,
 .subnav_wrap h1.life,
 .subnav_wrap h1.me{ 
 			display:block; 
@@ -327,13 +331,11 @@ ul#nav img				{ vertical-align:-2px;}
 			box-shadow: inset 0 0 7px 0px #000;
 			}
 
-.subnav_wrap h1.work		{ background-position:14px 20px;}
 .subnav_wrap h1.freestyle	{ background-position:14px -51px;}
-.subnav_wrap h1.resource	{ background-position:14px -122px;}
 .subnav_wrap h1.life		{ background-position:14px -191px;}
 .subnav_wrap h1.me			{ background-position:14px -261px;}
 
-/* 通用 */
+/* PC 通用 */
 #submenu					{ padding:0;}
 #submenu a					{ 
 			display:block;
@@ -347,16 +349,16 @@ ul#nav img				{ vertical-align:-2px;}
 			text-decoration:none;
 			text-shadow:0px 1px 1px #000;
 			background:url(../images/submenu_default.png) no-repeat;
-			-webkit-transition:all 0.2s ease-in-out;
-			-moz-transition:all 0.2s ease-in-out; 
-			-o-transition:all 0.2s ease-in-out;  
-			transition:all 0.2s ease-in-out;
+			-webkit-transition:all 0.2s ease-out;
+			-moz-transition:all 0.2s ease-out; 
+			-o-transition:all 0.2s ease-out;  
+			transition:all 0.2s ease-out;
 			}
 #submenu a:hover{ color:#fff; background:url(../images/submenu_hover.png) no-repeat;}
 
 #submenu a.submenu_current	{ color:#fff; font-weight:bold; text-shadow:0px 0px 0px #000; background:url(../images/submenu_current.png) no-repeat;}
 
-#submenu a b{ font-weight:bold; font-size:14px;}
+#submenu a b{ font-weight:500; font-size:16px;}
 #submenu a i{ background:rgba(0,0,0,0.2); border-radius:200px; padding:2px 6px; font-size:11px; font-weight:bold; color:#999; margin-left:4px;
 				-webkit-box-shadow:inset 0 1px 2px 0px rgba(0,0,0,0.75);  
 				-moz-shadow:inset 0 1px 2px 0px rgba(0,0,0,0.75);  
@@ -371,7 +373,7 @@ ul#nav img				{ vertical-align:-2px;}
 /* ---------------------------------------------------------------------- */
 /*                                三级导航                                 */
 /* ---------------------------------------------------------------------- */
-.three_nav{ position:absolute; width:100%; min-height:100%; overflow:hidden;}
+.three_nav{ position:absolute; width:100%; min-height:100%; overflow:hidden; background:url(../images/three_nav_bg.jpg) repeat;}
 .three_nav h1{ background:rgba(0,0,0,0.4); border-bottom:1px solid rgba(255,255,255,0.2);
 			}
 		
@@ -381,17 +383,17 @@ ul#nav img				{ vertical-align:-2px;}
 			width:200px; 
 			height:40px;
 			line-height:39px;
-			font-size:12px;
-			font-weight:normal;
+			font-size:14px;
+			font-weight:500;
 			color:#bedeff;
 			text-indent:30px;
 			text-decoration:none;
 			text-shadow:0px 1px 1px #000;
 			background:url(../images/threemenu_default.png) no-repeat;
-			-moz-transition:all 0.2s ease-in-out; 
-			-o-transition:all 0.2s ease-in-out; 
-			-webkit-transition:all 0.2s ease-in-out; 
-			transition:all 0.2s ease-in-out;
+			-moz-transition:all 0.2s ease-out; 
+			-o-transition:all 0.2s ease-out; 
+			-webkit-transition:all 0.2s ease-out; 
+			transition:all 0.2s ease-out;
 			}
 
 .three_nav_list a:hover{ color:#fff; background:url(../images/threemenu_hover.png) no-repeat;}
@@ -417,7 +419,7 @@ ul#nav img				{ vertical-align:-2px;}
 .ui-loader { display: none; z-index:9999; position: fixed; top: 50%; left: 50%; border:0; }
 
 /* 导航标题文字 */
-.ui-header .ui-title { min-height:1.1em; text-align:center; font-size:20px; line-height:64px; display:block; margin:0; padding:0; text-overflow:ellipsis; overflow:hidden; white-space:nowrap; outline: 0 !important; }
+.ui-header .ui-title { min-height:1.1em; text-align:center; font-size:20px; line-height:64px; display:block; margin:0; padding:0; text-overflow:ellipsis; overflow:hidden; white-space:nowrap; outline: 0 !important; text-indent: 18px; }
 
 .ui-mobile, 
 .ui-mobile body 	{ height: 99.9%; }

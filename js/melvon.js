@@ -7,7 +7,7 @@
 	  });
 	  
 	  //左侧：响应式导航+点击样式
-	  $(".open, .linklogo").pageslide();
+	  $(".open").pageslide();
 	  $("#nav_mobile a").click(function(){
 		  $(this).addClass("nav_mobile_current").siblings("a").removeClass();
 	  });

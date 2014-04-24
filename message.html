@@ -2,13 +2,13 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="Keywords" content="UI,UX,UED,UCD,网页,设计,前端,视觉设计,网页设计,前端设计,photoshop,dreamweaver,flash,illustrator,javascript,jquery,extjs, phonegap,xcode">
     <meta name="description" content="UI,UX,UED,UCD,网页,设计,前端,视觉设计,网页设计,前端设计,photoshop,dreamweaver,flash,illustrator,javascript,jquery,extjs, phonegap,xcode">
     <meta name="author" content="Melvon 毛旭峰">
-	<title>Melvon - Message</title>
+	<title>Melvon - 九十里</title>
 	<!--[if IE]> 
     <link rel="stylesheet" href="css/ie.css">
     <div class="fuck_ie">
@@ -25,8 +25,6 @@
     <link rel="stylesheet" href="css/message.css">
     <!--<![endif]-->
     <script src="js/jquery-1.7.2.min.js"></script>
-    <script src="js/jquery.loader.js"></script>
-    <script>$(document).ready(function (){ $("body").queryLoader2({ }); });</script>
     <script src="js/jquery.message.modernizr-2.5.2.min.js"></script>
     <style>
 	body{ overflow:hidden;}
@@ -52,11 +50,11 @@
 					  <!-- Navigation -->
                     <nav class="navbox">
                       <section class="navwrap clearfix">
-                        <h1><a href="submenu_all.html" class="open"></a>Melvon.Studio<a class="linklogo"><img class="logo" src="images/logo.png"></a></h1>
+                        <h1><a href="submenu_all.html" class="open"></a><a class="linklogo"><img class="logo" src="images/logo.png"></a></h1>
                             <a href="#" class="logoicon_tip"><img src="images/space.png"></a>
                         <ul id="nav">
                           <li><a href="index.html"><img src="images/icon_home_default.png"></a></li>
-                          <li><a href="message.html" class="nav_current">GitHub Project</a></li>
+                          <li><a href="message.html" class="nav_current">90Mile</a></li>
                           <li><a href="team.html">Team</a></li>
                           <li href="submenu_me.html" class="submenu" id="me_page">Me</li>
                           <li href="submenu_design.html" class="submenu" id="design_page">Play</li>
@@ -69,9 +67,9 @@
                     <!-- Navigation End -->
     
                     <nav class="site-menu">
-                        <div>
-                            <a href="#" class="home">Who We do?</a>
-                            <a href="#who-we-are" class="home1">Who We Are?</a>
+                        <div class="site-menu-inner">
+                            <a href="#" class="home">九十里</a>
+                            <a href="#message2">心灵鸡汤的危害</a>
                         </div>
                     </nav>
                     
@@ -79,49 +77,54 @@
                     <article class="content"></article>
 
                     <nav class="main-grid">
-                        <a id="" class="grid-1" data-title="Orcon Genius Go" data-type="project" href="projects/orcon-genius-go.aspx"><img src="images/baby/baby04.jpg" alt="" /></a>
-                        <a id="MainContent_HomePageTiles_1_Rpt_Btn_1" class="grid-2" data-title="Genesis Energy" data-type="project" href="projects/genesis-energy.aspx"><img src="images/baby/baby04.jpg" alt="" /></a>
-                        <a id="MainContent_HomePageTiles_1_Rpt_Btn_2" class="grid-3" data-title="McDonalds Monopoly" data-type="project" href="projects/mcdonalds-monopoly.aspx"><img src="images/baby/baby04.jpg" alt="" /></a>
-                        <a id="MainContent_HomePageTiles_1_Rpt_Btn_3" class="grid-4" data-title="Smiths - Mr Potato Head" data-type="project" href="projects/smiths-mr-potato-head.aspx"><img src="images/baby/baby04.jpg" alt="" /></a>
-                    		<a id="MainContent_HomePageTiles_1_Rpt_Btn_4" class="grid-5" data-title="DB Export 33" data-type="project" href="projects/db-export-33.aspx"><img src="images/baby/baby04.jpg" alt="" /></a>
-                        <a id="MainContent_HomePageTiles_1_Rpt_Btn_5" class="grid-6" data-title="Clare Burlinson" data-type="profile" href="profiles/clare-burlinson.aspx"><img src="images/baby/baby04.jpg" alt="" /></a>
-                        <a id="MainContent_HomePageTiles_1_Rpt_Btn_6" class="grid-7" data-title="Leoni Willis" data-type="profile" href="profiles/leoni-willis.aspx"><img src="images/baby/baby04.jpg" alt="" /></a>
-                        <a id="MainContent_HomePageTiles_1_Rpt_Btn_7" class="grid-8" data-title="V Energy" data-type="project" href="projects/v-energy.aspx"><img src="images/baby/baby04.jpg" alt="" /></a>
-                        <a id="MainContent_HomePageTiles_1_Rpt_Btn_8" class="grid-9" data-title="Andrew Brown" data-type="profile" href="profiles/andrew-brown.aspx"><img src="images/baby/baby04.jpg" alt="" /></a>
-                        <a id="MainContent_HomePageTiles_1_Rpt_Btn_9" class="grid-10" data-title="Toybox Animation" data-type="project" href="projects/toybox-animation.aspx"><img src="images/baby/baby04.jpg" alt="" /></a>
-                        <a id="MainContent_HomePageTiles_1_Rpt_Btn_10" class="grid-11" data-title="Chorus Fibre" data-type="project" href="projects/chorus-fibre.aspx"><img src="images/baby/baby04.jpg" alt="" /></a>
-                        <a id="MainContent_HomePageTiles_1_Rpt_Btn_11" class="grid-12" data-title="Wattyl Forestwood Armada" data-type="project" href="projects/wattyl-forestwood-armada.aspx"><img src="images/baby/baby04.jpg" alt="" /></a>
+                        <a id="" class="grid-1" data-title="TITLE" data-type="Description" href="#"><img src="images/github/picture01.jpg" /></a>
+
+                        <a id="MainContent_HomePageTiles_1_Rpt_Btn_1" class="grid-2" data-title="TITLE" data-type="Description" href="#"><img src="images/github/picture02.jpg" /></a>
+
+                        <a id="MainContent_HomePageTiles_1_Rpt_Btn_2" class="grid-3" data-title="TITLE" data-type="Description" href="#"><img src="images/github/picture03.jpg" /></a>
+
+                        <a id="MainContent_HomePageTiles_1_Rpt_Btn_3" class="grid-4" data-title="TITLE" data-type="Description" href="#"><img src="images/github/picture04.jpg" /></a>
+
+                    		<a id="MainContent_HomePageTiles_1_Rpt_Btn_4" class="grid-5" data-title="TITLE" data-type="Description" href="#"><img src="images/github/picture05.jpg" /></a>
+
+                        <a id="MainContent_HomePageTiles_1_Rpt_Btn_5" class="grid-6" data-title="TITLE" data-type="Description" href="#"><img src="images/github/picture06.jpg" /></a>
+
+                        <a id="MainContent_HomePageTiles_1_Rpt_Btn_6" class="grid-7" data-title="TITLE" data-type="Description" href="#"><img src="images/github/picture07.jpg" /></a>
+
+                        <a id="MainContent_HomePageTiles_1_Rpt_Btn_7" class="grid-8" data-title="TITLE" data-type="Description" href="#"><img src="images/github/picture08.jpg" /></a>
+
+                        <a id="MainContent_HomePageTiles_1_Rpt_Btn_8" class="grid-9" data-title="TITLE" data-type="Description" href="#"><img src="images/github/picture09.jpg" /></a>
+
+                        <a id="MainContent_HomePageTiles_1_Rpt_Btn_9" class="grid-10" data-title="TITLE" data-type="Description" href="#"><img src="images/github/picture10.jpg" /></a>
+
+                        <a id="MainContent_HomePageTiles_1_Rpt_Btn_10" class="grid-11" data-title="TITLE" data-type="Description" href="#"><img src="images/github/picture11.jpg" /></a>
+
+                        <a id="MainContent_HomePageTiles_1_Rpt_Btn_11" class="grid-12" data-title="TITLE" data-type="Description" href="#"><img src="images/github/picture12.jpg" /></a>
+
                     </nav>
+
+
+
 			
 			
-					  <article id="who-we-are" class="static-content">
-					  	<h1 style="color:#333;">test...</h1>
-                      <p>test...</p>
-                      <p>test...</p>
-                      <p>test...</p>
-                      <p>test...</p>
-                      <p>test...</p>
-                      <p>test...</p>
-                      <p>test...</p>
-                      <p>test...</p>
-                      <p>test...</p>
-                      <p>test...</p>
-                      <p>test...</p>
-                      <p>test...</p>
-                      <p>test...</p>
-                      <p>test...</p>
-					</article>
+        					  <article id="message2" class="static-content">
+                          <h1>警惕断章取义的心灵鸡汤的危害</h1>
+
+                          <h6>心灵鸡汤最大的危害，是消弱青少年的进取心。</h6>
+                          <h6>越来越多的人对心灵鸡汤持反感的态度，这些充斥于网上的煽情文字，大量鼓吹所谓的“正能量”，却越发邪教化。它们看似很有道理，亦温情脉脉，但大多毫无逻辑，经不起任何推敲。</h6>
+                          <h6>心灵鸡汤的一个可怕之处，在于它往往会成为沟通中最常使用的借口，被鸡汤拥趸用于劝诫他人。</h6>
+                          <h6>如果留心日常生活，我们就会发现，无论是在工作交流中，还是在家庭沟通中，乃至网络对话中，心灵鸡汤式的借口都是极其普遍性的存在，甚至很多拥有高学历的群体，在逻辑思维上也极度欠缺，很容易以鸡汤式语言进行对话。</h6>
+                          <h6>统治者是狼，用心灵鸡汤把大多数人变成不思进取的羊方便于统治，这是中国历代统治者惯用的伎俩。</h6>
+        					 </article>
 	
 
 
 
 			
-                    <div class="loading">
-                        <span class="cog-2"></span>
-                        <span class="cog-1"></span>
-                    </div>
-                    
-                    <h2 class="welcome">Welcome to <strong>Toybox.co.nz</strong> - feel free to explore.</h2>
+                  <div class="loading">
+                      <span class="cog-2"></span>
+                      <span class="cog-1"></span>
+                  </div>
 			 
 		</div>
 
@@ -132,20 +135,21 @@
 	<div class="show-menu">
     
 		<div class="icon">
-			<span></span><span></span><span class="last"></span>
+			<span></span>
+      <span></span>
+      <span class="last"></span>
 		</div>
         
 		<nav class="full-nav">
-				
 					<a href="message.html" class="logo home">Click</a>
-                    
 					<h4>Projects</h4>
 					<a href="submenu_all.html">ITEM</a>	
-                  <a href="#">ITEM</a>	
-                  <a href="#">ITEM</a>	
-                  <a href="#">ITEM</a>	
-                  <a href="#">ITEM</a>	
-				</nav>
+          <a href="#">ITEM</a>	
+          <a href="#">ITEM</a>	
+          <a href="#">ITEM</a>	
+          <a href="#">ITEM</a>	
+		</nav>
+
 	</div>
     
     

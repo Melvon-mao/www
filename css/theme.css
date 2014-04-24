@@ -11,7 +11,7 @@
 /*                                 Content       		                  */
 /* ---------------------------------------------------------------------- */
 .banner			{ background:#1a6399; height:100%; padding-top:70px;}
-.life_content	{ background:url(../images/life_bg.png); margin-top:70px; }
+.life_content	{ background:url(../images/whit_grid_bg.png) repeat; margin-top:70px; }
 .me_content		{ position:relative; top:70px; overflow:hidden; min-height:100%;}
 
 
@@ -650,15 +650,9 @@ background:#fff;
 		    -ms-shadow:0px 0px 5px rgba(0,0,0,0.4);
 		     -o-shadow:0px 0px 5px rgba(0,0,0,0.4);
 			box-shadow:0px 0px 5px rgba(0,0,0,0.4);
-						-webkit-transition: all 0.3s ease-in-out;
-						-moz-transition: all 0.3s ease-in-out;
-						-o-transition: all 0.3s ease-in-out;
-						-ms-transition: all 0.3s ease-in-out;
-						transition: all 0.3s ease-in-out; 
+						
 }
-@media screen and (max-width: 1024px){
-	.gamebox img{ width:90%;}
-}
+
 
 .gamebox h1{ color:#fff;}
 
@@ -672,7 +666,13 @@ background:#fff;
 
 .zhuangshi_app{ display:block; position:absolute; left:0; top:0; width:100%; height:1px; overflow:hidden; background:rgba(255,255,255,0.15); }
 
-
+@media screen and (max-width: 1200px){
+	.gamebox img{ width:80%;}
+}
+@media screen and (max-width: 960px){
+	.gamebox .wow_title,
+	.gamebox .cxl_title { display: none;}
+}
 
 
 
@@ -751,27 +751,18 @@ background:#fff;
 
 /* ----- 普通瀑布流 ----- */
 .life_picture_box			{ margin:0 auto 0; }
-.life_picture 				{ width:180px; margin:8px; float:left;  position: relative; border-radius:6px;
-		-moz-box-shadow:0 0 4px rgba(0,0,0,0.3); 
-		 -ms-box-shadow:0 0 4px rgba(0,0,0,0.3);
-		  -o-box-shadow:0 0 4px rgba(0,0,0,0.3); 
-	     	 box-shadow:0 0 4px rgba(0,0,0,0.3); 
+.life_picture 				{ width:180px; margin:8px; float:left;  position: relative; border-radius:2px;
+	     	 box-shadow:0 0 0 1px rgba(0,0,0,0.1); 
 }
 
-.life_transition 			{ background:#fff; padding:14px; border-radius:6px;
+.life_transition 			{ background:#fff; padding:14px; border-radius:2px;
 	 -webkit-transition:all 0.25s ease-in-out; 
 		-moz-transition:all 0.25s ease-in-out;
 	      -o-transition:all 0.25s ease-in-out;
 	 	 -ms-transition:all 0.25s ease-in-out;
 		     transition:all 0.25s ease-in-out;
 }
-.life_transition:hover	{ background:#333;-webkit-box-shadow:0 0 1px rgba(0,0,0,0.4);  
-	 	-moz-box-shadow:0 0 5px rgba(0,0,0,0.5); 
-		 -ms-box-shadow:0 0 5px rgba(0,0,0,0.5);
-		  -o-box-shadow:0 0 5px rgba(0,0,0,0.5); 
-	     	 box-shadow:0 0 5px rgba(0,0,0,0.5); }
-
-.life_transition:hover .life_picture_text { color:#fff; }
+.life_transition:hover	{ background:#fff;  box-shadow:0 0 0 1px rgba(0,0,0,0.2), 0 0 10px rgba(0,0,0,0.2);  }
 
 .life_picture img 			{ display:block; width:100%; border-radius:4px;}
 
