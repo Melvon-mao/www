@@ -129,10 +129,15 @@ jQuery(
 			$('#menuSeccion1 li').removeClass('active');
 			$('#worknav_1_13').addClass('active');
 		}
-		else if( $('#workcont_1_14').offset().top < $.Window.height() / 2 )
+		else if( $('#workcont_1_14').offset().top < $.Window.height() / 2 && $('#workcont_1_15').offset().top > $.Window.height() / 2 )
 		{
 			$('#menuSeccion1 li').removeClass('active');
 			$('#worknav_1_14').addClass('active');
+		}
+		else if( $('#workcont_1_15').offset().top < $.Window.height() / 2 )
+		{
+			$('#menuSeccion1 li').removeClass('active');
+			$('#worknav_1_15').addClass('active');
 		}
 		else
 		{
