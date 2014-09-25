@@ -49,6 +49,7 @@
 		  $('.navbox').removeClass('overlayed');
 		}
 	  });
+	  
 	  //点击LOGO滚回顶部 
 	  $('.logoicon_tip').live('click', function(){
 		$('html, body').animate({scrollTop:0},{duration:500, queue:true, complete:function(){
