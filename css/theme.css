@@ -770,8 +770,8 @@ background:#fff;
 .life_picture_text			{ font-size:12px; margin:12px 0; font-family:"Microsoft YaHei";}
 .life_picture_time,
 .life_picture_address		{ color:#888; padding:0; margin:0; font-size:12px; font-family:"Microsoft YaHei";}
-.life_picture_time:before	{ content:'时间：'; } 
-.life_picture_address:before{ content:'地点：'; }
+.life_picture_time:before	{ content:'时间: '; } 
+.life_picture_address:before{ content:'地点: '; }
 
 /* 操作元素 */
 .life_picture .icon-eye 	{ display:block; position:absolute; top:0; left:0; width:100%; height:100%; cursor:pointer; visibility:hidden; content:"+"}
