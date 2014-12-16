@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="Keywords" content="UI,UX,UED,UCD,网页,设计,前端,视觉设计,网页设计,前端设计,photoshop,dreamweaver,flash,illustrator,javascript,jquery,extjs, phonegap,xcode">
+    <meta name="description" content="UI,UX,UED,UCD,网页,设计,前端,视觉设计,网页设计,前端设计,photoshop,dreamweaver,flash,illustrator,javascript,jquery,extjs, phonegap,xcode">
+    <meta name="author" content="Melvon 毛旭峰">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Melvon - Team</title>
+	<!--[if IE]> 
+    <link rel="stylesheet" href="css/ie.css">
+    <div class="fuck_ie">
+    <h1>暂时拒绝IE家族</h1>
+    <p>IE公开践踏W3C标准，可是一样流行，所谓标准不过是人定义的东西。</p>
+    <span>强烈推荐：</span>
+    <a class="chrome" href="http://www.google.com/chrome/" target="_blank"><img src="images/browser_chrome.png">Chrome浏览器</a>
+    <a class="safari" href="http://www.apple.com.cn/safari/" target="_blank"><img src="images/browser_safari.png">Safari浏览器</a>
+    </div>
+    <![endif]-->
+    <!--[if !IE]><!-->
+    <link rel="shortcut icon" href="favicon.ico"> 
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <!--<![endif]-->
+    <style class="csscreations">
+        /*basic reset*/
+        * {margin: 0; padding: 0;}
+        body {text-align: center; overflow: hidden; background: #fff;}
+
+        .grid {
+            width: 1000px; height: 300px; margin: 200px auto 50px;
+            -webkit-transform-style: preserve-3d;
+            -webkit-perspective: 1000; /*For 3d*/
+        }
+        .grid img {width: 100px; height: 100px; display: block; float: left;}
+
+        .animate { display: inline-block; margin-top: 30px;
+            font: 12px Montserrat; text-transform: uppercase;
+            background: rgb(0, 100, 0); color: white;
+            padding: 10px 20px; border-radius: 5px;
+            cursor: pointer;
+        }
+        .animate:hover {background: rgb(0, 75, 0);}6c28c47e
+    </style>
+</head>
+<body>
+
+
+    <!-- Navigation -->
+    <nav class="navbox">
+      <section class="navwrap clearfix">
+      	<h1><a href="submenu_all.html" class="open"></a><a class="linklogo"><img class="logo" src="images/logo.png"></a></h1>
+        	<a href="###" class="logoicon_tip"><img src="images/space.png"></a>
+        <ul id="nav">
+          <li><a href="index.html"><img src="images/icon_home_default.png"></a></li>
+          <li><a href="message.html">90Mile</a></li>
+          <li><a href="team.html" class="nav_current">Team</a></li>
+          <li href="submenu_me.html" class="submenu" id="me_page">Me</li>
+          <li href="submenu_design.html" class="submenu" id="design_page">Play</li>
+          <li href="submenu_life.html" class="submenu" id="life_page">Life</li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="resources.html">Resources</a></li>
+        </ul>
+      </section>
+    </nav>
+    <!-- Navigation End -->
+
+    <!--
+    <div class="os-phrases" id="os-phrases">
+        <h2>Visual Design</h2>
+        <h2>Interactive Developer</h2>
+        <h2>Front End Developer</h2>
+        <h2>CSS</h2>
+        <h2>LESS</h2>
+        <h2>PHOTOSHOP</h2>
+        <h2>MOBILE APP</h2>
+        <h2>Refresh to replay</h2>
+    </div>
+    -->
+
+    <div class="grid"></div>
+    <div class="clearfix"></div>
+    <div class="animate">Animate</div>
+
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+
+    <!-- Fix
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/jquery.lettering.js"></script>
+    <!-- Video
+	<script type="text/javascript" src="video/swfobject.js"></script> 
+	<script type="text/javascript" src="video/video_team.js"></script> 
+	<script type="text/javascript" src="video/buttons.js"></script>
+    <!-- pageslide
+    <script src="js/jquery.pageslide.js"></script>
+    <!-- 自定义
+    <script src="js/jquery.parallax.js"></script>
+    <script src="js/melvon.js"></script>
+    -->
+	<script>
+
+        /*
+        $(document).ready(function(){
+			
+			//var BV = new $.BigVideo({useFlashForFirefox:false});
+			//BV.init();
+			//BV.show('video/cloud_x264.mp4',{altSource:'video/cloud_VP8.webm',ambient:true});
+			
+			$("#os-phrases > h2").css('opacity',1).lettering('words').children("span").lettering().children("span").lettering(); 
+            
+        });
+        */
+
+
+        //Creating 50 thumbnails inside .grid
+        //the images are stored on the server serially. So we can use a loop to generate the HTML.
+        var images = "", count = 50;
+        for(var i = 1; i <= count; i++)
+            images += '<img src="http://thecodeplayer.com/u/uifaces/'+i+'.jpg" />';
+
+        //appending the images to .grid
+        $(".grid").append(images);
+
+        var d = 0; //delay
+        var ry, tz, s; //transform params
+
+        //animation time
+        $(".animate").on("click", function melvon(){
+            //fading out the thumbnails with style
+            $(".grid img").each(function(){
+                d = Math.random()*1000; //1ms to 1000ms delay
+                $(this).delay(d).animate({opacity: 0}, {
+                    //while the thumbnails are fading out, we will use the step function to apply some transforms. variable n will give the current opacity in the animation.
+                    step: function(n){
+                        s = 0+n; //scale - will animate from 0 to 1
+                        $(this).css("transform", "scale("+s+")");
+                    },
+                    duration: 1000,
+                })
+            }).promise().done(function(){
+                //after *promising* and *doing* the fadeout animation we will bring the images back
+                storm();
+            })
+        })
+
+
+        //bringing back the images with style
+        function storm()
+        {
+            $(".grid img").each(function(){
+                d = Math.random()*1000;
+                $(this).delay(d).animate({opacity: 1}, {
+                    step: function(n){
+                        //rotating the images on the Y axis from 360deg to 0deg
+                        ry = (1-n)*360;
+                        //translating the images from 1000px to 0px
+                        tz = (1-n)*1000;
+                        //applying the transformation
+                        $(this).css("transform", "rotateY("+ry+"deg) translateZ("+tz+"px)");
+                    },
+                    duration: 3000,
+                    //some easing fun. Comes from the jquery easing plugin.
+                    easing: 'easeOutQuint',
+                })
+            }).promise().done(function(){
+                //after *promising* and *doing* the fadeout animation we will bring the images back
+                melvon_default();
+            })
+        }
+
+        function melvon_default()
+        {
+            //fading out the thumbnails with style
+            $(".grid img").each(function(){
+                d = Math.random()*1000; //1ms to 1000ms delay
+                $(this).delay(d).animate({opacity: 0}, {
+                    //while the thumbnails are fading out, we will use the step function to apply some transforms. variable n will give the current opacity in the animation.
+                    step: function(n){
+                        s = 0+n; //scale - will animate from 0 to 1
+                        $(this).css("transform", "scale("+s+")");
+                    },
+                    duration: 1000,
+                })
+            }).promise().done(function(){
+                //after *promising* and *doing* the fadeout animation we will bring the images back
+                melvon_x();
+            })
+        }
+
+        function melvon_x()
+        {
+            $(".grid img").each(function(){
+                d = Math.random()*1000;
+                $(this).delay(d).animate({opacity: 1}, {
+                    step: function(n){
+                        //rotating the images on the Y axis from 360deg to 0deg
+                        ry = (1-n)*360;
+                        //translating the images from 1000px to 0px
+                        tz = (1-n)*1000;
+                        //applying the transformation
+                        $(this).css("transform", "rotateX(-"+ry+"deg) translateZ("+tz+"px)");
+                    },
+                    duration: 3000,
+                    //some easing fun. Comes from the jquery easing plugin.
+                    easing: 'easeOutQuint',
+                })
+            }).promise().done(function(){
+                //after *promising* and *doing* the fadeout animation we will bring the images back
+                melvon_end();
+            })
+        }
+
+        function melvon_end()
+        {
+            //fading out the thumbnails with style
+            $(".grid img").each(function(){
+                d = Math.random()*1000; //1ms to 1000ms delay
+                $(this).delay(d).animate({opacity: 0}, {
+                    //while the thumbnails are fading out, we will use the step function to apply some transforms. variable n will give the current opacity in the animation.
+                    step: function(n){
+                        s = 0+n; //scale - will animate from 0 to 1
+                        $(this).css("transform", "scale("+s+")");
+                    },
+                    duration: 1000,
+                })
+            }).promise().done(function(){
+                //after *promising* and *doing* the fadeout animation we will bring the images back
+                storm();
+            })
+        }
+</script>
+</body>
+</html>
