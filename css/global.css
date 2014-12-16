@@ -6,8 +6,6 @@
  * 开发维护：毛旭峰
  * 版本时间：v 2013.1.21
  */
-@import url('http://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900');
-
 @font-face {
   font-family: 'Dosis';
   font-style: normal;
@@ -20,7 +18,7 @@
   font-weight: 600;
   src: local('Dosis SemiBold'), local('Dosis-SemiBold'), url(../font/Dosis_600.woff) format('woff');
 }
-
+@import url('http://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900');
 /* 结构 */
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -177,6 +175,7 @@ h6{ font-size:18px;}
 					}
 .navwrap h1		{ float:left; position:relative; font-size:30px; color:#fff; line-height:1em; }
 .navwrap .linklogo{ display: block; margin-top: 14px; }
+.navwrap .linklogo:hover { background: none;}
 .navwrap .logoicon_tip{ position:absolute; left:210px; top:31px; z-index:2;}
 
 /* 主导航 */
