@@ -1,0 +1,60 @@
+<ul class="pagelistbox">
+    <li ng-cloak ng-repeat="page in pages | orderBy:'pagetype' | orderBy:'pageorder'">
+        <a href="#{{page.pageurl}}" class="pagelist_btn listpage_01"  ng-click="showPageBlock($index, page)" ng-class="{active: $index==defaultselectedpageindex, articlepage_btn:11==page.pagetype}" ng-click="editNewPage(page)">
+            <i class="icon-gear" ng-click="showEditPage($index)"></i>
+            <i class="drag"></i>{{page.pagename}}
+        </a>
+
+        <!-- ======================================= Page Attribute Panel ======================================= -->
+        <div class="page_attri_panel" ng-cloak ng-show="selectedpageattributeindex == $index">
+            <h1 class="PopupTitle"><a href="" class="TipBoxClose" ng-click="hideEditPage();">X</a>Page Data</h1>
+            <div class="page_attri_cont">
+                <form class="page_edit_form">
+                    <dl class="clearfix">
+                        <dt>name</dt>
+                        <dd>
+                        	<div class="control-group">
+                              <div class="controls">
+                                <input type="text" id="inputError" placeholder="Page Name" ng-model="page.pagename">
+                              </div>
+                            </div>
+                        </dd>
+                    </dl>
+                    <dl class="clearfix">
+                        <dt>title</dt>
+                        
+                  
+                        <div class="tipFormBox tipFormBox_wrong"><i class="icon-exclamation-sign"></i> <strong>Oh snap!</strong> Change a few things up and try.></div>
+                     
+                        <!--<dd class="tipFormBox tipFormBox_attention"><i class="icon-exclamation-sign"></i> <strong>Heads up!</strong> This alert needs your attention, but it's not super important.</dd>-->
+                        <!--<dd class="tipFormBox tipFormBox_information"><i class="icon-question-sign"></i> This alert needs your attention.</dd>-->
+                        <dd>
+                            <div class="control-group error">
+                              <div class="controls">
+                                <input type="text" id="inputError" placeholder="Page Title" ng-model="page.pagetitle">
+                              </div>
+                            </div>
+                        </dd>
+                    </dl>
+                    <dl class="clearfix">
+                        <dt>URL</dt>
+                        <dd>
+                        	<div class="control-group">
+                              <div class="controls">
+                                <input type="text" id="inputError" placeholder="Page Url" ng-model="page.pageurl">
+                              </div>
+                            </div>
+                        </dd>
+                    </dl>
+                    <div class="btn_box">
+                        <button type="button" class="btn btn-save" ng-click="editSavePage(page)">SAVE</button>
+                        <button type="button" class="btn btn-delete" ng-click="delPage(page, $index)">DELETE</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </li>
+    <li ng-cloak ng-show="cssshowpageaddinput" add-Page>
+    </li>
+</ul>
+<a href="#" class="addpage_btn" ng-hide="cssshowpageaddinput" ng-click="showAddPageInput()">+</a>

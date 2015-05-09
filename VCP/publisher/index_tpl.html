@@ -1,0 +1,68 @@
+
+<!-- Header -->
+<header class="header">
+	<h1 class="logo"><a href="index.html">VCP</a></h1>
+</header>
+
+<div class="vcpbox"  ng-controller="userLoginController">
+	<div class="banner_box">
+    	<div class="banner">
+        	<div class="bannerTxt">
+        		<h1>The easiest way to build a beautiful website / app. </h1>
+           		<h4>30,276,041 sites created. No coding. Easy to customize. Google friendly.</h4>
+                		<div class="loginform">
+                        <form name="loginform" class="form-horizontal">
+                              <div class="control-group">
+                                <label class="control-label" for="inputEmail">Username</label>
+                                <div class="controls">
+                                  <input type="text" required id="inputEmail" ng-model="userdata.username" placeholder="Username">
+                                </div>
+                              </div>
+                              <div class="control-group">
+                                <label class="control-label" for="inputPassword">Password</label>
+                                <div class="controls">
+                                  <input type="password" required id="inputPassword" ng-model="userdata.password" placeholder="Password">
+                                  <p ng-cloak ng-show="css.loginprompt" style="color:#f30; margin:8px 0 0 0; padding:0; line-height:14px;">Username Or Password Error!</p>
+                                </div>
+                              </div>
+                              <div class="control-group">
+                                <div class="controls">
+<!--                                  <label class="checkbox">
+                                    <input type="checkbox" ng-model="userdata.rememberusername">Remember me
+                                  </label>-->
+                                  <input type="submit" class="login_btn signin_btn" ng-click="userlogin(loginform)" value="Login">
+                                </div>
+                              </div>
+                              <div class="socialsignin"><a href="#"><img src="publisheradmin/app/img/social.png"></a></div>
+                         	  <div class="intoRegister"><a href="#signup">Register For A New Account</a></div>
+
+                         </form>
+                         </div>
+                         <!-- 
+            	 		<a href="register.html" class="login_btn">New Account</a>
+               			<a href="#" id="slidebtn" class="login_btn signin_btn" >Sign In</a>
+               			<div class="index_socialbox"><a href="register.html"><img src="app/img/temp/signinico.png"></a></div>
+                        -->
+           </div>
+           <div class="slide_01"><!-- Easy To Use / build site fast / earn money --></div>
+        </div>
+    </div>
+</div>  
+
+<!-- Footer -->    
+<footer class="footer">
+    <p>
+    <a href="#">Privacy Policy</a>|
+    <a href="#">Terms & Conditions</a>|
+    <a href="#">Press Kit</a>|
+    <a href="#">Trademark Issues</a>|
+    <a href="#">Contact Us</a>
+    </p>
+    <p>Copyright © 2013 ValueClick Brands, Inc. All Rights Reserved.</p>
+</footer>
+
+
+<div class="vcpindexbg"></div>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+// ======================================================================= //
+//                             font-resize    	    	                   //
+// ======================================================================= //
+.font-size {
+    float: right; margin-right: $font-resize-margin;
+    span { cursor:pointer }
+    > a{ color: #111; font-size: $global-size; font-family: $title-font }
+    .f-small { font-size: $font-resize-small }
+    .f-medium{ font-size: $font-resize-medium }
+    .f-large { font-size: $font-resize-large }
+
+    // for PC
+    @if $forpc == true {
+        @include media ( $media-lg ) { // 768px
+            display: none;
+        }
+    }
+    // for Mobile
+    @else{
+        display: none;
+    }
+
+}

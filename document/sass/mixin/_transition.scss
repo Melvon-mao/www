@@ -1,0 +1,37 @@
+// ======================================================================= //
+//                    		      transition           	                   //
+// ======================================================================= //
+
+@mixin transition ( $pro:all, $time:0.3s, $type: ease-out ) 
+							{  	
+								-webkit-transition: $pro $time $type;
+								   -moz-transition: $pro $time $type;
+								    -ms-transition: $pro $time $type;
+								     -o-transition: $pro $time $type;
+										transition: $pro $time $type;
+								
+							}
+
+
+
+@mixin transform ( $transform: transform, $time: 0.5s ) 
+							{  	
+								-webkit-transition: -webkit-#{ $transform } $time;
+								   -moz-transition: -moz-#{ $transform } $time;
+								    -ms-transition: -ms-#{ $transform } $time;
+								     -o-transition: -o-#{ $transform } $time;
+										transition: $transform $time;
+								
+							}
+
+
+
+@mixin translate3d ( $x:0, $y:0, $z:0 ) 
+							{  	
+								-webkit-transform: translate3d($x, $y, $z);
+								   -moz-transform: translate3d($x, $y, $z);
+								    -ms-transform: translate3d($x, $y, $z);
+								     -o-transform: translate3d($x, $y, $z);
+										transform: translate3d($x, $y, $z);
+								
+							}

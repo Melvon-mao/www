@@ -1,0 +1,93 @@
+// ======================================================================= //
+//                           	  contributor                      	       //
+// ======================================================================= //
+.avatar{ margin: 10px 0 0 0; padding-right: 5%; text-align: center; width: 26%; vertical-align: top; float: left;
+    a.img{
+        display: block;
+        img{ width: 122px }
+    }
+    img{
+        width: 122px;
+        // for PC
+        @if $forpc == true {
+            @include media ( $media-lm ) { // max-width: 767px
+                width: 122px;
+            }
+        }
+        // for Mobile
+        @else{
+            @include media ( $media-lm ) { // max-width: 767px
+                width: 122px;
+            }
+        }
+    }
+
+    // for PC
+    @if $forpc == true {
+        @include media ( $media-md ) { // max-width: 512px
+            width:100%; height:auto; float:none; margin-right:0;
+        }
+    }
+    // for Mobile
+    @else{
+        @include media ( $media-lm ) { // max-width: 767px
+            width:100%; height:auto; float:none; margin-right:0;
+        }
+    }
+}
+.desc{ float: left; margin: 10px 0 0 0; width: 63%; padding: 0 0 0 5%; font-size: 18px; border-left: 1px solid #e4e5e7;
+    .jobtitle { display: block; font-size: 16px; margin-bottom: 20px; color: #292e40 }
+    p{ margin-top: 5px }
+    // for PC
+    @if $forpc == true {
+        @include media ( $media-md ) { // max-width: 512px
+            width:100%; height:auto; float:none; margin-right:0; border-left: 0px; padding: 0px; text-align: center;
+        }
+    }
+    // for Mobile
+    @else{
+        width:100%; height:auto; float:none; margin-right:0; border-left: 0px; padding: 0px; text-align: center;
+        @include media ( $media-lm ) { // max-width: 767px
+            width:100%; height:auto; float:none; margin-right:0; border-left: 0px; padding: 0px; text-align: center;
+        }
+    }
+}
+.spacebottom{ margin-bottom: 30px }
+.mbottom{ margin-bottom: 100px }
+.alphabettop{ margin-bottom: 60px; clear: both }
+.alphabetbottom{ margin:30px 0 60px 0; clear: both }
+
+.contributors { list-style: none outside none; margin: 40px 0; padding: 0;
+    li{ display: inline-block;
+        a { display: block; line-height: 1em; padding: 4px; position: relative;
+            img { display: block; height: 70px }
+            .label {  width: 100%; bottom: 100%; display: none; font-size: 13px; left: 0; margin-bottom: 5px; position: absolute; text-align: center }
+            .label:after,
+            .label:before { content: ""; left: 50%; margin-left: -8px; position: absolute }
+        }
+    }
+}
+.contributor-search { background: none repeat scroll 0 0 #fff; border: 1px solid #dcdde0; padding: 4px 10px; margin-top: 8px }
+.right {
+    float: right; width: 288px;
+    input[type="text"]{ background: none repeat scroll 0 0 rgba(0, 0, 0, 0); border: medium none; color: #aaa; font-size: 15px; margin-bottom: 0; vertical-align: middle; box-shadow: none; box-sizing: border-box; padding: 5px }
+    // for PC
+    @if $forpc == true {
+        @include media ( $media-lm ) { // max-width: 767px
+            width: 200px;
+        }
+        @include media ( $media-md ) { // max-width: 512px
+            float: none; margin-bottom: 20px; width: 94%;
+        }
+    }
+    // for Mobile
+    @else{
+        @include media ( $media-lm ) { // max-width: 767px
+            width: 200px;
+        }
+        @include media ( $media-md ) { // max-width: 512px
+            float: none; margin-bottom: 20px; width: 94%;
+        }
+    }
+    input[type="image"] { vertical-align: middle; width: 24px; float: right; padding: 4px 0 0 0 }
+}

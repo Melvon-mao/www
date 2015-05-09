@@ -1,0 +1,224 @@
+// ======================================================================= //
+//                         		corporation      	 	      	           //
+// ======================================================================= //
+.alphatip {
+    @at-root {
+        // in tooltip
+        .tooltip {
+            .alphatip { width: 100px; margin-left: -60px; line-height: 12px; z-index: 90;
+                .letter { font-size: 30px; line-height: 35px }
+            }
+        }
+        // in Corporation page
+        .corporation {
+            .alphabet {
+                li {
+                    a { padding:10px 4px }
+                }
+            }
+        }
+    }
+}
+
+
+.corporation {
+    margin-top: 60px;
+    .#{$list}{
+        .#{$item}{ border-bottom: 1px solid #ddd;
+            .#{$item}-image { min-height: 76px }
+        }
+    }
+
+    #AdditionalLinks,
+    #DownloadLinks{ width: 100%; margin: 0 auto; text-align: center; border-width: 1px; border-style: solid; border-color:#dad7cc; background-color:#F3F2E2;
+        h3 {
+            a { padding: 25px; display: block }
+        }
+    }
+
+    #AdditionalLinks { margin-top: 10px;
+        ul { text-align:center;
+            li { display: inline-block; padding: 6px 10px }
+        }
+    }
+
+    .flipboard_img { width: 100%; max-width: 568px }
+
+    a[rel="nofollow"] {
+        // for PC
+        @if $forpc == true {
+            @include media ( $media-ml ) { // 620px
+                display: block; width: 100px; margin: 20px auto 0;
+                ~ a[rel="nofollow"] { margin-top: 0 }
+            }
+        }
+        // for Mobile
+        @else{
+            @include media ( $media-lm ) { // 767px
+                display: block; width: 100px; margin: 20px auto 0;
+                ~ a[rel="nofollow"] { margin-top: 0 }
+            }
+        }
+    }
+
+
+    .row {
+        padding: 0 30px;
+        // for PC
+        @if $forpc == true {
+            @include media ( $media-ml ) {
+                padding: 0;
+            }
+        }
+            // for Mobile
+        @else{
+            @include media ( $media-ml ) {
+                padding: 0;
+            }
+        }
+    }
+    [class^="column-"],
+    [class^="column-"] { padding: 8px }
+    [class^="column-"].inline-box { padding-bottom: 0 }
+
+    // in advertising-contact ...
+    .register-form {
+        padding: 6px 0 0 0;
+    }
+
+}
+
+.corporation-s1-image {
+    .#{$list}{
+        .#{$item}{ border-bottom: 1px solid #ddd; padding: 20px 0;
+            .#{$item}-image { width: 270px; min-height: 130px;
+                .#{$item}-image-src { width: auto; height: auto; max-width: 100% }
+            }
+        }
+    }
+}
+
+
+
+
+// ======================================================================= //
+//                         		Advandlicense      	 	      	           //
+// ======================================================================= //
+.Advandlicense {
+    padding: 0; text-shadow: 0 0 1px #ccc;
+    // .sidebar
+    .sidebar { width: 250px; float: left; min-height: 645px; border-right: #d8d8d8 1px solid;
+        ul { list-style: none; padding: 0; margin: 0;
+            li { background: #f0f0f0; line-height: 40px; height: 40px; margin: 0 0 8px; padding-left: 10px;
+                a { color: #606060; font-size: 24px; text-decoration: none; font-family: $section-font }
+                &.active { background: #81ba2f;
+                    a { color: #fff }
+                }
+            }
+
+        }
+    }
+
+    // .invintro
+    .invintro { padding: 10px;
+        p { padding-bottom: 10px; line-height: 150%; color: #111; font-size: $global-size; margin: 0 }
+    }
+
+    // .invtraffic
+    .invtraffic { padding: 10px; color: $global-color; font-size: 20px; font-family: $section-font;
+        strong { font-size: 22px; color: $global-color; font-weight: normal }
+        p { padding-bottom: 20px; margin: 0 }
+    }
+
+    // .pagecontent
+    .pagecontent { margin-left: 295px; padding-bottom: 15px;
+        .aboutinv{
+            h1 { font-size: 23px; color: $global-color }
+            p { font-size: 15px; line-height: 24px;
+                span { width: 17px; height: 16px; display: -moz-inline-stack; display: inline-block; vertical-align: middle; zoom: 1;
+                    *display: inline; color: #81ba2f; overflow: hidden; text-indent: -9999px;
+                    background: url("../#{$image-default-patch}/icon_download_2.png") 0 2px no-repeat }
+                a { text-decoration: none; color: #08c;
+                    &:hover { text-decoration: underline }
+                }
+            }
+        }
+    }
+
+    //.responsiveimg
+    .responsiveimg { position: relative; padding: 10px 0 0;
+        img { max-width: 100%; max-height: 100% }
+    }
+
+    // .contactusbutton
+    .contactusbutton { position: absolute; top: -10px; right: 0; width: 25%;
+        p { font-size: 23px; text-align: center; font-family: $section-font }
+        a { display: block; height: 44px; line-height: 40px; width: 90%; margin: 0 auto; color: #fff; text-decoration: none; font-size: 20px; text-align: center; border: #79ab41 1px solid;
+            @include box-shadow(2px 2px 2px rgba(2, 2, 2, .2));
+            @include bglinear (#6da823,#5b9718,#83bc30);
+        }
+    }
+
+    //.otherlinks
+    .otherlinks { padding: 5px 0;
+        a { text-decoration: none; color: #08c; margin: 0; font-size: $global-size; font-family: $section-font;
+            &:hover { text-decoration: underline }
+        }
+        span { padding: 0 10px }
+        // for PC
+        @if $forpc == true {
+            @include media ( $media-xs ) { // 768px
+                a{ font-size:11px }
+                span{ padding: 0 5px }
+            }
+        }
+       // for Mobile
+        @else{
+            @include media ( $media-lm ) { // 767px
+                a{ font-size:11px }
+                span{ padding: 0 5px }
+            }
+        }
+    }
+
+    // .reprint
+    .reprint { position: absolute; right: 0; top: 130px; width: 25%;
+        p { font-size: 13px; text-align: center }
+        // for PC
+        @if $forpc == true {
+            @include media ( $media-lg ) { // 768 px
+                position: static; text-align: center; display: block; width: 100%;
+            }
+        }
+            // for Mobile
+        @else{
+            // ipad
+            position: static; text-align: center; display: block; width: 100%;
+        }
+    }
+
+    // for PC
+    @if $forpc == true {
+        @include media ( $media-lg ) { // 768 px
+            .contactusbutton { position: static; width: 100% }
+        }
+        @include media ( $media-md ) { // 512 px
+            .sidebar { margin: 0; width: 100%; float: none; border: 0; min-height: 0 !important }
+            .pagecontent { margin: 0; width: 100%; float: none; border: 0; min-height: 0 !important }
+        }
+    }
+        // for Mobile
+    @else{
+        // ipad
+        .contactusbutton { position: static; width: 100% }
+        @include media ( $media-lm ) { // 767 px
+            .sidebar { margin: 0; width: 100%; float: none; border: 0; min-height: 0 !important  }
+            .pagecontent { margin: 0; width: 100%; float: none; border: 0; min-height: 0 !important }
+        }
+    }
+
+}
+
+
+.flipboard { width: 810px; margin: auto }
+

@@ -1,0 +1,221 @@
+<!-- Header -->
+<div page-nav current = '2'></div>
+
+<!-- Header //End -->
+        
+
+<!-- Container -->
+<div class="vcpbox">
+	<div class="site_box">
+    
+        
+    	<!-- 第 1 步 -->
+    	<div class="site_stepbox" ng-class="{large_step_1: css.app, mini_step_1:!css.app}">
+        
+        	<div class="site_box_title clearfix">
+            	 <div class="title_num">1</div>
+                <h1 class="title_name">Site/App Data</h1>
+            </div>
+            
+        	<form class="site_form" name="siteinfoform"  >
+            	<h4><a href="" class="edit_step icon-gear" ng-click="showSiteForm();"></a></h4>
+                <div class="site_form_Box">
+                <table class="table">
+                	<tr>
+                    	<td class="titlename">Name</td>
+                        <td>
+                            <div class="control-group" ng-class="{error : css.namevalid}">
+                                <label class="control-label"></label>
+                                <div class="controls">
+                                    <!-- Validform Tip -->
+                                    <div ng-show="css.namevalid" class="tipFormBox tipFormBox_wrong"><i class="icon-exclamation-sign"></i> <strong> You can't leave this empty.</strong></div>
+                                    <!-- Validform Tip //End-->
+                                    <input type="text" class="site_input" placeholder="Pls input Site Name" ng-model="siteinfodata.name">
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                    	<td class="titlename">Domain</td>
+                        <td>
+                            <div class="control-group" ng-class="{error : css.domainvalid}">
+                                <label class="control-label"></label>
+                                <div class="controls">
+                                    <!-- Validform Tip -->
+                                    <div ng-show="css.domainvalid" class="tipFormBox tipFormBox_wrong"><i class="icon-exclamation-sign"></i> <strong>You can't leave this empty.</strong></div>
+                                    <!-- Validform Tip //End-->
+                                    <input type="text" class="site_input site_input2" placeholder="Domain" ng-model="siteinfodata.domain"><span class="site_inputspan">.vcp.com</span>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                    	<td class="titlename">Meta Data</td>
+                        <td>
+                            <div class="control-group " ng-class="{error : css.metavalid}">
+                                <label class="control-label"></label>
+                                <div class="controls">
+                                    <!-- Validform Tip -->
+                                    <div ng-show="css.metavalid" class="tipFormBox tipFormBox_wrong"><i class="icon-exclamation-sign"></i> <strong>You can't leave this empty.</strong></div>
+                                    <!-- Validform Tip //End-->
+                                    <input type="text" class="site_input" placeholder="Meta" ng-model="siteinfodata.meta">
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                    	<td class="titlename">Type</td>
+                        <td>
+                            <select ng-model="siteinfodata.organizationtype" style="width: 190px;margin-left: 7px;">
+                                <option value="10">Bussness</option>
+                                <option value="20">Organization</option>
+                                <option value="30">Persional</option>
+                            </select></td>
+                    </tr>
+                    <tr>
+                    	<td class="titlename">Mobile App</td>
+                        <!-- <td><div class="fancyinput_vcp"><input type="text" value=""></div></td> -->
+                        <td>
+                        	<label class="appLabel"><input type="checkbox"><div class="iOSApp">iOS App</div></label>   
+                            <label class="appLabel"><input type="checkbox"><div class="AndroidApp">Android App</div></label> 
+                        </td>
+                    </tr>
+                     <tr class="last">
+                    	<td class="titlename">RSS Link</td>
+                        <!-- <td><div class="fancyinput_vcp"><input type="text" value=""></div></td> -->
+                        <td>
+                        <label class="RssFeedLabel" style="padding-left: 7px;"><input type="radio" name="RSSfeed" id="RssFeedOff" ng-model="siteinfodata.rssapi" value="false">Off</label>
+                        <label class="RssFeedLabel" style="padding-left: 7px;"><input type="radio" name="RSSfeed" id="RssFeedOn" ng-model="siteinfodata.rssapi" value="true">On</label>
+                        <div class="RssFeedOn_Box" ng-show="siteinfodata.rssapi" >
+                        http://{{ siteinfodata.domain }}.vcp.com/api/0000001
+                        </div>
+                        </td>
+                        </tr>
+                </table>
+                </div>
+                <div class="submitbox SiteSubmitBox">
+                    <button type="button" id="save_step1" class="btn btn-save" ng-click="saveSiteInfo()">Save</button>
+                </div>
+            </form>
+            
+        </div>
+        
+        
+        
+        <!-- 第 2 步 -->
+        <div class="site_stepbox" ng-class="{large_step_2: css.theme, mini_step_2:!css.theme}">
+        	<div class="site_box_title clearfix">
+            	<div class="title_num">2</div>
+                <h1 class="title_name">Select Theme</h1>
+            </div>
+        	<form class="site_form">
+            	<h4><a href="" class="edit_step icon-gear" ng-click="showThemeForm()"></a></h4>
+                <div class="site_form_Box">
+                    <div class="site_themebox">
+
+                        <ul class="site_theme_ul clearfix">
+                          <!--
+                        <li><a href="" class="icon_sitetheme_blank" ng-class="{select:css.themeindex == 1}" ng-click="selectThemeIndex(0);"><img src="publisheradmin/app/img/sitetheme/Thumb_blank.png"></a></li>
+-->
+                            <li ng-repeat="theme in themeData">
+                                <a href="" class="icon_sitetheme_01" ng-class="{select:siteinfodata.system_theme_id == theme.id}" ng-click="selectThemeIndex(theme.id)"><img ng-src="{{  theme.thumbnail_path}}"></a></li>
+                      <!--  <li><a href="" class="icon_sitetheme_02" ng-class="{select:css.themeindex == 3}" ng-click="selectThemeIndex(2)"><img src="publisheradmin/app/img/sitetheme/Thumb_02.png"></a></li>
+                        <li><a href="" class="icon_sitetheme_03" ng-class="{select:css.themeindex == 4}" ng-click="selectThemeIndex(3)"><img src="publisheradmin/app/img/sitetheme/Thumb_03.png"></a></li>
+                        <li><a href="" class="icon_sitetheme_04" ng-class="{select:css.themeindex == 5}" ng-click="selectThemeIndex(4)"><img src="publisheradmin/app/img/sitetheme/Thumb_04.png"></a></li>
+                        <li><a href="" class="icon_sitetheme_05" ng-class="{select:css.themeindex == 6}" ng-click="selectThemeIndex(5)"><img src="publisheradmin/app/img/sitetheme/Thumb_05.png"></a></li>
+                        <li><a href="" class="icon_sitetheme_06" ng-class="{select:css.themeindex == 7}" ng-click="selectThemeIndex(6)"><img src="publisheradmin/app/img/sitetheme/Thumb_06.png"></a></li>
+                        <li><a href="" class="icon_sitetheme_07" ng-class="{select:css.themeindex == 8}" ng-click="selectThemeIndex(7)"><img src="publisheradmin/app/img/sitetheme/Thumb_07.png"></a></li>
+                        <li><a href="" class="icon_sitetheme_08" ng-class="{select:css.themeindex == 9}" ng-click="selectThemeIndex(8)"><img src="publisheradmin/app/img/sitetheme/Thumb_08.png"></a></li>
+-->
+                       <!-- <li class="ts_thumbnails">
+                            <div class="ts_preview_wrapper">
+                                <ul class="ts_preview">
+                                    <li><img src="publisheradmin/app/img/sitetheme/sitetheme_blank.jpg" alt="Thumb 1" /></li>
+                                    <li><img src="publisheradmin/app/img/sitetheme/sitetheme_01.png" alt="Thumb 2" /></li>
+                                    <li><img src="publisheradmin/app/img/sitetheme/sitetheme_02.png" alt="Thumb 3" /></li>
+                                    <li><img src="publisheradmin/app/img/sitetheme/sitetheme_03.png" alt="Thumb 4" /></li>
+                                    <li><img src="publisheradmin/app/img/sitetheme/sitetheme_04.jpg" alt="Thumb 5" /></li>
+                                    <li><img src="publisheradmin/app/img/sitetheme/sitetheme_05.jpg" alt="Thumb 6" /></li>
+                                    <li><img src="publisheradmin/app/img/sitetheme/sitetheme_06.jpg" alt="Thumb 7" /></li>
+                                    <li><img src="publisheradmin/app/img/sitetheme/sitetheme_07.jpg" alt="Thumb 8" /></li>
+                                    <li><img src="publisheradmin/app/img/sitetheme/sitetheme_08.jpg" alt="Thumb 9" /></li>
+                                </ul>
+                            </div>
+                            <span></span>
+                        </li>-->
+                                
+                        </ul>
+                    </div>
+                </div>
+                <div class="submitbox SiteSubmitBox">
+                    <button type="button" id="save_step2" class="btn btn-save" ng-click="saveTheme();">Save</button>
+                </div>
+            </form>
+        </div>
+        
+        
+        
+        <!-- 第 3 步 -->
+        <div class="site_stepbox" ng-class="{large_step_3: css.logo, mini_step_3:!css.logo}">
+        	<div class="site_box_title clearfix">
+            	<div class="title_num">3</div>
+                <h1 class="title_name">Select Logo</h1>
+            </div>
+        	<form class="site_form">
+            	<h4><a href="" class="edit_step icon-gear" ng-click="showLogoForm();"></a></h4>
+                <div class="site_form_Box">
+                    <table class="table">
+                        <tr>
+                        	<td class="titlename">Logo</td>
+                        	<td class="siteiconTD">
+                            <a ng-hide="selectlogo" href="" class="site_logo_btn" ng-click="selectlogo = true"><span>Click here to add</span></a>
+                            <img ng-show="selectlogo" src="publisheradmin/app/img/symptomfind/logo_fillbg.png" style="margin:35px auto;"></td>
+                        </tr>
+                        <tr class="last">
+                        	<td class="titlename">Web Icon</td>
+                        	<td class="siteiconTD">
+                            <a ng-hide="selectwebicon" href="" class="site_logo_btn" ng-click="selectwebicon = true"><span>Click here to add</span></a>
+                            <img ng-show="selectwebicon" src="publisheradmin/app/img/symptomfind/logo_webicon.png" style="margin:35px auto;"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="submitbox SiteSubmitBox">
+                    <button type="button" id="save_step3" class="btn btn-save" ng-click="saveLogo();">Save</button>
+                </div>
+            </form>
+        </div>
+        
+        
+        
+        <!-- 第 4 步 -->
+        <div class="site_stepbox" ng-class="{large_step_4: css.workflow, mini_step_4:!css.workflow}">
+        	<div class="site_box_title clearfix">
+            	<div class="title_num">4</div>
+                <h1 class="title_name">Select Publishing Workflow</h1>
+            </div>
+        	<form class="site_form">
+            	<h4><a href="" class="edit_step icon-gear" ng-click="showWorkflow();"></a></h4>
+                <div class="site_form_Box">
+                    <div class="site_workflow">
+                        <h6></h6>
+                        <p ng-click="changeWorkFlow(10);"><a href="" class="btn btn-info" ng-class="{selectbtninfo:siteinfodata.workflow == 10}"><i ng-show="selectpublish" class="icon-ok-sign"></i>1-Step</a></p>
+                        <p ng-click="changeWorkFlow(20);"><a href="" class="btn btn-success" ng-class="{selectbtnsuccess:siteinfodata.workflow == 20}"><i ng-show="selectone" class="icon-ok-sign"></i>Single Review and Publish</a></p>
+                        <p ng-click="changeWorkFlow(30);"><a href="" class="btn btn-warning" ng-class="{selectbtnwarning:siteinfodata.workflow == 30}"><i ng-show="selectcomplex" class="icon-ok-sign"></i> Complex Review and Publish</a></p>
+                    </div>
+                </div>
+                <div class="submitbox SiteSubmitBox">
+                    <button type="button" id="save_step4" class="btn btn-save" ng-click="saveWorkFlow();">Save</button>
+                </div>
+            </form>
+        </div>
+        
+        
+        
+        <!-- 背景横线 -->
+		<div class="site_bgpline"></div>
+        
+        
+        
+        
+    </div>
+</div>

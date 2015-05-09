@@ -1,0 +1,13 @@
+/* ======================================================================= */
+/*                                label-inline                             */
+/* ======================================================================= */
+.form-box.form-type-radios-inline.label-inline,
+.form-box.form-type-checkboxes-inline.label-inline{ margin-bottom: 0px;
+    .form-type-radios,
+    .form-type-checkboxes{
+            > label { margin-top: 0; margin-right: 10px; display: inline-block; vertical-align: top;  }
+            > label + div { display: inline-block; vertical-align: top;
+                .form-item { margin-top: 0;}
+            }
+    }
+}

@@ -1,0 +1,107 @@
+/* ======================================================================= */
+/*                         	   	Drupal: .radio      	 	               */
+/* ======================================================================= */
+// radio-block
+.form-type-radios {
+    .form-radios{ font-size: $input-text-medium; 
+        .form-type-radio{ 
+            display: block; min-height: 20px; padding-left: 22px; margin-top: 0px; margin-bottom: 10px; vertical-align: middle; cursor: pointer;
+            .form-radio { float: left;  margin-left: -20px; }
+            .option { display: inline; margin-bottom: 0; font-weight: normal; cursor: pointer; }
+            + .form-type-radio {  }
+        }
+    }
+}
+// radio-inline
+.form-type-radios-inline {
+    label { margin-bottom: 6px;}
+    .form-radios{
+        .form-type-radio{
+            display: inline-block; 
+            .form-radio { float: left;  margin-left: -20px; }
+            + .form-type-radio { margin-left: 10px; }
+        }
+    }
+}
+// radio-list
+.form-type-radios-inline{
+    &.form-type-list {
+        .form-type-radios {
+            .form-radios {
+                .form-type-radio{
+                    display: block; float: left; padding-right: 10px; margin-bottom: 0px; @include ellipsis(); @include boxsizing();
+                    + .form-type-radio { margin-left: 0; }
+                }
+            }
+        }
+    }
+    &.col-1 {
+        .form-type-radios {
+            .form-radios {
+                .form-type-radio{
+                    width: 100%;
+                }
+            }
+        }
+    }
+    &.col-2 {
+        .form-type-radios {
+            .form-radios {
+                .form-type-radio{
+                    width: 50%;
+                }
+            }
+        }
+    }
+    &.col-3 {
+        .form-type-radios {
+            .form-radios {
+                .form-type-radio{
+                    width: 33%;
+                }
+            }
+        }
+    }
+    &.col-4 {
+        .form-type-radios {
+            .form-radios {
+                .form-type-radio{
+                    width: 24%;
+                }
+            }
+        }
+    }
+    &.col-5 {
+        .form-type-radios {
+            .form-radios {
+                .form-type-radio{
+                    width: 20%;
+                }
+            }
+        }
+    }
+}
+// ----------------------------------------------
+//.radio {
+//    display: block; min-height: 20px; padding-left: 20px; margin-top: 10px; margin-bottom: 10px; vertical-align: middle;
+//    label               { display: inline; margin-bottom: 0; font-weight: normal; cursor: pointer; }
+//    input[type="radio"] { float: left; margin-left: -20px; }
+//    + .radio            { margin-top: -5px; }
+//    @at-root {
+//        .form-inline {
+//            .radio{ display: inline-block; padding-left: 0; margin-top: 0; margin-bottom: 0;
+//                input[type="radio"] { float: none; margin-left: 0; }
+//            }
+//        }
+//    }
+//}
+//.radio-inline {
+//    display: inline-block; padding-left: 20px; margin-bottom: 0; font-weight: normal; vertical-align: middle; cursor: pointer;
+//    input[type="radio"] { float: left;  margin-left: -20px; }
+//    + .radio-inline     { margin-top: 0; margin-left: 10px; }
+//    @at-root {
+//        .form-horizontal {
+//            .radio-inline { padding-top: 6px; }
+//        }
+//    }
+//}

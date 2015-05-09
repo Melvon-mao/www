@@ -1,0 +1,7 @@
+// ======================================================================= //
+//                    		      ellipsis           	                   //
+// ======================================================================= //
+
+@mixin ellipsis() {
+	word-break: keep-all; white-space: nowrap; text-overflow: ellipsis; -o-text-overflow: ellipsis; overflow: hidden;
+}

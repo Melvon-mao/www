@@ -1,0 +1,51 @@
+// =========================================================================================== //
+//                                            Chart                                            //
+// =========================================================================================== //
+.markets_chart{
+	iframe{ width: 100% !important }
+
+    @if $forpc == true {
+        padding-right: 0px;
+    }
+    @else{
+       padding-right: 1px;
+    }
+}
+
+.markets_sector{
+	> div,
+	> div > table,
+	> div > table > tbody,
+	> div > table > tbody > tr,
+	> div > table > tbody > tr > td,
+	> div > table > tbody > tr > td > div,
+	> div > table > tbody > tr > td > div > embed{ width: 100% !important }
+}
+
+.ui-canvas{ padding: 12px; text-align: center; border-width: 1px; border-style: solid; background: #f6f6f6; border: 1px solid $border-color }
+
+.feature{ height: 220px; overflow: visible; text-align:left;
+	> img{ margin-left: -39px; float: left; border: none }
+	div{ display: block }
+
+	.feature-left{ margin-left:40px; float: left;
+		.txt{ padding: 4px 0 14px }
+		.btn{ display: block;padding: 0 0 4px }
+	}
+    @if $forpc == true {
+        @include media ( $media-lg ) { // max-width: 768px
+            > img{ display: none }
+                .feature-left{ float: none; text-align: center; margin: 0 auto;
+                .btn{ margin: 0 auto }
+            }
+        }
+    }
+    @else{
+        @include media ( $media-lm ) { // max-width: 767px
+            > img{ display: none }
+                .feature-left{ float: none; text-align: center; margin: 0 auto;
+                .btn{ margin: 0 auto }
+            }
+        }
+    }
+}

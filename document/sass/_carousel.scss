@@ -1,0 +1,479 @@
+// ======================================================================= //
+//                                  video left                             //
+// ======================================================================= //
+.ui-video{
+    float: left; margin-right: 5px;
+    // for PC
+    @if $forpc == true {
+        @include media ( $media-lg ) { // 768px
+            margin: 0 !important; float: none; padding: 0;
+        }
+    }
+    // for Mobile
+    @else{
+        @include media ( $media-lm ) { // 767px
+            margin: 0 !important; float: none; padding: 0;
+        }
+    }
+    .video-left{ position: relative; display: block; width: 320px; height: 213px;
+      // for PC
+      @if $forpc == true {
+          @include media ( $media-lg ) { // 768px
+              width: 100% !important; margin: 0 auto;
+              #JWPVideo_wrapper,
+              #JWPVideo{ width: 100% !important }
+          }
+      }
+      // for Mobile
+      @else{
+          @include media ( $media-lm ) { // 767px
+              width: 100% !important; margin: 0 auto;
+              #JWPVideo_wrapper,
+              #JWPVideo{ width: 100% !important }
+          }
+      }
+      & .googima{ position: absolute; top: 0px; z-index: 10; width: 100%; visibility: hidden }
+      & .jwpsrv{ position: absolute; top: 0px; z-index: 11 }
+      & .gapro{ position: absolute; top: 0px; z-index: 12 }
+
+  }
+}
+
+
+
+
+
+
+
+
+// ======================================================================= //
+//                                  video list                             //
+// ======================================================================= //
+.video-playlist{
+	overflow: hidden; padding-left: 20px;
+    // for PC
+    @if $forpc == true {
+        @include media ( $media-lg ) {
+          float: none; padding: 0; margin: 10px 0 0 0;
+        }
+    }
+    // for Mobile
+    @else{
+        @include media ( $media-lm ) {
+          float: none; padding: 0; margin: 10px 0 0 0;
+        }
+    }
+	ul { margin: 0;padding: 0;
+		li { display: block; margin: 0 0 5px; padding: 0; border-radius: 2px; border: 1px solid #ddd;
+			&:hover { border-color: #aaa }
+			h3 { border: 1px solid transparent; display: block; font-size: 14px !important;
+				a { display: block; padding: 4px 5px 2px 10px;
+					&:visited { color: $link-color }
+					&:link { color: $link-color; cursor: pointer; text-decoration: none }
+					span{ display: inline-block;
+						&.prefix{ color: #4a0 }
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+// ======================================================================= //
+//                              slideshow start                            //
+// ======================================================================= //
+.#{ $layout}-page {
+    .carousel-box { margin-bottom: $margin-md !important;
+        // for PC
+        @if $forpc == true {
+            @include media ( $media-lg ) { //768px;
+                margin-bottom: $margin-sm !important;
+            }
+        }
+        // for Mobile
+        @else{
+                margin-bottom: $margin-sm !important;
+        }
+    } // 45px
+}
+
+.carousel{ width: 100%;
+	@at-root {
+		.bottom{ margin-bottom: 0px !important }
+		.carousel_animation{ overflow: hidden; position: relative; width: 610px; height: 248px }
+		.pre_img{ left: -610px }
+		.now_img{ left: 0px }
+		.next_img{ left: 610px }
+	}
+
+	&.carousel_style{ height: 234px; overflow: hidden; position: absolute; border-bottom:none }
+	.carousel_left{ width: 312px; height: 234px; position: relative; float: left; overflow: hidden;
+		img{ width: 100%; height: 100% }
+	}
+	.carousel_right{ background-color: transparent; height: 100%; padding: 0 22px; vertical-align: top; overflow: hidden;
+		p{ margin: 10px 0; text-transform: uppercase; font-size: 13px }
+		h2{ line-height: 1em;margin-bottom: 10px; margin-top: 0; /* max-height: 52px; */ overflow: hidden;
+			a{ font-size: 24px; line-height: 1.2em; color: $h-color;
+				&:link { color: $h-color; cursor: pointer; text-decoration: none }
+				&:visited { color: $h-color }
+				&:hover { text-decoration: underline }
+			}
+		}
+        > div{ max-height: 56px; overflow: hidden }
+		.carousel_btn_link{ padding: 6px 70px; font-size: 18px; background-color: $button-bgcolor; color: #fff; border: none; cursor: pointer; margin: 20px 0 10px 0;
+			&:hover { text-decoration: none; background-color: $link-color }
+		}		
+        .sign-free{ display: block;        	
+			.member-signup-link{ color: $link-color; font-size: 14px; display: inline-block; margin-top: 0px;
+				&:hover { text-decoration: underline; cursor: pointer }
+				&:visited { color: $link-color }
+			}
+        }
+		.item-link{ padding: 6px 0 0;
+			&:link { color: $link-color; cursor: pointer; text-decoration: none }
+			&:visited { color: $link-color }
+			&:hover { text-decoration: underline }
+		}
+	}
+	& .rss{ margin-top: 10px;
+		img{ height: 18px; width: 18px }
+	}
+
+    // for PC
+    @if $forpc == true {
+        @include media ( $media-lg ) {  // 768px
+             .carousel_right{ overflow: hidden; position: static; width: auto; margin-left: 0 }
+            .carousel_btn_link{ width: 100%; max-width: 248px; padding: 6px 0 !important }
+
+            @at-root {
+                  #professionals-carousel + .separator{ display: none }
+            }
+        }
+        @include media ( $media-md ) { // 512px
+            height: auto; @include clear;
+            .carousel_right > div,
+            .carousel_right .rss{ display:  none }
+            .carousel_right,
+            .carousel_left{ width: 100%; float: none }
+            .carousel_right{ padding: 0px }
+            .carousel_right .carousel_btn_link{ margin-top: 0px; width: 100%; max-width: 100% }
+            .carousel_right > div,
+            .carousel_right .item-link { display: none }
+            @at-root {
+                .carousel_animation { width: 100% }
+                .carousel_animation,
+                .carousel.carousel_style{ height: 330px; overflow: hidden }
+                #professionals-carousel,
+                #professionals-carousel .carousel.carousel_style{ height: 380px; overflow: hidden }
+                .carousel_animation + .separator{ display: none }
+            }
+        }
+    }
+    // for Mobile
+    @else{
+        @at-root {
+            .carousel_animation { width: auto }
+        }
+        @include media ( $media-lm ) {
+            .carousel_right > div,
+            .carousel_right .rss{ display: none }
+            .carousel_right,.carousel_left{ width: 300px; float: none }
+            .carousel_right{ padding: 0px }
+            .carousel_right .carousel_btn_link{ margin-top: 0px; width: 100%; max-width: 100% }
+            .carousel_right > div,
+            .carousel_right .item-link{ display: none }
+            @at-root {
+                .carousel_animation { width: 100% }
+                .carousel_animation,
+                .carousel.carousel_style{ height: 330px; overflow: hidden }
+                #professionals-carousel,
+                #professionals-carousel .carousel.carousel_style{ height: 380px; overflow: hidden }
+                .carousel_animation + .separator{ display: none }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+// ======================================================================= //
+//                              slideshow teaser                           //
+// ======================================================================= //
+.carousel_teaser{
+	display: block; font-size: 12px; height: 24px; margin: 0; padding: 13px 0 10px; font-family: $section-font;
+    &.video-carousel{ display:none }
+
+    //pc
+    @if $forpc == true {
+        @include media ( $media-lg ) { // 768px;
+            font-size: 15px;
+        }        
+        @include media ( $media-md ) { // 512px;
+            &.video-carousel{ display:block }
+        }
+    }
+    // for Mobile
+    @else{
+        font-size: 15px;
+        @include media ( $media-lm ) { // 767px
+            &.video-carousel{ display:block }
+        }
+    }
+	.teaserlabel{ /* float: left; padding: 4px 6px 4px 0; */ display: none }
+	.teasertitle{ overflow: hidden; white-space: nowrap; width: 380px; float: left; padding: 4px 6px 4px 0; display: none;
+		a{ color: #456D9F;
+			&:visited { color: $link-color }
+			&:link { color: $link-color; cursor: pointer; text-decoration: none }
+		}
+        //pc
+        @if $forpc == true {
+            @include media ( $media-lg ) { // 768px;
+                display: block;
+            }
+            @include media ( $media-md ) { // 512px;
+                width: 70%; white-space: normal;
+            }
+        }
+            // for Mobile
+        @else{
+            display: block;
+            @include media ( $media-lm ) { // 767px
+                width: 70%; white-space: normal;
+            }
+        }
+	}
+	.teaserctrls{ float: right; width: 90px;
+		& div { cursor: pointer; display: inline-block; height: $carousel-timer-height; width: $carousel-timer-width;
+			-moz-user-select: none; background-position: center center; background-repeat: no-repeat }
+		.prev{ background-image: url("../#{$image-default-patch}/sprite_icon.png"); background-position: -156px -342px;
+            &:hover { background-position: -204px -342px }
+        }
+		.next{ background-image: url("../#{$image-default-patch}/sprite_icon.png"); background-position: -181px -342px;
+            &:hover { background-position: -229px -342px }
+        }
+
+		.carousel_timer { background: url("../#{$image-default-patch}/t__sprite.gif") no-repeat scroll left top #000;
+
+            &.tmr01{ width: $carousel-timer-width; height: $carousel-timer-height; background-position:0 0}
+            &.tmr02{ width: $carousel-timer-width; height: $carousel-timer-height; background-position:-25px 0}
+            &.tmr03{ width: $carousel-timer-width; height: $carousel-timer-height; background-position:-50px 0}
+            &.tmr04{ width: $carousel-timer-width; height: $carousel-timer-height; background-position:-75px 0}
+            &.tmr05{ width: $carousel-timer-width; height: $carousel-timer-height; background-position:-100px 0}
+            &.tmr06{ width: $carousel-timer-width; height: $carousel-timer-height; background-position:-125px 0}
+            &.tmr07{ width: $carousel-timer-width; height: $carousel-timer-height; background-position:-150px 0}
+            &.tmr08{ width: $carousel-timer-width; height: $carousel-timer-height; background-position:-175px 0}
+            &.tmr09{ width: $carousel-timer-width; height: $carousel-timer-height; background-position:-200px 0}
+            &.tmr10{ width: $carousel-timer-width; height: $carousel-timer-height; background-position:-225px 0}
+            &.tmr11{ width: $carousel-timer-width; height: $carousel-timer-height; background-position:-250px 0}
+            &.tmr12{ width: $carousel-timer-width; height: $carousel-timer-height; background-position:-275px 0}
+            &.tmr13{ width: $carousel-timer-width; height: $carousel-timer-height; background-position:-300px 0}
+            &.tmr14{ width: $carousel-timer-width; height: $carousel-timer-height; background-position:-325px 0}
+            &.tmr15{ width: $carousel-timer-width; height: $carousel-timer-height; background-position:-350px 0}
+            &.tmr16{ width: $carousel-timer-width; height: $carousel-timer-height; background-position:-375px 0}
+            &.tmr17{ width: $carousel-timer-width; height: $carousel-timer-height; background-position:-400px 0}
+            &.tmr18{ width: $carousel-timer-width; height: $carousel-timer-height; background-position:-425px 0}
+            &.tmr19{ width: $carousel-timer-width; height: $carousel-timer-height; background-position:-450px 0}
+            &.tmr20{ width: $carousel-timer-width; height: $carousel-timer-height; background-position:-475px 0}
+            &.tmr21{ width: $carousel-timer-width; height: $carousel-timer-height; background-position:-500px 0}
+            &.tmr22{ width: $carousel-timer-width; height: $carousel-timer-height; background-position:-525px 0}
+            &.tmr23{ width: $carousel-timer-width; height: $carousel-timer-height; background-position:-550px 0}
+            &.tmr24{ width: $carousel-timer-width; height: $carousel-timer-height; background-position:-575px 0}
+            &.tmr25{ width: $carousel-timer-width; height: $carousel-timer-height; background-position:-600px 0}
+            &.tmr26{ width: $carousel-timer-width; height: $carousel-timer-height; background-position:-625px 0}
+            &.tmr27{ width: $carousel-timer-width; height: $carousel-timer-height; background-position:-650px 0}
+            &.tmr28{ width: $carousel-timer-width; height: $carousel-timer-height; background-position:-675px 0}
+            &.tmr29{ width: $carousel-timer-width; height: $carousel-timer-height; background-position:-700px 0}
+            &.tmr30{ width: $carousel-timer-width; height: $carousel-timer-height; background-position:-725px 0}
+            &.tmr31{ width: $carousel-timer-width; height: $carousel-timer-height; background-position:-750px 0}
+            &.tmr32{ width: $carousel-timer-width; height: $carousel-timer-height; background-position:-775px 0}
+            &.tmr33{ width: $carousel-timer-width; height: $carousel-timer-height; background-position:-800px 0}
+            &.tmr34{ width: $carousel-timer-width; height: $carousel-timer-height; background-position:-825px 0}
+            &.tmr35{ width: $carousel-timer-width; height: $carousel-timer-height; background-position:-850px 0}
+            &.tmr36{ width: $carousel-timer-width; height: $carousel-timer-height; background-position:-875px 0}
+
+        }
+
+        //pc
+        @if $forpc == true {
+            @include media ( $media-lg ) { // 768px;
+                width: 72px;
+                & div { width: 32px; height: 26px }
+                .prev,
+                .next{ background: url("../#{$image-default-patch}/sprite_icon.png") no-repeat }
+                .prev{ background-position:   0 -343px;
+                    &:hover { background-position: -79px -343px}
+                }
+                .next{ background-position: -29px -343px;
+                    &:hover { background-position: -108px -343px}
+                }
+                .carousel_timer { display: none }
+            }
+            @include media ( $media-md ) { // 512px
+
+            }
+        }
+            // for Mobile
+        @else{
+            width: 72px;
+            & div { width: 32px; height: 26px }
+            .prev,
+            .next{ background: url("../#{$image-default-patch}/sprite_icon.png") no-repeat }
+            .prev{ background-position:   0 -343px;
+                &:hover { background-position: -79px -343px }
+            }
+            .next{ background-position: -29px -343px;
+                &:hover { background-position: -108px -343px }
+            }
+            .carousel_timer { display: none; }
+            @include media ( $media-lm ) { // 767px
+
+            }
+        }
+	}
+
+
+
+}
+
+
+
+
+
+
+
+// ======================================================================= //
+//                                 colcarousel                             //
+// ======================================================================= //
+.colcarousel {
+
+	.colcarousel-nav{ float: left; width: 200px;
+		.#{$list} { margin-bottom: -1px; padding:0;
+			.#{$item} { list-style: none outside none; margin: 0 0 1px; overflow: visible; padding: 0; position: relative;
+				.#{$item}-title { display: block; margin: 0; padding: 0;
+					a { display: block; font-size: 15px; height: 38px; padding: 12px; color: #fff; background-color: #696969;
+						&:hover { background-color: $link-color; text-decoration: none }
+					}
+				}
+				:last-child {
+					a{ height: 37px }
+				}
+				&.selected {
+					.#{$item}-title {
+						a { background-color: $link-color }
+					}
+				}
+			}
+		}
+	}
+
+	.menu-dropdown{ 
+	    > i{
+	        display: none;
+            background: url("../#{$image-default-patch}/btn_selectmenu_arrow.png") center right no-repeat; cursor: pointer; height: 32px; position: relative;
+	        z-index: 2; border: #5aa0d7 1px solid; font-style: normal; line-height: 32px; text-indent: 12px; width: 100%; font-size: 12px
+   	    }
+
+	    &.active{
+            .#{$list}{ display: block !important }
+	    }
+
+        // for PC
+        @if $forpc == true {
+        	@include media ( $media-lg ) { // 768px
+        		width: 100%; float: none;
+                .#{$list}{
+                    .#{$item}{
+						width: 25%;float: left;
+						a{ line-height: 14px !important }
+					}
+        		}
+        	}
+
+            @include media ( $media-ml ) { // 480px
+                display: none;
+            }
+        }
+        // for Mobile
+        @else{
+          // ipad
+            width: 100%; float: none;
+            .#{$list}{
+                .#{$item}{
+                    width: 25%;float: left;
+                    a{ line-height: 14px !important }
+                }
+            }
+            // phone
+            @include media ( $media-ml )  {
+                display: none;
+            }
+        }    		
+
+	}    
+
+
+	.colcarousel-view {
+		float: right; width: 410px;
+		.colcarousel-screen {
+			height: 250px; margin: 0 5px; overflow: hidden;
+		}
+		.#{$item}-image { display: none; width:438px; height:253px;
+			.#{$item}-image-src { width: 100%; height: 100% }
+		}
+
+	    // for PC
+	    @if $forpc == true {
+        	@include media ( $media-lg ) { // 768px
+	        	width: 100%; padding: 0; background: #696969; 
+	        	.colcarousel-screen{ margin: 0; text-align: center }
+                .#{$item}-image{ margin:0 auto; width: 100%;
+                    .#{$item}-image-src { width: auto }
+                }
+        	}
+	        @include media ( $media-sm ) { // 480px
+	        	border: #ccc 1px solid; padding: 0; float: none;
+	        	.colcarousel-screen{ margin: 0 }
+                .#{$item}-image{ width: 100% !important;
+                    .#{$item}-image-src { width: 100% }
+                }
+	        }
+	    }
+	    // for Mobile
+	    @else{
+            width: 100%; padding: 0; background: #696969;
+            .colcarousel-screen{ margin: 0; text-align: center }
+            .#{$item}-image{ margin:0 auto; width: 100%;
+                .#{$item}-image-src { width: auto }
+            }
+            @include media ( $media-lm ) { // 767px
+                float: none;
+                .#{$item}-image{
+                    .#{$item}-image-src { width: 100% }
+                }
+            }
+	    }   		
+
+	}
+
+
+
+}
+
+
+
+
+
+
+

@@ -1,0 +1,637 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" version="XHTML+RDFa 1.0" dir="ltr">
+	<head profile="http://www.w3.org/1999/xhtml/vocab">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="application-name" content="Investopedia"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=9">
+	<title>Visual Document</title>
+	<link rel="stylesheet" type="text/css" href="css/tablet.css">
+	<link rel="shortcut icon" href="http://i.investopedia.com/vcb/assets_v2/img/favicon.ico" type="image/vnd.microsoft.icon">
+    <script language="javascript" type="text/javascript" src="js/jquery.min.js"></script>
+    <!-- <script language="javascript" type="text/javascript" src="js/g.js"></script> -->
+    <script language="javascript" type="text/javascript" src="js/var.js"></script>
+    <script language="javascript" type="text/javascript" src="js/func.js"></script>
+    <script language="javascript" type="text/javascript" src="js/event.js"></script>
+    <script language="javascript" type="text/javascript" src="js/Math.uuid.js"></script>
+        <style type="text/css">
+            [id^="-example"],
+            [id*="-example"]{ height: 100px; display: block; }
+
+            .interaction-doc .title h2{ text-transform: lowercase;}
+            .interaction-doc .title h2 span { }
+            .melvon     { margin-top: 160px; }
+            .melvon * { font-family: "Helvetica Neue",Helvetica,Arial,sans-serif !important; }
+            .melvon h1 { font-size: 40px !important; line-height: 1.5;}
+            .melvon h2 { font-size: 28px; font-family: "sourcesanspro-light-webfont" !important; }
+            .melvon h3 { font-size: 24px; }
+            .melvon h3 img { vertical-align: middle; margin-right: 10px; }
+            .melvon p { font-size: 16px; color: #555; line-height: 1.5; font-family: "Helvetica Neue",Helvetica,Arial,sans-serif !important; -webkit-text-stroke: 0.0em;}
+            
+            #Content { font-family: "sourcesanspro-regular-webfont"; 
+                -webkit-transition: all 0.5s ease-out;
+                -moz-transition: all 0.5s ease-out;
+                -ms-transition: all 0.5s ease-out;
+                -o-transition: all 0.5s ease-out;
+                transition: all 0.5s ease-out;
+            }
+            .doc-layout-size { width: 980px; margin: 0 auto;}
+
+            /* doc-header */
+            .doc-header { position: fixed; top:0; width: 100%; z-index: 999;
+                -webkit-transition: all 0.4s ease-out;
+                -moz-transition: all 0.4s ease-out;
+                -ms-transition: all 0.4s ease-out;
+                -o-transition: all 0.4s ease-out;
+                transition: all 0.4s ease-out;
+            }
+            .doc-header-shadow { box-shadow: 0 4px 20px rgba(0,0,0,0.2);}
+            .doc-header .mid { position: relative; height: 69px; overflow: hidden; background:#323a4e url('img/header_bg.jpg') center top repeat-x !important; 
+                -webkit-transition: all 0.4s ease-out;
+                -moz-transition: all 0.4s ease-out;
+                -ms-transition: all 0.4s ease-out;
+                -o-transition: all 0.4s ease-out;
+                transition: all 0.4s ease-out;
+            }
+            .doc-header .mid.mid-none{ height: 0px; overflow: hidden; }
+            .doc-header .mid.mid-show{ height: 69px; overflow: hidden; }
+            .doc-header .brand { padding: 0; }
+            .doc-header .brand .logo { float: right; margin: 13px 0; width: 200px; height: 42px; background: url('img/logo_white_new.png') center center no-repeat;
+                background-size:contain; }
+
+            /* front-end-title */
+            .front-end-title { position: relative; margin: 13px 0; float: left; color: #fff; font-size: 32px; font-family: "sourcesanspro-light-webfont";  }
+            .front-end-title b { font-family: 'sourcesanspro-bold-webfont'; font-weight: normal;}
+            .front-end-title i { position: absolute; right: -84px; top:12px; display: block; padding: 2px 8px; font-size: 11px; background: #a62436; font-style: normal; font-family:"sourcesanspro-bold-webfont",Helvetica,Arial,Verdana,sans-serif;}
+            .front-end-title i:after { content:''; display: block; position: absolute; left: -10px; top:4px; width: 0; height: 0; border-width:5px; border-style: solid; border-color: transparent #a62436 transparent transparent; }
+
+            /* doc_nav */
+            .doc_nav {  width: 100%; border-bottom: solid 1px #aba4ac; background: #fff; font-family: "sourcesanspro-regular-webfont"; }
+            .doc_nav ul{ position: relative; width: 980px; /* text-align: justify; */ margin: 0 auto; padding: 0; }
+            .doc_nav ul:after { content: ''; display: inline-block; width: 100%; height: 1px; }
+            .doc_nav li { padding: 9px 0; display: inline-block; list-style: none; text-align: center; }
+            .doc_nav li a { color: #111; padding: 2px 9px; border-radius: 2px; text-decoration: none; border:1px solid transparent; 
+                -webkit-transition: all 0.2s ease-out;
+                -moz-transition: all 0.2s ease-out;
+                -ms-transition: all 0.2s ease-out;
+                -o-transition: all 0.2s ease-out;
+                transition: all 0.2s ease-out; }
+            .doc_nav li a:hover { color: #a62436; border:1px solid #ccc; }
+            .doc_nav li a:active,
+            .doc_nav li a:focus { border:1px solid #aaa; box-shadow:inset 0 0 10px rgba(0,0,0,0.1); }
+            .doc_nav li.active a,
+            .doc_nav li.active a:hover { color: #fff; background: #a62436; border:1px solid #a62436; }
+
+            .gototop { opacity: 0; position: absolute; width: 50px; height: 60px; right:-100px; top:0; font-size: 18px; color: #fff !important;text-decoration: none !important; text-align: center; line-height: 44px; background-color: #a62436; font-family: 'sourcesanspro-bold-webfont';}
+            .gototop:after { display: block; content: ''; width: 0; height: 0; border-width: 15px 25px; border-style: solid; border-color: transparent transparent #fff transparent; position: absolute; left:0; bottom: 0; }
+
+            .form-item .title { color: #a62436; font-size: 16px; text-transform:capitalize; }
+
+            [class^="column-"],
+            [class*="column-"]{ padding: 10px;}
+            [class^="column-"].texttitle,
+            [class*="column-"].texttitle { text-align: right;}
+
+            .color-box { border-radius: 2px;}
+            .font-size-box { position: relative;}
+            .font-size-box .size-box-inner{ position: absolute; left: 10px; top:-24px; padding: 2px 8px; font-size: 15px !important; color: #444; border-radius: 100px; font-style: normal; font-family:"sourcesanspro-regular-webfont",Helvetica,Arial,Verdana,sans-serif; box-shadow: 0 0 1px 1px rgba(0,0,0,0.2); 
+                background: #fff; }
+            .font-size-box .size-box-inner:after,
+            .font-size-box .size-box-inner:before { content:''; display: block; position: absolute; left: 50%; bottom:-10px; margin-left: -5px; width: 0; height: 0; border-width:5px; border-style: solid; border-color: #aaa transparent transparent transparent; z-index: 1;}
+            .font-size-box .size-box-inner:before { bottom:-9px; border-color: #fff transparent transparent transparent; z-index: 2; }
+            .font-size-box .size-box-inner span { font-size: 11px; padding: 0 2px;}
+
+            @media only screen and (max-width: 1024px) {
+                html { min-height: 0;}
+                .doc-header,
+                #Content,
+                #Header,
+                #Footer{ 
+                    filter: url(blur.svg#blur); /* FireFox, Chrome, Opera */
+                    -webkit-filter: blur(7px); /* Chrome, Opera */
+                    -moz-filter: blur(7px);
+                    -ms-filter: blur(7px);
+                    filter: blur(7px);
+                    filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=7, MakeShadow=false); /* IE6~IE9 */
+                }
+                #Content { width: 94%;}
+                body { width: 100%; min-width: 0; min-height: 0; position: relative; 
+                    }
+                body:before { display: block; content: ''; width: 100%; height: 100%; position: fixed; background: #323a4e; z-index: 9999;
+                    opacity: 0.75; }
+                body:after { display: block; height: 50%; content: 'Visual Standards Documents'; color: #fff; font-size: 46px; position: fixed; left: 0; right:0; top:0; bottom:0; margin:auto; font-family: "sourcesanspro-light-webfont"; text-align: center; z-index: 10000; }
+            }
+
+
+            pre { overflow: auto; margin: 1.715em 0; padding: 1em; border: 1px solid #e5e8ec; border-radius: 3px;
+                background-color: #fdfdfd;
+                background-image: -webkit-linear-gradient(transparent 50%,rgba(69,142,209,0.04) 50%);
+                background-image: -moz-linear-gradient(transparent 50%,rgba(69,142,209,0.04) 50%);
+                background-image: -ms-linear-gradient(transparent 50%,rgba(69,142,209,0.04) 50%);
+                background-image: -o-linear-gradient(transparent 50%,rgba(69,142,209,0.04) 50%);
+                background-image: linear-gradient(transparent 50%,rgba(69,142,209,0.04) 50%);
+                background-size: 3em 3em;
+                background-origin: content-box;
+                font: .9em/1.5 Consolas,Monaco,'Andale Mono',monospace;
+                -webkit-overflow-scrolling: touch
+            }
+            pre::-webkit-scrollbar { height: 7px }
+            pre::-webkit-scrollbar-thumb { background: #e5e8ec }
+            pre::-webkit-scrollbar-thumb:hover { background: #d6dbe1 }
+            pre>code { text-align: left; white-space: pre; word-spacing: normal; font-family: inherit; direction: ltr;
+                -moz-tab-size: 4; -o-tab-size: 4; tab-size: 4;
+                -webkit-hyphens: none; -moz-hyphens: none; -ms-hyphens: none; hyphens: none
+            }
+            :not(pre)>code { padding: .25em .5em .1em; border: 1px solid #e5e8ec; border-radius: .25em; background: #fafafa; color: black; vertical-align: 2px;
+                font: .85em Consolas,Monaco,'Andale Mono',monospace }
+            .token.comment, .token.block-comment, .token.prolog, .token.doctype, .token.cdata { color: #7d8b99 }
+            .token.punctuation { color: #5f6364 }
+            .token.property, .token.tag, .token.boolean,.token.number,.token.function-name,.token.constant,.token.symbol { color: #c92c2c }
+            .token.selector,.token.attr-name,.token.string,.token.function,.token.builtin { color: #2f9c0a  }
+            .token.operator,.token.entity,.token.url,.token.variable { background: rgba(255,255,255,0.5); color: #a67f59 }
+            .token.atrule,.token.attr-value,.token.keyword,.token.class-name { color: #1990b8 }
+            .token.regex,.token.important { color: #e90 }
+            .language-css .token.string,.style .token.string { background: rgba(255,255,255,0.5); color: #a67f59 }
+            .token.important { font-weight: normal }
+            .token.entity { cursor: help }
+            .namespace { opacity: .7 }
+            .token.tab:not(:empty):before,.token.cr:before,.token.lf:before { color: #e0d7d1 }
+
+        </style>
+</head>
+<body class="interaction-doc">
+
+
+	<!-- ================================= Header ================================= -->
+	<div class="doc-header">
+
+		<div class="mid">
+			<div class="brand clear doc-layout-size">
+				<div class="front-end-title">Visual Standards Documents<i>2014.09.07</i></div>
+                <a href="http://www.investopedia.com/" target="_blank" class="logo"></a>
+			</div>
+		</div>
+
+        <!-- ================================= Navgitaion ================================= -->
+        <div class="doc_nav">
+            <ul class="clear">
+                <li><a href="#Color-example">Color</a></li>
+                <li><a href="#Font-example">Font</a></li>
+                <li><a href="#Space-example">Space</a></li>
+                <li><a href="#Icon-example">Icon</a></li>
+                <li><a href="#Form-example">Form</a></li>
+                <li><a href="#Image-example">Image</a></li>
+                <li><a href="#Responsive-example">Responsive</a></li>
+                <a class="gototop" href="###">TOP</a>
+            </ul>
+            
+        </div>
+        <!-- ================================= Navgitaion //End ================================= -->
+
+	</div>
+	<!-- ================================= Header //End ================================= -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<!-- ================================= Content  ================================= -->
+	<div id="Content" class="doc-layout-size">
+
+            <div class="box melvon">
+                <h1 class="box">Match target users and product branding. Plan for the future.</h1>
+                <h3><img src="img/temp/arrow.png">Consistent Design</h3>
+                <p>Design templates based on custom visual component. Standardize visual design for
+All pages and elements. Use consistent components (tab, form, pagination, table and button etc.).
+Use consistent margin and padding across all blocks and contents. Design style for channels and columns should match general look and feel throughout the whole site
+.</p>
+                <h3><img src="img/temp/arrow.png">Design Style</h3>
+                <p>Match target users and product branding. Plan for the future.</p>
+                <h3><img src="img/temp/arrow.png">Icon</h3>
+                <p>All icons should be intuitive and precise in their meanings. Keep consistent in color. Make sure they are organic.</p>
+
+            </div>
+
+
+
+            <!-- ==================================== Color ==================================== -->
+            <a id="Color-example"></a>
+            <div class="box layout-title"><h1>Color</h1></div>
+            <div class="box title">Main color</div>
+            <div class="box row">
+                <div class="column-3 texttitle">Main color</div>
+                <div class="column-3"><div class="color-box" style="height:30px; color:#fff; line-height:30px; text-align:center; background:#292f40;">#292f40</div></div>
+                <div class="column-3 texttitle">Secondary color</div>
+                <div class="column-3">
+                    <div class="color-box" style=" float:left; width:49%; height:30px; color:#fff; line-height:30px; text-align:center; background:#005b9d;">#005b9d</div>
+                    <div class="color-box" style=" float:left; width:49%; height:30px; color:#111; line-height:30px; text-align:center; background:#e4e5e6;">#e4e5e6</div>
+                </div>
+            </div>
+            <div class="box title">Title</div>
+            <div class="box row">
+               <div class="column-3 texttitle">Global title color</div>
+               <div class="column-3"><div class="color-box" style="height:30px; color:#fff; line-height:30px; text-align:center; background:#005b9d;">#005b9d</div></div>
+               <div class="column-3 texttitle">Secondary title color</div>
+               <div class="column-3"><div class="color-box" style="height:30px; color:#fff; line-height:30px; text-align:center; background:#666;">#666</div></div>
+            </div>
+            <div class="box title">Content text</div>
+            <div class="box row">
+               <div class="column-3 texttitle">Global text color</div>
+               <div class="column-3"><div class="color-box" style="height:30px; color:#fff; line-height:30px; text-align:center; background:#111;">#111111</div></div>
+               <div class="column-3 texttitle">Secondary text color</div>
+               <div class="column-3"><div class="color-box" style="height:30px; color:#fff; line-height:30px; text-align:center; background:#b3b3b3;">#b3b3b3</div></div>
+            </div>
+            <div class="box title">Border</div>
+            <div class="box row">
+               <div class="column-3 texttitle">All border default color</div>
+               <div class="column-3"><div class="color-box" style="height:30px; color:#111; line-height:30px; text-align:center; background:#e4e5e6;">#e4e5e6</div></div>
+               <div class="column-3 texttitle">All input border color</div>
+               <div class="column-3"><div class="color-box" style="height:30px; color:#fff; line-height:30px; text-align:center; background:#ccc;">#ccc</div></div>
+            </div>
+            <div class="box title">Button</div>
+            <div class="box row">
+               <div class="column-3 texttitle">Default color</div>
+               <div class="column-3"><div class="color-box" style="height:30px; color:#fff; line-height:30px; text-align:center; background:#a62436;">#a62436</div></div>
+               <div class="column-3 texttitle">Hover color</div>
+               <div class="column-3"><div class="color-box" style="height:30px; color:#fff; line-height:30px; text-align:center; background:#005b9d;">#005b9d</div></div>
+            </div>
+            <div class="box title">Example</div>
+            <div class="box row">
+              <div class="column-12" style="text-align:center"><img src="img/temp/visual_space_09.jpg"></div>
+            </div>
+            <div class="box row">
+              <div class="column-12" style="text-align:center"><img src="img/temp/visual_space_10.jpg"></div>
+            </div>
+
+
+
+
+
+
+
+
+            <!-- ==================================== Font ==================================== -->
+            <a id="Font-example"></a>
+            <div class="box layout-title"><h1>Font</h1></div>
+            <div class="box title">System font</div>
+            <div class="box row">
+                <div class="column-3 texttitle">Verdana,Geneva,sans-serift<br></div>
+                <div class="column-9 font-size-box" style="font-family:Verdana,Geneva,sans-serif; font-size: 15px;"><i class="size-box-inner">15<span>px</span></i>Become a member of Investopedia and receive free instant access to exclusive features including our Stock Simulator, FXtrader, Newsletters, and Exam Prep Quizzer.</div>
+            </div>
+            <div class="box title">Content font</div>
+            <div class="box row">
+                <div class="column-3 texttitle">gandhiserif-regular-webfont<br></div>
+                <div class="column-9 font-size-box" style="font-family:'gandhiserif-regular-webfont'; font-size: 15px;"><i class="size-box-inner">15<span>px</span></i>Become a member of Investopedia and receive free instant access to exclusive features including our Stock Simulator, FXtrader, Newsletters, and Exam Prep Quizzer.</div>
+            </div>
+            <div class="box title">Big title font</div>
+            <div class="box row">
+                <div class="column-3 texttitle">sourcesanspro-light-webfont<br></div>
+                <div class="column-9 font-size-box" style="font-family:'sourcesanspro-light-webfont'; font-size:46px;"><i class="size-box-inner">46<span>px</span></i>PERSONAL FINANCE</div>
+            </div>
+            <div class="box title">Column title font</div>
+            <div class="box row">
+                <div class="column-3 texttitle">sourcesanspro-light-webfont<br></div>
+                <div class="column-9 font-size-box" style="font-family:'sourcesanspro-regular-webfont'; font-size:18px; color:#005b9d;"><i class="size-box-inner">18<span>px</span></i>Increase Exposure To Technology Using ETFs</div>
+            </div>
+            <div class="box title">Section font</div>
+            <div class="box row">
+                <div class="column-3 texttitle">sourcesanspro-regular-webfont<br></div>
+                <div class="column-9 font-size-box" style="font-family:'sourcesanspro-regular-webfont'; font-size:22px; color: #666;"><i class="size-box-inner">22<span>px</span></i>RELATED TO 'CORPORATE BOND'</div>
+            </div>
+            <div class="box row">
+                <div class="column-3 texttitle">sourcesanspro-bold-webfont<br></div>
+                <div class="column-9 font-size-box" style="font-family:'sourcesanspro-bold-webfont';"><i class="size-box-inner">15<span>px</span></i>Become a member of Investopedia and receive free instant access to exclusive features including our Stock Simulator, FXtrader, Newsletters, and Exam Prep Quizzer.</div>
+            </div>
+            <div class="box title">Column title font</div>
+            <div class="box row">
+                <div class="column-3 texttitle">sourcesanspro-semibold-webfont<br></div>
+                <div class="column-9 font-size-box" style="font-family:'sourcesanspro-semibold-webfont'; font-size:12px; color:#b3b3b3"><i class="size-box-inner">12<span>px</span></i>CATEGORY MAY 12,2014</div>
+            </div>
+
+
+
+
+
+
+            <!-- ==================================== Space ==================================== -->
+            <a id="Space-example"></a>
+            <div class="box layout-title"><h1>Space</h1></div>
+            
+            <div class="box title">Form Block</div>
+            <div class="box row">
+                <div class="column-12" style="text-align:center"><img src="img/temp/visual_space_05.jpg"></div>
+            </div>
+            <div class="box title">List Block</div>
+            <div class="box row">
+                <div class="column-12" style="text-align:center"><img src="img/temp/visual_space_04.jpg"></div>
+            </div>
+            <div class="box row">
+                <div class="column-12" style="text-align:center"><img src="img/temp/visual_space_03.jpg"></div>
+            </div>
+            <div class="box row">
+                <div class="column-12" style="text-align:center"><img src="img/temp/visual_space_06.jpg"></div>
+            </div>
+            <div class="box title">Article Block</div>
+            <div class="box row">
+                <div class="column-12" style="text-align:center"><img src="img/temp/visual_space_07.jpg"></div>
+            </div>
+            <div class="box title">Layout-page Block</div>
+            <div class="box row">
+                <div class="column-12" style="text-align:center"><img src="img/temp/visual_space_01.jpg"></div>
+                <div class="column-12" style="text-align:center"><img src="img/temp/visual_space_02.jpg"></div>
+            </div>
+
+
+
+
+
+
+            <!-- ==================================== Icon ==================================== -->
+            <a id="Icon-example"></a>
+            <div class="box layout-title"><h1>Icon</h1></div>
+            <div class="box row">
+                <div class="column-12" style="text-align:center"><img src="img/temp/visual_space_08.jpg"></div>
+            </div>
+
+
+
+
+
+
+            <!-- ==================================== Form ==================================== -->
+            <a id="Form-example"></a>
+            <div class="box layout-title"><h1>Form</h1></div>
+            <div class="box title">Input</div>
+            <div class="box row">
+                <div class="column-4 font-size-box">
+                    <i class="size-box-inner">default</i>
+                    <div class="form-box">
+                        <!-- form-item -->
+                        <div class="form-item form-type-textfield">
+                            <input type="text" class="form-text">
+                        </div>
+                        <!-- form-item //End -->
+                    </div>
+                </div>
+                <div class="column-4 font-size-box">
+                    <i class="size-box-inner">hover/focus</i>
+                    <div class="form-box">
+                        <!-- form-item -->
+                        <div class="form-item form-type-textfield">
+                            <input type="text" class="form-text active">
+                        </div>
+                        <!-- form-item //End -->
+                    </div>
+                </div>
+                <div class="column-4 font-size-box">
+                <i class="size-box-inner">wrong tooltip</i>
+                    <div class="form-box">
+                        <div class="form-item form-type-textfield form-item-display-name">
+                            <a class="tooltip msg-validate">
+                            <div>
+                                <input type="text" id="edit-display-name" name="display_name" value="" size="10" maxlength="255" class="form-text warning">
+                            </div>
+                            <span class="content" style="bottom:36px; display:block;">        Provide a name that will be displayed when you log in.<br>
+                            <span class="pointer"></span></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="box title">Button</div>
+            <div class="box row">
+                <div class="column-4 font-size-box">
+                    <i class="size-box-inner">default</i>
+                    <div class="form-box">
+                        <input type="submit" name="submit" value="Submit Changes">
+                    </div>
+                </div>
+                <div class="column-4 font-size-box">
+                    <i class="size-box-inner">hover/focus</i>
+                    <div class="form-box">
+                        <input type="submit" name="submit" value="Submit Changes" class="active">
+                    </div>
+                </div>
+                <div class="column-4 font-size-box">
+                    <i class="size-box-inner">disable</i>
+                    <div class="form-box">
+                        <input type="submit" name="submit" value="Submit Changes" class="disabled">
+                    </div>
+                </div>
+            </div>
+            <div class="box title">Select</div>
+            <div class="box row">
+                <div class="column-4 font-size-box">
+                    <i class="size-box-inner">default</i>
+                    <div class="ui-tabset-select form-box">
+                        <div class="form-item form-type-select">
+                            <div class="nav-selectmenu selectmenu"><div class="label"><div class="text">Definition</div></div><input type="button" class="keytrigger" style="position:absolute; left:-99999px; width:10px;"><ul><li><a href="/markets/stocks/goog/">Definition</a></li><li><a href="/markets/stocks/goog/charts/">Videos</a></li><li><a href="/markets/stocks/goog/news/">FAQs</a></li><li><a href="/markets/stocks/goog/options/">Articles</a></li><li><a href="/markets/stocks/goog/historical/">View All</a></li></ul></div><select id="markets-left-nav-select" name="salutation" class="form-select" style="display: none;">
+                            <option selected="selected" value="/markets/stocks/goog/">Quotes</option>
+                            <option value="/markets/stocks/goog/charts/">Charts</option>
+                            <option value="/markets/stocks/goog/news/">Analysis</option>
+                            <option value="/markets/stocks/goog/options/">Options</option>
+                            <option value="/markets/stocks/goog/historical/">Historical</option>
+                            <option value="/markets/stocks/goog/insider/">Insider</option>
+                        </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="column-4 font-size-box">
+                    <i class="size-box-inner">hover/focus</i>
+                    <div class="ui-tabset-select form-box">
+                        <div class="form-item form-type-select">
+                            <div class="nav-selectmenu selectmenu"><div class="label"><div class="text">Definition</div></div><input type="button" class="keytrigger" style="position:absolute; left:-99999px; width:10px;"><ul style="display: block;"><li><a href="/markets/stocks/goog/">Definition</a></li><li><a href="/markets/stocks/goog/charts/">Videos</a></li><li><a href="/markets/stocks/goog/news/">FAQs</a></li><li><a href="/markets/stocks/goog/options/">Articles</a></li><li><a href="/markets/stocks/goog/historical/">View All</a></li></ul></div><select id="markets-left-nav-select" name="salutation" class="form-select" style="display: none;">
+                            <option selected="selected" value="/markets/stocks/goog/">Quotes</option>
+                            <option value="/markets/stocks/goog/charts/">Charts</option>
+                            <option value="/markets/stocks/goog/news/">Analysis</option>
+                            <option value="/markets/stocks/goog/options/">Options</option>
+                            <option value="/markets/stocks/goog/historical/">Historical</option>
+                            <option value="/markets/stocks/goog/insider/">Insider</option>
+                        </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="column-4 font-size-box">
+                    &nbsp;
+                </div>
+            </div>
+            
+
+
+
+
+
+
+
+            <!-- ==================================== Image ==================================== -->
+            <a id="Image-example"></a>
+            <div class="box layout-title"><h1>Image</h1></div>
+            <div class="box row">
+                <div class="column-4"><img src="img/temp/temp5.jpg"></div>
+                <div class="column-4"><img src="img/temp/temp7.jpg"></div>
+                <div class="column-4"><img src="img/temp/temp1.jpg"></div>
+            </div>
+            <div class="box row">
+                <div class="column-4"><img src="img/temp/temp9.jpg"></div>
+                <div class="column-4"><img src="img/temp/temp4.jpg"></div>
+                <div class="column-4"><img src="img/temp/temp6.jpg"></div>
+            </div>
+            <div class="box row">
+                <div class="column-4"><img src="img/temp/temp2.jpg"></div>
+                <div class="column-4"><img src="img/temp/temp8.jpg"></div>
+                <div class="column-4"><img src="img/temp/temp3.jpg"></div>
+            </div>
+
+
+
+
+
+
+
+
+
+            <!-- ==================================== Responsive ==================================== -->
+            <a id="Responsive-example"></a>
+            <div class="box layout-title"><h1>Responsive</h1></div>
+            <div class="title">Breakpoints</div>
+            <div class="row">
+                <div class="column-5" style="text-align:center; font-size:24px;">tablet.scss</div>
+                <div class="column-4" style="text-align:center; font-size:24px;">phone.scss</div>
+                <div class="column-3" style="text-align:center; font-size:24px;">phone.scss</div>
+            </div>
+            <div class="box row">
+                <div class="column-5" style="text-align:center; padding-top: 14px;"><img src="img/temp/visual_space_15.png"></div>
+                <div class="column-4" style="text-align:center"><img src="img/temp/visual_space_16.png"></div>
+                <div class="column-3" style="text-align:center; padding-top: 88px;"><img src="img/temp/visual_space_17.png"></div>
+            </div>
+            <div class="box title">Example</div>
+            <div class="box row">
+                <div class="column-12"><img src="img/temp/visual_space_11.jpg"></div>
+            </div>
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+    <script language="javascript" type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            
+            // doc nav 点击
+            $(".doc_nav li").click(function(){
+                $(this).addClass("active").siblings("li").removeClass();
+            });
+
+            //点击滚回顶部 
+            $('.gototop').on('click', function(){
+                $('html, body').animate({scrollTop:0},{duration:500, queue:true, complete:function(){
+                    $('.gototop').attr('href', '/');
+                }});
+                $(".doc_nav li").removeClass("active");
+                return false;
+            });
+
+
+            //auto select nav
+
+            var doc_nav = $('.doc_nav li'),
+                doc_nav_active = null,
+                doc_nav_mao = [];
+                doc_nav_a = $('.doc_nav li a');
+            doc_nav_a.each(function(){
+                doc_nav_mao.push($($(this).attr('href')));
+            });
+
+            function getSelectedNav(v){
+                var i = 0;
+                var _a  = null;
+                while(true){
+                    _a = doc_nav_mao[i];
+                    if(!_a)
+                        break;
+
+                    if(_a.offset().top > v)
+                        break;
+                    i++;
+                }
+
+                i--;
+
+                if(doc_nav_active === i){
+                    return;
+                }
+
+                doc_nav_active = i;
+
+                doc_nav.removeClass('active');
+                if( i>-1){
+                    doc_nav.eq(i).addClass('active');
+                }
+            }
+            $(window).bind('scroll', function(){
+
+                var y = Math.ceil($(this).scrollTop());
+                //判断页面滚动距离
+                if (y > 350) {
+                    $('.doc-header').addClass('doc-header-shadow');
+                    $('.doc-header .mid').addClass('mid-none');
+                    $('.gototop').stop().animate({'opacity':'1'},500);
+                } else {
+                    $('.doc-header').removeClass('doc-header-shadow');
+                    $('.doc-header .mid').removeClass('mid-none');
+                    $('.gototop').stop().animate({'opacity':'0'},500);
+                    $(".doc_nav li").removeClass("active");
+                }
+
+                getSelectedNav(y+5);
+
+            });
+
+        });
+    </script>
+
+</body>
+</html>

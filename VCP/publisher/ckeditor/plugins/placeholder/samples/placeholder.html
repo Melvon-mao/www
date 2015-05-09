@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--
+Copyright (c) 2003-2013, CKSource - Frederico Knabben. All rights reserved.
+For licensing, see LICENSE.html or http://ckeditor.com/license
+-->
+<html>
+<head>
+	<title>Placeholder Plugin &mdash; CKEditor Sample</title>
+	<meta charset="utf-8">
+	<script src="../../../ckeditor.js"></script>
+	<link rel="stylesheet" href="../../../samples/sample.css">
+	<meta name="ckeditor-sample-name" content="Placeholder plugin">
+	<meta name="ckeditor-sample-group" content="Plugins">
+	<meta name="ckeditor-sample-description" content="Using the Placeholder plugin to create uneditable sections that can only be created and modified with a proper dialog window.">
+</head>
+<body>
+	<form action="../../../samples/sample_posteddata.php" method="post">
+		<p>
+			<label for="editor1">
+				CKEditor using the <code>placeholder</code> plugin with its default configuration:
+			</label>
+			<textarea cols="80" id="editor1" name="editor1" rows="10">&lt;p&gt;This is a [[sample placeholder]]. You are using &lt;a href="http://ckeditor.com/"&gt;CKEditor&lt;/a&gt;. &lt;/p&gt;</textarea>
+			<script>
+
+				CKEDITOR.replace( 'editor1', {
+					extraPlugins: 'placeholder',
+					toolbar: [ [ 'CreatePlaceholder' ] ]
+				});
+
+			</script>
+		</p>
+		<p>
+			<input type="submit" value="Submit">
+		</p>
+	</form>
+	<div id="footer">
+		<hr>
+		<p>
+			CKEditor - The text editor for the Internet - <a class="samples" href="http://ckeditor.com/">http://ckeditor.com</a>
+		</p>
+		<p id="copy">
+			Copyright &copy; 2003-2013, <a class="samples" href="http://cksource.com/">CKSource</a> - Frederico
+			Knabben. All rights reserved.
+		</p>
+	</div>
+</body>
+</html>

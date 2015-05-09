@@ -1,0 +1,36 @@
+// ======================================================================= //
+//                    		      transition           	                   //
+// ======================================================================= //
+
+@mixin logo-option {
+
+    // for PC
+    @if $forpc == true {
+        float: left; margin: $logo-header-margin; width: $logo-width; height: $logo-height;
+        background: url('../#{$image-default-patch}/sprite_icon.png') 0 -174px no-repeat;
+        @include media ( $media-lg ) { // max-width: 768px
+            margin: 8px 0 20px 0;
+        }
+        @include media ( 400px ) {	// max-width: 400px
+            width: 200px; background-position:  0 -213px;
+        }
+        @include media ( $media-xs ) {	// max-width: 320px
+            width: 150px; background-position:  0 -252px;
+        }
+
+    }
+    // for Mobile
+    @else{
+        float: left; margin: 8px 0 20px 0; width: $logo-width; height: $logo-height;
+        background: url('../#{$image-default-patch}/logo_white_new.png') center center no-repeat;
+        background-size:contain;
+
+        @include media ( $media-lm ) {	// max-width: 767px
+            width: 200px;
+        }
+        @include media ( $media-xs ) {	// max-width: 320px
+            width: 150px;
+        }
+    }
+
+}

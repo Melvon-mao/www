@@ -1,0 +1,130 @@
+/* ======================================================================= */
+/*                        	   	Drupal: .checkbox      	 	  	           */
+/* ======================================================================= */
+// checkbox-block
+.form-type-checkboxes {
+    .form-checkboxes { font-size: $input-text-medium;
+        .form-type-checkbox{ 
+            display: block; min-height: 20px; padding-left: 22px; margin-top: 0; margin-bottom: 10px; vertical-align: middle; cursor: pointer;
+            .form-checkbox { float: left;  margin-left: -20px; }
+            .option { display: inline; margin-bottom: 0; font-weight: normal; cursor: pointer; }
+            + .form-type-checkbox {  }
+        }
+    }
+}
+// checkbox-inline
+.form-type-checkboxes-inline {
+    .form-checkboxes{
+        .form-type-checkbox{
+            display: inline-block; 
+            .form-checkbox { float: left;  margin-left: -20px;}
+            + .form-type-checkbox { margin-left: 10px; }
+        }
+    }
+}
+// checkbox-list
+.form-type-checkboxes-inline{
+    &.form-type-list {
+        .form-type-checkboxes {
+            .form-checkboxes {
+                .form-type-checkbox{
+                    display: block; float: left; padding-right: 10px; margin-top: 0px; margin-bottom: 0px; @include ellipsis(); @include boxsizing();
+                    + .form-type-checkbox { margin-left: 0; }
+                }
+            }
+        }
+    }
+    &.col-1 {
+        .form-type-checkboxes {
+            .form-checkboxes {
+                .form-type-checkbox{
+                    width: 100%;
+                }
+            }
+        }
+    }
+    &.col-2 {
+        .form-type-checkboxes {
+            .form-checkboxes {
+                .form-type-checkbox{
+                    width: 50%;
+                }
+            }
+        }
+    }
+    &.col-3 {
+        .form-type-checkboxes {
+            .form-checkboxes {
+                .form-type-checkbox{
+                    width: 33%;
+                    // for PC
+                    @if $forpc == true {
+                        @include media ( $media-sm ) { // 512 px
+                            width: 49%;
+                        }
+                    }
+                        // for Mobile
+                    @else{
+                        @include media ( $media-lm ) { // 767 px
+                            width: 49%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.col-4 {
+        .form-type-checkboxes {
+            .form-checkboxes {
+                .form-type-checkbox{
+                    width: 24%;
+                    // for PC
+                    @if $forpc == true {
+                        @include media ( $media-sm ) { // 512 px
+                            width: 49%;
+                        }
+                    }
+                        // for Mobile
+                    @else{
+                        @include media ( $media-lm ) { // 767 px
+                            width: 49%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.col-5 {
+        .form-type-checkboxes {
+            .form-checkboxes {
+                .form-type-checkbox{
+                    width: 20%;
+                }
+            }
+        }
+    }
+}
+
+//.checkbox {
+//    display: block; min-height: 20px; padding-left: 20px; margin-top: 10px; margin-bottom: 10px; vertical-align: middle;
+//    label                   { display: inline; margin-bottom: 0; font-weight: normal; cursor: pointer; }
+//    input[type="checkbox"]  { float: left; margin-left: -20px; }
+//    + .checkbox             { margin-top: -5px; }
+//    @at-root {
+//        .form-inline {
+//            .checkbox { display: inline-block; padding-left: 0; margin-top: 0; margin-bottom: 0;
+//                input[type="checkbox"] { float: none; margin-left: 0; }
+//            }
+//        }
+//    }
+//}
+//.checkbox-inline {
+//    display: inline-block; padding-left: 20px; margin-bottom: 0; font-weight: normal; vertical-align: middle; cursor: pointer;
+//    input[type="checkbox"]  { float: left; margin-left: -20px; }
+//    + .checkbox-inline      { margin-top: 0; margin-left: 10px; }
+//    @at-root {
+//        .form-horizontal {
+//            .form-box:after { display: table; content: " ";  }
+//        }
+//    }
+//}

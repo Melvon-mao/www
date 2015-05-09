@@ -1,0 +1,244 @@
+/* ======================================================================= */
+/*                        	   	Drupal: input      	     	  	           */
+/* ======================================================================= */
+.form-type-textfield,
+.form-type-password{
+    .form-text {
+        display: block; padding: 5px; width: 100%; height: 34px;
+        border: 1px solid #ccc; background-color: #fff; color: #555; font-size: $input-text-medium;
+        vertical-align: middle; line-height: 1.428571429;
+        @include transition-property(border-color);
+        @include transition-duration(.15s);
+        @include transition-timing-function(ease-in-out);
+        @include transition-property(box-shadow);
+        @include transition-duration(.15s);
+        @include transition-timing-function(ease-in-out);
+        @include box-shadow( inset 0 1px 1px rgba(0,0,0,0.075) );
+        @include box-sizing;
+        &:-moz-placeholder { color: #999; }
+        &::-moz-placeholder { color: #999; }
+        &:-ms-input-placeholder { color: #999; }
+        &::-webkit-input-placeholder { color: #999; }
+        &:focus,
+        &.active {
+            outline: 0; border-color: #66afe9;
+            @include box-shadow(inset 0 1px 1px rgba(0,0,0,0.075), 0 0 8px rgba(102,175,233,0.6));
+        }
+        &[disabled],
+        &[readonly] { background-color: #eee; cursor: not-allowed; }
+    }
+    @at-root {
+        // tooltip
+        .tooltip {
+            .error,
+            .warning{ padding: 6px 0 0 6px; }
+        }
+
+        // in Header ...
+        #Header {
+            .form-type-textfield {
+                .form-text {
+                    //
+                }
+            }
+        }
+        // in Footer ...
+        #Footer {
+            .form-type-textfield {
+                .form-text {
+                    //
+                }
+            }
+        }
+        // in Footer ...
+        .layout-page {
+            .form-type-textfield {
+                .form-text {
+                    //
+                }
+            }
+        }
+        // in fixed-nav
+        .nav-fixed {
+            .form-type-textfield {
+                .form-text {
+                    width:310px; height: 31px; font-size:14px; line-height: 1.5;
+                }
+            }
+        }
+    }
+}
+
+
+
+/* ======================================================================= */
+/*                             Custom: .input-text                         */
+/* ======================================================================= */
+.input-text { font-size: 13px; @extend %input-defautl-style;
+    -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+
+    .search-box & { background: none repeat scroll 0 0 rgba(0, 0, 0, 0); border: medium none; box-shadow: none; font-size: $input-text-default; margin: 0; padding: 4px; width: 75%; border-radius:0; }
+
+    &:focus { outline: 0; border-color: #66afe9; @include box-shadow(inset 0 1px 1px rgba(0,0,0,0.075), 0 0 8px rgba(102,175,233,0.6)); }
+
+    // Start @at-root ...
+    @at-root {
+        #Footer,
+        .sharing,
+        .#{$layout}-page {
+            .newsletter {
+                .input-text { padding:5px 4px 4px 4px; display:inline-block; margin:0; box-shadow:none; color: $main-color; border:none; vertical-align:middle; }
+            }
+        }
+
+        .sharing,
+        .#{$layout}-page {
+            .newsletter {
+                .input-text { border:solid 1px #afb2b5; font-size: $global-size; color: $input-newslettr-color; margin-top:6px; }
+            }
+        }
+
+        #Footer {
+            .newsletter {
+                .input-text { width:200px; margin:0; }
+            }
+        }
+
+        .sharing {
+            .newsletter {
+                .input-text { width:210px; }
+            }
+        }
+
+        .#{$layout}-page {
+            .newsletter {
+                .input-text { width:160px; }
+            }
+        }
+
+        .fl {
+            .input-text { float: left; margin-top: 6px; width: 155px; border: 1px solid #afb2b5; color: #b3b3b3; font-size: 15px; vertical-align: middle; box-shadow: none;
+                // for PC
+                @if $forpc == true {
+                    @include media ( $media-lm ) {  // max-width: 767px
+                        width: 70%;
+                    }
+                    @include media ( $media-md ) { // max-width: 512px
+                        width: 60%;
+                    }
+                    @include media ( $media-sm ) { // max-width: 480px
+                        width: 50%;
+                    }
+                    @include media ( $media-xs ) { // max-width: 320px
+                        width: 50%;
+                    }
+                }
+                    // for Mobile
+                @else{
+                    @include media ( $media-lm ) { // max-width: 767px
+                        width: 70%;
+                    }
+                    @include media ( $media-md ) { // max-width: 512px
+                        width: 60%;
+                    }
+                    @include media ( $media-sm ) { // max-width: 480px
+                        width: 50%;
+                    }
+                    @include media ( $media-xs ) { // max-width: 320px
+                        width: 50%;
+                    }
+                }
+            }
+            .form-signup { float: left; margin: 6px 0 0; padding: 5px 10px 5px 10px; -webkit-padding: 6px 10px 7px 10px; background-color: $button-bgcolor; border: medium none; border-radius: 0; color: #fff; cursor: pointer; display: inline-block; font-size: 16px; vertical-align: bottom;
+                &:hover{ background-color: #005b9d; }
+            }
+        }
+    }
+    // End @at-root ...
+
+}
+
+
+
+
+
+
+/* ======================================================================= */
+/*                        	   	Networth: input      	  	  	           */
+/* ======================================================================= */
+.ui-input-text {
+    display:inline-block;vertical-align:top;
+
+    .app-main-content & { padding-right:0 }
+
+    >  label,
+    > .label { display:block;padding-bottom:4px }
+
+    &.inline {
+        >  label,
+        > .label { display:inline-block;margin-right:6px;text-align:right }
+    }
+
+    input{
+        margin:0 0 10px 0; padding: 4px 6px; width:100%; border: 1px solid #ccc; background-color: #fff; color: #555; font-size: 15px;
+        @include transition-property(border-color);
+        @include transition-duration(.15s);
+        @include transition-timing-function(ease-in-out);
+        @include transition-property(box-shadow);
+        @include transition-duration(.15s);
+        @include transition-timing-function(ease-in-out);
+        @include box-shadow( inset 0 1px 1px rgba(0,0,0,0.075) );
+        @include box-sizing;
+        &:-moz-placeholder { color: #999; }
+        &::-moz-placeholder { color: #999; }
+        &:-ms-input-placeholder { color: #999; }
+        &::-webkit-input-placeholder { color: #999; }
+        &:focus,
+        &.active {
+            outline: 0; border-color: #66afe9;
+            @include box-shadow(inset 0 1px 1px rgba(0,0,0,0.075), 0 0 8px rgba(102,175,233,0.6));
+        }
+        /* margin-bottom:10px; padding:4px 6px; width:100%; border:solid 1px #5aa0d7; border-radius:2px; box-shadow:inset 0 0 2px #aaa;font-size:14px;-o-box-sizing:border-box; @include boxsizing; */
+
+        &.secondary{padding:2px 6px;border-color:#bbb;box-shadow:none }
+        /* &:focus { outline:solid 1px #5aa0d7;border-radius:0 } */
+    }
+
+    &.large {
+        input { padding:5px;font-size:16px }
+        > label {font-size:12px }
+    }
+
+    > .tooltip { width:100%;
+        > .content{right:5px;width:140px;line-height:15px}
+    }
+
+    .warning{ clear:both; display:inline-block;border:solid 1px #ad0303!important;background:#fff url('../img/btn_ui_alert.png') center right no-repeat;zoom:1;
+        .empty-div & {
+            &:hover { outline:solid 1px #ad0303!important;border:solid 1px #ad0303!important;border-radius:0}
+        }
+    }
+
+    .ui-button{ margin-right:0 }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

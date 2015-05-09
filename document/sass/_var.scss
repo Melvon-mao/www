@@ -1,0 +1,271 @@
+// ======================================================================= //
+//                      	       Path                                    //
+// ======================================================================= //
+$image-default-patch: img !default;
+$image-corporation-patch: corporation !default;
+$image-responsive-patch: responsive !default;
+$font-default-patch: fonts !default;
+
+
+// ======================================================================= //
+//                          Global: font-face                              //
+// ======================================================================= //
+// System font
+$system-font:   Verdana,Geneva,sans-serif !default;
+// Body font 
+$global-font:  'gandhiserif-regular-webfont',Helvetica,Arial,Verdana,sans-serif !default;
+// Header, Footer, nav, h1, h2, h4, h5, h6, input, button font
+$section-font: 'sourcesanspro-regular-webfont',Helvetica,Arial,Verdana,sans-serif !default;
+$section-font-bold: 'sourcesanspro-bold-webfont',Helvetica,Arial,Verdana,sans-serif !default;
+// Big title
+$title-font:   'sourcesanspro-light-webfont',Helvetica,Arial,Verdana,sans-serif !default;
+// Column title
+$column-font:  'sourcesanspro-semibold-webfont',Helvetica,Arial,Verdana,sans-serif !default;
+
+
+// ======================================================================= //
+//                          Global: font-size                              //
+// ======================================================================= //
+$global-size: 	15px !default;
+$h1: 			33px !default;
+$h2: 			22px !default;
+$h3: 			18px !default;
+$input-text-mini: 11px !default;
+$input-text-default: 13px !default;
+$input-text-medium: 16px !default;
+
+
+// ======================================================================= //
+//                      	    Global: color                              //
+// ======================================================================= //
+// Global: font-color 									    
+$global-color: 	#111 !default;
+// Global: link-color 
+$link-color: 	#005b9d !default;
+// Line: #ccc
+$line-color: 	#ccc !default;
+// H color
+$h-color: 		#362f2d !default;
+// Global: h weight
+$h-weight: 		normal !default;
+// master color & bg
+$main-color: 	#292f40 !default;
+// Global border color
+$border-color:  #e4e5e6 !default;
+// separator border color
+$separator-color:  #d6d9de !default;
+// input button
+$button-bgcolor: #a62436 !default;
+$button-fontcolor: #fff !default;
+
+
+
+// ======================================================================= //
+//                      	    Global: margin                             //
+// ======================================================================= //
+$margin-xs: 	20px !default;
+$margin-sm: 	30px !default;
+$margin-md: 	45px !default;
+$margin-lg: 	50px !default;
+$margin-xl: 	65px !default;
+
+
+
+// ======================================================================= //
+//                      	 	   Font resize                             //
+// ======================================================================= //
+$font-resize-margin: 6px !default;
+$font-resize-small:  15px !default;
+$font-resize-medium: 17px !default;
+$font-resize-large:  19px !default;
+$font-mobile-input: 16px !default;
+
+
+
+// ======================================================================= //
+//                      	 	 	  Logo              	               //
+// ======================================================================= //
+$logo-width: 		266px !default;
+$logo-height: 		38px !default;
+$logo-header-margin: 18px 0 14px 0 !default;
+$logo-footer-margin: 18px 0 16px 0 !default;
+
+
+
+// ======================================================================= //
+//                      	 	   Navigation              	               //
+// ======================================================================= //
+$nav: 		nav !default;
+$mainnav: 	mainnav !default;
+$subnav: 	subnav !default;
+$subnav-a-padding: 8px 0 8px 40px !default;
+$mobile-nav-default-fontcolor: #fff !default;
+$mobile-navtop-bgcolor: #191c29 !default; 
+$mobile-navtop-btn-bgcolor: #3a4051 !default;
+$mobile-navtop-btn-hovercolor: #32384a !default;
+$mobile-navtop-btn-border: 1px solid #191c29 !default; 
+$mobile-nav-border: 1px solid #1f2331 !default;
+$mobile-nav-bghover: #1f2331 !default;
+$mobile-nav-bgselect: #191c29 !default;
+$mobile-subnav-highlight-bg: #262a39 !default;
+$mobile-subnav-default-fontcolor: #bbb !default;
+$mobile-highlight-and-account-fontcolor: #c0c7d8 !default;
+
+
+
+// ======================================================================= //
+//                      	 	 	  List              	               //
+// ======================================================================= //
+$list: list !default;
+$item: item !default;
+// Default padding
+$item-default-padding: 10px 0 !default;
+// Default Image
+$item-default-image-width: 110px !default;
+$item-default-image-height: 80px !default;
+// Default title
+$item-default-title-size: 18px !default;
+// Default description
+$item-default-description-color: $main-color !default;
+$item-default-description-size: 15px !default;
+// Default category
+$item-default-category-color: #b3b3b3 !default;
+$item-default-category-size: 12px !default;
+// Default author
+$item-default-author-color: $main-color !default;
+$item-default-author-size: 13px !default;
+// Default link
+$item-default-link-color: $main-color !default;
+$item-default-link-size: 15px !default;
+
+//alphalist
+$text: text !default;
+
+
+
+// ======================================================================= //
+//                      	 	 	 form         	     	               //
+// ======================================================================= //
+$input-newslettr-color:  #b3b3b3 !default;
+$form-box: form-box !default;
+$form-control: form-control !default;
+$radio: radio !default;
+$checkbox: checkbox !default;
+
+
+// ======================================================================= //
+//                      	 	 	  box         	     	               //
+// ======================================================================= //
+$box: box !default;
+
+
+// ======================================================================= //
+//                      	 	   Content         	     	               //
+// ======================================================================= //
+$content-bgcolor: #fff !default;
+
+
+// ======================================================================= //
+//                      	 	 	layout         	     	               //
+// ======================================================================= //
+$layout: layout !default;
+
+
+// ======================================================================= //
+//                      	 	 laytou-size       	     	               //
+// ======================================================================= //
+$layout-size-width: 980px !default;
+
+
+// ======================================================================= //
+//                      	 	laytou-page        	     	               //
+// ======================================================================= //
+$layout-page-width: 100% !default; 
+
+
+// ======================================================================= //
+//                      	laytou-content      	     	               //
+// ======================================================================= //
+$layout-content-margin: 0 350px 0 0 !default;
+
+
+// ======================================================================= //
+//                      	 	laytou-side        	     	               //
+// ======================================================================= //
+$layout-side-margin: 0 0 0 -350px !default;
+$layout-side-width: 350px !default;
+
+
+// ======================================================================= //
+//                      	 	layout-body       	     	               //
+// ======================================================================= //
+$layout-body-margin: 45px !default;
+
+
+// ======================================================================= //
+//                      	 	Column Title       	     	               //
+// ======================================================================= //
+$title: title !default;
+$title-color: #666 !default;
+
+
+// ======================================================================= //
+//                      	 	Body-video       	     	               //
+// ======================================================================= //
+$layout-body-video-width: 100% !default;
+$layout-body-video-maxwidth: 419px !default;
+
+
+// ======================================================================= //
+//                      	 		 More         	     	               //
+// ======================================================================= //
+$more: more !default;
+
+
+// ======================================================================= //
+//                      	 	 	Header       	     	               //
+// ======================================================================= //
+$header-bgcolor-default: #323a4e !default;
+$header-bgcolor-start: $header-bgcolor-default !default; 
+$header-bgcolor-end: #262a39 !default;
+
+
+// ======================================================================= //
+//                      	 		 Footer        	     	               //
+// ======================================================================= //
+$footer-link-color: #fff !default;
+$footer-btm-color: #666 !default;
+$footer-title-color: #5cacd7 !default;
+$footer-bgcolor-default: #24293a !default;
+$footer-bgcolor-start: #1a1d2b !default;
+$footer-bgcolor-end: #2e3648 !default;
+$footer-copyright-bgcolor: #262a39 !default;
+
+
+// ======================================================================= //
+//                      Responsive design for PC	     	               //
+// ======================================================================= //
+$media-xl: 769px !default;
+$media-lg: 768px !default;
+$media-lm: 767px !default;
+$media-ml: 620px !default;
+$media-md: 512px !default;
+$media-sm: 480px !default;
+$media-xs: 320px !default;
+
+
+// ======================================================================= //
+//                        carousel design for PC      	                   //
+// ======================================================================= //
+$carousel-timer-width: 24px;
+$carousel-timer-height: 24px;
+
+
+
+
+
+
+
+
+
+

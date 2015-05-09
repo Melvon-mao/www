@@ -1,0 +1,54 @@
+// ======================================================================= //
+//                         			homefuture  	     			       //
+// ======================================================================= //
+.homepage { 
+    .layout-content { 
+        .slidebottom{ margin-bottom: $margin-sm; } 
+    }
+}
+.homefuture { margin-bottom:17px;
+    &.col-left 		{ margin-bottom: 0; }
+    &.vid 			{
+        .vid-more 	{ text-align: right;}
+        h3 			{ margin-bottom: 10px; }
+        .separator 	{ margin-bottom: 6px;}
+    }
+    > .mainimage 	{ width:660px; height:226px; margin-bottom:20px; display:block;
+        img { width: 100%; height: 100%; }
+        // for PC
+        @if $forpc == true {
+            @include media ( $media-lg ) {   // max-width: 768px
+                width: 100%; height:285px;
+            }
+            @include media ( $media-md ) {   // max-width: 512px
+                height:195px;
+            }
+        }
+        // for Mobile
+        @else{
+            width: 100%; height: 285px;
+            @include media ( $media-lm ) { // 767px
+                height: 195px;
+            }
+        }
+    }
+    .meta 		    { font-size:14px; text-transform: uppercase; color:#777; }
+    // for PC
+    @if $forpc == true {
+        @include media ( $media-lg ) {   // max-width: 768px
+            #AdSlot_AF-Right-Rectangle { display: none; }
+        }
+        @include media ( $media-md ) {   // max-width: 512px
+            margin-bottom: 0;
+            > h1 { padding-bottom: 10px; font-size: 28px; border-bottom: 1px dotted #ddd; }
+        }
+    }
+    // for Mobile
+    @else{
+        #AdSlot_AF-Right-Rectangle { display: none; }
+        @include media ( $media-lm ) { // 767px;
+            margin-bottom: 0;
+            > h1 { padding-bottom: 10px; font-size: 28px; border-bottom: 1px dotted #ddd; }
+        }
+    }
+}

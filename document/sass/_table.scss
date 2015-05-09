@@ -1,0 +1,542 @@
+.calendar{
+	height:298px; overflow:auto; margin-bottom:30px;
+	&.fullcalendar{ height: auto;
+	    #fxec_content {
+	        #FXstreetCalendar { margin-top:10px !important; height:auto !important; overflow:auto !important;}
+	    }
+		thead { display: table-header-group; vertical-align: middle; border-color: inherit; background: none repeat scroll 0 0 #fff !important; }
+	}
+	&.autoheight{
+		height: auto;
+	}
+	&.section-padding-left{ padding-left:10px; 
+		// for PC
+		@if $forpc == true {
+			@include media ( $media-ml ) {
+				padding-left: 0;
+			}
+		}
+		// for Mobile
+		@else{
+			@include media ( $media-ml ) {
+				padding-left: 0;
+			}
+		}	
+	}
+    &.column-left {
+      td,th{text-align: left;}
+    }
+    #fxec_calendartable .fxec_evenRow:hover td,#fxec_calendartable .fxec_oddRow:hover td,#fxec_calendartable .fxec_selectedRow:hover td {
+		border-bottom: 1px solid #888 !important;
+	}
+    #fxec_content {
+        #FXstreetCalendar { margin-top:0px !important; height:298px !important; overflow:auto !important;}
+    }
+	table{ width: 100%; border: 1px solid #E3E2C2 !important; border-collapse: collapse !important;  border-spacing: 2px; }
+	thead { display: table-header-group; vertical-align: middle; border-color: inherit; background: none repeat scroll 0 0 #fff !important; }
+
+	tr {
+        display: table-row; vertical-align: inherit; border-color: inherit;
+		th{ font-size: 13px;font-weight: normal;text-align: center;border: 1px solid $border-color;padding: 4px 10px;font-weight:normal; }
+		&.fxec_evenRow td{ background: none repeat scroll 0 0 #f6f6f6 !important; }
+		td{
+			border: 1px solid $border-color; font-size: 13px; font-weight:normal; padding: 4px 10px !important; background: #fff;
+			p{ margin: 0 !important; }
+			&.fxec_better{ color: #16a237; }
+			&.fxec_worst{ color: $button-bgcolor; }
+            strong{ color : #111; }
+            .fxec_loading1{ background: #fff; }
+            a{
+              color: $link-color !important;
+              &:hover { text-decoration: underline !important; }
+              &:visited { color: $link-color !important; }
+              &:link{ cursor: pointer; }
+            }
+		}
+	}
+	tbody{
+		display: table-header-group; vertical-align: middle; border-color: inherit; border: medium none !important;
+		.fxec_dateRow, .fxec_oddRow, .fxec_evenRow{ background: none repeat scroll 0 0 #fff !important; }
+		.fxec_detailRow { display: none; }
+	}
+}
+
+
+
+
+
+
+
+// ======================================================================= //
+//                    PIVOT POINTS tabset table1    	                   //
+// ======================================================================= //
+.table1{
+	width: 100%; border-collapse: collapse; margin: 0 auto; margin-bottom: 10px;
+	tbody {
+		display: table-row-group; vertical-align: middle; border-color: inherit; border-top: 0;
+		tr {
+			display: table-row; vertical-align: inherit; border-color: inherit;
+			th{
+				text-align: left; text-transform: uppercase; font-weight: normal; font-size: 12px; border-bottom: solid 1px $border-color; padding: 0 5px 8px 5px; color: #666;
+				&.num{ text-align: right; }
+			}
+			td{
+				padding: 5px; font-size: 14px;
+				.dn, .down, .fxec_worst { color: $button-bgcolor; }
+			}
+			.num{ text-align: right; }
+		}
+	}
+    // for PC
+    @if $forpc == true {
+        @include media ( $media-md ) { // max-width: 480px
+            overflow-x: scroll;
+        }
+    }
+    // for Mobile
+    @else{
+        @include media ( $media-lm ) { // 767px
+            overflow-x: scroll;
+        }
+    }
+
+}
+// ======================================================================= //
+//                                table2    	    	                   //
+// ======================================================================= //
+.table2{
+	width: 100%; margin: 10px 0px; display: block;
+    > p { font-size: 17px; line-height: 1.5em;}
+	table{
+		width: 100%; border-collapse: collapse; margin: 0 auto;
+		tbody{
+			display: table-row-group; vertical-align: middle; border-color: inherit;
+			tr {
+				display: table-row; vertical-align: inherit; border-color: inherit;
+				&.even{ background: none repeat scroll 0 0 #f0f0f0 !important; }
+			}
+			th{ text-transform: uppercase; font-weight: normal; font-size: 12px; border-bottom: solid 1px $border-color; padding: 0 5px 8px 5px; color: #666;}
+			td{ padding: 5px; font-size: 14px; border-bottom: solid 1px $border-color; }
+			th.txt, td.txt { text-align: left; }
+		}
+	}
+    // for PC
+    @if $forpc == true {
+        @include media ( $media-md ) { // max-width: 480px
+            overflow-x: auto;
+        }
+    }
+    // for Mobile
+    @else{
+        @include media ( $media-lm ) { // 767px
+            overflow-x: auto;
+        }
+    }
+}
+
+.table2.table2-nth { margin: 30px 0 27px; }
+
+
+
+
+
+
+
+
+// ======================================================================= //
+//                               Table 3      	    	                   //
+// ======================================================================= //
+.table3 { width: 100%; border-collapse: collapse; margin: 0 auto;
+    td { padding: 5px; font-size: 14px; }
+    &.bdr3 {
+        td { border-bottom: solid 1px $border-color; }
+    }
+    th { text-transform: uppercase; font-weight: normal; font-size: 12px;  border-bottom: solid 1px $border-color; padding: 0 5px 8px 5px; }
+}
+
+
+
+
+
+
+// ======================================================================= //
+//                               table-grid   	    	                   //
+// ======================================================================= //
+.table-grid { margin-bottom: 20px;
+    // for PC
+    @if $forpc == true {
+        @include media ( $media-ml ) { //620px
+            overflow-x: scroll; margin-bottom: 30px;
+        }
+    }
+        // for Mobile
+    @else{
+        @include media ( $media-lm ) { //767px
+            overflow-x: scroll; margin-bottom: 30px;
+        }
+    }
+}
+
+
+
+
+
+// ======================================================================= //
+//                               table-data   	    	                   //
+// ======================================================================= //
+.table-data {
+    border-collapse: collapse; width: 100%;
+
+    td, th { border: 1px solid $border-color; font-size: 13px; padding: 4px 8px; text-align: left; }
+    th { border-bottom-color: $border-color; font-weight: normal; }
+    tr.even{
+        td { background: none repeat scroll 0 0 #F6f6f6 !important; }
+    }
+
+    &.summary { border: 1px solid #D1BDA5;
+        td { font-size: 12px; }
+    }
+
+    .txt, .prop-name { text-align: left; }
+    .num, .prop-vol, .prop-num, .prop-change { text-align: right; }
+    .category { font-size: 14px; padding-top: 20px; }
+    .logocss, .logo, .remove-product-row td { text-align: center; }
+
+    .name-product-row {
+        th { font-size: 16px; text-align: center; }
+    }
+    .remove-product-row {
+        th { text-align: center; }
+    }
+}
+
+
+
+
+
+
+
+// ======================================================================= //
+//                            converter-wrapper  	    	               //
+// ======================================================================= //
+.converter-wrapper{
+	width: 100%; border-collapse: separate; display: table; border-spacing: 2px; border-color: gray;
+    .form-box { margin-bottom: 0;}
+	input, select {
+		width: 100%; @include boxsizing;
+		&[type=text]{ border: solid 1px #ccc; background: #fff; font-size: 16px; padding: 5px; margin-bottom: 4px; @include boxsizing; }
+		&.input-selectmenu{ padding: 5px; font-size: 14px; }
+	}
+	tbody{ display: table-row-group; vertical-align: middle; border-color: inherit;
+		tr{ display: table-row; vertical-align: inherit; border-color: inherit;
+			th { text-align: left; font-weight: normal; font-size: 14px; font-family: $section-font; color: #444; }
+			.td1{ width:60%;
+                // for PC
+                @if $forpc == true {
+                    @include media ( $media-md ) {   // max-width: 512px
+                        width: auto;
+                    }
+                }
+                // for Mobile
+                @else{
+                    @include media ( $media-lm ) { // 767px
+                        width: auto;
+                    }
+                }
+			}
+			.td2{ width:20%; }
+		}
+	}
+}
+
+// markets options canvas padding
+.options_padding { padding:10px;
+	table { margin: 0 auto; width: 300px; height: 160px;
+		.annotationsdiv { height: 157px; width: 0px; }
+	}
+}
+
+
+
+
+
+
+// ======================================================================= //
+//                            markets historical  	    	               //
+// ======================================================================= //
+.ui-historical {
+	label { margin-right: 20px; }
+	.historical-type { margin: 0; display: inline-block; width: 80px; }
+	.historical-filter-row,
+    .historical-filter-row > .control-group { display: inline-block; padding-bottom:20px; }
+	.input-text, .input-text-large, textarea {
+		border-color: #aaa; background: #fff; border-style: solid; border-width: 1px; margin: 4px 0; padding: 6px 8px; vertical-align: middle;
+        @include box-shadow( inset 0 0 2px rgba(0, 0, 0, 0.3) );
+	}
+	.reset-submit{padding: 4px 30px;}
+}
+
+
+
+
+// ======================================================================= //
+//                                  tow column  	    	               //
+// ======================================================================= //
+.ui-tow-table{
+	margin-left: 0px !important;
+	// for PC
+	@if $forpc == true {
+		@include media ( $media-ml ) {
+			margin-left: 0px !important;
+		}
+	}
+	// for Mobile
+	@else{
+		@include media ( $media-ml ) {
+			margin-left: 0px !important;
+		}
+	}	
+}
+
+
+
+
+
+
+// ======================================================================= //
+//                                Rss table  	           	               //
+// ======================================================================= //
+.rss-table{
+	.rss-title-margin{
+		margin-top: 20px;
+	}
+	table{
+		margin-bottom: 85px; width: 100%;
+		.first-table{padding-right: 80px;}
+		.inner{padding-top: 50px;}
+		table{
+			width: 100%;
+			.first-col{padding-right:10px;}
+		}
+	}
+	// for PC
+	@if $forpc == true {
+		@include media ( $media-lg ) { // max-width: 620px
+			table{
+				.first-table,.second-table{
+					display:block;
+				}
+				.first-table {
+					padding-right: 10px;
+				}
+				.second-table{
+					margin-top: -50px;
+					.inner{padding-top: 0px;}
+				}
+			}
+		}
+	}
+	// for Mobile
+	@else{
+		@include media ( $media-lm ) { // max-width: 767px;
+			table{
+				.first-table,.second-table{
+					display:block;
+				}
+				.first-table {
+					padding-right: 10px;
+				}
+				.second-table{
+					margin-top: -50px;
+					.inner{padding-top: 0px;}
+				}
+			}
+	     }
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ======================================================================= //
+//                            Net worth ui-table  	       	               //
+// ======================================================================= //
+.ui-table-blank{ border:0;border-collapse:collapse;border-spacing:0; }
+.ui-table-blank{
+    > tbody {
+        > tr {
+            > th { padding:4px; color: #292f40; text-align:left;  font-weight:normal; font-size:16px; font-family: $section-font;}
+            > td { vertical-align:top;}
+        }
+    }
+    th.num,
+    td.num {text-align:right;}
+}
+
+.ui-table-a{
+    border:solid 1px transparent;border-collapse:collapse;border-spacing:0;
+    tr.no-border td{border-color:transparent;background-color:transparent;}
+    th{vertical-align:top;}
+    td{vertical-align:middle;}
+
+    >tbody>tr>th,
+    .th{padding:4px 8px;color:#534741;white-space:nowrap;font-weight:normal;font-size:12px;}
+    >tbody>tr>td{padding:6px;border:solid 1px #ccc;background:#fff;color:#000;text-align:left;font-weight:normal;font-size:13px;}
+    td.tight{padding:0;}
+    th.txt,
+    td.txt{text-align:left;}
+    th.action,
+    td.action{text-align:center;}
+    th.hidden,
+    td.hidden{display:none;}
+    th.num,
+    td.num {text-align:right;}
+    th.num {
+        .tooltip {
+            .content{right:0;bottom:30px;white-space:normal;}
+        }
+    }
+
+    .disabled td{color:#555;text-decoration:line-through;}
+
+    &.history{
+        td,
+        th{height:24px!important;padding:0 6px}
+        .total {
+            td{padding-bottom:20px}
+        }
+        .dt-iedit {
+            >td.dt-menu{padding:0 6px}
+        }
+    }
+
+    .asset {
+        td{border-color:#9db6d0}
+        td.changed,
+        &.new td{background:#d3e8ff;color:#224f6f}
+        &.add-new-separator,
+        &.total{
+            td{  border-top:solid 2px #06c; }
+
+        }
+    }
+
+    .liability {
+        td { border-color:#d0a79d; }
+        td.changed,
+        &.new td{ background-color:#ffcfc3;color:#5c1b07; }
+        &.total,
+        &.add-new-separator {
+            td { border-top:solid 2px #cc1400}
+        }
+    }
+
+    .dt-sub {
+        .total {
+            &.asset,
+            &.liability,
+            &.networth {
+                td { font-weight: bold; }
+            }
+        }
+    }
+
+    .total {
+        td{border:0;background:transparent}
+        &.networth td{border-top:solid 2px #109618;font-size:14px}
+    }
+
+    .highlighted {
+        td{background-color:#109618;color:#fff}
+    }
+
+    tr.add-new-separator {
+        td{border-width:2px 0 0 0;padding:0;height:0}
+    }
+
+    .add-new {
+        .ui-input-text,
+        .ui-input-text input,
+        .ui-select-menu{ width:100%;margin:0 }
+        td{padding:4px;border:0;vertical-align:top;overflow:visible}
+    }
+
+    .add-new-label {
+        th { padding:15px 4px 2px 4px;text-align:left}
+    }
+
+    .ui-button-b,
+    .ui-button-flat{margin:0}
+
+    @at-root{
+        .asset,
+        .liability{
+            .ui-table-a {
+                .empty{background:#fff;padding:30px;text-align:center}
+            }
+        }
+    }
+
+}
+.table-features {
+    width:100%;
+    td { text-align:center; vertical-align:top; }
+}
+.num input{text-align:right;}
+.cell-header-date{display:inline-block;margin-right:-5px;cursor:pointer;}
+
+
+
+
+
+
+
+
+
+
+// ======================================================================= //
+//                             Net worth dl,dt,dd  	       	               //
+// ======================================================================= //
+.dt{table-layout:fixed}
+.dt>tbody>tr>th{height:16px}
+.dt>tbody>tr>td{overflow:hidden;height:18px;text-overflow:ellipsis;white-space:nowrap}
+.dt tr.dt-editable td:hover{background-color:#edf6ff}
+.dt tr.dt-editable.dt-iedit td.dt-blank,
+.dt tr.dt-editable td.dt-blank{box-shadow:none!important}
+.dt tr.dt-editable.dt-iedit td.dt-frozen,
+.dt tr.dt-editable td.dt-frozen{border-style:dashed;color:#555;font-style:italic}
+.dt tr.dt-editable td.dt-blank:hover{background-color:transparent}
+.dt tr.dt-editable.dt-iedit td:hover{box-shadow:0 0 2px #aaa inset}
+.dt-data{display:none}
+.dt-sub{position:relative;z-index:1;overflow-x:auto;overflow-y:hidden;min-height:0}
+.dt-sub.overflow{border-right:solid 2px #444;border-left:solid 2px #444}
+.dt-sub>.ui-table-a{border:0}
+.dt-scrollbar>td{padding:0;height:18px}
+.dt-template{display:none}
+.dt-iedit>td{height:18px!important;border:1px solid #5aa0d7!important;background-color:#edf6ff!important;box-shadow:0 0 1px #4c6278 inset!important}
+.dt-iedit>td.dt-blank{background:#f3f8fe;box-shadow:none}
+.dt-iedit>td.dt-menu{padding:5px}
+.dt-iedit-prev>td{border-bottom-color:#5aa0d7!important}
+.dt-iedit input[type="text"],
+.dt-iedit select,
+.dt-iedit textarea{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;width:95%;outline:0;-ie-box-sizing:border-box}
+.dt-iedit>td>input[type="text"],
+.dt-iedit>td>textarea{border:0;background:transparent}
+.dt-checkbox{display:inline-block;width:13px;height:13px;background:url(../img/ui-icon-unchecked.png) center left no-repeat}
+.checked .dt-checkbox{background:url(../img/ui-icon-checked.png) center left no-repeat}
+.dt .dt-editable .dt-dollar,
+.dt .dt-editable .dt-dollar input{text-align:right}
+.dt .add-new-label th{vertical-align:bottom}
+

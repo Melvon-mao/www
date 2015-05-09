@@ -1,0 +1,218 @@
+// ======================================================================= //
+//                              Professionals                   	       //
+// ======================================================================= //
+.common {
+	.layout-content .box { @include clear();  margin-bottom: 15px;}
+	.title + .clear + .separator, .title + .separator, .clear + .separator { display:none; }
+	.title h2 { color: #666; font-size: 22px; margin: 0px; padding: 0 0 2px; text-transform: uppercase; }
+	.left { float: left; 
+		// for PC
+		  @if $forpc == true {
+		    @include media ( $media-md ) {  // max-width: 512px
+		      float: none !important;
+		      width: 100% !important;
+		    }
+		  }
+		    // for Mobile
+		  @else{
+		    @include media ( $media-md ) {  // max-width: 512px
+		      float: none;
+		      float: none !important;
+		      width: 100% !important;
+		    }
+		}
+	}
+	.list { font-family: $section-font; }
+	.title{ text-transform: none;
+		h1{ font-family: $title-font; color: $main-color; font-size: 46px; line-height: 1.1em; margin-bottom: 10px; } 
+	}
+	.table-exam-prep { background-color: #fff; border: 1px solid #bbb; margin: 1%; width: 98%;
+		td{ padding-right: 45px;
+			// for PC
+			  @if $forpc == true {
+			    @include media ( $media-md ) {  // max-width: 512px
+			      display: block; width: auto; padding: 0px 35px 15px 35px;
+			    }
+			  }
+			    // for Mobile
+			  @else{
+			    @include media ( $media-md ) { // max-width: 512px
+			      display: block; width: auto; padding: 0px 35px 15px 35px;
+			    }
+			} 
+		}
+		.text-bottom{ 
+			// for PC
+			  @if $forpc == true {
+			    @include media ( $media-md ) {  // max-width: 512px
+			      display: block; width: auto; padding: 0px 35px 0px 35px;
+			    }
+			  }
+			    // for Mobile
+			  @else{
+			    @include media ( $media-md ) {  // max-width: 512px
+			      display: block; width: auto; padding: 0px 35px 0px 35px;
+			    }
+			}
+		}
+		.icon{
+			height: 91px;
+			padding-left: 65px;
+			width: 127px;
+			padding-right: 0px;
+			// for PC
+			  @if $forpc == true {
+			    @include media ( $media-md ) {  // max-width: 512px
+			      display: none;
+			    }
+			  }
+			    // for Mobile
+			  @else{
+			    @include media ( $media-md ) {  // max-width: 512px
+			      display: none;
+			    }
+			}
+		}
+		.text{
+			padding:10px 45px 0 0;
+			width: auto;
+			// for PC
+            @if $forpc == true {
+                @include media ( $media-md ) {  // max-width: 512px
+                    padding: 20px 35px 10px 35px; width: auto;
+                }
+            }
+			    // for Mobile
+			@else{
+			    @include media ( $media-md ) { // max-width: 512px
+			        padding: 20px 35px 10px 35px; width: auto;
+			    }
+			}
+		}
+		.text-bottom{
+			height: auto;
+			padding: 10px 10px 10px 65px;
+			width: 60%;
+			// for PC
+			  @if $forpc == true {
+			    @include media ( $media-md ) {  // max-width: 512px
+			      width: auto;
+			      padding: 10px 10px 10px 35px;
+			    }
+			  }
+			    // for Mobile
+			  @else{
+			    @include media ( $media-md ) { // max-width: 512px
+			      width: auto;
+			      padding: 10px 10px 10px 35px;
+			    }
+			}
+			p { color: $h-color; font-size: 18px; }
+		} 
+	}
+	.table-exam-details{
+		td{ padding-bottom: 5px; vertical-align: top; 
+			// for PC
+			  @if $forpc == true {
+			    @include media ( $media-md ) { // max-width: 512px
+			      display: block;
+			    }
+			  }
+			    // for Mobile
+			  @else{
+			    @include media ( $media-md ) {  // max-width: 512px
+			      display: block;
+			    }
+			}
+		}
+
+	}
+	.graph > img{ 
+		// for PC
+		  @if $forpc == true {
+		    @include media ( $media-md ) { // max-width: 512px
+		      width: 100%;
+		    }
+		  }
+		    // for Mobile
+		  @else{
+		    @include media ( $media-md ) { // max-width: 512px
+		      width: 100%;
+		    }
+		} 
+	}
+	.frequently-asked-questions{
+		.list{
+			li{ margin: auto;  padding-bottom: 5px;}
+		}
+	}
+	.ui-canvas { border-style: solid; border-width: 1px; border-color: #dad7cc; background-color: #f6f7fa;  padding: 0px !important; width: auto !important; text-align: left;}
+	.article-body{
+		margin: 0px 0 25px 0;
+		padding: 0px;
+		line-height: 1.5em;
+		p{
+			margin: 10px 0 0 0;
+			padding: 0px;
+			&.p-padding{
+				padding-bottom: 10px;
+			}
+		}
+		ul{
+			list-style: disc outside none;
+		}
+		ul.list{
+			list-style: none outside none;
+		}
+		img{ 
+			// for PC
+			  @if $forpc == true {
+
+			    @include media ( $media-md ) {  // max-width: 512px
+			      width: 100%;
+			    }
+			  }
+			    // for Mobile
+			  @else{
+
+			    @include media ( $media-md ) { // max-width: 512px
+			      width: 100%;
+			    }
+			} 
+		}
+	}
+	.layout-side{
+		.list .item-image {
+		    border-style: solid;
+		    border-width: 1px;
+		    display: none;
+		    padding: 4px;
+		}
+		.buttonlist {
+			.list .item {
+			    border-bottom: 1px dotted #ddd;
+			}
+			.item-title {
+			    display: block;
+			}	
+			.item-description, .item-link {
+			    display: none;
+			}
+		}
+	}
+	// for PC
+	@if $forpc == true {
+		@include media ( $media-lm ) {  // max-width: 767px
+		  	.layout-side { height: auto !important; padding: 0; width: 100%; display: block; float: none !important; margin: 0; overflow: visible; }
+		  	.af-right-multi, .sharing, .openxbuttons{ display: none; }
+		}
+	}
+	// for Mobile
+	@else{
+		@include media ( $media-lm ) {	// max-width: 767px
+		  	.layout-side { height: auto !important; padding: 0; width: 100%; display: block; float: none !important; margin: 0;  overflow: visible;}
+		  	.af-right-multi, .sharing, .openxbuttons{ display: none; }
+		}
+	}
+}
+

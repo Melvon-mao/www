@@ -1,0 +1,145 @@
+// ======================================================================= //
+//                                 tooltip    	                            //
+// ======================================================================= //
+.tooltip {
+    position: relative; cursor: pointer; text-decoration: none; zoom: 1; display: inline-block;
+
+    .error,
+    .warning{ border: solid 1px #AD0303 !important; background: #fff url("../#{$image-default-patch}/btn_ui_alert.png") center right no-repeat; }
+
+    .content { display: none; position: absolute; bottom: 40px; width: 100px; padding: 4px 10px 6px; background: #fff; border-radius: 3px; font-size: 11px; color: #1c74e0 !important; line-height: 15px; text-align: center; z-index: 99; border: 1px solid #ccc; box-shadow: 1px 1px 3px rgba(0,0,0,.1); }
+
+    .pointer { display: block; text-align: center; position: absolute; right: 2px; bottom: -8px; width: 17px; height: 8px;
+        background: url("../#{$image-default-patch}/sprite_icon.png") -435px -313px no-repeat;
+    }
+
+    &:hover {
+        text-decoration: none;
+        .content { display: block !important;
+            // for PC
+            @if $forpc == true {
+            }
+            // for Mobile
+            @else{
+                @include media ( $media-lm ) { //767px
+                    display: none !important;
+                }
+            }
+        }
+    }
+
+    @at-root {
+
+        // form-group
+        .form-box,
+        .form-group {
+            .tooltip { display: block;
+                .content { right: 5px; bottom: 33px; width: 140px;}
+            }
+        }
+
+        // in account-page Default
+        .account-page {
+            .form-box,
+            .form-group {
+                .tooltip {
+                    .content { bottom: 36px; }
+                }
+            }
+        }
+
+        // in Radio ...
+        .account-page {
+            .form-type-radios,
+            .form-type-radios-inline {
+                .tooltip {
+                    .error,
+                    .warning{ padding: 6px 0 0 6px; }
+                    .content { bottom: 41px; }
+                }
+            }
+        }
+
+        // in Checkbox ...
+        .account-page {
+            .form-type-checkboxes,
+            .form-type-checkboxes-inline{
+                .tooltip {
+                    .error,
+                    .warning{ padding: 6px 0 0 6px; }
+                    .content { bottom: 41px; }
+                }
+            }
+        }
+
+        // Corporation page
+        .corporation {
+            .tooltip {
+                .pointer { right: 48px !important }
+            }
+            .form-item {
+                .tooltip {
+                    .content { bottom:36px; right: 4px; }
+                    .pointer { right: 0px !important }
+                }
+            }
+            .form-item.form-type-checkboxes{
+                .tooltip {
+                    .content { top:-44px; bottom:auto;}
+                }
+            }
+            .form-item.form-type-textarea{
+                .tooltip {
+                    .content { top:-30px; bottom:auto;}
+                }
+            }
+            .captcha {
+                .form-item {
+                    .tooltip { width: 180px;
+                        .content { }
+                    }
+                }
+            }
+        }
+
+        // in  newsletter ...
+        .account-page {
+            .table-newsletterlist {
+                .column_third { position: relative;
+                    .tooltip {
+                        &:hover {
+                            .content { right: 0; width: 160px; bottom: 30px; }
+                        }
+                    }
+                }
+            }
+        }
+
+        // in label-inline ....
+        .label-inline {
+            .tooltip { display: inline-block; width: 150px; margin-top: -10px;
+                // for PC
+                @if $forpc == true {
+                    @include media ( $media-lm ) { // 768px
+                        margin-top: 0;
+                        display: block;
+                    }
+                }
+                    // for Mobile
+                @else{
+                    @include media ( $media-lm ) { //767px
+                        margin-top: 0;
+                    }
+                }
+            }
+        }
+
+        // in net worth ....
+        #AppContent {
+            .tooltip { color:#06c;
+                .content { right: -2px; bottom: 30px; width: 94px; }
+            }
+        }
+    }
+
+}

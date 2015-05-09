@@ -1,0 +1,35 @@
+// ======================================================================= //
+//                         	Layout-Side : Sharing    	                   //
+// ======================================================================= //
+.sharing { 
+	.box-inner { border-width:3px 1px; border-color:$main-color #94969f; border-style: solid; padding:16px; font-size:18px; text-align:center; }
+	hr { border:none; border-top:solid 1px #f2f2f3; margin:0 0 16px 0; }
+}
+
+
+
+
+// ======================================================================= //
+//               			layout-Page : Sharing     				       //
+// ======================================================================= //
+.#{$layout}-sharing {
+	border-width:1px 0; border-style:solid; border-color: $border-color; padding:8px 0;
+
+	> .fr { padding-top: 8px; }
+
+	// for PC
+	@if $forpc == true {
+		@include media ( $media-lg ) {
+			> .fr,
+	 		> .fl { float: none; }
+		}
+	}
+	// for Mobile
+	@else{
+		@include media ( $media-lm ) {
+			> .fr,
+	 		> .fl { float: none; }
+		}
+	}
+
+}

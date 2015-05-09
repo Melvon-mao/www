@@ -1,0 +1,225 @@
+
+// =========================================================================================== //
+//                                  2013.9.6 Calculator New Design: Form Group                 //
+// =========================================================================================== //
+// ----- Calculator ----- //
+.calculator-inner                     { padding: 20px 0; /*border-radius: 5px; */ box-shadow: 1px 1px 3px #ddd;  border: solid 1px #ccc; background: #fff }
+
+
+
+
+
+
+// =========================================================================================== //
+//                                       Calculator Form Global                                //
+// =========================================================================================== //
+.form-horizontal {
+
+    input, textarea, select,
+    .help-inline, .uneditable-input, .input-prepend, .input-append { display: inline-block; *display: inline; margin-bottom: 0; vertical-align: -2px;  *zoom: 1 }
+    label { display: block; margin-bottom: 5px }
+    .radio,
+    .checkbox { min-height: 20px; padding-left: 20px }
+    .radio input[type="radio"],
+    .checkbox input[type="checkbox"] { float: left; margin-left: -20px }
+    .radio.inline,
+    .checkbox.inline { display: inline-block; padding-top: 5px; margin-bottom: 0; vertical-align: middle }
+    .radio.inline + .radio.inline,
+    .checkbox.inline + .checkbox.inline   { margin-left: 10px }
+    input + .help-block,
+    select + .help-block,
+    textarea + .help-block,
+    .uneditable-input + .help-block,
+    .input-prepend + .help-block,
+    .input-append + .help-block { margin-top: 10px }
+
+    .btn { margin:0; text-align:  center; cursor:pointer; position: relative; padding: 10px 20px }
+    .btn-submit,
+    .btn-default{ padding: 6px 30px; font-size: 18px; background-color: #a62436; color: #fff; border: none; cursor: pointer; margin-bottom: 10px;
+        &:hover { background-color: $link-color; border-color: #464646 }
+    }
+    .cancel{ padding: 6px 30px; font-size: 18px; background-color: #666; color: #fff; border: none; cursor: pointer; margin-bottom: 10px;
+        &:hover { background-color:#333 }
+    }
+    .btn-small { padding: 6px 30px; font-size: 18px; background-color: #a62436; color: #fff; border: none; cursor: pointer; margin-bottom: 10px; vertical-align: 3px;
+        &:hover { background-color: $link-color }
+    }
+
+    .control-group { *zoom: 1; /* margin-bottom: 20px; */
+        &:before, &:after { display: table; line-height: 0; content: ""}
+        &:after {clear: both }
+    }
+
+    legend + .control-group { margin-top: 20px; -webkit-margin-top-collapse: separate }
+
+    .control-label { float: left; width: 200px; padding-top: 5px; text-align: right }
+
+    .controls { position: relative; line-height: 24px; *display: inline-block; *padding-left: 20px; margin-left: 220px; *margin-left: 0;
+        &:first-child { *padding-left: 180px }
+        > .radio:first-child,
+        > .checkbox:first-child { padding-top: 5px }
+    }
+
+    .form-actions { padding-left: 180px }
+
+    .help-block { margin-bottom: 0 }
+}
+
+
+
+
+
+// =========================================================================================== //
+//                                        control-group                                        //
+// =========================================================================================== //
+.control-group { margin-bottom: 10px;
+    &.warning {
+        .control-label, .help-block, .help-inline { color: #b94a48 !important; font-weight: bold !important }
+        .checkbox, .radio, input, select, textarea { color: #b94a48 !important }
+        input, select, textarea { border-color: #b94a48 !important; @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075));
+            &:focus{ border-color: #a47e3c; @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #dbc59e) }
+        }
+    }
+}
+
+
+
+
+
+// ----- Calculator Input ----- //
+.form-horizontal input[type="text"] { width:300px; margin-bottom: 10px; border-radius: 2px; box-shadow: inset 0 0 2px #aaa; @include boxsizing; padding: 5px; height: 34px; border: 1px solid #ccc; background-color: #fff; color: #555; vertical-align: middle; font-size: 16px; line-height: 1.428571429;
+	-webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+	transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+	@include box-shadow( inset 0 1px 1px rgba(0,0,0,0.075) );
+	@include box-sizing;
+	&:-moz-placeholder { color: #999; }
+	&::-moz-placeholder { color: #999; }
+	&:-ms-input-placeholder { color: #999; }
+	&::-webkit-input-placeholder { color: #999; }
+	&:focus {
+	    outline: 0; border-color: #66afe9;
+	    @include box-shadow(inset 0 1px 1px rgba(0,0,0,0.075), 0 0 8px rgba(102,175,233,0.6));
+	}
+	&[disabled],
+	&[readonly] { background-color: #eee; cursor: not-allowed; }
+
+	@at-root {
+	    //Wraning tip ....
+	    .has-warning {
+	        .#{$form-control} { border-color: #c09853;  @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075));
+	            &:focus { border-color: #a47e3c; @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075)); }
+	        }
+	    }
+	    //Error tip ....
+	    .has-error {
+	        .#{$form-control} { border-color: #b94a48; @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075));
+	            &:focus { border-color: #953b39; @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075)); }
+	        }
+	    }
+	    //Success tip ....
+	    .has-success {
+	        .#{$form-control} { border-color: #468847; @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075));
+	            &:focus { border-color: #356635; @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075)); }
+	        }
+	    }
+	    .form-inline {
+	        .form-control{ display: inline-block; }
+	    }
+
+	}
+}
+.form-horizontal input[type="text"]:focus{ border-radius: 0; }
+.form-horizontal input[type="text"].small{ width: 150px;}
+.form-horizontal input[type="text"].mini { width: 70px;}
+
+
+// ----- Calculator  Submit Box ----- //
+.tipFormBox            { position:absolute; bottom:37px; left:0; padding:6px 10px; width:280px; line-height: 18px !important; border-width:1px; border-style:solid; border-radius:4px; font-size:12px; }
+.tipFormBox:after      { position:absolute; bottom:-6px; left:12px; display:block; width:0; height:0; border-width:6px 6px 0 6px; border-style:solid; content:''; }
+.tipFormBox:before     { position:absolute; bottom:-7px; left:11px; display:block; width:0; height:0; border-width:7px 7px 0 7px; border-style:solid; content:''; }
+
+.tipFormBox_warning            { border-color:#d8afaf; color:#b94a48; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); background:#f2dede;}
+.tipFormBox_warning:after      { border-color:#f2dede transparent transparent transparent; }
+.tipFormBox_warning:before     { border-color:#cb9a9a transparent transparent transparent; }
+.tipFormBox .warning_icon      { width: 20px; height: 20px; background:url('../#{$image-default-patch}/btn_ui_alert.png') center center no-repeat; display:-moz-inline-stack; display:inline-block; vertical-align:middle; zoom:1; *display:inline; }
+
+
+// ----- Calculator Text information ----- //
+.calculator-textinformation       { padding: 20px 30px;}
+.calculator-textinformation.noPadTop   { padding-top: 0;}
+.calculator-textinformation .logo-icon   { vertical-align: middle;}
+.calculator-uldefault li         { margin-bottom: 10px;}
+
+// ----- Calculator Result ----- //
+.calculator-ResultList           { margin: 30px 0 10px; padding: 20px 0; background: #edf6ff; border-top: 1px solid #bbbbbb; border-bottom: 1px solid #bbbbbb;}
+.calculator-ResultList .control-label   { width: 50%;}
+.calculator-ResultList .controls      { margin-left: 51%;}
+.calculator-ResultList .controls span   { font-size: 16px;}
+
+
+// ----- Calculator Chart -- //
+.calculator-chart             { /*width: 80%;*/ margin:30px auto; padding: 10px; text-align: center; border-radius: 5px; box-shadow: 1px 1px 3px #ddd; border: solid 1px #ccc; background: #fff; color: #999;}
+
+// ----- Calculator error message container ----- //
+.calculator-inner .container       { color:Red;background-color:White;border-color:#336699;border-width:3px;border-style:Dashed; width:50%; padding: 10px; margin: 0 auto 20px; }
+.calculator-inner .container > h4 > img         {  margin-right:8px; vertical-align: -3px;}
+.calculator-inner .container ul{ list-style: disc;}
+
+// Calculator 2013.10.28 Melvon //
+.radio_label                                      { display:-moz-inline-stack !important; display:inline-block !important; vertical-align:middle !important; zoom:1 !important; *display:inline !important;}
+.radio_label input                                {vertical-align: -2px !important;}
+
+
+.layout-page{
+  	// for PC
+	  @if $forpc == true {
+	    @include media ( $media-lm ) { // max-width: 768px
+			.calculator-inner .calculator-textinformation  					{ padding: 20px;}
+			.calculator-inner .form-horizontal .control-group 				{ padding: 0 20px;}
+			.calculator-inner .form-horizontal .control-group .control-label { width: 30%; }
+			.calculator-inner .form-horizontal .control-group .controls 	 { margin-left: 35%; }
+			.calculator-inner .form-horizontal .control-group .controls input[type="text"]{ width: 88%; float: left; box-sizing: border-box;}
+			.calculator-inner .form-horizontal .control-group .controls .radio_label > input { vertical-align: 0px !important; margin-right: 6px;}
+			#calVideo .video-screen 				{ width: 100% !important; height: auto;}
+			// list font size ...
+			#InvestingChannel .buttonlist .item-title a { font-size: 13px;}
+			#video_wrapper,
+			#JWPVideo_wrapper,
+			#JWPVideo { width:100% !important; margin: 0 auto;}			
+			
+	    }
+
+	    // max-width: 480px
+	    @include media ( $media-ml ) {
+			.calculator-inner .form-horizontal .control-group .control-label { width: 100%; float: none; text-align: left; }
+			.calculator-inner .form-horizontal .control-group .controls 	 { margin-left: 0; }
+			.calculator-inner .form-horizontal .control-group .controls > input{ margin:0;}
+			.calculator-inner .calculator-chart  						{ overflow: hidden;}
+			.calculator-inner .calculator-chart > div { width:250px !important; margin:0 auto;}
+			.calculator-inner .calculator-chart svg { zoom:0.4 !important; width: 100% !important; }
+			.calculator-inner .calculator-chart div:nth-child(1){ height: 250px !important;}
+			.calculator-inner > table 				{ width: 100% !important;}
+
+	    }	    
+	  }
+	  // for Mobile
+	  @else{
+	    @include media ( $media-lm ) { // max-width: 767px
+	    	.calculator-inner .form-horizontal .control-group 				{ padding: 0 20px;}
+			.calculator-inner .form-horizontal .control-group .control-label { width: 100%; float: none; text-align: left; }
+			.calculator-inner .form-horizontal .control-group .controls 	 { margin-left: 0; }
+			.calculator-inner .form-horizontal .control-group .controls input[type="text"]{ width: 88%; float: left; box-sizing: border-box;}
+			.calculator-inner .form-horizontal .control-group .controls > input{ margin:0;}
+			.calculator-inner .calculator-chart  						{ overflow: hidden;}
+			.calculator-inner .calculator-chart > div { width:250px !important; margin:0 auto;}
+			.calculator-inner .calculator-chart svg { zoom:0.4 !important; width: 100% !important; }
+			.calculator-inner .calculator-chart div:nth-child(1){ height: 250px !important;}
+			.calculator-inner > table 				{ width: 100% !important;}
+
+			#video_wrapper,
+			#JWPVideo_wrapper,
+			#JWPVideo { width:100% !important; margin: 0 auto;}						
+	    }
+	}
+
+}

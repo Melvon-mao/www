@@ -1,0 +1,196 @@
+// ======================================================================= //
+//               			  	Column Title 	   			  		       //
+// ======================================================================= //
+.#{$title} {
+    position: relative; margin: 0 0 12px 0; color: $title-color; padding: 0 0 2px 0; font-size: 22px; text-transform: uppercase; border-bottom: 1px solid #e4e5e6;
+    h2,
+    h2 > a{ color: $title-color; }
+    &.small-title { font-size: 15px; text-transform:capitalize;}
+
+    @at-root {
+        // in layout-side box defautl ...
+        .#{$layout}-side {
+            .#{$box} {
+                .#{$title} { font-size: 18px; color: $main-color; text-transform: none;
+                    // for PC
+                    @if $forpc == true {
+                        @include media ( $media-lg ) { // max-width: 768px
+                            font-size: 22px; color: #666666;
+                        }
+                        @include media ( $media-md ) { // max-width: 512px
+
+                        }
+                    }
+                        // for Mobile
+                    @else{
+                        font-size: 22px; color: #666666;
+                        @include media ( $media-lm ) { // max-width: 767px
+
+                        }
+                    }
+                }
+                &.#{$box}-bg {
+                    .#{$title} {
+                        margin: 0; padding: 4px 8px; color: #fff; background: $main-color; line-height: 1em; text-transform: uppercase; border: 0;
+                        h2,
+                        h2 > a { color: #fff; font-size: 18px; }
+                        // for PC
+                        @if $forpc == true {
+                            @include media ( $media-lg ) { // 768px
+                                margin: 0 0 12px 0; padding: 0 0 2px 0; color: $title-color; font-size: 22px; border-bottom: 1px solid #e4e5e6; background: none;
+                                h2,
+                                h2 > a{ color: $title-color; font-size: 22px; }
+                            }
+                            @include media ( $media-md ) {  // 512px
+                                margin:0; line-height: inherit;
+                            }
+                        }
+                            // for Mobile
+                        @else{  /// iPad
+                            margin: 0 0 12px 0; padding: 0 0 2px 0; color: $title-color; font-size: 22px; border-bottom: 1px solid #e4e5e6; background: none;
+                            h2,
+                            h2 > a{ color: $title-color; font-size: 22px; }
+                            @include media ( $media-lm ) {  // 767px
+                                margin:0; line-height: inherit;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        // in hot definitions...
+        .hot-definitions {
+            .#{$title} { margin-bottom: 20px !important;}
+        }
+        //.#{$layout}-side-small ...
+        .#{$layout}-side.#{$layout}-side-small{
+            .hot-definitions {
+                .#{$list}{ padding:0 0 0 10px;
+                    .#{$item}{
+                        padding:0 0 12px 0;
+                    }
+                }
+            }
+            .home-markets {
+                .#{$title} { margin-bottom: 0 !important;
+                    // for PC
+                    @if $forpc == true {
+                        @include media ( $media-lg ) { // 768px
+                            margin: 0 0 12px 0 !important;
+                        }
+                    }
+                    // for Mobile
+                    @else{  /// iPad
+                        margin: 0 0 12px 0 !important;
+                    }
+                }
+            }
+        }
+        // in layout-col-left ...
+        .#{$layout}-col-left {
+            .#{$title} {
+                h2 { font-size: 15px !important;}
+                // for PC
+                @if $forpc == true {
+                    @include media ( $media-lg ) { // 768px
+                        h2 { padding-right: 0; }
+                    }
+                    @include media ( $media-ml ) { // 620px
+                        display: none;
+                    }
+                }
+                    // for Mobile
+                @else{
+                    h2 { padding-right: 0; }
+                    @include media ( $media-lm ) { //767px
+                        display: none;
+                    }
+                }
+            }
+            // .termpage-col-left ...
+            &.termpage-col-left {
+                h2 { font-size: 12px !important;}
+            }
+            // .left-nav, .left-related-list ...
+            .left-nav,
+            .left-related-list{
+                .#{$title} { margin:0 -1px 0 0; padding:10px; background-color:#f6f7fa; text-align:center; border:solid 1px #d6d9de;  }
+            }
+            .left-nav {
+                // for PC
+                @if $forpc == true {
+                    @include media ( $media-lg ) { // 768px
+                        //margin-bottom: 0 !important;
+                    }
+                }
+                @else{
+                   // margin-bottom: 0 !important;
+                }
+            }
+            .left-related-list{
+                .#{$title} {
+                    // for PC
+                    @if $forpc == true {
+                        @include media ( $media-lg ) { // 768px
+                            display: block; margin:0 0 12px 0; padding: 0 0 2px; color: #666; font-size: 22px; text-transform: uppercase; border:0; border-bottom: 1px solid #e4e5e6; background: none; text-align:left;
+                            h2 { font-size: 22px !important; }
+                        }
+                        @include media ( $media-md ) { // 512px
+                            margin: 0; padding: 0 0 2px 0;
+                        }
+                    }
+                    @else{
+                        @include media ( $media-lm ) { // 767px
+                            display: block; margin:0 0 12px 0; padding: 0 0 2px; color: #666; font-size: 22px; text-transform: uppercase; border:0; border-bottom: 1px solid #e4e5e6; background: none; text-align:left;
+                            h2 { font-size: 22px !important; }
+                        }
+                        @include media ( $media-md ) { // 512px
+                            margin: 0; padding: 0 0 2px 0;
+                        }
+                    }
+                }
+            }
+        }
+        // no bottom line
+        &.no-line{ border-bottom: 0; }
+        &.no-margin{ margin-bottom: 0; }
+        // in homepage banner...
+        .column-banner {
+            .#{$title} {
+                a { color: $link-color; }
+            }
+        }
+        //in through-right
+        .through-col {
+            .#{$title} { margin-bottom: 15px !important;}
+        }
+        // in search result list ...
+        .search-result-#{$list} {
+            .#{$title}{ text-transform:none; font-size:16px; color:#b3b3b3; margin-bottom:6px; padding:0; border-bottom:0;  }
+        }
+
+        // in content-list-tmp ...
+        .content-list-tmp {
+            .#{$title} { margin-bottom:10px; padding: 0; border: 0; font-size:17px; text-transform:none; font-weight:normal; color: $global-color; font-family:'gandhiserif-bold-webfont';}
+        }
+
+        // in Net worth page....
+        #AppBody {
+            .title {
+
+            }
+        }
+    }
+
+    // for PC
+    @if $forpc == true {
+        @include media ( $media-md ) { // 512px
+            margin: 0;
+        }
+    }
+    @else{
+        @include media ( $media-lm ) { // 767px
+            margin: 0;
+        }
+    }
+}

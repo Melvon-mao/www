@@ -1,0 +1,54 @@
+// ======================================================================= //
+//                         	 		newsletter    	       	               //
+// ======================================================================= //
+.newsletter {
+	// in layout-page ...
+	.#{$layout}-page & { position:relative; border:solid 10px $border-color; padding:20px 20px 20px 50px; }
+	.#{$layout}-page &:after 	{ content:''; width:20px; height:100%; position:absolute; top:-10px; left:-10px; padding:10px; background-color: $link-color; }
+	.#{$layout}-page &:before { content:''; position:absolute; border-width:19px; border-style:solid; border-color:transparent transparent #fff transparent; left:-10px; bottom:-10px; z-index:1; }
+
+	@at-root { 
+		// for PC
+		@if $forpc == true {
+			// max-width: 620px
+			@include media ( $media-ml ) {
+				.layout-page { 
+					.newsletter { 
+						.fl { margin-bottom: 10px; } 
+					}
+				}
+				.layout-page {
+					.newsletter { 
+						.fr { float: none; clear: both; } 
+					}
+				}
+			}
+			// max-width: 512px
+			@include media ( $media-md ) {
+				.layout-page {
+					.newsletter { 
+						.fl, 
+						.fr  { width: 100%; float: none;} 
+					}		
+				}
+			}
+		}
+		// for Mobile
+		@else{
+			@include media ( $media-lm ) {
+				.layout-page {
+					.newsletter { 
+						.fl, 
+						.fr { width: 100%; float: none;}
+					}
+				}
+				.layout-page { 
+					.newsletter { 
+						.fl  { margin-bottom: 10px; }
+					}
+				}
+			}
+		}
+	}
+
+}

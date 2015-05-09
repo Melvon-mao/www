@@ -1,0 +1,46 @@
+// ======================================================================= //
+//                               	 Reset      	                       //
+// ======================================================================= //
+// ---------- Html ---------- //
+html 						{	height: 100%; 
+								min-height: 100%; 
+								overflow:{ 	x: hidden; 
+											y: scroll; }
+							}
+
+// ---------- Body ---------- //
+body 						{ 	color: $global-color; 
+								font-size: $global-size; 
+								font-family: $global-font;
+								min:{ 	width: 1040px; 
+										height: 100%; }
+								margin: 0; 
+								padding: 0; 
+								overflow: hidden;
+								-webkit-text-stroke: 0.01em;
+								-webkit-text-size-adjust : 100%;
+								   -moz-text-size-adjust : 100%;
+									-ms-text-size-adjust : 100%;
+									    text-size-adjust : 100%;
+								// for PC
+								@if $forpc == true {
+									@include media ( $media-lg ) {
+										position: relative; min-width: 0%;
+									}
+								}
+								// for Mobile
+								@else{
+									position: relative; min-width: 0%;
+								}
+							}
+
+a 							{	
+								&:link 		{ color: $link-color; text-decoration: none; cursor: pointer}
+								&:visited	{ color: $link-color }
+								&:hover		{ text-decoration: underline }
+							}
+hr 							{ background-color: $line-color; border: medium none; height: 1px; }
+img 						{ border: medium none; }
+textarea 					{ resize: none; }
+ul							{ list-style: none; }
+table 						{ border-collapse: separate; }

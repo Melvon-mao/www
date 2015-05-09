@@ -1,0 +1,326 @@
+// ======================================================================= //
+//                              Responsive icon  	       	               //
+// ======================================================================= //
+.m-nav-icon,
+.m-search-icon,
+.m-nav-icon.active,
+.m-search-icon.active {
+    width:32px; height:32px; cursor:pointer;
+}
+
+// for PC
+@if $forpc == true {
+    .m-nav-icon,
+    .m-search-icon,
+    .m-nav-icon.active,
+    .m-search-icon.active {
+        background:url("../#{$image-default-patch}/sprite_icon.png") no-repeat;
+    }
+    .m-nav-icon 						{ background-position:   -3px -301px; }
+    .m-search-icon  					{ background-position: -100px -301px; }
+    .m-nav-icon.active,
+    .m-search-icon.active  				{ background-position:  -52px -301px; }
+}
+
+// for Mobile
+@else{
+    .m-nav-icon,
+    .m-search-icon,
+    .m-nav-icon.active,
+    .m-search-icon.active {
+        background-image:url("../#{$image-default-patch}/mobile_icon.png");
+        background-image:-webkit-image-set(url("../#{$image-default-patch}/mobile_icon.png") 1x, url("../#{$image-default-patch}/mobile_icon_retina.png") 2x);
+    }
+    .m-nav-icon 						{ background-position: -3px 0; }
+    .m-search-icon  					{ background-position: -100px 0; }
+    .m-nav-icon.active,
+    .m-search-icon.active  				{ background-position: -52px 0; }
+}
+
+
+
+
+
+
+
+
+
+
+
+// ======================================================================= //
+//                              shareicon icon  	       	               //
+// ======================================================================= //
+.shareicon {
+    display:inline-block; vertical-align:bottom; cursor:pointer;
+
+    // for PC
+    @if $forpc == true {
+        padding:0; margin:10px 26px 10px 0; height: 24px; background: url("../#{$image-default-patch}/sprite_icon.png") left top no-repeat;
+        &.fb            { width: 12px; background-position: 0 0;
+            &:hover     { width: 12px; background-position: 0 -26px; }
+        }
+        &.twtr          { width: 25px; background-position: -56px 0;
+            &:hover     { width: 25px; background-position: -56px -26px; }
+        }
+        &.utube         { width: 54px; background-position: -112px 0;
+            &:hover     { width: 54px; background-position: -112px -26px; }
+        }
+        &.rss           { width: 25px; background-position: -168px 0;
+            &:hover     { width: 25px; background-position: -168px -26px; }
+        }
+
+        @include media ( $media-md ) { //max-width: 512px
+            margin:10px 16px 10px 0;
+            &.rss 	    { margin-right: 0; }
+        }
+
+    }
+    // for Mobile
+    @else{
+        margin:0; padding:10px; height:20px; background-position:center center; background-repeat:no-repeat; background-size:auto 30px;
+
+        &.fb 			{ width:10px; background-image:url("../#{$image-default-patch}/shareicon_fb.png"); background-position: center left;
+            &:hover		{ background-image:url("../#{$image-default-patch}/shareicon_fb_on.png");}
+        }
+        &.twtr			{ width:10px; background-image:url("../#{$image-default-patch}/shareicon_twtr.png");
+            &:hover		{ background-image:url("../#{$image-default-patch}/shareicon_twtr_on.png");}
+        }
+        &.utube		    { width:50px; background-image:url("../#{$image-default-patch}/shareicon_utube.png");
+            &:hover	    { background-image:url("../#{$image-default-patch}/shareicon_utube_on.png");}
+        }
+        &.rss			{ width:30px; background-image:url("../#{$image-default-patch}/shareicon_rss.png");
+            &:hover		{ background-image:url("../#{$image-default-patch}/shareicon_rss_on.png");}
+        }
+        &.gogl			{ width:24px; background-image:url("../#{$image-default-patch}/shareicon_gogl.png");
+            &:hover		{ background-image:url("../#{$image-default-patch}/shareicon_gogl_on.png");}
+        }
+        &.lnkd			{ width:26px; background-image:url("../#{$image-default-patch}/shareicon_lnkd.png");
+            &:hover		{ background-image:url("../#{$image-default-patch}/shareicon_lnkd_on.png");}
+        }
+        &.inv			{ width:24px; background-image:url("../#{$image-default-patch}/shareicon_inv.png");
+            &:hover		{ background-image:url("../#{$image-default-patch}/shareicon_inv_on.png");}
+        }
+
+        @include media ( $media-lg ) { //max-width: 768px;
+            &.fb 	    { width:2px; }
+            &.twtr 	    { width:6px; }
+            &.utube     { width:40px; }
+            &.rss 	    { width:12px; }
+        }
+        @include media ( $media-lm ) { //max-width: 767px;
+            &.fb 	    { width:8px; }
+            &.twtr 	    { width:10px; }
+            &.utube     { width:48px; }
+            &.rss 	    { width:20px; }
+        }
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ======================================================================= //
+//                           footicon Social icon  	       	               //
+// ======================================================================= //
+/* footicon */
+.footicon {
+
+    // for PC
+    @if $forpc == true {
+        width: 20px; height: 19px; margin:5px 15px 5px 0; display:inline-block; vertical-align:bottom; overflow: hidden;
+        background: url("../#{$image-default-patch}/sprite_icon.png") no-repeat;
+
+        &.fb            { background-position: 0 -62px;
+            &:hover     { background-position: 0 -83px; }
+        }
+        &.twtr          { background-position: -56px -62px;
+            &:hover     { background-position: -56px -83px; }
+        }
+        &.gogl          { background-position: -112px -62px;
+            &:hover     { background-position: -112px -83px; }
+        }
+        &.lnkd          { background-position: -168px -62px;
+            &:hover     { background-position: -168px -83px; }
+        }
+        &.rss           { background-position: -224px -62px;
+            &:hover     { background-position: -224px -83px; }
+        }
+        &.inv           { background-position: -280px -62px;
+            &:hover     { background-position: -280px -83px; }
+        }
+
+    }
+    // for Mobile
+    @else{
+        width: 20px; height: 19px; margin:5px 15px 5px 0; display:inline-block; vertical-align:bottom; background-repeat: no-repeat; background-position: center center; background-size:contain; overflow: hidden;
+
+        &.fb 			{ background-image:url("../#{$image-default-patch}/footicon_fb.png");
+            &:hover 	{ background-image:url("../#{$image-default-patch}/footicon_fb_on.png"); }
+        }
+        &.twtr 			{ background-image:url("../#{$image-default-patch}/footicon_twtr.png");
+            &:hover 	{ background-image:url("../#{$image-default-patch}/footicon_twtr_on.png"); }
+        }
+        &.gogl 			{ background-image:url("../#{$image-default-patch}/footicon_gogl.png");
+            &:hover 	{ background-image:url("../#{$image-default-patch}/footicon_gogl_on.png"); }
+        }
+        &.lnkd 			{ background-image:url("../#{$image-default-patch}/footicon_lnkd.png");
+            &:hover 	{ background-image:url("../#{$image-default-patch}/footicon_lnkd_on.png"); }
+        }
+        &.rss 			{ background-image:url("../#{$image-default-patch}/footicon_rss.png");
+            &:hover 	{ background-image:url("../#{$image-default-patch}/footicon_rss_on.png"); }
+        }
+        &.inv 			{ background-image:url("../#{$image-default-patch}/footicon_inv.png");
+            &:hover 	{ background-image:url("../#{$image-default-patch}/footicon_inv_on.png"); }
+        }
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+// ======================================================================= //
+//                              partnericon icon  	       	               //
+// ======================================================================= //
+.partnericon {
+    // for PC
+    @if $forpc == true {
+        height:25px; background: url("../#{$image-default-patch}/sprite_icon.png") no-repeat;
+
+        &.ask       { background-position: 0 -114px; width:35px;
+            &:hover { background-position: 0 -139px; }
+        }
+        &.about     { background-position: -58px -114px; width:84px;
+            &:hover { background-position: -58px -139px; }
+        }
+        &.dict		{ background-position: -164px -114px; width:94px;
+            &:hover	{ background-position: -164px -139px; }
+        }
+    }
+    // for Mobile
+    @else{
+        height:25px; background-size: contain;
+
+        &.ask       { width:35px; background-image:url('../#{$image-default-patch}/partnericon_ask.png');
+            &:hover { background-image:url('../#{$image-default-patch}/partnericon_ask_on.png'); }
+        }
+        &.about     { width:84px; background-image:url('../#{$image-default-patch}/partnericon_about.png');
+            &:hover { background-image:url('../#{$image-default-patch}/partnericon_about_on.png'); }
+        }
+        &.dict		{ width:94px; background-image:url('../#{$image-default-patch}/partnericon_dictionary.png');
+            &:hover	{ background-image:url('../#{$image-default-patch}/partnericon_dictionary_on.png'); }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ======================================================================= //
+//                     Content below Social table icon                     //
+// ======================================================================= //
+.pw-icon							{ background-image:none !important; }
+.socialicons  						{ margin-left:0px; }
+.socialicons .pw-size-small.pw-button{ margin-right:3px!important; }
+.socialicons a,
+.socialicons .pw-share 				{ display:block; width:30px; height:30px !important;
+    background:url("http://i.investopedia.com/vcb/assets_v2/img/main_sprite.png") no-repeat !important;
+    // for PC
+    @if $forpc == true {
+        // max-width: 512px
+        @include media ( $media-md ) {
+            display: none;
+        }
+    }
+        // for Mobile
+    @else{
+        // max-width: 767px
+        @include media ( $media-lm ) {
+            display: none;
+        }
+    }
+}
+.socialicons a 						{ cursor:pointer; }
+.socialicons .pw-share				{ width:72px; height:30px; }
+.socialicons .pw-share 				{ background-position:   0px -410px !important;}
+.socialicons .pw-button-facebook 	{ background-position: -73px -410px !important;}
+.socialicons .pw-button-twitter		{ background-position:-104px -410px !important;}
+.socialicons .pw-button-googleplus	{ background-position:-135px -410px !important;}
+.socialicons .pw-button-linkedin	{ background-position:-166px -410px !important;}
+.socialicons .pw-button-stumbleupon	{ background-position:-197px -410px !important;}
+.socialicons .pw-button-email		{ background-position:-228px -410px !important;}
+
+.socialicons span.stButton          { margin:0 3px !important;}
+.socialicons > tbody > tr > td      { font-size: 0; vertical-align: top; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ======================================================================= //
+//                            Net worth icon  	       	                   //
+// ======================================================================= //
+.ui-button {
+    .ui-icon { display:block;width:28px;height:26px;cursor:pointer }
+}
+.ui-table-a {
+    .ui-button-flat {
+        .ui-icon { width:17px; height:17px;
+        }
+    }
+}
+.ui-tinytab { width:17px;height:17px;border-radius:2px;border-width:1px;border-style:solid;border-color:#ccc;background-color:#f6f6f6;display:inline-block;vertical-align:middle}
+.ui-icon-insert{background:url("../img/btn_ui_plus.png") center center no-repeat}
+.ui-icon-remove{background:url("../img/btn_ui_minus.png") center center no-repeat}
+.ui-icon-add{background:url("../img/btn_ui_add.png") center left no-repeat}
+.ui-icon-close{background:url("../img/btn_ui_close.png") center center no-repeat}
+.ui-icon-delete{background:url("../img/btn_ui_trash.png") center center no-repeat}
+.ui-icon-edit{background:url("../img/btn_ui_edit.png") center center no-repeat}
+.ui-icon-active{background:url("../img/btn_ui_active.png") center center no-repeat}
+.ui-icon-arrRight{background:url("../img/btn_ui_right_arrow.png") center center no-repeat}
+.ui-icon-clear{background:url("../img/btn_ui_clear.png") center center no-repeat}
+.ui-icon-calendar{background:url("../img/btn_ui_calendar.png") center center no-repeat}
+.ui-icon-apply{background:url("../img/btn_ui_apply.png") center center no-repeat}
+.ui-icon-stop{background:url("../img/btn_ui_stop.png") center center no-repeat}
+.ui-tinyicon-edit{background:url("../img/tinyicon_edit.png") center center no-repeat}
+.ui-tinyicon-delete{background:url("../img/tinyicon_delete.png") center center no-repeat}

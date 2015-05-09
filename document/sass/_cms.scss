@@ -1,0 +1,39 @@
+// =========================================================================================== //
+//                                             CMS                                             //
+// =========================================================================================== //
+.page-user {
+    .element-invisible,
+    .primary,
+    #user-login,
+    #user-pass{
+        width:500px;
+        margin: 0 auto
+    }
+
+    .primary {
+        margin: 20px auto 30px;  padding: 0; text-align: justify; border-bottom: solid 1px $border-color; font-size: 15px; color: $link-color; white-space: normal; @include clear;
+        &:after { display: inline-block; width: 100%; content: ''  }
+        li { display: inline-block; margin: 0 0 -3px 0;  padding: 10px 0; text-align: center; list-style: none; font-family: $section-font;
+            &.active { border-bottom: solid 3px $link-color }
+            a { border:0 !important; background: #fff !important }
+        }
+    }
+
+    #user-pass,
+    #user-login { margin-bottom: $margin-xl; // 65px
+        .form-item { margin-bottom: $margin-xs; // 20px
+            > label { font-family: $section-font; margin-bottom: 6px; display: inline-block }
+            .description { margin-top: 4px; color: #888; font-family: $section-font; font-size: 14px }
+        }
+        .form-actions { text-align: center }
+    }
+
+    h2.element-invisible {
+        font-family: $title-font; font-size: 46px; line-height: 1.1em; color: $main-color; border-bottom: 1px solid $border-color;
+        padding-bottom: 20px; margin-bottom: 30px
+    }
+}
+
+.logged-in {
+    .layout-col-left.termpage-col-left { margin-top: 0 }
+}

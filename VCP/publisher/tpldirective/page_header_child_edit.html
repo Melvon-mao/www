@@ -1,0 +1,27 @@
+
+<a href="#" class="urllink" ng-hide="csseditheaderchildform">
+    {{child.menuname}}<i class="icon-gear" ng-click="showEditHeaderChildForm(child,head.childdata);"></i>
+</a>
+<form name="form" ng-show="csseditheaderchildform" method="get" class="newlink_panel">
+    <h1 class="PopupTitle"><a href="#" class="TipBoxClose" ng-click="hideEditHeaderChildForm();"></a>Link Data</h1>
+
+    <div class="newlink_panel_name">
+        <input type="text" class="input_newlink" maxlength="10" required ng-model="menuname" placeholder="Nav link name">
+    </div>
+    <div class="newlink_panel_form">
+        <label class="radio clearfix">
+            <input type="radio" ng-model="menutype" value="other">
+            <input type="url" ng-model="linkedurl" class="input_url" placeholder="URL">
+        </label>
+        <label class="radio clearfix">
+            <input type="radio" ng-model="menutype" value="local">
+            <select style="width:110px;" ng-model="localurl" ng-options="page.pagename as page.pagename for page in pages">
+            </select>
+        </label>
+
+        <div class="newlink_panel_btn">
+            <input type="submit" value="save" class="btn btn-save" ng-click="saveEditHeaderChildForm(form);">
+            <input id="delete" value="del" type="button" class="btn btn-delete" ng-click="deleteHeaderChildNav();">
+        </div>
+    </div>
+</form>

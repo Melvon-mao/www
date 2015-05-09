@@ -1,0 +1,60 @@
+<ul class="footer_structure clearfix">
+    <li ng-repeat="footermenu in data.footer.list"  >
+        <a href="#" ng-hide="css.footer.editform==$index" class="pagelink">{{footermenu.name}}<i class="ico_edit" ng-click="showEditFooterForm($index)"></i></a>
+
+        <form name="formboxedit" ng-show="css.footer.editform==$index" method="get" class="newlink_panel">
+            <h1 class="PopupTitle"><a href="#" class="TipBoxClose" ng-click="hideEditFooterForm()"></a>Edit Menu</h1>
+
+            <div class="newlink_panel_name">
+                <input type="text" class="input_newlink" maxlength="10" required ng-model="footermenu.name" placeholder="Nav name">
+            </div>
+            <div class="newlink_panel_form">
+                <label class="radio clearfix">
+                    <input type="radio" ng-model="footermenu.type" value="20">
+                    <input type="url" ng-model="footermenu.linkurl" class="input_url" placeholder="URL">
+                </label>
+                <label class="radio clearfix">
+                    <input type="radio" ng-model="footermenu.type" value="10">
+                    <select style="width:110px;" ng-model="footermenu.link_page_id" ng-options="page.pageid as page.pagename for page in pages">
+                    </select>
+                </label>
+
+                <div class="newlink_panel_btn">
+                    <input type="submit" value="save" class="btn btn-save" ng-click="updateFooterForm(formboxedit, footermenu)">
+                    <input id="delete" value="del" type="button" class="btn btn-delete" ng-click="deleteFootermenu(footermenu, $index)">
+                </div>
+            </div>
+        </form>
+    </li>
+
+
+
+    <li style="width: 160px;" >
+        <a ng-show="css.footer.addbutton" href="#" class="sub_addlink" ng-click="showAddFooterForm()">+</a>
+
+        <form name="formboxadd" ng-show="css.footer.addform" class="newlink_panel">
+            <h1 class="PopupTitle"><a href="#" class="TipBoxClose" ng-click="hideAddFooterForm()"></a>Add Menu</h1>
+
+            <div class="newlink_panel_name">
+                <input type="text" class="input_newlink" maxlength="10" required ng-model="data.footer.newmenu.name" placeholder="Nav link name">
+            </div>
+            <div class="newlink_panel_form">
+                <label class="radio clearfix">
+                    <input type="radio" ng-model="data.footer.newmenu.type" value="20">
+                    <input type="url" ng-model="data.footer.newmenu.linkurl" class="input_url" placeholder="URL">
+                </label>
+                <label class="radio clearfix">
+                    <input type="radio" ng-model="data.footer.newmenu.type" value="10">
+                    <select style="width:110px;" ng-model="data.footer.newmenu.link_page_id" ng-options="page.pageid as page.pagename for page in pages">
+                    </select>
+                </label>
+
+                <div class="newlink_panel_btn">
+                    <input type="submit" value="save" class="btn btn-save" ng-click="saveAddFooterForm(formboxadd)">
+                </div>
+            </div>
+        </form>
+    </li>
+</ul>
+
+

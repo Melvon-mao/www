@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="vcpmodule">
+  <head>
+    <meta charset="utf-8">
+    <title>VCP</title>
+    <link href="lib/bootstrap/bootstrap.css" rel="stylesheet">
+    <link href="app/style.css" rel="stylesheet" id="skinCss">
+    <link rel="shortcut icon" href="app/img/favicon.ico">
+    <!--[if lt IE 9]>
+      <script src="lib/other/html5shiv.js"></script>
+    <![endif]-->
+    <!-- 默认 Site Theme -->
+    <link href="theme/default/site-theme.css" rel="stylesheet">
+    <!-- <link href="lib/boostrap/bootstrap-combined.min.css" rel="stylesheet">-->
+    
+
+
+      
+  </head>
+<body class="vcpbody">
+
+
+
+<!-- Header -->
+<header class="header">
+    <h1 class="logo"><a href="#">VCP</a></h1>
+    <!-- NAV -->
+    <ul class="menu clearfix">
+        <li id="menuSite"><a href="#/site"><span>Site</span></a></li>
+        <li id="menuPage"><a href="#/page"><span>Page</span></a></li>
+        <li id="menuArticle"><a href="#/articlelist" class="current"><span>Article</span></a></li>
+        <li id="menuReports"><a href="#/report"><span>Report</span></a></li>
+        <li id="menuStore"><a href="#/store"><span>Store</span></a>
+        <li id="menuAppGenerate"><a href="#/download"><span>App</span></a></li>
+    </ul>
+    <!-- NAV: Preview -->
+    <div class="dropdown dropdownPreview">
+        <a href="#" class="dropdown-toggle preview" data-toggle="dropdown">Preview</a>
+        <ul class="dropdown-menu pull-right">
+            <li><a href="#"><i class="icon-mobile-phone"></i>On Mobile</a></li>
+            <li><a href="#"><i class="icon-tablet"></i>On Pad</a></li>
+            <li><a href="../demo/index.html" target="_blank"><i class="icon-desktop"></i>On PC</a></li>
+        </ul>
+    </div>
+    <!-- NAV: User -->
+    <div class="dropdown dropdownUser">
+        <a href="#" class="dropdown-toggle nav_user" data-toggle="dropdown">User</a>
+        <ul class="dropdown-menu pull-right">
+          <li><a href="#/user"><i class="icon-user"></i>Information</a></li>
+          <li><a href="#/user"><i class="icon-signout"></i>Log out</a></li>
+        </ul>
+    </div>
+</header>
+<!-- Header //End -->
+
+
+<!-- Container -->
+<div class="vcpbox" ng-view>
+</div>
+
+
+
+	<ul id="skin">
+    	<li id="style" class="selected"></li>
+    	<li id="style_1"></li>
+    </ul>
+    
+    <script src="lib/angular/1.1.5/angular.js"></script>
+    <script src="lib/angularui/ui-bootstrap-tpls-0.4.0.min.js"></script>
+	<script src="app/js/articlecontrollers.js"></script>
+    <script src="app/js/factory.js"></script>
+    <script src="app/js/directives.js"></script>
+
+
+
+    <script src="https://cdn.firebase.com/v0/firebase.js"></script>
+    <script src="lib/angularfire/angularfire.js"></script>
+
+    <script src="lib/underscore/underscore-min.js"></script>
+
+    <script src="lib/jquery/jquery-1.8.2.min.js"></script>
+	<!-- Load JS -->
+    <script src="lib/jqueryui/jquery-ui-1.10.0.custom.min.js"></script>
+
+    <script src="ckeditor/ckeditor.js"></script>
+
+    <!-- Bootstrap Plug -->
+    <script src="lib/bootstrap/bootstrap.js"></script>
+    <!-- FlatUI Plug -->
+    <script src="lib/flatui/jquery.tagsinput.js"></script>
+    
+    <!-- jQuery Plug: niceScroll -->
+    <script src="lib/jqueryplugin/jquery.nicescroll.min.js"></script>
+
+	<script src="app/js/custom.js"></script>
+
+</body>
+</html>

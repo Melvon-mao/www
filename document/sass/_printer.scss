@@ -1,0 +1,26 @@
+
+// ======================================================================= //
+//                           	  printer   	    	                   //
+// ======================================================================= //
+.print_button {
+    padding-left: 4px; display: inline-block; vertical-align: middle;
+
+    > img{ vertical-align: middle; display: none; }
+
+    // for PC
+    @if $forpc == true {
+        width: 22px; height: 20px; background: url('../#{$image-default-patch}/sprite_icon.png') -390px -308px no-repeat;
+    }
+    // for Mobile
+    @else{
+        display: none !important;
+    }
+
+    @at-root {
+        .sharelicense {
+            .print_button { border-right: 0; padding:0; margin:2px 0 0 0; }
+            .first + .second + .print_button { padding: 2px 0 0 0;}
+        }
+    }
+
+}

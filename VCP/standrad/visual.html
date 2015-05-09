@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<title>VCP - Visual</title>
+	<!-- 元素基础样式 -->
+	<link rel="stylesheet" href="css/base.css">
+    <!-- 页面默认布局样式 -->
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/icon.css">
+	<script src="js/bootstrap.js"></script>
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+    </style>
+    <!-- 响应式布局 -->
+    <link rel="stylesheet" href="css/layout-responsive.css">
+</head>
+<body data-spy="scroll" data-target=".subnav" data-offset="50"><!-- #BeginLibraryItem "/Library/tophead.lbi" --><!-- Header -->
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container-fluid">
+    	<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        </a>
+        <span class="brand">VCP<span>&nbsp;|&nbsp;Front-end Design Standrad</span></span>
+		<div class="nav-collapse">
+            <ul class="nav">
+              <li class="divider-vertical"></li>
+              <li><a href="standrad.html">HTML&CSS</a></li>
+              <li class="divider-vertical"></li>
+              <li><a href="Interactive.html">Interactive</a></li>
+              <li class="divider-vertical"></li>
+              <li><a href="visual.html">Visual</a></li>
+              <li class="divider-vertical"></li>
+              <li><a href="icon.html">ICON</a></li>
+              <li class="divider-vertical"></li>
+            </ul>
+            <div class="pull-right">
+            项目跳转：
+            <select class="melvon_select" onchange="self.location.href=options[selectedIndex].value">
+              <optgroup label="Publish Admin">
+                <option value="../publisheradmin/index.html">Index</option>
+                <option value="../publisheradmin/register.html">Register</option>
+                <option value="../publisheradmin/site.html">Site</option>
+                <option value="../publisheradmin/page.html">Page</option>
+                <option value="../publisheradmin/register.html">Article</option>
+                <option value="../publisheradmin/user.html">User</option>
+                <option value="../publisheradmin/app.html">App</option>
+              </optgroup>
+              <optgroup label="Publisher Preview">
+                <option value="../publisherpreview/index.html">Preview</option>
+              </optgroup>
+              <optgroup label="Reader Admin">
+                <option value="../readeradmin/index.html">Reader Admin</option>
+              </optgroup>
+              <optgroup label="Standrad">
+                <option value="standrad.html" selected>HTML/CSS/Javascript</option>
+                <option value="Interactive.html">Interactive</option>
+                <option value="icon.html">Icon</option>
+                <option value="visual.html">Visual</option>
+              </optgroup>
+            </select>
+            </div>
+        </div>
+      
+    </div>
+  </div>
+</div>
+<!-- Header End --><!-- #EndLibraryItem --><!-- container -->
+<div class="container">
+     				<div class="page-header"><h1>核心的设计主题</h1></div>
+                    <h2>依从</h2>
+                    <p>UI要帮助用户对内容进行理解和互动，但绝不能与内容产生竞争关系。</p>
+                    <h2>清晰</h2>
+					<p>任何字号的文字都要清楚易读，图标要精细且含义明确，装饰性元素要少而精，且使用得当；聚焦于功能性的实现，并以此激发设计的进行。</p>
+                    <h2>纵深</h2>
+					<p>视觉外观的层次以及逼真的动画效果可以传达出界面的活力，使界面更容易被理解，并提升用户的愉悦度。</p>
+                    <p>&nbsp;</p>
+                    
+                    
+					<div class="page-header"><h1>视觉设计目标</h1></div>
+                    <h3>设计统一性</h3>
+					<p>根据制定的视觉组件设计模板，规范所有页面及元素的视觉设计；按钮风格统一、使用统一的组件（tab标签、内容框、统一的分页、表格控件），各内容区块间的间隔保持统一、相关频道和栏目与总体设计风格一致。</p>
+					<h3>设计风格</h3>
+					<p>根据需求调查结果，设计符合用户使用习惯、符合教学期望的界面风格。体现稳重、专业感，以红色作为默认模板和基调，同时提供多颜色的换肤，以适应不同需求。</p>
+					<h3>图标</h3>
+					<p>所有图标示意准确，色彩保持统一性，保证图标的原创性</p>
+                    <p>&nbsp;</p>
+
+                    <div class="page-header"><h1>设计风格描述</h1></div>
+                    <p>采用红色作为默认模板颜色</p>
+                    <p>支持换肤功能</p>
+                    <p>整体风格简洁，体现专业性，以保持视觉的统一性为主要设计目标。在设计之前应设计指导性的风格模板，对所有的页面元素、组件进行统一设计，保持页面颜色使用的统一性</p>
+                    <p>考虑多语言版本的适应性，所有的导航、按钮、tab标签、title及其他组件元素需要能根据文字长度自适应显示，避免固定宽度和高度的区块设计</p>
+                    <p>学员端和教师端整体风格一致（管理端导航可以和学员端有所区别）</p>
+                    
+                    
+                    
+                    <div class="page-header"><h1>2.LOGO</h1></div>
+                    <img src="UI_Specification/visual/logo.png" />
+                    
+                    <div class="page-header"><h1>3.色彩系统</h1></div>
+                    <img src="UI_Specification/visual/color.png" />
+                    
+                    <div class="page-header"><h1>4.导航</h1></div>
+                    <img src="UI_Specification/visual/navigation.jpg" />
+                    
+                    <div class="page-header"><h1>5.表格</h1></div>
+                    <img src="UI_Specification/visual/table.png" />
+                    
+                    <div class="page-header"><h1>6.翻页</h1></div>
+                    <img src="UI_Specification/visual/pagination.png" />
+                    
+                    <div class="page-header"><h1>7.表单</h1></div>
+                    <img src="UI_Specification/visual/form.png" />
+                    
+                    <div class="page-header"><h1>8.按钮</h1></div>
+                    <img src="UI_Specification/visual/button.png" />
+                    
+                    <div class="page-header"><h1>9.弹出层</h1></div>
+                    <img src="UI_Specification/visual/overlay.png" />
+                    
+                    <div class="page-header"><h1>10.侧导航</h1></div>
+                    <img src="UI_Specification/visual/side_nav.png" />
+                    
+                    <div class="page-header"><h1>11.标签页</h1></div>
+                    <img src="UI_Specification/visual/tab.png" />
+                    
+                    <div class="page-header"><h1>12.日历</h1></div>
+                    <img src="UI_Specification/visual/calendar.png" />
+                    
+                    
+                    <div class="page-header"><h1>ICON</h1></div>
+                    <table class="table table-striped table-bordered table-condensed">
+<thead class="icon_table_header">
+      <tr>
+      <th class="first" width="10%">&nbsp;</th>
+      <th>LMS-学员端</th>
+      <th>LMS-教师端</th>
+      <th>LMS-系统端</th>
+      <th>资源库</th>
+      <th>基础支撑系统</th>
+      <th>门户</th>
+      </tr>
+</thead>
+
+<tbody class="openable_tbody">
+      
+      <tr>
+      <td class="first tdtitle">编辑</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td><img src="UI_Specification/visual/ico/Unknown-4.png" /></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      </tr>
+      
+      <tr>
+      <td class="first tdtitle">查看</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td><img src="UI_Specification/visual/ico/Unknown-12.png" /></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      </tr>
+      
+      <tr>
+      <td class="first tdtitle">删除</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td><img src="UI_Specification/visual/ico/Unknown-2.png" /></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      </tr>
+      
+      <tr>
+      <td class="first tdtitle">进入课程</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      </tr>
+      
+      
+      
+      <tr>
+      <td class="first tdtitle">下载</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td><img src="UI_Specification/visual/ico/Unknown-3.png" /></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      </tr>
+      
+      <tr>
+      <td class="first tdtitle">在线预览</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td><img src="UI_Specification/visual/ico/Unknown-10.png" /></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      </tr>
+      
+      <tr>
+      <td class="first tdtitle">移动</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td><img src="UI_Specification/visual/ico/Unknown-16.png" /></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      </tr>
+      
+      <tr>
+      <td class="first tdtitle">启动共享</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td><img src="UI_Specification/visual/ico/Unknown-14.png" /></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      </tr>
+      
+      <tr>
+      <td class="first tdtitle">暂停共享</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td><img src="UI_Specification/visual/ico/Unknown-15.png" /></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      </tr>
+      
+      <tr>
+      <td class="first tdtitle">提交审核</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td><img src="UI_Specification/visual/ico/Unknown.png" /></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      </tr>
+      
+      <tr>
+      <td class="first tdtitle">审核通过</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td><img src="UI_Specification/visual/ico/Unknown.png" /></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      </tr>
+      
+      <tr>
+      <td class="first tdtitle">审核未通过</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td><img src="UI_Specification/visual/ico/Unknown-6.png" /></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      </tr>
+      
+      <tr>
+      <td class="first tdtitle">取消审核</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      </tr>
+      
+      <tr>
+      <td class="first tdtitle">举报有效</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td><img src="UI_Specification/visual/ico/Unknown-8.png" /></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      </tr>
+      
+      <tr>
+      <td class="first tdtitle">举报无效</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td><img src="UI_Specification/visual/ico/Unknown-9.png" /></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      </tr>
+      
+      <tr>
+      <td class="first tdtitle">举报</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td><img src="UI_Specification/visual/ico/Unknown-11.png" /></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      </tr>
+      
+      <tr>
+      <td class="first tdtitle">收藏</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td><img src="UI_Specification/visual/ico/Unknown-7.png" /></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      </tr>
+      
+      <tr>
+      <td class="first tdtitle">评价</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td><img src="UI_Specification/visual/ico/Unknown-5.png" /></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      </tr>
+      
+      <tr>
+      <td class="first tdtitle">设置权限</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      </tr>
+      
+      <tr>
+      <td class="first tdtitle">查看用户</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      </tr>
+      
+      <tr>
+      <td class="first tdtitle">添加用户</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      </tr>
+      
+      <tr>
+      <td class="first tdtitle">启用</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td><img src="UI_Specification/visual/ico/Unknown-13.png" /></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      </tr>
+      
+      <tr>
+      <td class="first tdtitle">停用</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td><img src="UI_Specification/visual/ico/Unknown-13_2.png" /></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      </tr>
+      
+      
+</tbody>
+</table><!-- #BeginLibraryItem "/Library/footer.lbi" --><footer class="footer navbar-fixed-bottom">
+        <p class="pull-right"><a href="#">顶端</a></p>
+        <p>
+        <span>VCP Team</span>
+        <a href="#a">Jin</a>/&nbsp;&nbsp;
+        <a href="#a">Jerome</a>/&nbsp;&nbsp;
+        <a href="#a">Susa</a>/&nbsp;&nbsp;
+        <a href="#a">Antares</a>/&nbsp;&nbsp;
+        <a href="#a">Vincent</a>/&nbsp;&nbsp;
+        <a href="#a">Melvon</a>
+        </p>
+          
+      </footer><!-- #EndLibraryItem --></div>
+<!-- container End -->
+	<!-- 核心库 -->
+	<script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <!-- 浮动式导航 -->
+    <script src="js/application.js"></script>
+    <script src="js/customize.js"></script>
+</body>
+</html>

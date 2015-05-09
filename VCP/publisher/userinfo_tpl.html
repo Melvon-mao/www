@@ -1,0 +1,298 @@
+<!-- Header -->
+<div page-nav current = '1'></div>
+<!--<header class="header">
+  <h1 class="logo"><a href="#">VCP</a></h1>
+    &lt;!&ndash; NAV &ndash;&gt;
+    <ul class="menu clearfix">
+      <li id="menuSite"><a href="#/site"><span>Site</span></a></li>
+        <li id="menuPage"><a href="#/page"><span>Page</span></a></li>
+        <li id="menuArticle"><a href="#/articlelist"><span>Article</span></a></li>
+        <li id="menuReports"><a href="#/report"><span>Report</span></a></li>
+        <li id="menuStore"><a href="#/store"><span>Store</span></a>
+        <li id="menuAppGenerate"><a href="#/download"><span>App</span></a></li>
+    </ul>
+    &lt;!&ndash; NAV: Preview &ndash;&gt;
+    <div class="dropdown dropdownPreview">
+        <a href="#" class="dropdown-toggle preview" data-toggle="dropdown">Preview</a>
+        <ul class="dropdown-menu pull-right">
+            <li><a href="#"><i class="icon-mobile-phone"></i>On Mobile</a></li>
+            <li><a href="#"><i class="icon-tablet"></i>On Pad</a></li>
+            <li><a href="../demo/index.html" target="_blank"><i class="icon-desktop"></i>On PC</a></li>
+        </ul>
+    </div>
+    &lt;!&ndash; NAV: User &ndash;&gt;
+    <div class="dropdown dropdownUser">
+        <a href="#" class="dropdown-toggle nav_user" data-toggle="dropdown">User</a>
+        <ul class="dropdown-menu pull-right">
+          <li><a href="#/user"><i class="icon-user"></i>Information</a></li>
+          <li><a href="" ng-click="logout()"><i class="icon-signout"></i>Log out</a></li>
+        </ul>
+    </div>
+</header>-->
+<!-- Header //End -->
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Container -->
+<div class="vcpbox" ng-controller="userInfoController">
+
+    	
+        <div class="userContent" ng-switch="css.user.showuserinfobox">
+        
+            <!-- SideMenu -->
+            <div class="user_sideMenu">
+                <div class="sideMenuList">
+                    <span class="titleico"><i class="icon-user"></i></span>
+                    <a href="" id="userinfo" ng-class="{current: css.user.showuserinfobox == 1}" ng-click="showInfo(1);">User Info</a>
+                    <a href="" id="userpassword" ng-class="{current: css.user.showuserinfobox == 2}" ng-click="showInfo(2);">Passwrod</a>
+                    <a href="" id="userrole" ng-class="{current: css.user.showuserinfobox == 3}" ng-click="showInfo(3);">User Role</a>
+                    <a href="" id="socialbinding" ng-class="{current: css.user.showuserinfobox == 4}" ng-click="showInfo(4);">Social Binding</a>
+                </div>
+            </div>
+            <!-- SideMenu //End -->
+            
+                
+            <!-- User Info -->
+            <div class="userInfoBox" ng-switch-when="1">
+                    <form class="userInfoBoxForm" name="userinfo">
+                      <fieldset>
+                        <legend>Personal Information</legend>
+                        <div class="media">
+                          <a class="pull-left" href="#">
+                            <img data-src="holder.js/140x140" class="img-polaroid" alt="140x140" style="width: 140px; height: 140px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIwAAACMCAYAAACuwEE+AAAErUlEQVR4Xu3YwStscRjG8d8QQnZEFkqyY6NE/n0rlOxkS1ZqrCiFe/udOtPcue6YJ889Gc93Vtz7eo/3eT/9zjl6/X7/V+FDAhMm0APMhElR1iQAGCBICQBGiotiwGBASgAwUlwUAwYDUgKAkeKiGDAYkBIAjBQXxYDBgJQAYKS4KAYMBqQEACPFRTFgMCAlABgpLooBgwEpAcBIcVEMGAxICQBGiotiwGBASgAwUlwUAwYDUgKAkeKiGDAYkBIAjBQXxYDBgJQAYKS4KAYMBqQEACPFRTFgMCAlABgpLooBgwEpAcBIcVEMGAxICQBGiotiwGBASgAwUlwUAwYDUgKAkeKiGDAYkBIAjBQXxYDBgJQAYKS4KAYMBqQEACPFRTFgMCAlABgpLooBgwEpAcBIcVEMGAxICQBGiotiwGBASgAwUlwUAwYDUgKAkeKiGDAYkBIAjBQXxYDBgJQAYKS4KAYMBqQEACPFRTFgMCAlABgpLooBgwEpgakH8/7+Xs7Ozsrz83M5OTkpi4uLfwRwd3dXbm5uyvr6etnf32/+r9/vl6urq1J/tn729vbKxsbGRMF1fb2JfqkOi6YazOvrazk9PS1vb2+l1+v9BaZd7tPT0wBM+zNLS0vl6OioXF5eNtjq13Nzc2Oj7/p6HTqY+FJTC2Z4eXXaj8BcX1+Xh4eHUmvX1taaE6Y9cba3t8vOzs7g+3rKzM/PNyfP8vJyA6j+/P39fXMCra6uDnC6rjfpqTbxNjsonGowFxcX5eDgYHBKDN+S2tvO1tZWub29/RRMC6ieOI+Pj+X4+Licn5+X9iSq6P7H9TrYsfUSUwumTeGjZ4r232ZmZsru7m5zarQnTHtqjJ4w7feT3naGn5m+cj3rNjto9iPBDN9K2tvMZ7ekFkzNvJ4y9YQaflAeB/Sr1+tgz7ZL/DgwCwsLzVtTfdAd/aysrJTNzc3mremjZ5j6TNHeyuoD8MvLy19vUKMn2levZ9tkR41+HJjR1+oWQHvCjHtLmp2dbbDVt67Dw8PmpKlfD79BffZarVzvs7eyjgxIl4kDM+7vMP96vhm+Nalgxl1P2tQ3KZ56MN8kx5hfAzAxq/YMChhPjjFdABOzas+ggPHkGNMFMDGr9gwKGE+OMV0AE7Nqz6CA8eQY0wUwMav2DAoYT44xXQATs2rPoIDx5BjTBTAxq/YMChhPjjFdABOzas+ggPHkGNMFMDGr9gwKGE+OMV0AE7Nqz6CA8eQY0wUwMav2DAoYT44xXQATs2rPoIDx5BjTBTAxq/YMChhPjjFdABOzas+ggPHkGNMFMDGr9gwKGE+OMV0AE7Nqz6CA8eQY0wUwMav2DAoYT44xXQATs2rPoIDx5BjTBTAxq/YMChhPjjFdABOzas+ggPHkGNMFMDGr9gwKGE+OMV0AE7Nqz6CA8eQY0wUwMav2DAoYT44xXQATs2rPoIDx5BjTBTAxq/YMChhPjjFdABOzas+ggPHkGNMFMDGr9gwKGE+OMV0AE7Nqz6CA8eQY0wUwMav2DAoYT44xXQATs2rPoIDx5BjTBTAxq/YMChhPjjFdABOzas+ggPHkGNMFMDGr9gz6G1HzSbXtC7t7AAAAAElFTkSuQmCC">
+                          </a>
+                          <div class="media-body">
+                            <p><button type="button" class="btn btn-default">Change Photo</button></p>
+                          </div>
+                        </div>
+
+                          <div class="control-group" ng-class="{error: css.user.firstnamewarn == 1}">
+                              <label class="control-label">First Name</label>
+                              <div class="controls">
+                                  <!-- Validform Tip -->
+                                  <div ng-cloak ng-show="css.user.firstnamewarn == 1" class="tipFormBox tipFormBox_wrong"><i class="icon-exclamation-sign"></i> You can't leave this empty.</div>
+                                  <!-- Validform Tip //End-->
+                                  <input type="text" class="span4" maxlength="20" ng-model="userdata.firstname" ng-keydown="checkfirstname()">
+                                  <!-- 保存后显示：<p>Melvon</p> -->
+                              </div>
+                          </div>
+
+                          <div class="control-group" ng-class="{error: css.user.lastnamewarn == 1}">
+                              <label class="control-label">Last Name</label>
+                              <div class="controls">
+                                  <!-- Validform Tip -->
+                                  <div ng-cloak ng-show="css.user.lastnamewarn == 1" class="tipFormBox tipFormBox_wrong"><i class="icon-exclamation-sign"></i> You can't leave this empty.</div>
+                                  <input type="text" class="span4" maxlength="20" ng-model="userdata.lastname" >
+                                  <!-- 保完后显示：<p>Melvon</p> -->
+                              </div>
+                          </div>
+
+                          <div class="control-group">
+                              <label class="control-label">Gender</label>
+                              <div class="controls">
+                                  <label class="gender"><input type="radio" ng-model="userdata.gender" value="1" name="gender">Male</label>
+                                  <label class="gender"><input type="radio" ng-model="userdata.gender" value="2" name="gender">Female</label>
+                                  <!-- 保存后显示：<p>Male</p> -->
+                              </div>
+                          </div>
+
+                          <div class="control-group">
+                              <label class="control-label">Mobile</label>
+                              <div class="controls"><input type="text" class="span4" ng-model="userdata.mobilephone"></div>
+                              <!-- 保存后显示：<p>010-62068000</p> -->
+                          </div>
+                        
+                        <hr>
+
+                        <button type="button" class="btn btn-save" ng-click="saveuserinfo(userinfo)">Save</button>
+                        
+                      </fieldset>
+                    </form>
+                    
+            </div>
+            <!-- User Info //End -->
+            
+
+            <!-- User Password -->
+            <div class="userPasswordBox" ng-switch-when="2">
+                <form>
+                    <fieldset>
+                        <legend>Change Password</legend>
+                        <div class="control-group" ng-class="{error: css.user.pwdwarn == 1}">
+                            <label class="control-label">Old Password</label>
+                            <div class="controls">
+                                <!-- Validform Tip -->
+                                <div ng-cloak ng-show="css.user.pwdwarn == 1" class="tipFormBox tipFormBox_wrong"><i class="icon-exclamation-sign"></i> Old password error .</div>
+                                <!-- Validform Tip //End-->
+                                <input type="password" class="span4" ng-model="userdata.oldpassword">
+                            </div>
+                        </div>
+                        <div class="control-group" ng-class="{error: css.user.pwdwarn == 2}">
+                            <label class="control-label">New Password</label>
+                            <div class="controls">
+                                <!-- Validform Tip -->
+                                <div ng-cloak ng-show="css.user.pwdwarn == 2" class="tipFormBox tipFormBox_wrong"><i class="icon-exclamation-sign"></i> Please input new password .</div>
+                                <div ng-cloak ng-show="css.user.pwdwarn == 4" class="tipFormBox tipFormBox_wrong"><i class="icon-exclamation-sign"></i> Password is too short .</div>
+                                <input type="password" class="span4" ng-model="userdata.newpassword1">
+                            </div>
+                        </div>
+                        <div class="control-group" ng-class="{error: css.user.pwdwarn == 3}">
+                            <label class="control-label">Confirm New Password</label>
+                            <div class="controls">
+                                <div ng-cloak ng-show="css.user.pwdwarn == 3" class="tipFormBox tipFormBox_wrong"><i class="icon-exclamation-sign"></i> Password inconsistent.</div>
+                                <input type="password" class="span4" ng-model="userdata.newpassword2">
+                            </div>
+                        </div>
+                        <hr>
+
+                        <button type="button" class="btn btn-save" ng-click="modifypassword()">Save</button>
+                    </fieldset>
+                </form>
+            </div>
+            <!-- User Role //End -->
+
+
+
+            <!-- User Role -->
+            <div class="userRoleBox" ng-switch-when="3">
+                    <form>
+                      <fieldset>
+                        <legend>User Role</legend>
+
+                        	<table class="table table-bordered user_table">
+
+                              <thead>
+                                <tr>
+                                  <th colspan="2">You are a contributor for</th>
+                                </tr>
+                              </thead>
+
+                              <tbody>
+
+                                <tr>
+                                  <td width="50%"><span class="icon-sitemap"></span><h5>My Personal Site</h5>
+                                  <p>Website mete hier angezeigten Informationen</p>
+                                  </td>
+                                  <td>
+                                  	<div class="userRoleStatus_yes roleiswrite">Writer</div>
+                                    <div class="userRoleStatus_yes roleiseditor">Editor</div>
+                                  </td>
+                                </tr>
+
+                                <tr>
+                                  <td><span class="icon-sitemap"></span><h5>Social Auszug</h5>
+                                  <p>Website mete hier angezeigten Informationen</p>
+                                  </td>
+                                  <td>
+                                  	<div class="userRoleStatus_yes roleiswrite">Writer</div>
+                                    <div class="userRoleStatus_none roleiseditor">Editor</div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                  <td><span class="icon-sitemap"></span><h5>Emotional Leben</h5>
+                                  <p>Website mete hier angezeigten Informationen</p>
+                                  </td>
+                                  <td>
+                                  	<div class="userRoleStatus_none roleiswrite">Writer</div>
+                                    <div class="userRoleStatus_yes roleiseditor">Editor</div>
+                                  </td>
+                                </tr>
+
+                                <tr>
+                                  <td><span class="icon-sitemap"></span><h5>Site 4 as</h5>
+                                  <p>Website mete hier angezeigten Informationen</p>
+                                  </td>
+                                  <td>
+                                  	<div class="userRoleStatus_none roleiswrite">Writer</div>
+                                    <div class="userRoleStatus_yes roleiseditor">Editor</div>
+                                  </td>
+                                </tr>
+
+                                <tr>
+                                  <td><span class="icon-sitemap"></span><h5>Site 5 as</h5>
+                                  <p>Website mete hier angezeigten Informationen</p>
+                                  </td>
+                                  <td>
+                                  	<div class="userRoleStatus_none roleiswrite">Writer</div>
+                                    <div class="userRoleStatus_none roleiseditor">Editor</div>
+                                  </td>
+                                </tr>
+
+                              </tbody>
+                            </table>
+
+                      </fieldset>
+                    </form>
+            </div>
+            <!-- User Role //End -->
+
+
+            <!-- Social Binding -->
+            <div class="socialBindingBox" ng-switch-when="4">
+                    <form>
+                      <fieldset>
+                        <legend>Social Binding</legend>
+
+                                    <p>Show social accounts on your personal page.</p>
+
+                                    <div class="user_SocialBinding clearfix">
+                                    	<a href="#" class="social_brand select">
+                                        	<i class="social_brand_icon icon-facebook-sign"></i>
+                                        </a>
+                                        <a href="#" class="social_brand select">
+                                        	<i class="social_brand_icon icon-weibo"></i>
+                                        </a>
+                                        <a href="#" class="social_brand">
+                                        	<i class="social_brand_icon icon-twitter"></i>
+                                        </a>
+                                        <a href="#" class="social_brand">
+                                        	<i class="social_brand_icon icon-github-alt"></i>
+                                        </a>
+                                        <a href="#" class="social_brand">
+                                        	<i class="social_brand_icon icon-google-plus"></i>
+                                        </a>
+                                        <!--
+                                    	<div class="user_socialBindingInner">
+                                        <img src="http://img.t.sinajs.cn/t4/style/images/staticlogo/groups3.png" alt="">
+                                        </div>
+                                        -->
+                                    </div>
+
+                                    <hr>
+
+
+                                    <div class="control-group">
+                                      <div class="controls">
+                                        <label class="checkbox">
+                                          <input type="checkbox"> Receive email notification when your note is recommended by our editors or liked by other readers.
+                                        </label>
+                                        <br>
+                                        <button type="button" class="btn btn-save">Save</button>
+                                      </div>
+                                    </div>
+
+                      </fieldset>
+                    </form>
+            </div>
+            <!-- Social Binding //End -->
+                
+        </div>
+       
+
+</div>
+	
+    
+

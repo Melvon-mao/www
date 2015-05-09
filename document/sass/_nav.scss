@@ -1,0 +1,462 @@
+// ======================================================================= //
+//                               	 #Nav      	                           //
+// ======================================================================= //
+#Nav { position: relative; z-index: 100;
+	// for PC
+	@if $forpc == true {
+
+		@include media ( $media-lg ) {	// max-width: 768px
+            position: fixed; /* position: absolute; */ left: -200px; top: 0; margin: 0; width: 200px; height: 100%; z-index: 999;
+            background: $header-bgcolor-end;
+			@include box-shadow( inset -2px 0 6px rgba(0,0,0,0.6) );
+		}
+	}
+    @else {
+        position: fixed; /* position: absolute;  left: -200px; */ top: 0; margin: 0; width: 200px; height: 100%; z-index: 999;
+        background: $header-bgcolor-end;
+        @include box-shadow( inset -2px 0 6px rgba(0,0,0,0.6) );
+    }
+}
+
+
+
+// ======================================================================= //
+//                          	      .nav                                 //
+// ======================================================================= //
+.#{$nav} {
+	 background: $header-bgcolor-end;
+	.m-login,
+	.m-account { display: none; }
+	// for PC
+	@if $forpc == true {
+		position:relative; 
+		@include media ( $media-xl, min-width ) { // min-width:769px
+			left: 0 !important;
+		}
+		@include media ( $media-lg ) {
+			.m-login { display: block; height: 64px; border-bottom: $mobile-navtop-btn-border; background: $mobile-navtop-bgcolor; 
+				a { display: block; margin:4px; height: 28px; line-height: 28px; color: $mobile-highlight-and-account-fontcolor; text-align: center; background: $mobile-navtop-btn-bgcolor; border-radius: 1px; font-size: 13px; text-decoration: none;
+					&:hover { color: $mobile-nav-default-fontcolor; background: $mobile-navtop-btn-hovercolor; }
+				}
+			}
+			.m-account { display: block; height: 64px; border-bottom: $mobile-navtop-btn-border; background: $mobile-navtop-bgcolor; 
+				a { display: block; margin:4px; padding-right: 12px; height: 28px; line-height: 28px; color: $mobile-highlight-and-account-fontcolor; text-align: right; font-size: 13px; text-decoration: none;
+					&:hover { color: $mobile-nav-default-fontcolor; }
+				}
+			}
+		}
+	}
+	// for Mobile
+	@else{
+		position: absolute; left:0; top: 0; margin: 0; width: 200px; height: 100%; z-index: 99; 
+		@include box-shadow( inset -2px 0 6px rgba(0,0,0,0.6) );
+		@include transform( transform, 0.5s );
+		@include translate3d( -200px, 0, 0 );
+
+		.m-login { display: block; height: 64px; border-bottom: $mobile-navtop-btn-border; background: $mobile-navtop-bgcolor; 
+			a { display: block; margin:4px; height: 28px; line-height: 28px; color: $mobile-highlight-and-account-fontcolor; text-align: center; background: $mobile-navtop-btn-bgcolor; border-radius: 1px; font-size: 13px; text-decoration: none;
+				&:hover { color: $mobile-nav-default-fontcolor; background: $mobile-navtop-btn-hovercolor; }
+			}
+		}
+		.m-account { display: block; height: 64px; border-bottom: $mobile-navtop-btn-border; background: $mobile-navtop-bgcolor; 
+			a { display: block; margin:4px; padding-right: 12px; height: 28px; line-height: 28px; color: $mobile-highlight-and-account-fontcolor; text-align: right; font-size: 13px; text-decoration: none;
+				&:hover { color: $mobile-nav-default-fontcolor; }
+			}
+		}
+	}
+}
+.subnav-space { height:38px;
+    // for PC
+    @if $forpc == true {
+
+        @include media ( $media-lg ) {    // max-width: 768px
+            display: none;
+        }
+    }
+        // for Mobile
+    @else{
+        // iPad
+        display: none;
+    }
+}
+
+
+// ======================================================================= //
+//                               mainnav      	                           //
+// ======================================================================= //
+.#{$mainnav} { margin: 0 auto;
+
+	.menulist { height: 34px; margin: auto; padding: 0; text-align: justify; border-top: solid 1px #404351;
+
+	 	&:after { content:''; display: inline-block; width: 100%; height: 1px; }
+
+		// for PC
+		@if $forpc == true {
+			@include media ( $media-lg ) {	// max-width: 768px
+				display: block; border: 0; height: 100%;
+			}
+		}
+		// for Mobile
+		@else{
+			display: block; border: 0; height: 100%;	// iPad
+		}
+
+
+	 	> li { display: inline; list-style: none; text-align: center;
+
+	 		> i { display: none; position: absolute; top: 0; right: 0; z-index: 101; width: 50px; height: 44px; cursor: pointer; font-size: 0; filter: Alpha(opacity=20); -moz-opacity: 0.2; opacity: 0.2; -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=20)"; }
+	 		> a { display: inline-block; position:relative; color: #fff; height: 34px; line-height: 38px; padding: 0; font-size: 14px; text-transform:uppercase; outline: none; z-index: 99; }
+	 		&.active {
+	 			> a:after{ display:block; content:''; @include stretch( false, false, -14px, 50%); border-width:8px; border-style:solid; border-color:#27292c transparent transparent transparent; margin-left:-8px; z-index: 100; }
+	 		}
+
+	 		// for PC
+			@if $forpc == true {
+				// max-width: 768px
+				@include media ( $media-lg ) {
+					position: relative; display: block; padding: 0; text-align: left; border-bottom: $mobile-nav-border;
+					&.active > a:after,
+	 				&.active .subnav,
+	 				&.selected > a:after { display: none; }
+					&:hover { background-color: $mobile-nav-bghover; }
+					> a { display: block; padding: 12px 20px; line-height: 18px; height: auto; }
+					> i { display: block; background: url('../#{$image-default-patch}/sprite_icon.png') -152px -297px no-repeat;
+						:hover { filter: Alpha(opacity=100); -moz-opacity: 1; opacity: 1; -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)"; }
+					}
+					&.selected { background-color: $mobile-nav-bgselect;
+						> i,
+						> i:hover {
+                            background-position: -206px -297px; background-color: $mobile-nav-bgselect;
+                            filter: Alpha(opacity=100); -moz-opacity: 1; opacity: 1; -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)"; }
+					}
+					&.MenuDictionary {
+						li { margin: 0; float: left; width: 33%; padding: 0; 
+							a { display: block; height: 40px; line-height: 40px; margin: 4px; padding: 0; text-align: center;}
+							&.highlight {
+								a{ background: $mobile-subnav-highlight-bg; }
+							}
+						}
+					}
+
+				}
+
+			}
+			// for Mobile
+			@else{
+                // iPad
+                position: relative; display: block; padding: 0; text-align: left; border-bottom: $mobile-nav-border;
+                &.active > a:after,
+                &.active .subnav,
+                &.selected > a:after { display: none; }
+                &:hover { background-color: $mobile-nav-bghover;}
+                > a { display: block; padding: 12px 20px; line-height: 18px; height: auto; }
+                > i { display: block;
+                        background-image: url('../#{$image-default-patch}/mobilenav_sildeup_icon.png');
+                        background-image: -webkit-image-set(url('../#{$image-default-patch}/mobilenav_sildeup_icon.png') 1x, url('../#{$image-default-patch}/mobilenav_sildeup_icon_retina.png') 2x);
+                        background-position: 0 -6px; background-repeat: no-repeat;
+                    &:hover { filter: Alpha(opacity=100); -moz-opacity: 1; opacity: 1; -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)"; }
+                }
+                &.selected { background-color: $mobile-nav-bgselect;
+                    > i,
+                    > i:hover {
+                        background-color: $mobile-nav-bgselect;
+                        background-position: 0 -58px;
+                        filter: Alpha(opacity=100); -moz-opacity: 1; opacity: 1; -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)"; }
+                }
+                &.MenuDictionary {
+                    li { margin: 0; float: left; width: 33%; padding: 0;
+                        a {  display: block; height: 40px; line-height: 40px; margin: 4px; padding: 0; text-align: center; }
+                        &.highlight {
+                            a{ background: $mobile-subnav-highlight-bg; }
+                        }
+                    }
+                }
+			}
+	 	}
+
+        // Default menu no display for PC ...
+        .MenuArticles,
+        .MenuFAQS,
+        .MenuSlideshows,
+        .MenuCalculator,
+        .MenuChartAdvisorArticles,
+        .MenuAnalysisOpinions,
+        .MenuFreeNewsletters{ display: none; }
+
+        // Special menu item....
+        .MenuArticles,
+        .MenuFAQS,
+        .MenuSlideshows,
+        .MenuCalculator{
+            &.active { display: inline;
+                > a,
+                > a:after { display: none; }
+                .subnav { display: block; }
+            }
+        }
+	}
+
+
+
+
+	// for PC
+	@if $forpc == true {
+
+		@include media ( $media-lg ) {	// max-width: 768px
+			a {
+				&:hover { text-decoration: none; }
+			}
+			.menulist {  
+				.MenuArticles, 
+				.MenuFAQS, 
+				.MenuSlideshows, 
+				.MenuCalculator, 
+				.MenuChartAdvisorArticles, 
+				.MenuAnalysisOpinions,
+				.MenuSimulator,
+				.MenuFreeNewsletters { display: block;
+                    // Special menu item....
+                    &.active { display: block;
+                        > a,
+                        > a:after { display: block; }
+                        .subnav { display: none; }
+                    }
+                    &.selected { display: block;
+                        > a,
+                        > a:after { display: block; }
+                        .subnav { display: block; }
+                    }
+                }
+			}
+		}
+
+	}
+	// for Mobile
+	@else{
+		// iPad
+			a {
+				&:hover { text-decoration: none; }
+			}
+			.menulist {  
+				.MenuArticles, 
+				.MenuFAQS, 
+				.MenuSlideshows, 
+				.MenuCalculator, 
+				.MenuChartAdvisorArticles, 
+				.MenuAnalysisOpinions,
+				.MenuSimulator,
+				.MenuFreeNewsletters { display: block;
+                    // Special menu item....
+                    &.active { display: block;
+                        > a,
+                        > a:after { display: block; }
+                        .subnav { display: none; }
+                    }
+                    &.selected { display: block;
+                        > a,
+                        > a:after { display: block; }
+                        .subnav { display: block; }
+                    }
+                }
+			}
+	}
+
+}
+
+
+
+
+
+
+
+// ======================================================================= //
+//                               subnav      	                           //
+// ======================================================================= //
+.#{$subnav} { display: none; @include stretch( 35px, false, false, 0); width: 100%; border-bottom:solid 1px #aba4ac; background: #fff; z-index: 98;
+	.sub-menulist { margin: auto; padding: 0; 
+		li { float: left; list-style: none; margin: 0 14px 0 0; padding: 6px 0; 
+			a { color: #444; display: block; font-size: 14px; outline: medium none; padding: 4px 0;
+				img { vertical-align: top; width: 16px;}
+                .nav-FARL-2 { display: none; }
+                // for PC
+                @if $forpc == true {
+                    @include media ( $media-lg ) { // 768px
+                        .nav-FARL-1 { display: none; }
+                        .nav-FARL-2 { display: inline-block; }
+                    }
+                }
+                @else{
+                    .nav-FARL-1 { display: none; }
+                    .nav-FARL-2 { display: inline-block; }
+                }
+			}
+			&.highlight {
+				a { color: $link-color; text-decoration: underline; }
+			}
+		}
+		.dummy { display: none; }
+	}
+
+	@at-root {
+		.#{$mainnav} {
+			.menulist {
+				> li{
+					&.active {
+						.#{$subnav} { display: block; }
+					}
+				}
+			}
+		}
+	}
+
+	// for PC
+	@if $forpc == true {
+		// max-width: 768px
+		@include media ( $media-lg ) {
+			position: relative; top: 0; left: 0; z-index: 102; background: $mobile-nav-bgselect; border-bottom:0;
+			@at-root {
+				.#{$mainnav} {
+					.menulist { 
+						> li{
+							&.active { 
+								.#{$subnav} { display: none; }
+							}
+							&.selected { 
+								.#{$subnav} { display: block; }
+							}
+						}
+					}
+				}
+			}
+			.sub-menulist {
+				li { float: none; margin: 0; padding:0; 
+					a { color: $mobile-subnav-default-fontcolor; padding: $subnav-a-padding; 
+						&:hover { color: #fff; background: $mobile-subnav-highlight-bg;}
+					}
+					&.highlight {
+						a { color: $mobile-highlight-and-account-fontcolor; text-decoration: underline; }
+					}
+				}
+			}
+		}
+
+	}
+	// for Mobile
+	@else{
+		// iPad
+			@at-root {
+				.#{$mainnav} {
+					.menulist { 
+						> li{
+							&.active { 
+								.#{$subnav} { display: none; }
+							}
+							&.selected { 
+								.#{$subnav} { display: block; }
+							}
+						}
+					}
+				}
+			}
+			position: relative; top: 0; left: 0; z-index: 102; background: $mobile-nav-bgselect; border-bottom:0;
+			.sub-menulist {
+				li { float: none; margin: 0; padding: 0;
+					a { color: $mobile-subnav-default-fontcolor; padding: $subnav-a-padding; 
+						&:hover { color: #fff; background: $mobile-subnav-highlight-bg;}
+					}
+					&.highlight {
+						a { color: $mobile-highlight-and-account-fontcolor; text-decoration: underline; }
+					}
+				}
+			}
+	}
+}
+
+
+
+// ======================================================================= //
+//                           MenuDictionary	          	                   //
+// ======================================================================= //
+.MenuDictionary {
+	.sub-menulist { text-align: justify; 
+		&:after { content:''; display:inline-block; width:100%; height:0px; }
+		li { float: none; display: inline-block; padding: 2px 0; text-align: center; margin:0; 
+			a { display: inline-block; padding: 8px 11px; }
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ======================================================================= //
+//                            fixed  nav                                      //
+// ======================================================================= //
+.nav-fixed {
+	 display: none; 
+    // for PC
+    @if $forpc == true {
+
+        position: fixed; left: 0; top: 0; width: 100%; z-index: 101; transition:top 0.3s ease-out;
+        background: #323a4e;
+        background: -moz-linear-gradient(top, #323a4e 0%, #1a1d2b 100%);
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #323a4e), color-stop(100%, #1a1d2b));
+        background: -webkit-linear-gradient(top, #323a4e 0%, #1a1d2b 100%);
+        background: -o-linear-gradient(top, #323a4e 0%, #1a1d2b 100%);
+        background: -ms-linear-gradient(top, #323a4e 0%, #1a1d2b 100%);
+        background: linear-gradient(to bottom, #323a4e 0%,#1a1d2b 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#323a4e', endColorstr='#1a1d2b',GradientType=0);
+
+        .logo { height: 38px; width:50px; display:inline-block; margin:10px 0; background: url('../img/sprite_icon.png') 2px -174px no-repeat;  }
+
+        ul { margin:13px 0 6px 0; padding:0; list-style:none;
+            li { display:inline-block; margin-right:20px; position:relative; list-style:none;
+                a  { color:#fff; text-transform:uppercase; }
+                ul { display:none; margin:0; padding:10px; list-style:none; position:absolute; top:100%; left:-10px; margin-top:16px; background-color:#1a1d2b;
+                    li { display:block; padding:4px 0; }
+                    + a:after {
+                        content: ''; display: inline-block; border-width: 5px; border-style: solid; border-color: #fff transparent transparent; vertical-align: middle; margin: 2px 0 0 10px;
+                    }
+                }
+                &.open {
+                    ul { display: block; @include box-shadow(0 10px 10px rgba(0,0,0,0.15)); }
+                }
+            }
+        }
+
+        .srch { position:relative; margin-left:25px; margin-right:0; width: 37px; height: 35px; vertical-align: middle;
+            .icon { display: block; width: 37px; height: 35px; cursor:pointer; background: url('../img/sprite_icon.png') -326px -337px no-repeat; }
+            .field { display:none; position:absolute; right:0; background-color:#a62336; padding:2px; }
+            &.open { background-color:#a62336;
+                .field { display: block; }
+            }
+        }
+
+        @include media ( $media-lg ) { // 768px
+            display: none;
+        }
+    }
+
+
+
+    // for Mobile
+    @else{
+        display: none;
+    }
+
+
+
+}
+
+
+

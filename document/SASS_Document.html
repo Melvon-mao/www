@@ -1,0 +1,666 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" version="XHTML+RDFa 1.0" dir="ltr">
+	<head profile="http://www.w3.org/1999/xhtml/vocab">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="application-name" content="Investopedia"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=9">
+	<title>SASS Document</title>
+	<link rel="stylesheet" type="text/css" href="css/tablet.css">
+	<link rel="shortcut icon" href="http://i.investopedia.com/vcb/assets_v2/img/favicon.ico" type="image/vnd.microsoft.icon">
+    <script language="javascript" type="text/javascript" src="js/jquery.min.js"></script>
+    <!-- <script language="javascript" type="text/javascript" src="js/g.js"></script> -->
+    <script language="javascript" type="text/javascript" src="js/var.js"></script>
+    <script language="javascript" type="text/javascript" src="js/func.js"></script>
+    <script language="javascript" type="text/javascript" src="js/event.js"></script>
+    <script language="javascript" type="text/javascript" src="js/Math.uuid.js"></script>
+        <style type="text/css">
+            [id^="-example"],
+            [id*="-example"]{ height: 100px; display: block; }
+
+            .interaction-doc .title h2{ text-transform: lowercase;}
+            .interaction-doc .title h2 span { }
+            .melvon     { margin-top: 160px; }
+            .melvon * { font-family: "Helvetica Neue",Helvetica,Arial,sans-serif !important; }
+            .melvon h1 { font-size: 40px !important; line-height: 1.5;}
+            .melvon h2 { font-size: 28px; font-family: "sourcesanspro-light-webfont" !important; }
+            .melvon p { font-size: 16px; color: #555; line-height: 1.5; font-family: "Helvetica Neue",Helvetica,Arial,sans-serif !important; -webkit-text-stroke: 0.0em;}
+            
+            #Content { font-family: "sourcesanspro-regular-webfont"; 
+                -webkit-transition: all 0.5s ease-out;
+                -moz-transition: all 0.5s ease-out;
+                -ms-transition: all 0.5s ease-out;
+                -o-transition: all 0.5s ease-out;
+                transition: all 0.5s ease-out;
+            }
+            .doc-layout-size { width: 980px; margin: 0 auto;}
+
+            /* doc-header */
+            .doc-header { position: fixed; top:0; width: 100%; z-index: 999;
+                -webkit-transition: all 0.4s ease-out;
+                -moz-transition: all 0.4s ease-out;
+                -ms-transition: all 0.4s ease-out;
+                -o-transition: all 0.4s ease-out;
+                transition: all 0.4s ease-out;
+            }
+            .doc-header-shadow { box-shadow: 0 4px 20px rgba(0,0,0,0.2);}
+            .doc-header .mid { position: relative; height: 69px; overflow: hidden; background:#323a4e url('img/header_bg.jpg') center top repeat-x !important; 
+                -webkit-transition: all 0.4s ease-out;
+                -moz-transition: all 0.4s ease-out;
+                -ms-transition: all 0.4s ease-out;
+                -o-transition: all 0.4s ease-out;
+                transition: all 0.4s ease-out;
+            }
+            .doc-header .mid.mid-none{ height: 0px; overflow: hidden; }
+            .doc-header .mid.mid-show{ height: 69px; overflow: hidden; }
+            .doc-header .brand { padding: 0; }
+            .doc-header .brand .logo { float: right; margin: 13px 0; width: 200px; height: 42px; background: url('img/logo_white_new.png') center center no-repeat;
+                background-size:contain; }
+
+            /* front-end-title */
+            .front-end-title { position: relative; margin: 13px 0; float: left; color: #fff; font-size: 32px; font-family: "sourcesanspro-light-webfont";  }
+            .front-end-title b { font-family: 'sourcesanspro-bold-webfont'; font-weight: normal;}
+            .front-end-title i { position: absolute; right: -84px; top:12px; display: block; padding: 2px 8px; font-size: 11px; background: #a62436; font-style: normal; font-family:"sourcesanspro-bold-webfont",Helvetica,Arial,Verdana,sans-serif}
+            .front-end-title i:after { content:''; display: block; position: absolute; left: -10px; top:4px; width: 0; height: 0; border-width:5px; border-style: solid; border-color: transparent #a62436 transparent transparent; }
+
+            /* doc_nav */
+            .doc_nav {  width: 100%; border-bottom: solid 1px #aba4ac; background: #fff; font-family: "sourcesanspro-regular-webfont"; }
+            .doc_nav ul{ position: relative; width: 980px; /* text-align: justify; */ margin: 0 auto; padding: 0; }
+            .doc_nav ul:after { content: ''; display: inline-block; width: 100%; height: 1px; }
+            .doc_nav li { padding: 9px 0; display: inline-block; list-style: none; text-align: center; }
+            .doc_nav li a { color: #111; padding: 2px 9px; border-radius: 2px; text-decoration: none; border:1px solid transparent; 
+                -webkit-transition: all 0.2s ease-out;
+                -moz-transition: all 0.2s ease-out;
+                -ms-transition: all 0.2s ease-out;
+                -o-transition: all 0.2s ease-out;
+                transition: all 0.2s ease-out; }
+            .doc_nav li a:hover { color: #a62436; border:1px solid #ccc; }
+            .doc_nav li a:active,
+            .doc_nav li a:focus { border:1px solid #aaa; box-shadow:inset 0 0 10px rgba(0,0,0,0.1); }
+            .doc_nav li.active a,
+            .doc_nav li.active a:hover { color: #fff; background: #a62436; border:1px solid #a62436; }
+
+            .gototop { opacity: 0; position: absolute; width: 50px; height: 60px; right:-100px; top:0; font-size: 18px; color: #fff !important;text-decoration: none !important; text-align: center; line-height: 44px; background-color: #a62436; font-family: 'sourcesanspro-bold-webfont';}
+            .gototop:after { display: block; content: ''; width: 0; height: 0; border-width: 15px 25px; border-style: solid; border-color: transparent transparent #fff transparent; position: absolute; left:0; bottom: 0; }
+
+            .form-item .title { color: #a62436; font-size: 16px; text-transform:capitalize; }
+
+            pre { overflow: auto; margin: 1.715em 0; padding: 1em; border: 1px solid #e5e8ec; border-radius: 3px;
+                background-color: #fdfdfd;
+                background-image: -webkit-linear-gradient(transparent 50%,rgba(69,142,209,0.04) 50%);
+                background-image: -moz-linear-gradient(transparent 50%,rgba(69,142,209,0.04) 50%);
+                background-image: -ms-linear-gradient(transparent 50%,rgba(69,142,209,0.04) 50%);
+                background-image: -o-linear-gradient(transparent 50%,rgba(69,142,209,0.04) 50%);
+                background-image: linear-gradient(transparent 50%,rgba(69,142,209,0.04) 50%);
+                background-size: 3em 3em;
+                background-origin: content-box;
+                font: .9em/1.5 Consolas,Monaco,'Andale Mono',monospace;
+                -webkit-overflow-scrolling: touch
+            }
+            pre::-webkit-scrollbar { height: 7px }
+            pre::-webkit-scrollbar-thumb { background: #e5e8ec }
+            pre::-webkit-scrollbar-thumb:hover { background: #d6dbe1 }
+            pre>code { text-align: left; white-space: pre; word-spacing: normal; font-family: inherit; direction: ltr;
+                -moz-tab-size: 4; -o-tab-size: 4; tab-size: 4;
+                -webkit-hyphens: none; -moz-hyphens: none; -ms-hyphens: none; hyphens: none
+            }
+            :not(pre)>code { padding: .25em .5em .1em; border: 1px solid #e5e8ec; border-radius: .25em; background: #fafafa; color: black; vertical-align: 2px;
+                font: .85em Consolas,Monaco,'Andale Mono',monospace }
+            .token.comment, .token.block-comment, .token.prolog, .token.doctype, .token.cdata { color: #7d8b99 }
+            .token.punctuation { color: #5f6364 }
+            .token.property, .token.tag, .token.boolean,.token.number,.token.function-name,.token.constant,.token.symbol { color: #c92c2c }
+            .token.selector,.token.attr-name,.token.string,.token.function,.token.builtin { color: #2f9c0a  }
+            .token.operator,.token.entity,.token.url,.token.variable { background: rgba(255,255,255,0.5); color: #a67f59 }
+            .token.atrule,.token.attr-value,.token.keyword,.token.class-name { color: #1990b8 }
+            .token.regex,.token.important { color: #e90 }
+            .language-css .token.string,.style .token.string { background: rgba(255,255,255,0.5); color: #a67f59 }
+            .token.important { font-weight: normal }
+            .token.entity { cursor: help }
+            .namespace { opacity: .7 }
+            .token.tab:not(:empty):before,.token.cr:before,.token.lf:before { color: #e0d7d1 }
+
+            .layout-title h1 span { font-size: 24px; color: #888; padding: 0 20px;}
+
+            @media only screen and (max-width: 1024px) {
+                html { min-height: 0;}
+                .doc-header,
+                #Content,
+                #Header,
+                #Footer{ 
+                    filter: url(blur.svg#blur); /* FireFox, Chrome, Opera */
+                    -webkit-filter: blur(7px); /* Chrome, Opera */
+                    -moz-filter: blur(7px);
+                    -ms-filter: blur(7px);
+                    filter: blur(7px);
+                    filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=7, MakeShadow=false); /* IE6~IE9 */
+                }
+                #Content { width: 94%;}
+                body { width: 100%; min-width: 0; min-height: 0; position: relative; 
+                    }
+                body:before { display: block; content: ''; width: 100%; height: 100%; position: fixed; background: #323a4e; z-index: 9999;
+                    opacity: 0.75; }
+                body:after { display: block; height: 50%; content: 'SASS Development Documents'; color: #fff; font-size: 46px; position: fixed; left: 0; right:0; top:0; bottom:0; margin:auto; font-family: "sourcesanspro-light-webfont"; text-align: center; z-index: 10000; }
+            }
+        </style>
+</head>
+<body class="interaction-doc">
+
+
+	<!-- ================================= Header ================================= -->
+	<div class="doc-header">
+
+		<div class="mid">
+			<div class="brand clear doc-layout-size">
+				<div class="front-end-title"><b>SASS</b> Development Documents<i>2014.09.10</i></div>
+                <a href="http://www.investopedia.com/" target="_blank" class="logo"></a>
+			</div>
+		</div>
+
+        <!-- ================================= Navgitaion ================================= -->
+        <div class="doc_nav">
+            <ul class="clear">
+                <li><a href="#sass1-example">Design Guideline</a></li>
+                <li><a href="#sass2-example">Collaborative Development</a></li>
+                <li><a href="#sass3-example">File Structure</a></li>
+                <li><a href="#sass4-example">Main Style Files</a></li>
+                <li><a href="#sass5-example">Mixin</a></li>
+                <li><a href="#sass6-example">Variables</a></li>
+                <li><a href="#sass7-example">Responsive</a></li>
+                <a class="gototop" href="###">TOP</a>
+            </ul>
+            
+        </div>
+        <!-- ================================= Navgitaion //End ================================= -->
+
+	</div>
+	<!-- ================================= Header //End ================================= -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<!-- ================================= Content  ================================= -->
+	<div id="Content" class="doc-layout-size">
+
+        <div class="box melvon">
+            <h1>Syntactically Awesome Stylesheets</h1>
+            <h2>Sass let CSS into the language, you can go to organizations like the other languages ​​as modules, packages, reuse code, so CSS development looks very "design sense."</h2>
+            <p>Sass is a reliable, configurable, feature-rich CSS development solutions. It uses a dynamic construction method, rather than the old static CSS rules. If you want to use everyday use in the development of programming style, while access to programming language constructs, then Sass will be your best choice. Sass excellent flexibility and full-featured solution will surprise you.</p>
+        </div>
+
+
+
+            <!-- ==================================== Design Guideline ==================================== -->
+            <a id="sass1-example"></a>
+            <div class="box layout-title"><h1>Design Guideline</h1></div>
+            <div class="box row">
+                <div class="column-12">
+                    <img src="img/temp/sass_01.jpg">
+                </div>
+            </div>
+
+
+
+            <!-- ==================================== Collaborative Development ==================================== -->
+            <a id="sass2-example"></a>
+            <div class="box layout-title"><h1>Collaborative Development</h1></div>
+            <div class="row">
+                <div class="column-12">
+                    <img src="img/temp/sass_05.jpg">
+                </div>
+            </div>
+            <div class="row">
+                <div class="column-12">
+                    <img src="img/temp/sass_06.jpg">
+                </div>
+            </div>
+
+
+
+
+
+
+            <!-- ==================================== File structure ==================================== -->
+            <a id="sass3-example"></a>
+            <div class="box layout-title"><h1>File Structure</h1></div>
+            <div class="box row">
+                <div class="column-12">
+                    <pre><code>|-- [minxin]                 # Definition @mixin
+|   |-- _bglinear.scss       # linear-gradient
+|   |-- _boxsizing.scss      # boxsizing
+|   |-- _clear.scss          # clear both
+|   |-- _ellipsis.scss       # text-overflow ellipsis
+|   |-- _fonts.scss          # @font-face
+|   |-- _logo-option.scss    # global logo style
+|   |-- _media.scss          # @media query
+|   |-- _transition.scss     # CSS3 transition
+|
+|
+|-- [form]                   # Definition form style
+|   |-- _global.scss         # global form style
+|   |-- _button.scss         # buttons 
+|   |-- _input.scss          # input
+|   |-- _radio.scss          # radio
+|   |-- _checkbox.scss       # checkbox
+|   |-- _textarea.scss       # textarea
+|   |-- _select.scss         # select
+|   |-- _formbox.scss        # form group
+|   |-- _searchbox.scss      # search box
+|   |-- _inlinelabel.scss    # inline label
+|
+|
+|-- _screen.scss             # Main style files
+|-- _var.scss                # Definition all variables
+|-- _mixin.scss              # Definition @mixin 
+|-- _reset.scss              # css reset
+|-- _fonts.scss              # @font-face
+|-- _utilities.scss          # some defautl style
+|-- _fontresize.scss         # font resize
+|-- _printer.scss            # printer
+|-- _sharelicense.scss       # sharelicense
+|-- _info.scss               # Example: View all
+|-- _homefuture.scss         # homepage column style
+|-- _columnbanner.scss       # homepage column style
+|-- _list.scss               # list
+|-- _form.scss               # @import form
+|-- _table.scss              # table
+|-- _tab.scss                # tab
+|-- _carousel.scss           # carousel
+|-- _alphabet.scss           # alphabet
+|-- _sharing.scss            # share
+|-- _newsletter.scss         # newsletter
+|-- _video.scss              # viedo box and play
+|-- _tooltip.scss            # tooltip
+|-- _scrollbar.scss          # scoll bar
+|-- _pagination.scss         # pagination
+|-- _tag.scss                # tag
+|-- _layout.scss             # website layout
+|-- _title.scss              # column title
+|-- _box.scss                # website block
+|-- _header.scss             # header
+|-- _footer.scss             # footer
+|-- _nav.scss                # navigation
+|-- _ad.scss                 # all ad
+|-- _icons.scss              # icon
+|-- _special.scss            # some special page style
+|-- _account.scss            # account page
+|-- _chart.scss              # chart
+|-- _corporation.scss        # corporation page
+|-- _calculator.scss         # calculator page
+|-- _professionals.scss      # professionals page
+|-- _cms.scss                # CMS style
+|
+|
+|-- tablet.scss              # for PC Sass file
+|-- phone.scss               # for Mobile Sass file
+</code></pre>
+                </div>
+            </div>
+
+
+
+
+
+
+            <!-- ==================================== Main style files ==================================== -->
+            <a id="sass4-example"></a>
+            <div class="box layout-title"><h1>_screen.scss <span>(Main style files)</span></h1></div>
+            <div class="box row">
+                <div class="column-12">
+                    <pre class="  language-scss"><code class="  language-scss"><span class="token comment" spellcheck="true">// Compass</span>
+<span class="token keyword">@import</span> <span class="token string">"compass/layout/stretching"</span><span class="token punctuation">;</span>
+</span><span class="token keyword">@import</span> <span class="token string">"compass/css3"</span><span class="token punctuation">;</span>
+</span><span class="token keyword">@import</span> <span class="token string">"compass/utilities/sprites"</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// Core variables and mixins
+</span><span class="token keyword">@import</span> <span class="token string">"var"</span><span class="token punctuation">;</span>
+</span><span class="token keyword">@import</span> <span class="token string">"mixin"</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// Reset
+</span><span class="token keyword">@import</span> <span class="token string">"reset"</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// @font-face
+</span><span class="token keyword">@import</span> <span class="token string">"fonts"</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// Components</span>
+<span class="token keyword">@import</span> <span class="token string">"utilities"</span><span class="token punctuation">;</span>
+<span class="token keyword">@import</span> <span class="token string">"fontresize"</span><span class="token punctuation">;</span>
+<span class="token keyword">@import</span> <span class="token string">"printer"</span><span class="token punctuation">;</span>
+<span class="token keyword">@import</span> <span class="token string">"sharelicense"</span><span class="token punctuation">;</span>
+<span class="token keyword">@import</span> <span class="token string">"info"</span><span class="token punctuation">;</span>
+<span class="token keyword">@import</span> <span class="token string">"homefuture"</span><span class="token punctuation">;</span>
+<span class="token keyword">@import</span> <span class="token string">"columnbanner"</span><span class="token punctuation">;</span>
+<span class="token keyword">@import</span> <span class="token string">"list"</span><span class="token punctuation">;</span>
+<span class="token keyword">@import</span> <span class="token string">"form"</span><span class="token punctuation">;</span>
+<span class="token keyword">@import</span> <span class="token string">"table"</span><span class="token punctuation">;</span>
+<span class="token keyword">@import</span> <span class="token string">"tab"</span><span class="token punctuation">;</span>
+<span class="token keyword">@import</span> <span class="token string">"carousel"</span><span class="token punctuation">;</span>
+<span class="token keyword">@import</span> <span class="token string">"alphabet"</span><span class="token punctuation">;</span>
+<span class="token keyword">@import</span> <span class="token string">"sharing"</span><span class="token punctuation">;</span>
+<span class="token keyword">@import</span> <span class="token string">"newsletter"</span><span class="token punctuation">;</span>
+<span class="token keyword">@import</span> <span class="token string">"video"</span><span class="token punctuation">;</span>
+<span class="token keyword">@import</span> <span class="token string">"tooltip"</span><span class="token punctuation">;</span>
+<span class="token keyword">@import</span> <span class="token string">"scrollbar"</span><span class="token punctuation">;</span>
+<span class="token keyword">@import</span> <span class="token string">"pagination"</span><span class="token punctuation">;</span>
+<span class="token keyword">@import</span> <span class="token string">"tag"</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// Layout</span>
+<span class="token keyword">@import</span> <span class="token string">"layout"</span><span class="token punctuation">;</span>
+<span class="token keyword">@import</span> <span class="token string">"title"</span><span class="token punctuation">;</span>
+<span class="token keyword">@import</span> <span class="token string">"box"</span><span class="token punctuation">;</span>
+<span class="token keyword">@import</span> <span class="token string">"header"</span><span class="token punctuation">;</span>
+<span class="token keyword">@import</span> <span class="token string">"footer"</span><span class="token punctuation">;</span>
+<span class="token keyword">@import</span> <span class="token string">"nav"</span><span class="token punctuation">;</span>
+<span class="token keyword">@import</span> <span class="token string">"ad"</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// Icon</span>
+<span class="token keyword">@import</span> <span class="token string">"icons"</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// Special page</span>
+<span class="token keyword">@import</span> <span class="token string">"special"</span><span class="token punctuation">;</span>
+<span class="token keyword">@import</span> <span class="token string">"account"</span><span class="token punctuation">;</span>
+<span class="token keyword">@import</span> <span class="token string">"chart"</span><span class="token punctuation">;</span>
+<span class="token keyword">@import</span> <span class="token string">"corporation"</span><span class="token punctuation">;</span>
+<span class="token keyword">@import</span> <span class="token string">"calculator"</span><span class="token punctuation">;</span>
+<span class="token keyword">@import</span> <span class="token string">"professionals"</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// CMS user</span>
+<span class="token keyword">@import</span> <span class="token string">"cms"</span><span class="token punctuation">;</span></code></pre>
+                </div>
+            </div>
+
+
+
+
+
+
+
+            <!-- ==================================== Mixin ==================================== -->
+            <a id="sass5-example"></a>
+            <div class="box layout-title"><h1>_mixin.scss <span>(Code snippets)</span></h1></div>
+            <div class="box row">
+                <div class="column-12">
+                    <pre class="  language-scss"><code class="  language-scss"><span class="token comment" spellcheck="true">// Maxin import</span>
+<span class="token keyword">@import</span> <span class="token string">"mixin/clear"</span><span class="token punctuation">;</span>
+<span class="token keyword">@import</span> <span class="token string">"mixin/ellipsis"</span><span class="token punctuation">;</span>
+<span class="token keyword">@import</span> <span class="token string">"mixin/boxsizing"</span><span class="token punctuation">;</span>
+<span class="token keyword">@import</span> <span class="token string">"mixin/transition"</span><span class="token punctuation">;</span>
+<span class="token keyword">@import</span> <span class="token string">"mixin/fonts"</span><span class="token punctuation">;</span>
+<span class="token keyword">@import</span> <span class="token string">"mixin/bglinear"</span><span class="token punctuation">;</span>
+<span class="token keyword">@import</span> <span class="token string">"mixin/logo-option"</span><span class="token punctuation">;</span>
+<span class="token keyword">@import</span> <span class="token string">"mixin/media"</span><span class="token punctuation">;</span>
+                    </code></pre>
+                </div>
+            </div>
+
+
+
+
+
+
+
+            <!-- ==================================== Variables ==================================== -->
+            <a id="sass6-example"></a>
+            <div class="box layout-title"><h1>_var.scss <span>(Define all the variables)</span></h1></div>
+            <div class="box row">
+                <div class="column-12">
+                    <pre class="  language-scss"><code class="  language-scss"><span class="token comment" spellcheck="true">// System font
+</span><span class="token variable">$system-font</span><span class="token punctuation">:</span> Verdana,Geneva,sans-serif !default<span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// Body font 
+</span><span class="token variable">$global-font</span><span class="token punctuation">:</span> 'gandhiserif-regular-webfont',Helvetica,Arial,Verdana,sans-serif !default<span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// Header, Footer, nav, h1, h2, h4, h5, h6, input, button font
+</span><span class="token variable">$section-font</span><span class="token punctuation">:</span> 'sourcesanspro-regular-webfont',Helvetica,Arial,Verdana,sans-serif !default<span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// Big title
+</span><span class="token variable">$title-font</span><span class="token punctuation">:</span> 'sourcesanspro-light-webfont',Helvetica,Arial,Verdana,sans-serif !default<span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// Column title
+</span><span class="token variable">$column-font</span><span class="token punctuation">:</span> 'sourcesanspro-semibold-webfont',Helvetica,Arial,Verdana,sans-serif !default<span class="token punctuation">;</span>
+
+
+<span class="token comment" spellcheck="true">// Global: font-color
+</span><span class="token variable">$global-color</span><span class="token punctuation">:</span> <span class="token number">#111 !default</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// Global: link-color 
+</span><span class="token variable">$link-color</span><span class="token punctuation">:</span> <span class="token number">#005b9d !default</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// Line: #ccc
+</span><span class="token variable">$line-color</span><span class="token punctuation">:</span> <span class="token number">#ccc !default</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// H color
+</span><span class="token variable">$h-color</span><span class="token punctuation">:</span> <span class="token number">#362f2d !default</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// Global: h weight
+</span><span class="token variable">$h-weight</span><span class="token punctuation">:</span> <span class="token number">normal !default</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// master color & bg
+</span><span class="token variable">$main-color</span><span class="token punctuation">:</span> <span class="token number">#292f40 !default</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// Global border color
+</span><span class="token variable">$border-color</span><span class="token punctuation">:</span> <span class="token number">#e4e5e6 !default</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// input button
+</span><span class="token variable">$button-bgcolor</span><span class="token punctuation">:</span> <span class="token number">#a62436 !default</span><span class="token punctuation">;</span>
+</span><span class="token variable">$button-fontcolor</span><span class="token punctuation">:</span> <span class="token number">#fff !default</span><span class="token punctuation">;</span>
+
+
+<span class="token comment" spellcheck="true">// Global: margin
+</span><span class="token variable">$margin-xs</span><span class="token punctuation">:</span> <span class="token number">20px !default</span><span class="token punctuation">;</span>
+<span class="token variable">$margin-sm</span><span class="token punctuation">:</span> <span class="token number">30px !default</span><span class="token punctuation">;</span>
+<span class="token variable">$margin-md</span><span class="token punctuation">:</span> <span class="token number">45px !default</span><span class="token punctuation">;</span>
+<span class="token variable">$margin-lg</span><span class="token punctuation">:</span> <span class="token number">50px !default</span><span class="token punctuation">;</span>
+<span class="token variable">$margin-xl</span><span class="token punctuation">:</span> <span class="token number">65px !default</span><span class="token punctuation">;</span>
+
+...
+...
+...</code></pre>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- ==================================== Responsive ==================================== -->
+            <a id="sass7-example"></a>
+            <div class="box layout-title"><h1>Responsive Design</h1></div>
+
+            <div class="title">Breakpoints</div>
+            <div class="row">
+                <div class="column-5" style="text-align:center; font-size:20px; padding-bottom: 20px;">min-width:1025px</div>
+                <div class="column-4" style="text-align:center; font-size:20px; padding-bottom: 20px;">max-width:1024px <br> min-width:768px</div>
+                <div class="column-3" style="text-align:center; font-size:20px; padding-bottom: 20px;">max-width:767px</div>
+            </div>
+            <div class="box row">
+                <div class="column-5" style="text-align:center; padding-top: 14px;"><img src="img/temp/visual_space_12.png"></div>
+                <div class="column-4" style="text-align:center"><img src="img/temp/visual_space_13.png"></div>
+                <div class="column-3" style="text-align:center; padding-top: 82px;"><img src="img/temp/visual_space_14.png"></div>
+            </div>
+
+
+
+
+            <div class="title">Use @media query</div>
+            <div class="row">
+                <div class="column-12">
+
+                    <pre class="  language-scss"><code class="  language-scss"><span class="token comment" spellcheck="true">// Define @mixin code snippets
+</span><span class="token variable">@mixin media</span> <span class="token punctuation">(</span> <span class="token number">$width, $type:max-width</span> <span class="token punctuation">) {</span>
+    <span class="token variable">@media only screen and</span> <span class="token punctuation">(</span> <span class="token number">$type: $width</span> <span class="token punctuation">) {</span>
+        @content;
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+                </div>
+            </div>
+            <div class="box row">
+                <div class="column-12">
+
+                    <pre class="  language-scss"><code class="  language-scss"><span class="token comment" spellcheck="true">// Use @mixin code snippets in css</span>
+.class <span class="token punctuation">{</span> 
+    color: red;
+
+    <span class="token variable">@if $forpc == true</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">// for PC</span>
+        <span class="token variable">@include media <span class="token punctuation">(</span> $media-lg </span><span class="token punctuation">) {</span> <span class="token comment" spellcheck="true">// max-width: 768px</span> 
+            color: blue;
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token variable">@else</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">// for Mobile</span>
+            color: yellow; <span class="token comment" spellcheck="true">// for iPad min-width: 768px</span> 
+        <span class="token variable">@include media <span class="token punctuation">(</span> $media-lm </span><span class="token punctuation">) {</span> <span class="token comment" spellcheck="true">// for iPhone max-width: 767px</span> 
+            color: orange;
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+</code></pre>
+
+                </div>
+            </div>
+
+            <div class="box title">@if / @else statements flow</div>
+            <div class="box row">
+                <div class="column-12" style="text-align:center">
+                    <img src="img/temp/sass_04.jpg">
+                </div>
+            </div>
+            <div class="box title">Method Description</div>
+            <div class="box row">
+                <div class="column-12" style="text-align:center">
+                    <img src="img/temp/sass_02.jpg">
+                </div>
+            </div>
+            <div class="box title">Use Code</div>
+            <div class="box row">
+                <div class="column-12" style="text-align:center">
+                    <img src="img/temp/sass_03.jpg">
+                </div>
+            </div>
+            
+            
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+    <script language="javascript" type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            
+            // doc nav 点击
+            $(".doc_nav li").click(function(){
+                $(this).addClass("active").siblings("li").removeClass();
+            });
+
+            //点击滚回顶部 
+            $('.gototop').on('click', function(){
+                $('html, body').animate({scrollTop:0},{duration:500, queue:true, complete:function(){
+                    $('.gototop').attr('href', '/');
+                }});
+                $(".doc_nav li").removeClass("active");
+                return false;
+            });
+
+
+            //auto select nav
+
+            var doc_nav = $('.doc_nav li'),
+                doc_nav_active = null,
+                doc_nav_mao = [];
+                doc_nav_a = $('.doc_nav li a');
+            doc_nav_a.each(function(){
+                doc_nav_mao.push($($(this).attr('href')));
+            });
+
+            function getSelectedNav(v){
+                var i = 0;
+                var _a  = null;
+                while(true){
+                    _a = doc_nav_mao[i];
+                    if(!_a)
+                        break;
+
+                    if(_a.offset().top > v)
+                        break;
+                    i++;
+                }
+
+                i--;
+
+                if(doc_nav_active === i){
+                    return;
+                }
+
+                doc_nav_active = i;
+
+                doc_nav.removeClass('active');
+                if( i>-1){
+                    doc_nav.eq(i).addClass('active');
+                }
+            }
+            $(window).bind('scroll', function(){
+
+                var y = Math.ceil($(this).scrollTop());
+                //判断页面滚动距离
+                if (y > 350) {
+                    $('.doc-header').addClass('doc-header-shadow');
+                    $('.doc-header .mid').addClass('mid-none');
+                    $('.gototop').stop().animate({'opacity':'1'},500);
+                } else {
+                    $('.doc-header').removeClass('doc-header-shadow');
+                    $('.doc-header .mid').removeClass('mid-none');
+                    $('.gototop').stop().animate({'opacity':'0'},500);
+                    $(".doc_nav li").removeClass("active");
+                }
+
+                getSelectedNav(y+5);
+
+            });
+
+        });
+    </script>
+
+</body>
+</html>

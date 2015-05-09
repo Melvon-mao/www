@@ -1,0 +1,19 @@
+
+// ======================================================================= //
+//                           	sharelicense   	    	                   //
+// ======================================================================= //
+.sharelicense {
+    a { padding-right: 6px; margin-left: 4px; border-right: 1px solid #333; cursor:pointer; color:#111; vertical-align:middle; font-size: $global-size; }
+    // for PC
+    @if $forpc == true {
+        @include media ( $media-lg ) { //768px
+            .second {  }
+            &.fr {display:none;}
+        }
+    }
+    // for Mobile
+    @else{
+        .second { padding-right: 0; border-right: 0; }
+        &.fr {display:none;}
+    }
+}

@@ -1,0 +1,9 @@
+/* ======================================================================= */
+/*                          Custom: .Search-box                            */
+/* ======================================================================= */
+.search-box {
+    margin-left: 12px; display: inline-block; position: relative; vertical-align: top; width: 186px; max-width: 450px; background-color: #fff;
+    .search-btn {
+        width: 22px; height: 20px; position: absolute; right:4px; top:3px; background: url('../img/icon_search.png') no-repeat; background-size:16px 16px; background-position: center center; border:0;
+    }
+}

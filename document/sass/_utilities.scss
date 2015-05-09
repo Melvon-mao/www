@@ -1,0 +1,284 @@
+/* ======================================================================= */
+/*                               Utilities                                 */
+/* ======================================================================= */
+// global-font: gandhiserif-regular-webfont ....
+.desc, .coreg-desc, .coreg-link, .phone-text, .column-banner > i, .column-banner .second, .table2 > p{ font-family: $global-font; }
+
+
+
+// section-font: sourcesanspro-regular-webfont ....
+#Header, #Footer, .nav, .nav-fixed,
+.title, .box.sharing, .adx-link-item a, .content-tags, .layout-tickers, .newsletter, .article-author-more, .item-title, .item-partner, .sharelicense a, .homefuture > .meta, .homefuture.vid, .column-banner, .carousel p, .alphabet li a, .carousel .member-signup-link, .disclaimer, .ui-tabset ul li, .table1, .table2, .table3, .table-data, .calendar, .pagination, .form-box, .list-checkbox, .register-form table.fields, .register-steps li, .help-text, .coreg-title, .title-callout, .tab-nav .tab-menu, .content-box .next-pg,.corp_tag,.ui-historical,.ui-canvas, .carousel .carousel_right .carousel_btn_link, .column-banner .first, .three-col .col a, .quotesearch .datetime,.rss-table table, .account-newsletterlist-title li, .table-newsletterlist,
+.un-whitelist,.trend-analysis, .video .feature .meta, #AppHeader, #AppSide, .app .shelf, #AppFooter, .page-container > .labelname, .ui-table-a, .chart-info, .ui-button, .drawer-tab, #DeleteOptions,.app .form-item label,
+h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,
+input, button, select  					{ font-family: $section-font; }
+#fxec_filterform, #FXstreetCalendar     { font-family: $section-font !important;}
+
+
+.form-type-select .selectmenu .label .text{}
+
+
+
+// sourcesanspro-bold-webfont .... : $section-font-bold
+#AppHeader .Selected a,
+#AppHeader .app-main-nav .hlist.log-in a,
+#AppSide .selected > a,
+#DeleteOptions strong,
+.chart-info-val{ font-family: $section-font-bold; }
+
+
+// sourcesanspro-light-webfont ....
+.homefuture > h1, .layout-title h1, .layout-title .h1, .layout-title h2, .layout-title .h2, .content-section h2, .layout-sharing, .item-author, .carousel h2, .register-form, input[type=text], .form-control,  .view-as-link a, .app h1 {
+	font-family: $title-font; 
+}
+
+
+// sourcesanspro-semibold ....
+.register-steps li.selected, .raq, .content-tags > i, .first-letter-item .item-title::before, .first-letter-item .item-description::before,  .content-author-title{ font-family: $column-font; }
+
+
+
+
+// h1, h2, h3, h4, h5, h6
+h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6 { color: $h-color; font-weight: $h-weight; margin: 0.1em 0; }
+h1, .h1 					{ font-size: $h1; }
+h2, .h2 					{ font-size: $h2; }
+h3, .h3 					{ font-size: $h3; line-height: 1.1em; }
+
+
+.clear 						{ @include clear(); }
+
+.fl 						{ float: left; }
+.fr 						{ float: right; }
+.center 					{ text-align: center; }
+.centered 					{ margin: 0 auto; }
+.inline 					{ display: inline-block; }
+.none 						{ display: none !important; }
+.disn                       { display: none;}
+.hidden                     { display: none;}
+.show 						{ display: block !important; }
+.up 						{ color: #16a237; }
+.down                       { color: #cf0000;}
+.inline 					{ display: inline; }
+.required,
+.form-required              { color:#a62436; vertical-align: middle; }
+.txt-right 					{ text-align: right !important; }
+.txt-left 					{ text-align: left !important; }
+.overflow-h 				{ overflow: hidden;}
+.border-top 				{ border-top: 1px solid #ddd; }
+.border-btm 				{ border-bottom: 1px solid #ddd;}
+.border-t-m 				{ border-width: 1px 0; border-color: #ddd; border-style: solid; }
+.no-mag                     { margin: 0;}
+.no-border                  { border:0 !important;}
+.group:after                { clear: both; }
+.group:after,
+.group:before               { content: ""; display: table; }
+p.first                     { margin-top: 0; }
+
+
+
+
+/* in homepage :  Leaderbooard and first box margin. */
+.nav-space { height: 18px;
+    // for PC
+    @if $forpc == true {
+        @include media ( $media-lg ) {
+            display: none;
+        }
+    }
+    // for Mobile
+    @else{
+        display: none;
+    }
+}
+
+
+
+
+/* ======================================================================= */
+/*                        layout-page : article-author   	               */
+/* ======================================================================= */
+.article-author {
+
+	//author ...
+	margin:0 0 10px 0;
+	.article-author-title{ margin-bottom: 10px; border-bottom: 1px solid #ddd; }
+	.profile-pic { float: left; margin-right: 14px; width: 71px; height: 67px; overflow: hidden; 
+		img { width: 100%; height: 100%; }
+	}
+	.profile-text { font-size: 11px; overflow: hidden; font-family: $system-font; }
+
+	// More ...
+	&-more { margin:0 0 $margin-sm 0; 
+		h2 { font-size: $global-size; }
+	}
+}
+
+
+
+
+
+/* ======================================================================= */
+/*                         			more   	          				       */
+/* ======================================================================= */
+.#{$more} {
+	display: block; text-align: right; margin-top:4px; font-size: $global-size; color: $link-color;
+	@at-root  { 
+		a.#{$more}  { @extend .#{$more}; }
+	}
+}
+
+
+
+
+
+
+/* ======================================================================= */
+/*                             separator    	    	                   */
+/* ======================================================================= */
+.separator { height:1px; background-color: $separator-color;
+	.#{$layout}-title + & { margin-bottom: $margin-sm; }
+	.table1 + & {margin: 2px 0 12px;}
+    .search-result-ad & { margin-bottom: 0 !important;}
+}
+
+
+
+
+
+/* ======================================================================= */
+/*                         			ui-canvas  	   		  			       */
+/* ======================================================================= */
+.ui-canvas { margin-bottom: $margin-sm; }
+
+
+
+
+
+
+/* ======================================================================= */
+/*                         		disclaimer  	      				       */
+/* ======================================================================= */
+.disclaimer { font-size: 10px; color: #777; padding:0 6px; 
+	&.disclaimer-bottom {margin-bottom: $margin-xs !important;}
+    &.disclaimer-none{
+        // for PC
+        @if $forpc == true {
+            display: block;
+        }
+        // for Mobile
+        @else{
+          display: none;
+        }
+    }
+
+    // for PC
+    @if $forpc == true {
+        @include media ( $media-lg ) { // 768px
+          display: none;
+        }
+    }
+    @else{
+          display: none;
+    }
+}
+.disclaimer-scroll-mag {
+    // for PC
+    @if $forpc == true {
+        @include media ( $media-lg ) { // 768px
+            margin-bottom: 14px;
+        }
+    }
+    @else{
+        margin-bottom: 14px;
+    }
+}
+
+
+
+
+
+
+/* ======================================================================= */
+/*                         			flags  	      					       */
+/* ======================================================================= */
+.currency-flags { display: inline-block; vertical-align: middle; padding-right: 4px; 
+	@at-root{ 
+		// for PC
+		@if $forpc == true {
+			@include media ( $media-md ) {
+				.first-show-description {
+					.currency-flags { display: none; }
+				}
+			}
+		}
+		// for Mobile
+		@else{
+			@include media ( $media-lm ) {
+				.first-show-description {
+					.currency-flags { display: none; }
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+/* ======================================================================= */
+/*                         			Disqus  	      				       */
+/* ======================================================================= */
+#disqus_thread { width: 100%; overflow: hidden }
+
+
+
+
+
+
+/* ======================================================================= */
+/*                   			Markets Chart iframe  	     		       */
+/* ======================================================================= */
+.tradeview-box {
+    // for PC
+    @if $forpc == true {
+        @include media ( $media-lg ) {   // max-width: 768px
+            iframe {
+                width: 100% !important;
+            }
+        }
+    }
+    // for Mobile
+    @else{
+        iframe {
+            width: 100% !important;
+        }
+    }
+}
+#tradeview_chart_box {
+    iframe { width: 100% !important;}
+}
+
+
+
+
+/* ======================================================================= */
+/*                   			Markets Chart iframe  	     		       */
+/* ======================================================================= */
+.view-as-link { text-align: right;
+    a { color: #111;  font-size: 15px; }
+}
+
+
+
+
+/* ======================================================================= */
+/*                      	Advertising-contact.html  	     		       */
+/* ======================================================================= */
+.ls-corp { margin-bottom: 30px;
+    h2 { font-family: $title-font; font-size: 22px; }
+    p  { font-family: $section-font; font-size: 15px; margin-top: 0; }
+}
+
+

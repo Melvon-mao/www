@@ -1,0 +1,116 @@
+
+<body class="vcpbody">
+
+
+
+<!-- Header -->
+<header class="header">
+	<h1 class="logo"><a href="#">VCP</a></h1>
+</header>
+        
+
+<!-- Container -->
+<div class="vcpbox" ng-controller="userRegisterController">
+	<div class="reg_box">
+    	
+    	<!-- 第 1 步 -->
+    	<div class="reg_stepbox reg_step_1">
+        
+        	<div class="reg_box_title clearfix">
+            	 <!-- <div class="title_num">1</div>-->
+                <h1 class="title_name">Register</h1>
+            </div>
+            
+        	<form name="register" class="reg_form">
+            	<h4>Register</h4>
+                <div class="reg_form_Box">
+                <table class="table">
+                    <tr>
+                        <td class="titlename">UserName</td>  <!--user.username-->
+                        <td><div class="control-group" ng-class="{error: css.errorwarn == 1}">
+                                <label class="control-label"></label>
+                                <div class="controls">
+                                    <!-- Validform Tip -->
+                                    <div ng-cloak ng-show="css.errorwarn == 1" class="tipFormBox tipFormBox_wrong"><i class="icon-exclamation-sign"></i> You can't leave this empty.</div>
+                                    <div ng-cloak ng-show="css.errorwarn == 5" class="tipFormBox tipFormBox_wrong"><i class="icon-exclamation-sign"></i> UserName is too short.</div>
+                                    <div ng-cloak ng-show="css.errorwarn == 6" class="tipFormBox tipFormBox_wrong"><i class="icon-exclamation-sign"></i> UserName is too long.</div>
+                                    <div ng-cloak ng-show="css.errorwarn == 9" class="tipFormBox tipFormBox_wrong"><i class="icon-exclamation-sign"></i> Username already exist!</div>
+
+                                    <!-- Validform Tip //End-->
+                                    <input type="text" maxlength="18" minlength="3" class="reg_input" ng-model="userdata.username">
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                	<tr>
+                    	<td class="titlename">Email</td>  <!--user.email-->
+                        <td><div class="control-group" ng-class="{error: css.errorwarn == 2}">
+                                <label class="control-label"></label>
+                                <div class="controls">
+                                    <!-- Validform Tip -->
+                                    <div ng-cloak ng-show="css.errorwarn == 2" class="tipFormBox tipFormBox_wrong">
+                                        <i class="icon-exclamation-sign"></i> Enter your full email address, including the '@'.</div>
+                                    <div ng-cloak ng-show="css.errorwarn == 10" class="tipFormBox tipFormBox_wrong"><i class="icon-exclamation-sign"></i> This email is already registered!</div>
+                                    <!-- Validform Tip //End-->
+                                    <input type="email" class="reg_input" placeholder="example@gmail.com" ng-model="userdata.email">
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                    	<td class="titlename">Password</td> <!--user.password-->
+                        <td><div class="control-group" ng-class="{error: css.errorwarn == 3}">
+                                <label class="control-label"></label>
+                                <div class="controls">
+                                    <!-- Validform Tip -->
+                                    <div ng-show="css.errorwarn == 3" class="tipFormBox tipFormBox_wrong"><i class="icon-exclamation-sign"></i> <strong>You can't leave this empty.</strong></div>
+                                    <div ng-cloak ng-show="css.errorwarn == 7" class="tipFormBox tipFormBox_wrong"><i class="icon-exclamation-sign"></i> Password is too short.</div>
+                                    <div ng-cloak ng-show="css.errorwarn == 8" class="tipFormBox tipFormBox_wrong"><i class="icon-exclamation-sign"></i> Password is too long.</div>
+                                    <!-- Validform Tip //End-->
+                                    <input id="password" type="password" ng-model="userdata.password1" minlength="6" maxlength="18" class="reg_input">
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="last">
+                    	<td class="titlename">Confirm Password</td>
+                        <td><div class="control-group" ng-class="{error: css.errorwarn == 4}">
+                                <label class="control-label"></label>
+                                <div class="controls">
+                                    <!-- Validform Tip -->
+                                    <div ng-show="css.errorwarn == 4" class="tipFormBox tipFormBox_wrong"><i class="icon-exclamation-sign"></i> <strong>Password inconsistent.</strong></div>
+                                    <!-- Validform Tip //End-->
+                                    <input id="reformpassword" type="password" ng-model="userdata.password2" class="reg_input">
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                </div>
+                <div class="submitbox RegisterSubmitBox">
+                    <input type="button" value="save" class="btn btn-save" ng-click="createNewUser(register)">
+                </div>
+            </form>
+            
+        </div>
+
+        
+        <!-- 背景横线 -->
+		<div class="reg_bgpline"></div>
+        
+        
+        
+        
+    </div>
+</div>  
+	
+    
+    <ul id="skin">
+    	<li id="style" class="selected"></li>
+    	<li id="style_1"></li>
+    </ul>
+    
+
+
+ </body>
+</html>

@@ -1,0 +1,712 @@
+// ======================================================================= //
+//                           	 life-stages                      	       //
+// ======================================================================= //
+
+.life-stage-text { float: left; margin-left: 10px; padding-top: 14px; width: 222px;
+    // for PC
+    @if $forpc == true {
+        @include media ( $media-lm ) { // max-width: 767px
+            width: 100%;
+        }
+    }
+    // for Mobile
+    @else{
+        padding-top: 0px;
+        @include media ( $media-lm ) { // max-width: 767px
+            width: 100%;
+        }
+    }
+}
+
+.ls-panel {
+    display: block;
+    // for PC
+    @if $forpc == true {
+        @include media ( $media-lm ) { // max-width: 767px
+            width: 100%;
+        }
+    }
+    // for Mobile
+    @else{
+        width: 100%;
+        @include media ( $media-lm ) { // max-width: 767px
+            width: 100%;
+        }
+    }
+}
+
+.stacked {
+    float: left; width: 415px;
+    // for PC
+    @if $forpc == true {
+        @include media ( $media-lm ) { // max-width: 767px
+            width: 100%; float:none;
+        }
+    }
+    // for Mobile
+    @else{
+        width: 100%; float:none;
+        @include media ( $media-lm ) { // max-width: 767px
+            width: 100%; float:none;
+        }
+    }
+    a { color: #111;
+        &:hover{ text-decoration: none; }
+    }
+    .education { border-bottom: 1px solid #bbb; margin: 0 35px 35px 0; padding-bottom: 35px;
+        .life-stage-image { float: left; margin: 0 20px 0 0;
+            // for PC
+            @if $forpc == true {
+                @include media ( $media-md ) { // max-width: 512px
+                    display: none;
+                }
+            }
+             // for Mobile
+            @else{
+                @include media ( $media-md ) { // max-width: 512px
+                    display: none;
+                }
+            }
+        }
+    }
+    h2{ color: #005b9d; }
+    .ls-panel:hover h2{ text-decoration: underline; }
+    .ls-panel{
+        // for PC
+        @if $forpc == true {
+            @include media ( $media-lm ) { // max-width: 767px
+                margin: 0 0 20px;  padding: 0 0 20px;
+            }
+            @include media ( $media-md ) { // max-width: 512px
+                margin: 0 0 20px; padding: 0 0 20px;
+            }
+        }
+        // for Mobile
+        @else{
+            margin: 0 0 20px;  padding: 0 0 20px;
+            @include media ( $media-lm ) { // max-width: 767px
+                margin: 0 0 20px; padding: 0 0 20px;
+            }
+            @include media ( $media-md ) { // max-width: 512px
+                margin: 0 0 20px; padding: 0 0 20px;
+            }
+        }
+    }
+    @at-root.career {
+        margin: 0 0 20px;
+        img{
+            // for PC
+            @if $forpc == true {
+                @include media ( $media-lm ) { // max-width: 767px
+                    float: right;
+                }
+                @include media ( $media-md ) { // max-width: 512px
+                    display: none; margin-bottom: 0px;
+                }
+            }
+            // for Mobile
+            @else{
+                float: right;
+                @include media ( $media-lm ) { // max-width: 767px
+                    float: right;
+                }
+                @include media ( $media-md ) { // max-width: 512px
+                    display: none; margin-bottom: 0px;
+                }
+            }
+        }
+    }
+    .ls-panel.career {
+        // for PC
+        @if $forpc == true {
+            @include media ( $media-lm ) { // max-width: 767px
+                padding-bottom: 0px;
+            }
+            @include media ( $media-md ) { // max-width: 512px
+                margin-bottom: 0px; padding-bottom: 20px;
+            }
+        }
+        // for Mobile
+        @else{
+            padding-bottom: 0px;
+            @include media ( $media-md ) { // max-width: 512px
+                margin-bottom: 0px;  padding-bottom: 20px;
+            }
+        }
+    }
+
+    .life-stages-text { float: left; margin-left: 10px; padding-top: 14px; width: 222px;
+        // for PC
+        @if $forpc == true {
+            @include media ( $media-lm ) { // max-width: 767px
+                width: 70%; padding-top: 0px; margin-left: 0px;
+            }
+            @include media ( $media-md ) { // max-width: 512px
+                width: 100%; float: none; margin-left: 0px; padding-top: 0px;
+            }
+        }
+        // for Mobile
+        @else{
+            width: 70%;  padding-top: 0px;  margin-left: 0px;
+            @include media ( $media-lm ) { // max-width: 767px
+                width: 70%;  padding-top: 0px;  margin-left: 0px;
+            }
+            @include media ( $media-md ) { // max-width: 512px
+                width: 100%; float: none; margin-left: 0px; padding-top: 0px;
+            }
+        }
+    }
+}
+
+a.couple { border-left: 1px solid #bbb; float: left; height: 327px; padding-left: 18px; padding-top: 25px; width: 175px; color: #111;
+    // for PC
+    @if $forpc == true {
+        @include media ( $media-lm ) { // max-width: 767px
+            width: 100%; float:none; border-left: none; border-top: 1px solid #bbb; height: auto; padding: 25px 0;
+        }
+        @include media ( $media-md ) { // max-width: 512px
+            padding: 20px 0;
+        }
+
+    }
+    // for Mobile
+    @else{
+        border-left: medium none; border-top: 1px solid #bbb; float: none; height: auto; padding: 25px 0; width: 100%;
+        @include media ( $media-lm ) { // max-width: 767px
+            width: 100%; float:none; border-left: none; border-top: 1px solid #bbb; height: auto; padding: 25px 0;
+        }
+        @include media ( $media-md ) { // max-width: 512px
+            padding: 20px 0;
+        }
+    }
+    .life-stage-image-stacked {
+        padding-bottom: 43px;
+        // for PC
+        @if $forpc == true {
+            @include media ( $media-lm ) { // max-width: 767px
+                float:left; padding-right: 25px;  padding-bottom: 23px;
+            }
+            @include media ( $media-md ) { // max-width: 512px
+                display: none;
+            }
+        }
+        // for Mobile
+        @else{
+            float:left; padding-right: 25px; padding-bottom: 23px;
+            @include media ( $media-lm ) { // max-width: 767px
+                float:left; padding-right: 25px;  padding-bottom: 23px;
+            }
+            @include media ( $media-md ) { // max-width: 512px
+                display: none;
+            }
+        }
+    }
+    h2{ color: $link-color;
+        &:hover{ text-decoration: underline; }
+    }
+}
+a.couple:hover{ text-decoration: none; }
+a.family { border-top: 1px solid #bbb; padding-bottom: 0px; padding-top: 35px; width: 610px; color: #111;
+    // for PC
+    @if $forpc == true {
+        @include media ( $media-lm ) { // max-width: 767px
+            width: 100%; float:none; height: auto;  margin: 0 0 20px; padding-top: 20px;
+        }
+        @include media ( $media-md ) { // max-width: 512px
+            width: 100%; float:none; height: auto;  margin: 0px; padding: 20px 0 0 0;
+        }
+    }
+    // for Mobile
+    @else{
+        float: none; height: auto; margin: 0 0 20px; width: 100%; padding-top: 20px;
+        @include media ( $media-lm ) { // max-width: 767px
+            width: 100%; float:none; height: auto;  margin: 0 0 20px; padding-top: 20px;
+        }
+        @include media ( $media-md ) { // max-width: 512px
+            width: 100%; float:none; height: auto;  margin: 0px; padding: 20px 0 0 0;
+        }
+    }
+    .life-stages-right { padding-top: 30px; width: 250px; float: left;
+        h2{ color: $link-color;
+            &:hover{ text-decoration: underline; }
+        }
+        // for PC
+        @if $forpc == true {
+            @include media ( $media-lm ) { // max-width: 767px
+                float:none; padding:0; overflow: hidden;  width: auto !important;
+            }
+        }
+        // for Mobile
+        @else{
+            float:none; padding:0; overflow: hidden;  width: auto !important;
+            @include media ( $media-lm ) { // max-width: 767px
+                float:none; margin:0; overflow: hidden;  width: auto !important;
+            }
+        }
+    }
+    img{ float: left; margin: 0 25px 0 0;
+        // for PC
+        @if $forpc == true {
+            @include media ( $media-lm ) {  // max-width: 767px
+                float:right; margin:0;
+            }
+            @include media ( $media-md ) {  // max-width: 512px
+                display: none;
+            }
+        }
+        // for Mobile
+        @else{
+            float: right; margin: 0;
+            @include media ( $media-lm ) { // max-width: 767px
+                float:right; margin:0;
+            }
+            @include media ( $media-md ) {  // max-width: 512px
+                display: none;
+            }
+        }
+    }
+}
+a.family:hover{ text-decoration: none; }
+.rightimg{ float: right; width: 350px; margin: 0 0 0 -350px; -webkit-margin: 0 -25px 0 -350px; min-height: 160px; text-align: center;
+    // for PC
+    @if $forpc == true {
+        @include media ( $media-lm ) { // max-width: 767px
+            float:none; display: block; height: auto; width: 100%; overflow: auto; margin: 0px; min-height: auto; text-align: center;
+            #AdSlot_AF-Right-Rectangle { display: none; }
+        }
+        @include media ( $media-md ) { // max-width: 512px
+            float:none; display: block; height: auto; width: 100%; overflow: auto; margin: 0px; min-height: auto; text-align: left; margin-top: 20px; padding-top: 20px;
+        }
+    }
+    // for Mobile
+    @else{
+        float:none; display: block; height: auto; width: 100%; overflow: auto; margin: 0px; min-height: auto; text-align: center;
+        #AdSlot_AF-Right-Rectangle { display: none; }
+        @include media ( $media-lm ) { // max-width: 767px
+            float:none; display: block; height: auto; width: 100%; overflow: auto; margin: 0px; min-height: auto; text-align: left;
+        }
+        @include media ( $media-md ) { // max-width: 512px
+            float:none; display: block; height: auto; width: 100%; overflow: auto; margin: 0px; min-height: auto; text-align: left; margin-top: 20px; padding-top: 20px;
+        }
+    }
+    a { color: #111;
+        &:hover{ text-decoration: none; }
+    }
+    h2{ color: $link-color;
+        &:hover{ text-decoration: underline; }
+    }
+    .retirement { border-left: 1px solid #bbb; height: 270px; margin-top: 0px; padding-left: 45px; padding-top: 20px; text-align: left;
+        // for PC
+        @if $forpc == true {
+            @include media ( $media-lm ) { // max-width: 767px
+                padding-left: 0px; border: 0; height: auto; border-top: 1px solid #bbb;
+            }
+            @include media ( $media-md ) { // max-width: 512px
+                padding-left: 0px; border-left: 0; border-top: 1px solid #bbb; height: auto; padding-top: 20px;
+            }
+        }
+        // for Mobile
+        @else{
+            padding-left: 0px; border: 0; height: auto; text-align: left; border-top: 1px solid #bbb;
+            @include media ( $media-lm ) { // max-width: 767px
+                padding-left: 0px; border: 0; height: auto; border-top: 1px solid #bbb;
+            }
+            @include media ( $media-md ) {  // max-width: 512px
+                padding-left: 0px; border-left: 0; border-top: 1px solid #bbb; height: auto; padding-top: 20px;
+            }
+        }
+        img{
+            // for PC
+            @if $forpc == true {
+                @include media ( $media-lm ) {  // max-width: 767px
+                    float: left; padding: 0 25px 0 0;
+                }
+                @include media ( $media-md ) { // max-width: 512px
+                    display: none;
+                }
+            }
+            // for Mobile
+            @else{
+                float: left; padding: 0 25px 0 0;
+                @include media ( $media-lm ) {  // max-width: 767px
+                    float: left; padding: 0 25px 0 0;
+                }
+                @include media ( $media-md ) {  // max-width: 512px
+                    display: none;
+                }
+            }
+        }
+    }
+}
+.lifestages{
+    padding: 5px 0 0;
+    // for PC
+    @if $forpc == true {
+        @include media ( $media-md ) { // max-width: 512px
+            display: none;
+        }
+    }
+    // for Mobile
+    @else{
+        @include media ( $media-md ) { // max-width: 512px
+            display: none;
+        }
+    }
+}
+
+// ======================================================================= //
+//                           	 education                      	       //
+// ======================================================================= //
+
+.life_topimg{
+    margin-bottom: 10px;
+    // for PC
+    @if $forpc == true {
+        @include media ( $media-lm ) { // max-width: 767px
+            display: none;
+        }
+    }
+    // for Mobile
+    @else{
+        display: none;
+        @include media ( $media-lm ) { // max-width: 767px
+            display: none;
+        }
+    }
+}
+.lifefrom{
+    display: none;
+    // for PC
+    @if $forpc == true {
+        @include media ( $media-lg ) { // max-width: 768px
+            display: block; margin-bottom: 0;
+            .form-type-select .nav-selectmenu { display: block; }
+        }
+    }
+    // for Mobile
+    @else{
+        display: block; margin-bottom: 0;
+        .form-type-select .nav-selectmenu { display: block; }
+        @include media ( $media-lm ) {  // max-width: 767px
+            display: block; margin-bottom: 0;
+        }
+    }
+}
+.lifetab {
+    // for PC
+    @if $forpc == true {
+        @include media ( $media-lm ) { // max-width: 767px
+            margin: 0px;
+        }
+        @include media ( $media-md ) { // max-width: 767px
+            margin: 0px;
+        }
+    }
+    // for Mobile
+    @else{
+        margin: 0px;
+        @include media ( $media-lm ) { // max-width: 767px
+            margin: 0px;
+        }
+        @include media ( $media-md ) { // max-width: 767px
+            margin: 0px;
+        }
+    }
+    .ui-tabset{
+        // for PC
+        @if $forpc == true {
+            @include media ( $media-lm ) { // max-width: 767px
+                display: none;
+            }
+        }
+        // for Mobile
+        @else{
+            display: none;
+            @include media ( $media-lm ) { // max-width: 767px
+                display: none;
+            }
+        }
+    }
+}
+
+.lifepanel{ width: 100%; height: auto; margin-top: 40px;
+    // for PC
+    @if $forpc == true {
+        @include media ( $media-lm ) { // max-width: 767px
+            margin-top: 5px;
+        }
+    }
+    // for Mobile
+    @else{
+        margin-top: 5px;
+        @include media ( $media-lm ) { // max-width: 767px
+            margin-top: 5px;
+        }
+    }
+}
+.s15{ border-bottom: 1px solid #ccc; padding-bottom: 25px; position: relative; width: 100%; overflow: hidden;
+    .title { width: 86px; text-align: right; position: absolute; z-index: 1; border:  0; display: block; text-transform: none;
+        // for PC
+        @if $forpc == true {
+            @include media ( $media-lm ) {  // max-width: 767px
+                margin-bottom: 10px; position: static; text-align: left; width: 100%;
+            }
+        }
+        // for Mobile
+        @else{
+            margin-bottom: 10px; position: static; text-align: left; width: 100%;
+            @include media ( $media-lm ) { // max-width: 767px
+                margin-bottom: 10px; position: static; text-align: left; width: 100%;
+            }
+        }
+        .viewall{
+            // for PC
+            @if $forpc == true {
+                @include media ( $media-lm ) { // max-width: 767px
+                    float: right; margin: -30px 0 0;display:inline;
+                }
+            }
+            // for Mobile
+            @else{
+                @include media ( $media-lm ) {// max-width: 767px
+                    float: right; margin: -10px 0 0;display:inline;
+                }
+            }
+            a{ font-size: 14px; text-transform:capitalize; padding-top: 12px; display: inline-block; }
+        }
+        h2,
+        h3{ font-size: 18px; color: #362f2d; font-weight: normal; margin: 0.1em 0; line-height: 1.1em; display: inline; }
+    }
+
+    .#{$list}{ background-image: url("../#{$image-default-patch}/icon_arrow_right.png"); background-position: 667px center; background-repeat: no-repeat;
+        min-height: 174px; position: relative;
+        // for PC
+        @if $forpc == true {
+            @include media ( $media-lm ) { // max-width: 767px
+                background: none repeat scroll 0 0 rgba(0, 0, 0, 0)!important;
+                .#{$item}-title { display: inline; }
+            }
+        }
+        // for Mobile
+        @else{
+            background: none repeat scroll 0 0 rgba(0, 0, 0, 0)!important;
+            .#{$item}-title { display: inline; }
+            @include media ( $media-lm ) { // max-width: 767px
+                background: none repeat scroll 0 0 rgba(0, 0, 0, 0)!important;
+                .#{$item}-title { display: inline; }
+            }
+        }
+        .#{$item}{ margin-bottom: 6px; padding: 0px;
+            // for PC
+            @if $forpc == true {
+                @include media ( $media-lm ) { // max-width: 767px
+                    left: 0 !important; list-style-position: inside; margin: 0 !important; padding: 0 0 0 200px !important; position: relative !important; top: 0 !important; width: auto !important; overflow: visible;
+                }
+                @include media ( $media-md ) { // max-width: 512px
+                    padding: 5px 0px !important;
+                }
+            }
+            // for Mobile
+            @else{
+                left: 0 !important; list-style-position: inside; margin: 0 !important; padding: 0 0 0 200px !important; position: relative !important; top: 0 !important; width: auto !important; overflow: visible;
+                @include media ( $media-lm ) { // max-width: 767px
+                    left: 0 !important; list-style-position: inside; margin: 0 !important; padding: 0 0 0 200px !important; position: relative !important; top: 0 !important; width: auto !important; overflow: visible;
+                }
+                @include media ( $media-md ) { // max-width: 512px
+                    padding: 5px 0px !important;
+                }
+            }
+            .#{$item}-title { font-size: 18px;
+                // for PC
+                @if $forpc == true {
+                    @include media ( $media-md ) { // max-width: 512px
+                        padding: 0;
+                    }
+                }
+                // for Mobile
+                @else{
+                    @include media ( $media-md ) { // max-width: 512px
+                        padding: 0;
+                    }
+                }
+            }
+            .item-image-src{ background-position: center center !important; background-repeat: no-repeat !important; background-size: 232px 154px !important;
+                height: 154px; width: 232px;
+                // for PC
+                @if $forpc == true {
+                    @include media ( $media-md ) { // max-width: 512px
+                        width: 100%; height: 100%;
+                    }
+                }
+                // for Mobile
+                @else{
+                    @include media ( $media-md ) { // max-width: 512px
+                        width: 100%; height: 100%;
+                    }
+                }
+            }
+        }
+        .first{ left: 101px; padding-right: 31px; position: absolute; width: 521px;
+            // for PC
+            @if $forpc == true {
+                @include media ( $media-lm ) { // max-width: 767px
+                    left: 0px; margin-bottom: 10px !important;
+                }
+                @include media ( $media-md ) { // max-width: 512px
+                    margin-bottom: 0px !important;
+                }
+            }
+            // for Mobile
+            @else{
+                left: 0px; margin-bottom: 10px !important; padding-top: 25px;
+                @include media ( $media-lm ) { // max-width: 767px
+                    left: 0px; margin-bottom: 10px !important;
+                }
+                @include media ( $media-md ) { // max-width: 512px
+                    margin-bottom: 0px !important;
+                }
+            }
+            .#{$item}-description,
+            .#{$item}-image { display: block; }
+            .#{$item}-image { display: block; float: left; margin-right: 20px;
+                // for PC
+                @if $forpc == true {
+                    @include media ( $media-lm ) { // max-width: 767px
+                        left: 0px; top: 0px; position: absolute;
+                    }
+                    @include media ( $media-md ) {  // max-width: 512px
+                        left: 0px; top: 0px; float: none; margin-bottom: 10px; position: static; width: 100%; height: 154px; background-size: 100% auto !important;
+                    }
+                }
+                // for Mobile
+                @else{
+                    left: 0px; top: 0px; position: absolute;
+                    @include media ( $media-lm ) { // max-width: 767px
+                        left: 0px; top: 0px; position: absolute;
+                    }
+                    @include media ( $media-md ) { // max-width: 512px
+                        left: 0px; top: 0px; float: none; margin-bottom: 10px; position: static; width: 100%; height: 154px; background-size: 100% auto !important;
+                    }
+                }
+            }
+        }
+        .second,
+        .third,
+        .nth {  position: relative; left: 721px;width: 265px; color: #00406e;
+            //padding: 0 !important;
+            .#{$item}-description,
+            .#{$item}-image { display: none; }
+            h3 {
+                a{ font-size:  13px; }
+            }
+        }
+
+    }
+}
+.lifeleft { float: left; width: 660px; padding-right: 20px; height: auto;
+    // for PC
+    @if $forpc == true {
+        @include media ( $media-lm) { // max-width: 767px
+            float: left; width: 100%;
+        }
+        @include media ( $media-md ) { // max-width: 512px
+            float: left; width: 100%;
+        }
+    }
+    // for Mobile
+    @else{
+        float: left; width: 100%;
+        @include media ( $media-lm) { // max-width: 767px
+            float: left; width: 100%;
+        }
+        @include media ( $media-md ) { // max-width: 512px
+            float: left; width: 100%;
+        }
+    }
+}
+.liferight { float: right; width: 300px;
+    // for PC
+    @if $forpc == true {
+        @include media ( $media-lm ) { // max-width: 767px
+            display: none;
+        }
+    }
+    // for Mobile
+    @else{
+        display: none;
+        @include media ( $media-lm ) { // max-width: 767px
+            display: none;
+        }
+    }
+}
+
+.s15.vertical { float: none; width: auto; padding-top: 30px; padding-bottom: 25px;
+    // for PC
+    @if $forpc == true {
+        @include media ( $media-lm ) { // max-width: 767px
+            padding-bottom: 0px; margin-bottom: 0px;
+        }
+        @include media ( $media-ml) { // max-width: 620px
+            padding-bottom: 25px; margin-bottom: 0px;
+        }
+        @include media ( $media-md ) { // max-width: 512px
+            padding-bottom: 25px;
+            margin-bottom: 30px;
+        }
+    }
+    // for Mobile
+    @else{
+        padding-bottom: 0px; margin-bottom: 30px;
+        @include media ( $media-lm) { // max-width: 767
+            padding-bottom: 25px;
+        }
+    }
+    .#{$list} { background-image: url('../#{$image-default-patch}/icon_arrow_down.png'); background-repeat: no-repeat; background-position: 300px 67px;
+        min-height: 250px; position: relative;
+        // for PC
+        @if $forpc == true {
+            @include media ( $media-lm ) { // max-width: 767px
+                min-height: 174px;
+            }
+        }
+        // for Mobile
+        @else{
+            min-height: 174px;
+            @include media ( $media-lm ) { // max-width: 767px
+                min-height: 174px;
+            }
+        }
+    }
+    .first { float: none; width: 513px; padding-bottom: 35px; border-right: medium none; }
+    .nth,
+    .second,
+    .third { position: relative; left: 320px; top: 104px; width: 265px; list-style-type: disc; overflow:  visible; }
+}
+.s15.first {
+    .nth,
+    .second,
+    .third { list-style-type: disc; overflow: visible; }
+}
+.s15.end { border-bottom: 0 !important;}
+.adbottom{
+    display: none;
+    // for PC
+    @if $forpc == true {
+        @include media ( $media-lm) { // max-width: 767px
+            display: block;
+        }
+        @include media ( $media-md ) { // max-width: 512px
+            display: block;
+        }
+    }
+    // for Mobile
+    @else{
+        display: block;
+        @include media ( $media-lm) { // max-width: 767px
+            display: block;
+        }
+        @include media ( $media-md ) { // max-width: 512px
+            display: block;
+        }
+    }
+}

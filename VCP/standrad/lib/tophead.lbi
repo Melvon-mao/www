@@ -1,0 +1,54 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><!-- Header -->
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container-fluid">
+    	<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        </a>
+        <span class="brand">VCP<span>&nbsp;|&nbsp;Front-end Design Standrad</span></span>
+		<div class="nav-collapse">
+            <ul class="nav">
+              <li class="divider-vertical"></li>
+              <li><a href="../standrad.html">HTML&CSS</a></li>
+              <li class="divider-vertical"></li>
+              <li><a href="../Interactive.html">Interactive</a></li>
+              <li class="divider-vertical"></li>
+              <li><a href="../visual.html">Visual</a></li>
+              <li class="divider-vertical"></li>
+              <li><a href="../icon.html">ICON</a></li>
+              <li class="divider-vertical"></li>
+            </ul>
+            <div class="pull-right">
+            项目跳转：
+            <select class="melvon_select" onchange="self.location.href=options[selectedIndex].value">
+              <optgroup label="Publish Admin">
+                <option value="../publisheradmin/index.html">Index</option>
+                <option value="../publisheradmin/register.html">Register</option>
+                <option value="../publisheradmin/site.html">Site</option>
+                <option value="../publisheradmin/page.html">Page</option>
+                <option value="../publisheradmin/register.html">Article</option>
+                <option value="../publisheradmin/user.html">User</option>
+                <option value="../publisheradmin/app.html">App</option>
+              </optgroup>
+              <optgroup label="Publisher Preview">
+                <option value="../publisherpreview/index.html">Preview</option>
+              </optgroup>
+              <optgroup label="Reader Admin">
+                <option value="../readeradmin/index.html">Reader Admin</option>
+              </optgroup>
+              <optgroup label="Standrad">
+                <option value="standrad.html" selected>HTML/CSS/Javascript</option>
+                <option value="Interactive.html">Interactive</option>
+                <option value="icon.html">Icon</option>
+                <option value="visual.html">Visual</option>
+              </optgroup>
+            </select>
+            </div>
+        </div>
+      
+    </div>
+  </div>
+</div>
+<!-- Header End -->

@@ -1,0 +1,17 @@
+// ======================================================================= //
+//                    		     @font-face         	  	               //
+// ======================================================================= //
+
+@mixin font-face( $font-family, $font-weight: normal, $font-style: normal ) {
+	@font-face { font-family: '#{$font-family}';
+				src: url('../#{$font-default-patch}/#{$font-family}.eot?v=20141023');
+				src: url('../#{$font-default-patch}/#{$font-family}.eot?v=20141023#iefix') format('embedded-opentype'),
+                     // url('../#{$font-default-patch}/#{$font-family}.woff2') format('woff2'),
+                     // url('../#{$font-default-patch}/#{$font-family}.woff?v=20141023') format('woff'),
+					 url('../#{$font-default-patch}/#{$font-family}.ttf?v=20141023') format('truetype');
+					 // url('../#{$font-default-patch}/#{$font-family}.svg##{$font-family}') format('svg');
+				font-weight: $font-weight;
+				font-style: $font-style;
+	}
+}
+

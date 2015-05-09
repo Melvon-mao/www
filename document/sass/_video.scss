@@ -1,0 +1,105 @@
+// ======================================================================= //
+//                               	 Video      	                       //
+// ======================================================================= //
+
+.videobox {
+    @include boxsizing;
+	.homefuture.vid & { width:300px; height:190px; border:solid 1px #ccc; margin:12px 0 20px 0; @include boxsizing;
+        // for PC
+        @if $forpc == true {
+            @include media ( $media-lg ) { //768px
+                max-width: 300px !important; margin: 22px auto 30px;
+            }
+            @include media ( $media-md ) { //512px
+                width: 100%; margin: 10px auto 20px;
+                .jwplayer { width: 100% !important; }
+            }
+        }
+            // for Mobile
+        @else{
+            max-width: 300px !important; margin: 22px auto 30px;
+            @include media ( $media-lm ) { //767px
+                width: 100%; height: 100%; margin: 10px auto 20px;
+                .jwplayer { width: 100% !important; }
+            }
+        }
+    }
+
+	#JWPVideo_wrapper { width: 100% !important; height: 100% !important;
+        // for PC
+        @if $forpc == true {
+            @include media ( $media-lg ) { //768px
+                max-width: 300px !important;
+            }
+        }
+        // for Mobile
+        @else{
+            height: 188px !important;
+            @include media ( $media-lm ) {  //767px
+                max-width: 300px !important; height: 177px !important;
+            }
+        }
+    }
+
+}
+
+.video {
+    width: 100%;
+    .video-screen {
+        display: block; height: 348px; position: relative; width: 100%; border-color: #dad7cc; border-style: solid; border-width: 1px; margin-bottom: 25px;
+        @include boxsizing();
+        @at-root {
+            .layout-col-right {
+                .video-screen { height: auto; }
+            }
+        }
+        // for PC
+        @if $forpc == true {
+            @include media ( $media-lg ) { // 768px
+                height: auto;
+                // http://www.staging.investopedia.com/video/play/calculating-the-means/
+                .jwplayer { width: 100% !important; margin: 0 auto !important;}
+            }
+        }
+        // for Mobile
+        @else{
+            height: auto;
+            // http://www.staging.investopedia.com/video/play/calculating-the-means/
+            .jwplayer { width: 100% !important; margin: 0 auto !important;}
+        }
+        a.ipad { background-color: #000; display: block; width: 618px; height: 348px; }
+    }
+
+    #JWPVideo_wrapper { width: 100% !important;
+        // for PC
+        @if $forpc == true {
+            @include media ( $media-lg ) { //768px
+                margin: 0 auto; /* max-width: 300px !important; */height: 300px !important;
+            }
+        }
+        // for Mobile
+        @else{
+            @include media ( $media-lm ) {  //767px
+                margin: 0 auto; /* max-width: 300px !important;*/ height: 300px !important;
+            }
+        }
+    }
+
+    .feature { height: auto;
+        .meta { font-size:14px; text-transform:uppercase; color:#777; margin-bottom:10px; }
+    }
+    .video-description {
+        > p:nth-last-child(1){ margin-bottom: 0; padding-bottom: 0;}
+    }
+}
+
+
+
+
+.videoshare .box .title{ background-color: #292f40; color: #fff; font-size: 18px; line-height: 1em; padding: 4px 8px; text-transform: uppercase; margin-bottom: 0px; border: 0; }
+.share > .inner { border: 1px solid #d6d0d5; font-size: 16px; padding: 0 20px 10px; text-align: center; }
+.fl .videotext{ width: 210px; }
+.vid-overlay { position: absolute; width: 618px; height: 348px; background-color: #303030; display: none; color: #fff; }
+.btn-replay-video { background: url("../#{$image-default-patch}/replay-video-btn.jpg") no-repeat top; width: 126px; height: 31px; margin: 15px 0px 10px 0px; border: none; cursor: pointer; }
+.btn-replay-video:hover { background: url("../#{$image-default-patch}/replay-video-btn.jpg")  no-repeat bottom; width: 126px; height: 31px; cursor: pointer; }
+.ad-slideunder-video { margin-top: 10px; display: none; text-align: center; }

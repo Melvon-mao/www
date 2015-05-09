@@ -1,0 +1,896 @@
+// ======================================================================= //
+//                 	#Content,#Header,#Footer,.ad-leaderboard 	           //
+// ======================================================================= //
+#Content { min-height: 500px; background: $content-bgcolor; 
+	// for PC
+	@if $forpc == true {
+        @include media ( $media-lg ) {  //768px
+            width: 94%; min-height: 718px;
+        }
+	}
+	// for Mobile
+	@else{
+		width: 94%; min-height: 500px; // 1024px
+        @include media ( $media-lg ) { //768px
+            min-height: 718px;
+        }
+	}
+}
+#Content, 
+#Header, 
+#Footer,
+.ad-leaderboard { 
+	position: relative; left: 0; z-index: 100; 
+	// for PC
+	@if $forpc == true {
+		@include media ( $media-xl, min-width ) {
+			left: 0 !important;
+		}
+	}
+	// for Mobile
+	@else{
+		@include transform(transform, 0.5s);
+	}
+}
+.content-section { margin-bottom:  25px;
+    h2 { line-height:1.1em; font-size:35px; margin-bottom:16px; }
+}
+.content-img {
+    float: left; margin: 6px 18px 10px 0; text-align: center;
+    img { width: 100%; }
+}
+.content-body {
+    /* font-size: 17px; */ line-height: 1.5em;
+    h2 { font-size: 35px; line-height: 1.1em; margin-bottom: 16px; }
+    .content-subhead { margin-bottom: 10px;
+        h2{ margin-bottom: 13px; }
+    }
+}
+// Term article page Textnote margin-top:20px
+.content-box-term {
+    .content-body { margin-top: 30px; }
+    p + .content-body{ margin-top: 0; }
+
+}
+
+
+
+
+// ======================================================================= //
+//               			  	laytou-size : 980px 	     		       //
+// ======================================================================= //
+.#{$layout}-size 		{
+	width: $layout-size-width; margin: 0 auto; padding: 0 20px; 
+	// for PC
+	@if $forpc == true {
+		@include media ( $media-lg ) {
+			width: 100%; padding: 0;
+			#Header &{ width: auto;}
+		}
+
+	}
+	// for Mobile
+	@else{
+		width: 100%; padding: 0;
+		@include media ( $media-lm ) {
+			width: 100%; padding: 0;
+			#Header &{ width: auto;}
+		}
+	}
+}
+.channel-page { margin-top: 30px; }
+
+
+
+
+
+
+
+// ======================================================================= //
+//               			  		layout-page 	   		  		       //
+// ======================================================================= //
+.#{$layout}-page 		{ float: left; width: $layout-page-width;
+    // for PC
+    @if $forpc == true {
+        @include media ( $media-lg ) { // 768px
+            float: none;
+        }
+    }
+    // for Mobile
+    @else{
+        float: none;
+    }
+}
+
+
+
+
+
+
+// ======================================================================= //
+//               			  	layout-content 	   			  		       //
+// ======================================================================= //
+.#{$layout}-content 	{
+	margin: $layout-content-margin; padding: 0 20px 20px 0; 
+
+	&.#{$layout}-content-large { margin: 0 300px 0 0; }
+
+    &.#{$layout}-content-medium { margin: 0 320px 0 0; } // Term topic page - 2014.10.30
+
+    &.#{$layout}-content-fullright{ margin: 0; }
+
+	// for PC
+	@if $forpc == true {
+		@include media ( $media-lg ) {
+			margin:0; padding: 0;
+			&.#{$layout}-content-large,
+            &.#{$layout}-content-medium{ margin:0; padding: 0; }
+		}
+	}
+	// for Mobile
+	@else{
+		margin:0; padding: 0;
+		&.#{$layout}-content-large,
+        &.#{$layout}-content-medium{ margin:0; padding: 0; }
+	}
+}
+
+
+
+
+
+// ======================================================================= //
+//                 	layout-content > layout-col-left  			 	       //
+// ======================================================================= //
+.#{$layout}-col-left {
+	width: 154px; height: 100%; float: left; font-size: 14px;
+    .ui-tabset-select { display: none; }
+
+    // for PC
+    @if $forpc == true {
+        @include media ( $media-ml ) { //620px;
+			float: none; width: auto;
+            .ui-tabset-select { display: block; }
+        }
+    }
+    // for Mobile
+    @else{
+        @include media ( $media-lm ) {  //767px
+			float: none; width: auto;
+            .ui-tabset-select { display: block; }
+        }
+    }
+
+    &.termpage-col-left { position: relative; margin-top:-31px; border-right: 1px solid #d6d9de;
+        // for PC
+        @if $forpc == true {
+            @include media ( $media-ml ) { // 620px
+                margin-top:0; border-right: 0;
+            }
+        }
+            // for Mobile
+        @else{
+            @include media ( $media-lm ) { //767px
+                margin-top:0; border-right: 0;
+            }
+        }
+    }
+
+}
+
+
+
+
+
+// ======================================================================= //
+//                 	layout-content > layout-col-right  			 	       //
+// ======================================================================= //
+.#{$layout}-col-right {
+	margin-left:170px; overflow: hidden;
+
+   // for PC
+    @if $forpc == true {
+        @include media ( $media-ml ) { // 620px
+			margin-left: 0;
+        }
+    }
+    // for Mobile
+    @else{
+        @include media ( $media-lm ) { // 767px
+            margin-left: 0;
+        }
+    }
+
+    &.termpage-col-right { margin-left:200px;
+        // for PC
+        @if $forpc == true {
+            @include media ( $media-ml ) { // 620px
+                margin-left: 0;
+            }
+        }
+            // for Mobile
+        @else{
+            @include media ( $media-lm ) { // 767px
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+// ======================================================================= //
+//               	      	layout-through-left           			       //
+// ======================================================================= //
+.#{ $layout}-through-left {
+    width:154px; height:100%; float:left; font-size:14px;
+    .list {
+        .selected {
+            .item-title{
+                font-family: $section-font-bold;
+                a{
+                    &:after {
+                        font-family: $section-font-bold;
+                        content: "\00bb";
+                    }
+                }
+            }
+        }
+    }
+    // for PC
+    @if $forpc == true {
+        @include media ( $media-ml ) { //620px
+            width: 100%; float: none;
+            .layout-col-left-list { display: none; }
+            .form-item.form-type-select { display: block; }
+        }
+    }
+    // for Mobile
+    @else{
+        @include media ( $media-lm ) { // 767px
+            width: 100%; float: none;
+            .layout-col-left-list { display: none; }
+            .form-item.form-type-select { display: block; }
+        }
+    }
+}
+
+
+
+
+
+// ======================================================================= //
+//               		 	layout-through-right         			       //
+// ======================================================================= //
+.#{ $layout}-through-right {
+    margin-left: 170px;
+    margin-bottom: 65px;
+    .through-col {
+        .through-col-l{
+            width: 53%; padding-right: 1%; float: left;
+            // for PC
+            @if $forpc == true {
+                @include media ( $media-lg ) {
+                   width: 100%;
+                }
+            }
+            // for Mobile
+            @else{
+                    width: 100%;
+            }
+        }
+        .through-col-r{
+            float: right; width: 350px; min-height: 0;
+            .box.ad { margin-bottom: 50px; }
+            // for PC
+            @if $forpc == true {
+                @include media ( $media-lg ) { // 768px
+                    width: 100%; margin-bottom: 65px;
+                    .box.ad { margin-bottom: 0px; }
+                }
+                @include media ( $media-ml ) { //620px
+                    margin-bottom: 0;
+                }
+            }
+            // for Mobile
+            @else{
+                width: 100%; margin-bottom: 65px;
+                .box.ad { margin-bottom: 0px; }
+                @include media ( $media-lm ) { //767px
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    .quote-option-wrap {
+        margin-bottom: 38px;
+        .separator { margin-top: 18px;}
+        // for PC
+        @if $forpc == true {
+            @include media ( $media-ml ) { // 620px
+                margin-bottom: 30px;
+            }
+        }
+        // for Mobile
+        @else{
+            @include media ( $media-lm ) { // 767px
+                margin-bottom: 30px;
+            }
+        }
+    }
+    // for PC
+    @if $forpc == true {
+        @include media ( $media-ml ) { // 620px
+            margin-left:0;
+        }
+    }
+    // for Mobile
+    @else{
+        @include media ( $media-lm ) { // 767px
+            margin-left:0;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+// ======================================================================= //
+//               			  	layout-side 	   			  		       //
+// ======================================================================= //
+.#{$layout}-side {
+
+	float: right; margin: $layout-side-margin;  width: $layout-side-width; min-height: 400px; 
+
+	&.#{$layout}-side-small { margin-top: 0; width: 300px; margin: 0 0 0 -300px; }
+    &.#{$layout}-autoheight { min-height: 0;
+        // for PC
+        @if $forpc == true {
+            // max-width: 768px
+            @include media ( $media-lg ) {
+                + div +  .#{$layout}-page { margin-top: $margin-sm; }
+            }
+        }
+            // for Mobile
+        @else{
+                + div +  .#{$layout}-page { margin-top: $margin-sm; }
+            // max-width: 767px
+            @include media ( $media-lm ) {
+                + div +  .#{$layout}-page { margin-top: $margin-sm; }
+            }
+        }
+    }
+	// for PC
+	@if $forpc == true {
+		@include media ( $media-lg ) {
+			width: 0; height: 0; min-height: 0; margin:0; padding: 0; overflow: hidden;
+			&.#{$layout}-side-small { width: 0; }
+            &.#{$layout}-side-responsive { width: 100%; height: auto; }
+		}
+	}
+	// for Mobile
+	@else{
+		width: 0; height: 0; min-height: 0; margin:0; padding: 0; overflow: hidden;
+		&.#{$layout}-side-small { width: 0; }
+        &.#{$layout}-side-responsive { width: 100%; height: auto; }
+
+	}
+
+    // in corporation ....
+    @at-root {
+        // for PC
+        @if $forpc == true {
+            @include media ( $media-lg ) {
+                .corporation .#{$layout}-side { float: none; margin: 0; height: 100%; min-height: 100%;  width: $layout-side-width; float:left; }
+            }
+        }
+            // for Mobile
+        @else{
+            .corporation .#{$layout}-side { float: none; margin: 0; height: 100%; min-height: 100%;  width: $layout-side-width; float:left; }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+// ======================================================================= //
+//               			 	layout-title 	   			  		       //
+// ======================================================================= //
+.#{$layout}-title {
+	-webkit-text-stroke: 0.01em; 
+	@include clear;
+
+	&.only-fontsize-title {
+		h1, .h1,
+        h2, .h2{ padding-right: 100px;
+			// for PC
+			@if $forpc == true {
+				@include media ( $media-lg ) { padding-right: 0; }
+			}
+			// for Mobile
+			@else{ padding-right: 0; }
+		}
+	}
+	
+	h1, .h1,
+    h2, .h2{ font-size: 46px; line-height: 1.1em; color: $main-color;
+		// for PC
+		@if $forpc == true {
+			@include media ( $media-md ) { font-size: 38px; } // 512px
+		}
+		// for Mobile
+		@else{
+			@include media ( $media-lm ) { font-size: 38px; } // 767px
+		}
+        .rate-change{ font-size: 21px; }
+	}
+
+    
+    &.float-#{$layout}-title { // float-layout-title
+        // for PC
+        @if $forpc == true {
+            position:fixed; top:58px; left:0; right:0; width: 980px; margin: auto; z-index: 100; background-color: #fff; 
+            &:before {
+                content: ''; position: absolute; left:-100%; right:0; bottom:0; margin: auto; width:300%; height: 59px; background: #fff;
+                @include box-shadow(0 0 20px rgba(0,0,0,0.15)); z-index: -1; transition: box-shadow 0.3s ease-out;
+            }
+            &:after {
+                content: ''; position: absolute; left:-100%; right:0; bottom:0; margin: auto; width:300%; height: 1px; background: #d6d9de; overflow: hidden; z-index: 0;
+            }
+
+            @include media ( $media-lg ) { // 768px
+                position: static; width: 100%; margin: 0;
+                &:before,
+                &:after {
+                    display: none;
+                }
+            }
+        }
+        // for Mobile
+        @else{
+            position: static; width: 100%; 
+            &:before,
+            &:after {
+                display: none;
+            }
+        }
+        
+    }
+    
+
+	//&.partner-articles {
+		//>  h1,
+       // > .h1{ float: left; padding-right: 140px; }
+		// Partner pic
+		//.partner-articles-profile-pic { float: right; margin-left: -140px; }
+		// for PC
+		//@if $forpc == true {
+		//	@include media ( $media-md ) { // 512px
+		//		>  h1,
+        //        > .h1{ float: none; padding-right: 0; }
+				//.partner-articles-profile-pic { float: none; margin-left: 0; margin-bottom: 20px; }
+		//	}
+		//}
+		// for Mobile
+		//@else{
+		//	@include media ( $media-lm ) { // 767px
+		//		>  h1,
+        //        > .h1{ float: none; padding-right: 0; }
+				//.partner-articles-profile-pic { float: none; margin-left: 0;  margin-bottom: 20px;}
+		//	}
+		//}
+	//}
+    @at-root {
+        .layout-body {
+            .partner-articles-profile-pic { float: left; margin-right: 20px; }
+        }
+    }
+
+}
+
+
+
+
+
+
+// ======================================================================= //
+//               			layout-body-topbar 				  		       //
+// ======================================================================= //
+.#{$layout}-body-topbar {
+	position: relative; font-size: 18px;
+	.by-author { padding-bottom: 20px;  display: inline-block; }
+	.#{$layout}-title.only-fontsize-title &{
+        .font-size{ position: absolute; top: -36px; right: 0; }
+        .by-author { display: none; }
+	}
+
+	.content-section & { margin-top:0px; padding-bottom: 10px; }
+    @at-root{
+        .#{$layout}-body-slideshow{
+            .#{$layout}-body-topbar{ padding-bottom: 0px;}
+        }
+    }
+
+	// for PC
+	@if $forpc == true {
+		@include media ( $media-lg ) {
+			display: none;
+			@at-root{
+				.article-author-bar{
+					.#{$layout}-body-topbar{
+						display: block;
+					}
+				}
+                .gray-sub-title {
+                    .layout-body-topbar { display: block; }
+                }
+			}
+		}
+	}
+	// for Mobile
+	@else{
+		@include media ( $media-lm ) {
+			display: none;
+			@at-root{
+				.article-author-bar{
+					.#{$layout}-body-topbar{
+						display: block;
+					}
+				}
+                .gray-sub-title {
+                    .layout-body-topbar { display: block; }
+                }
+			}		
+		}
+	}	
+}
+
+
+
+
+
+
+// ======================================================================= //
+//               			layout related searches			  		       //
+// ======================================================================= //
+.#{$layout}-related-searches {
+    margin: 0 0 20px 0; padding: 10px 0; font-size: 17px; border-width: 1px 0; border-style: solid; border-color: #e4e5e7;
+    > i 	{ display:block; float: left; margin: 4px 15px 0 0; font-style: normal;
+            // for PC
+            @if $forpc == true {
+                // max-width: 512px
+                @include media ( $media-md ) {
+                    float: none; margin-bottom: 4px;
+                }
+            }
+            // for Mobile
+            @else{
+                // max-width: 767px
+                @include media ( $media-lm ) {
+                    float: none; margin-bottom: 4px;
+                }
+            }
+    }
+    a 		{ display:inline-block; margin: 0 15px 0 0; padding: 4px 0;}
+    > div 	{ overflow: hidden;
+            // for PC
+            @if $forpc == true {
+                // max-width: 512px
+                @include media ( $media-md ) {
+                    float: none; overflow: visible;
+                }
+            }
+            // for Mobile
+            @else{
+                // max-width: 767px
+                @include media ( $media-lm ) {
+                    float: none; overflow: visible;
+                }
+            }
+    }
+    // Bugzilla: 350400 (2014.09.22 By Melvon)
+    // for PC
+    @if $forpc == true {
+        @include media ( $media-lg ) { // 768px
+            margin: 0 0 20px 0; padding: 0; font-size: 0px; border-width: 1px 0 0; height: 0; overflow: hidden;
+        }
+    }
+    // for Mobile
+    @else{
+        margin: 0 0 20px 0; padding: 0; font-size: 0px; border-width: 1px 0 0; height: 0; overflow: hidden;
+    }
+
+}
+
+
+
+
+
+
+// ======================================================================= //
+//              				layout content			     		       //
+// ======================================================================= //
+.#{$layout}-body {
+	margin-bottom: $layout-body-margin; font-size: 17px; line-height: 1.5em;
+	p { margin-top: 0; padding-bottom: 10px ;
+		&.last-spacing  { padding-bottom: 0; margin-bottom: 0;}
+	}
+	h2,
+    h3{ font-family: $column-font; font-size: 25px; text-transform: uppercase;  }
+	    .content-image  { width: 380px; float: left; margin: 6px 18px 10px 0; text-align: center;
+            img{ width: 100%; max-width: 100%; }
+            // for PC
+            @if $forpc == true {
+                // max-width: 480px
+                @include media ( $media-sm ) {
+                    width: 100%; float: none; margin:6px 0 10px 0;
+                }
+            }
+                // for Mobile
+            @else{
+                // max-width: 767px
+                @include media ( $media-lm ) {
+                    width: 100%; float: none;  margin:6px 0 10px 0;
+                }
+            }
+	    }
+    h2 { color: $h-color; }
+    h3 { color: $h-color ; }
+    // for PC
+    @if $forpc == true {
+        @include media ( $media-lg ) { //768px
+            margin-bottom: $margin-sm; // 30px
+        }
+    }
+        // for Mobile
+    @else{
+        @include media ( $media-lm ) {  //767px
+            margin-bottom: $margin-sm; //30px
+        }
+    }
+}
+.#{$layout}-body-article	{ margin-bottom: $layout-body-margin; }
+
+
+
+
+
+
+
+// ======================================================================= //
+//               			Article contxt ul:disc		     		       //
+// ======================================================================= //
+.content-box {
+    /* font-size: $font-resize-medium; */
+	ul  { list-style: disc;}
+	img { max-width: 100% !important; }
+    > p:nth-last-child(1){ margin-bottom: 0; padding-bottom: 0;}
+	> table {
+        width: 100% !important; max-width: 100% !important;
+
+		// for PC
+		@if $forpc == true {
+			@include media ( $media-md ) {
+				// font-size: 0.7em !important; (bugzilla:350447)
+			}
+		}
+		// for Mobile
+		@else{
+			@include media ( $media-lm ) {
+				width: 100% !important;
+                // font-size: 0.7em !important; (bugzilla:350447)
+			}
+		}
+
+		td { width: auto !important;  word-wrap: break-word !important; word-break: keep-all !important;
+            @at-root{
+                .layout-body-article {
+                    .content-box {
+                        table {
+                            td{ word-break:normal !important; }
+                        }
+                    }
+                }
+
+            }
+
+			// for PC
+			@if $forpc == false {
+				@include media ( $media-lm ) {
+					 background: none !important;
+                     //text-align: center !important;
+				}
+			}
+		}
+	}
+	.next-pg { font-size:18px; float:right; margin-bottom:20px; margin-top: 15px; clear: left;
+		&:before{ content:'Next: '; font-family: $section-font-bold; }
+	}
+
+   
+    //reset h2 title for term content
+    &.content-box-term{
+        h2{
+            font-size: 23px;
+            margin-bottom: 0;
+        }
+    }
+
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ======================================================================= //
+//               			layout-body : video     				       //
+// ======================================================================= //
+.#{$layout}-body-video-title { margin-top:30px }
+.#{$layout}-body-video{
+	margin-top: 5px;
+	> div 	 { width: $layout-body-video-width; max-width: $layout-body-video-maxwidth !important }
+	> iframe { width: $layout-body-video-width; max-width: $layout-body-video-maxwidth !important }
+	img  	 { width: $layout-body-video-width; max-width: $layout-body-video-maxwidth !important }
+}
+
+
+
+
+
+
+// ======================================================================= //
+//              			  	two-col 	   			  			       //
+// ======================================================================= //
+.two-col { @include clear(); margin-bottom: 15px;
+	.col-left,
+	.col-right 	{ float: left; }
+	.col-left 	{ width: 303px; margin:0 7% 0 0;  }
+	.col-right 	{ width: 607px;  }
+	// for PC
+	@if $forpc == true {
+		@include media ( $media-lg ) {
+            margin-bottom: 0;
+			.col-left,
+			.col-right 	{ float: none; width:100%; margin:0; }
+		}
+	}
+	// for Mobile
+	@else{
+        // iPad
+        margin-bottom: 0;
+        .col-left,
+        .col-right 	{ float: none; width:100%; margin:0; }
+        // iPhone
+        @include media (  $media-lm ) {
+            margin-bottom: 0;
+            .col-left,
+            .col-right 	{ float: none; width:100%; margin:0; }
+        }
+	}
+
+}
+
+
+
+
+// ======================================================================= //
+//              			  	three-col 	   			  			       //
+// ======================================================================= //
+.three-col {
+
+	.col { float: left; padding-right: 3%; width: 30%; }
+	.title { border-bottom: 0; margin-bottom: 8px; }
+	// for PC
+	@if $forpc == true {
+		@include media ( $media-md ) {
+			.col 	{ float: none; width:100%; margin:0 0 30px 0; }
+			hr { display: none; }
+		}
+	}
+	// for Mobile
+	@else{
+		@include media ( $media-lm ) {
+			.col 	{ float: none; width:100%; margin:0 0 30px 0; }
+			hr { display: none; }
+		}
+	}
+
+}
+
+
+
+
+
+
+
+// ======================================================================= //
+//               			  	12 column 	   			  			       //
+// ======================================================================= //
+.row             { position: relative; @include boxsizing;  }
+.row:before,
+.row:after       { display: table; content: " "; }
+.row:after       { clear: both; }
+
+/* ===== Column ===== */
+%column { position: relative; min-height: 1px; float: left; }
+
+.column-12      { width: 100%;               }
+.column-11      { width: 91.66666666666666%; }
+.column-10      { width: 83.33333333333334%; }
+.column-9       { width: 75%;                }
+.column-8       { width: 66.66666666666666%; }
+.column-7       { width: 58.333333333333336%;}
+.column-6       { width: 50%;                }
+.column-5       { width: 41.66666666666667%; }
+.column-4       { width: 33.33333333333333%; }
+.column-3       { width: 25%;                }
+.column-2       { width: 16.666666666666664%;}
+.column-1       { width: 8.333333333333332%; }
+
+.column-1,
+.column-2,
+.column-3,
+.column-4,
+.column-5,
+.column-6,
+.column-7,
+.column-8,
+.column-9,
+.column-10,
+.column-11,
+.column-12 { 
+	@extend %column; 
+	@include boxsizing; 
+	// for PC
+	@if $forpc == true {
+		@include media ( $media-ml ) {
+			float: none;
+			width: 100%;
+		}
+	}
+	// for Mobile
+	@else{
+		@include media ( $media-ml ) {
+			float: none;
+			width: 100%;
+		}
+	}
+}
+

@@ -1,0 +1,646 @@
+ <div page-nav current = '3'></div>
+
+
+
+<!-- Container -->
+<div class="vcpbox">
+    <div class="container"  >
+
+<!-- =======================================  tip_auto ======================================= -->
+<div class="tip_box tip_auto" ng-cloak ng-show="'auto'==cssblocktipbox" >
+    <h1 class="PopupTitle"><a href="" class="TipBoxClose" ng-click="closeautoblock()">X</a>Auto Block Data</h1>
+    <div class="tabbable tabs-below">
+        <div class="tab-content">
+            <!-- Tab1: Layout -->
+            <div class="tab-pane active" id="tab-layout">
+                <dl class="clearfix">
+                    <dt>Block name :</dt>
+                    <dd>
+                        <div class="tipbox_filter">
+                            <input type="text" data-provide="typeahead" data-items="10" ng-model="newblock.blockname" placeholder="block name" min="0" max="5" required >
+                        </div>
+                    </dd>
+                </dl>
+                <dl class="clearfix">
+                    <dt>Layout :</dt>
+                    <dd>
+                        <div class="tipbox_layout">
+
+                            <a href="" ng-class="{selected:selectblockicon == $index}" ng-repeat="blocklayout in blocklayouts" ng-click="selectlayout($index,blocklayout.id)">
+                                <img ng-src="{{ blocklayout.thumbnail_path }}" >
+                            </a>
+                        </div>
+                    </dd>
+                </dl>
+                <dl class="clearfix">
+                    <dt>Article Quantity :</dt>
+                    <dd><input type="text" ng-model="newblock.blockquantity" ></dd>
+                </dl>
+
+                <dl class="clearfix">
+                    <dt>Category :</dt>
+                    <dd>
+                        <div class="tipbox_filter">
+                            <select ng-model="newblock.blockcategory" >
+                                <option selected="selected">All</option>
+                                <option>Cosmetics</option>
+                                <option>Insurance</option>
+                                <option>Healthcare</option>
+                                <option>Health and leisure</option>
+                                <option>Commercial</option>
+                                <option>Online service</option>
+                                <option>Entertainment</option>
+                                <option>Season</option>
+                                <option>Family</option>
+                                <option>Education</option>
+                                <option>Traveling</option>
+                                <option>Car</option>
+                                <option>Law</option>
+                                <option>Toys and games</option>
+                                <option>Law</option>
+                            </select>
+                        </div>
+                    </dd>
+                </dl>
+                <dl class="clearfix">
+                    <dt>Sort by :</dt>
+                    <dd>
+                        <div class="tipbox_sort">
+                            <label class="radio">
+                                <input type="radio" name="optionsRadios" ng-model="newblock.blocksortby" value="bydate" >Date
+                            </label>
+                            <label class="radio">
+                                <input type="radio" name="optionsRadios" ng-model="newblock.blocksortby" value="bypv">PV
+                            </label>
+                        </div>
+                    </dd>
+                </dl>
+                <dl class="clearfix">
+                    <dt>Tag :</dt>
+                    <dd>
+                        <div class="tipbox_filter">
+                            <input name="tagsinput"  id="tagsinput" class="tagsinput" value=""  />
+                        </div>
+                    </dd>
+                </dl>s
+
+            </div>
+            <!-- Tab1: Layout //End -->
+            <!-- Tab2: Filter -->
+            <div class="tab-pane" id="tab-filter">
+
+            </div>
+            <!-- Tab2: Filter //End -->
+            <!-- Tab3: Sort
+            <div class="tab-pane" id="tab-Sort">
+
+            </div>
+             Tab3: Sort //End -->
+        </div>
+        <ul class="nav nav-tabs">
+            <li id="layout" class="active"><a href="#tab-layout" data-toggle="tab" ng-click="clickblocklayouttab($event,'tab-layout')">Block</a></li>
+            <li id="filter"><a href="#tab-filter" data-toggle="tab" ng-click="clickblocklayouttab($event,'tab-filter')">Article Filter</a></li>
+            <!-- <li id="sort"><a href="#tab-Sort" data-toggle="tab" ng-click="clickblocklayouttab($event,'tab-Sort')">Sort</a></li> -->
+        </ul>
+
+        <li ng-hide="csspooruglilyshortboy" ng-repeat="boy in boys" ng-angulargirl="getTallerRichHandsomeBoy($index) " >
+            <a href="{{boy.location}}">Hey  {{boy.name}} , do you have time date with me?</a>
+        </li>
+
+    </div>
+</div>
+
+<!-- ======================================= tip_editor ======================================= -->
+<div class="tip_box tip_editor" ng-cloak ng-show="'editor'==cssblocktipbox">
+    <h1 class="PopupTitle"><a href="" class="TipBoxClose" ng-click="closeeditorblock()">X</a>Editor's Pick Block Data</h1>
+    <div class="tab-content">
+        <dl class="clearfix">
+            <dt>Block name :</dt>
+            <dd>
+                <div class="tipbox_filter">
+                    <input type="text" data-provide="typeahead" data-items="10" ng-model="newblock.blockname" placeholder="block name" data-source='[]'>
+                </div>
+            </dd>
+        </dl>
+        <dl class="clearfix">
+            <dt>Layout :</dt>
+            <dd>
+                <div class="tipbox_layout">
+                   <!--2222 <a href=""  ng-repeat="blocklayout in blocklayouts"  ng-click="addblocktopage('editor', currentlayoutcontainer, $index, blocklayout.id)">-->
+                    <a href="" ng-class="{selected:selecteditorblockicon == $index}"  ng-repeat="blocklayout in blocklayouts" ng-click="selecteditorlayout($index,blocklayout.id)">
+                        <img ng-src="{{ blocklayout.thumbnail_path }}" alt="">
+                    </a>
+                </div>
+            </dd>
+        </dl>
+        <dl class="clearfix">
+            <dt>Article Quantity :</dt>
+            <dd>
+                <input type="text" ng-model="newblock.blockquantity" >
+            </dd>
+        </dl>
+    </div>
+</div>
+
+<!-- ======================================= tip_static ======================================= -->
+<div class="tip_box tip_static" ng-cloak ng-show="'static'==cssblocktipbox">
+    <h1 class="PopupTitle"><a href="" class="TipBoxClose" ng-click="closestaticblock()">X</a>Static</h1>
+    <ul class="StaticElementBlock clearfix">
+     	<li><a href="" class="icon_static_txt" ng-click="addblocktopage('statictext', currentlayoutcontainer, 0) ">TXT</a></li>
+        <li><a href="" class="icon_static_pic" ng-click="addblocktopage('staticpic', currentlayoutcontainer, 0)">PIC</a></li>
+        <li><a href="" class="icon_static_video" ng-click="addblocktopage('staticvideo', currentlayoutcontainer, 0)">VIDEO</a></li>
+        <li><a href="" class="icon_static_slider" ng-click="addblocktopage('staticslideshow', currentlayoutcontainer, 0)">Slideshow</a></li>
+    </ul>
+</div>
+
+<!-- ======================================= tip_ad ======================================= -->
+<div class="tip_box tip_ads" ng-cloak ng-show="'ads'==cssblocktipbox">
+    <h1 class="PopupTitle"><a href="" class="TipBoxClose" ng-click="closeadblock()">X</a>Ad Block Data</h1>
+    <div class="tab-content">
+        <dl class="clearfix">
+            <dt>Ad Name:</dt>
+            <dd><input type="text" data-provide="typeahead" data-items="10" ng-model="newblock.adsname"></dd>
+        </dl>
+        <dl class="clearfix">
+        	<dt>Layout :</dt>
+            <dd>
+                <div class="tipbox_layout">
+                    <a href="" ng-hide="currentlayoutcontainer.layoutcontainerclass == 'span3'" ng-click="addblocktopage('ads', currentlayoutcontainer, 0, 1001)"><img src="publisheradmin/app/img/layoutadbig.png" alt=""></a>
+                    <a href="" ng-hide="currentlayoutcontainer.layoutcontainerclass == 'span9'" ng-click="addblocktopage('ads', currentlayoutcontainer, 0, 1002)"><img src="publisheradmin/app/img/layoutadsmall.png" alt=""></a>
+                </div>
+            </dd>
+        </dl>
+        <dl class="clearfix">
+            <dt>Ad Code :</dt>
+            <dd><textarea rows="3" ng-model="newblock.adscode"></textarea></dd>
+        </dl>
+    </div>
+</div>
+
+<!-- ======================================= tip_RSS ======================================= -->
+<div class="tip_box tip_RSS" ng-cloak  ng-show="'RSS'==cssblocktipbox">
+    <h1 class="PopupTitle"><a href="" class="TipBoxClose" ng-click="closerssblock()">X</a>RSS Block Data</h1>
+    <div class="tab-content">
+        <dl class="clearfix">
+            <dt>Block name :</dt>
+            <dd>
+                <div class="tipbox_filter">
+                    <input type="text" data-provide="typeahead" data-items="10" ng-model="newblock.blockname" placeholder="block name1" data-source='[]'>
+                </div>
+            </dd>
+        </dl>
+        <dl class="clearfix">
+            <dt>Layout :</dt>
+            <dd>
+                <div class="tipbox_layout">
+                    <a href="" class="selected" ng-show="blocklayout.id == 101"  ng-repeat="blocklayout in blocklayouts" ng-click="selectlayout($index,blocklayout.id)">
+                        <img ng-src="{{ blocklayout.thumbnail_path }}" alt="">
+                    </a>
+                </div>
+            </dd>
+        </dl>
+        <dl class="clearfix">
+            <dt>Rss URL:</dt>
+            <dd><input type="text" data-provide="typeahead" data-items="10" ng-model="newblock.urlapi">
+            </dd>
+        </dl>
+    </div>
+</div>
+
+
+		<!-- Page -->
+        <div class="pagewrap" >
+
+               <!-- Loading -->
+                <div class="loading" ng-show="cssloading" ng-animate="'fade'">
+                	<div class="loadingCont"><img src="publisheradmin/app/img/loading.gif"><h6>Loading...</h6></div>
+                </div>
+                <!-- Loading //End -->
+
+                <!-- Page: Navigation -->
+                <div class="row-fluid">
+                    <div class="span12">
+
+                        <!-- Header Block 2 -->
+                        <div class="block_header" ng-class="{header_full: css.header.menuhavadata, header_empty:!css.header.menuhavadata}" ng-mouseenter="showheadermenusetting()" ng-mouseleave="hideheadermenusetting()">
+                            
+                            <!-- 有header 数据 -->
+                            <div class="site-theme b-header clearfix" ngCloak ng-class="{covervid:css.header.menubutton}"  ng-show="css.header.menuhavadata" ng-class="{zindextop:css.header.menuhavadata}">
+                                <h1 class="b-h-logo"><img src="publisheradmin/theme/site-theme_default/img/logo.png" alt="SymptomFind"></h1>
+                                <div class="b-h-information">
+                                    <input type="text" class="search" value="" placeholder="search...">
+                                    <input type="button" class="search_btn" value="Search">
+                                </div>
+                                <ul class="b-h-nav">
+                                    <li ng-repeat="head in data.header.list"><a href="" ng-class="{current: $index==cssheadernavindex}" >{{head.name}}</a></li>
+                                </ul>
+                            </div>
+                            <!-- 有header //End -->
+
+                            <!-- 空header 无数据-->
+                            <div class="header_view" ngCloak ng-class="{covervid:css.header.menubutton}"  ng-hide="css.header.menuhavadata" ng-class="{hover_view:css.header.menubutton} ">
+                                
+                            </div>
+                            <!-- 空header //End -->
+
+                            <!-- Menu 右上角button ========== Block Attribute Panel ======================================= -->
+                            <div class="attribute_panel clearfix" ng-show="css.header.menubutton">
+                                <a href="" class="icon_setup" ng-click="slideshowheadersetting()"><i class="icon-gear"></i></a>
+                                <a href="" class="icon_delete" ng-hide="true"><i class="icon-trash"></i></a>
+                                <a href="" class="icon_space">space</a>
+                            </div>
+
+
+                            <!-- Theme -->
+                            <div class="theme_panel" ng-show="css.header.headersetting">
+                                <!--<a href="" ng-repeat="theme in headerthemes" ng-class="{select: $index == css.header.headerthemeindex, 'last':$last}" ng-click="clickheadertheme($index, theme)">
+                                    <img ng-src="{{theme.image}}">
+                                </a>-->
+                                <a href="" id="site-theme_default" ng-class="{select: 1 == css.header.headerthemeindex}" ng-click="clickheadertheme(1);">
+                                    <img src="publisheradmin/app/img/header_theme_01.jpg" alt="">
+                                </a>
+                                <a href="" id="site-theme_inv" ng-class="{select: 2 == css.header.headerthemeindex}" ng-click="clickheadertheme(2);">
+                                    <img src="publisheradmin/app/img/header_theme_02.jpg" alt="">
+                                </a>
+                                <a href="" id="site-theme_melvon" ng-class="{select: 3 == css.header.headerthemeindex}" ng-click="clickheadertheme(3);">
+                                    <img src="publisheradmin/app/img/header_theme_03.jpg" alt="">
+                                </a>
+                                <a href="" id="site-theme_smarter" ng-class="{select: 4 == css.header.headerthemeindex}" ng-click="clickheadertheme(4);">
+                                    <img src="publisheradmin/app/img/header_theme_04.jpg" alt="">
+                                </a>
+                            </div>
+                            <!-- Theme //End -->
+
+
+                            <!-- Nav Link -->
+                            <div class="navlink_panel" maxmenus="5" page-header ng-show="css.header.headersetting" ng-animate="{show: 'fade-show', hide: ''}" >
+
+                            </div>
+                            <!-- Nav Link //End -->
+
+
+                            <!-- HeaderNavSettings 设置面板区 
+                            <div class="header_panel" ngCloak  ng-show="css.header.menubutton">
+                                
+                            </div>
+                             HeaderNavSettings 设置面板区 //End -->
+
+
+                        </div>
+                        <!-- Header Block 2 //End -->
+                    </div>
+                </div>
+                <!-- Page: Navigation//End -->
+
+
+
+
+
+
+
+                <!-- Page: Row -->
+                <div class="row-fluid" ng-repeat="row in current.page.rowpanels">
+                    <div ng-repeat="column in row.systemColumns" ng-class="column.systemColumnTemplate.cssname">
+                        <!-- Block Box -->
+                        <div class="block_content blockfull" ng-repeat="block in column.blocks " ng-class="{blockfull_hover:cssblockeditmenubutton}"  ng-mouseenter="showeditblockmenubutton(row, column, block)" ng-mouseleave="hideeditblockmenubutton()">
+
+                            <!-- Block Layou: 无图列表 class="PageBlockLayout_Row_noIMG" -->
+                            <div class="site-theme b-block" ng-class="{displaynone:block.blocktype == 'RSS', displaynone2:block.blocktype == 'ads', displaynone3:block.blocktype == 'static'}">
+                                <!-- Block theme CSS -->
+                                <div ng-class="{PageBlockLayout_Row_noIMG:block.blocklayout == '101',PageBlockLayout_Row:block.blocklayout == '100',PageBlockLayout_Column2_noIMG:block.blocklayout == '103',PageBlockLayout_Column3:block.blocklayout == '102'}" >
+                            		<div class="globalTitle clearfix">
+                                		<div class="arrow"></div>
+                                		<h6>{{ block.blockname}}</h6>
+                            		</div>
+                                    <div class="globalContBox">
+                                        <ul class="clearfix">
+                                        	<li ng-repeat="article in block.blockarticles " class="clearfix">
+                                            	<div class="layoutIMG">
+                                                	<a href="" class="linkImg"><img src="publisheradmin/app/img/symptomfind/temp_06.jpg" alt="" /></a>
+                                                </div>
+                                                <div class="layoutContext">
+                                                	<h6><span class="time">{{ article.created | date:'MM/dd/yyyy' }}</span><a href="">{{ article.title }}</a></h6>
+                                                	<p>{{ article.description }}...<a href="">more</a></p>
+                                                	<p><span>Author:&nbsp;<i>{{ article.author }}</i></span></p>
+                                                </div>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- Block theme CSS //End-->
+                            </div>
+                            <!-- Block Layou: 无图列表 // End -->
+
+
+                            <div class="site-theme b-block" ng-show="block.blocktype=='RSS'">
+                                <div class="rss">
+                                    <h3>{{ block.blockname}}</h3>
+                                    <p><a href="">How To Be A Top Financial Advisor</a></p>
+                                    <p><a href="">Retail Banking Vs. Commercial Banking</a></p>
+                                    <p><a href="">The Basics Of A 401(k) Retirement Plan</a></p>
+                                    <p><a href="">6 Tough Questions To Ask Before Retirement</a></p>
+                                    <p><a href="">Quit Your Job To Trade Stocks?</a></p>
+                                </div>
+                            </div>
+
+                            <div class="site-theme b-block" ng-show="block.blocktype=='ads'">
+                                <!-- 长条形广告 -->
+                                <img src="publisheradmin/app/img/AD/AD_span9.jpg" ng-show="block.blocklayout==1001">
+                                <!-- 短形广告 -->
+                                <img src="publisheradmin/app/img/AD/AD_span3.jpg" ng-show="block.blocklayout==1002">
+                            </div>
+
+
+
+                            <div class="site-theme b-block" ng-show="block.blocktype=='static'">
+                            	<!-- 纯文本 -->
+                                <h2 ng-show="block.blockstatictype=='text'">{{ block.blockname}}</h2>
+                                <h4 class="b-block-staticTitle" ng-show="block.blockstatictype=='text'">Seasonal Allergy Symptoms</h4>
+                                <p class="b-block-staticTxt" ng-show="block.blockstatictype=='text'">SymptomFind.com is one of the leading providers of health information on the Web. </p>
+                                <h4 class="b-block-staticTitle" ng-show="block.blockstatictype=='text'">Our Mission</h4>
+                                <p class="b-block-staticTxt" ng-show="block.blockstatictype=='text'">At SymptomFind.com, we are committed to providing the most accurate and authoritative information regarding health and nutrition to suit the needs of the everyday person.</p>
+
+                                <!-- 图片 -->
+                                <div ng-show="block.blockstatictype=='pic'">
+                                	<p><img src="publisheradmin/app/img/temp/pic.jpg"></p>
+                                </div>
+
+                                <!-- 视频 -->
+                                <video ng-show="block.blockstatictype=='video'" style="width:100%;" src="publisheradmin/app/img/temp/forest.mp4" autoplay loop controls></video>
+
+
+                                <!-- 幻灯片 Slider Banner -->
+                                <div  ng-show="block.blockstatictype=='slideshow'" class="content-slider">
+                                    <div class="slider">
+                                        <div class="mask">
+                                            <ul>
+                                                <li class="firstanimation">
+                                                    <a href="">
+                                                        <img src="../publisheradmin/app/img/temp/img_1.jpg" alt="Cougar"/>
+                                                    </a>
+                                                    <div class="tooltip">
+                                                        <h1>Cougar</h1>
+                                                    </div>
+                                                </li>
+
+                                                <li class="secondanimation">
+                                                    <a href="">
+                                                        <img src="../publisheradmin/app/img/temp/img_2.jpg" alt="Lions"/>
+                                                    </a>
+                                                    <div class="tooltip">
+                                                        <h1>Lions</h1>
+                                                    </div>
+                                                </li>
+
+                                                <li class="thirdanimation">
+                                                    <a href="">
+                                                        <img src="../publisheradmin/app/img/temp/img_3.jpg" alt="Snowalker"/>
+                                                    </a>
+                                                    <div class="tooltip">
+                                                        <h1>Snowalker</h1>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="progress-bar"></div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                            <!-- Content End -->
+
+                            <!-- ======================================= Block Menu Attribute Panel ======================================= -->
+
+                            <div class="attribute_panel" ng-show="cssblockeditmenubutton" ng-class="{editors: block.blocktype=='editor'}">
+                                <a href="" class="icon_delete" ng-click="delblock(current);"><i class="icon-trash"></i></a>
+                               <!-- <a href="" class="icon_move" ng-click="showfilleditform();">move</a>-->
+                                <a href="" class="icon_setup"><i class="icon-gear"></i></a>
+                                <!--<a href="" class="icon_setup" ng-click="updateshowblcoksetting(block, $event );">setup</a>-->
+                               <!-- <a href="" class="icon_editor" ng-click="showfilleditform();">editors</a>-->
+                                <div class="editor_inset" ng-show="block.blocktype=='editor'" >
+                                    <input type="text" placeholder="Please input article title" value="" ng-model="newarticle" typeahead="article as article.title for article in localarticles | filter:$viewValue"   enter-Keypress="{enter: addAritcleToEditorBlock(block, currentlayoutcontainer)}">
+                                </div>
+                            </div>
+                            <!-- Block Menu Attribute Panel //End -->
+                        </div>
+                        <div class="ArticleLaytouDefault_pic" ng-show="column.cssname == 'span9'" ng-class="{displaynone:current.page.pagetype != 11}">
+                             <img src="publisheradmin/app/img/ArticleLaytouDefault_pic.jpg">
+                        </div>
+                        <!-- Add Block Box -->
+                        <div id="blockcontent" class="block_content blockempty" ng-class="{blockempty_hover:cssblockaddmenubutton}"  ng-mouseenter="showaddblockmenubutton()" ng-mouseleave="hideaddblockmenubutton()">
+
+                            <!-- ICO -->
+                            <div class="ico_box" ng-show="showcontenticon">
+                                <div class="ico_autoblock" ng-click="showblocksettingmenu( 'auto', $event, column, row)" ng-class="{ico_active:'auto'==cssblocktipadd}">Auto</div>
+                                <div class="ico_autoeditor" ng-click="showblocksettingmenu( 'editor', $event, column, row)" ng-class="{ico_active:'editor'==cssblocktipadd}">Pick</div>
+                                <br>
+                                <div class="ico_staticblock" ng-click="showblocksettingmenu( 'static', $event, column, row)" ng-class="{ico_active:'static'==cssblocktipadd}">T</div>
+                                <div class="ico_adblock"  ng-click="showblocksettingmenu( 'ads', $event, column, row)" ng-class="{ico_active:'ads'==cssblocktipadd}">AD</div>
+                                <div class="ico_RSS"  ng-click="showblocksettingmenu( 'RSS', $event, column, row)" ng-class="{ico_active:'RSS'==cssblocktipadd}">RSS</div>
+                            </div>
+                            <!-- ICO //End -->
+
+                            <div class="masklayer" ng-show="showautoblockstyle">
+                                <a href="" class="icon-save" ng-click="addblocktopage('auto', current, selectblockicon, autoblocklayout)">SAVE</a>
+                                <!--有图一列-->
+                                <img ng-show="selectblockicon == 0" src="publisheradmin/app/img/temp/blocklayout_preview1.jpg" alt="">
+                                <!--无图一列-->
+                                <img ng-show="selectblockicon == 1" src="publisheradmin/app/img/temp/blocklayout_preview2.jpg" alt="">
+                                <!--有图三列-->
+                                <img ng-show="selectblockicon == 2" src="publisheradmin/app/img/temp/blocklayout_preview3.jpg" alt="">
+                                <!--无图两列-->
+                                <img ng-show="selectblockicon == 3" src="publisheradmin/app/img/temp/blocklayout_preview4.jpg" alt="">
+                            </div>
+                            <div class="masklayer" ng-show="showeditorblockstyle">
+                                <a href="" class="icon-save" ng-click="addblocktopage('editor', currentlayoutcontainer, selecteditorblockicon, autoeditorblocklayout)">SAVE</a>
+                                <!--有图一列-->
+                                <img ng-show="selecteditorblockicon == 0" src="publisheradmin/app/img/temp/blocklayout_preview1.jpg" alt="">
+                                <!--无图一列-->
+                                <img ng-show="selecteditorblockicon == 1" src="publisheradmin/app/img/temp/blocklayout_preview2.jpg" alt="">
+                                <!--有图三列-->
+                                <img ng-show="selecteditorblockicon == 2" src="publisheradmin/app/img/temp/blocklayout_preview3.jpg" alt="">
+                                <!--无图两列-->
+                                <img ng-show="selecteditorblockicon == 3" src="publisheradmin/app/img/temp/blocklayout_preview4.jpg" alt="">
+                            </div>
+
+                            <div class="masklayer" ng-click="addblocktopage('RSS', currentlayoutcontainer, selectrssblockicon, rsseditorblocklayout)" ng-show="showrssblockstyle">
+                                <a href="" class="icon-save">SAVE</a>
+                                <!--无图一列-->
+                                <img ng-show="selectrssblockicon == 1" src="publisheradmin/app/img/temp/blocklayout_preview2.jpg" alt="">
+                            </div>
+                            <!--insert here-->
+                        </div>
+                        <!-- Add Block Box //End -->
+
+                    </div>
+                </div>
+            	<!-- Page: Row //End -->
+
+
+
+
+
+
+                <!-- Page: Footer -->
+                <div class="row-fluid">
+                    <div class="span12">
+                        <!-- Footer Block 1 -->
+                    	<div class="block_footer" ng-class="{footer_full:css.footer.menuhavadata, footer_empty:!css.footer.menuhavadata}" ng-mouseenter="showfootmenusetting()" ng-mouseleave="hidefootmenusetting()">
+                           <!-- footer_full footer_empty-->
+
+                        	<!-- 有 Footer -->
+                        	<div class="site-theme b-footer" ng-class="{covervid:css.footer.menubutton}" ng-show="css.footer.menuhavadata">
+                            	<p>
+                                    <span ng-repeat="footermenu in data.footer.list"><a href="">{{footermenu.name}}</a><span ng-hide="$last">&nbsp;|</span></span>
+                                </p>
+                                <p>Copyright @ 2013 ValueClick Brands, Inc. All Rights Reserved.</p>
+                            </div>
+                            <!-- 有 Footer //End -->
+
+                            <!-- 空 Footer -->
+                        	<div class="footer_view" ng-class="{covervid:css.footer.menubutton, hover_view:css.footer.menubutton}" ng-hide="css.footer.menuhavadata" ></div>
+                            <!-- 空 Foote //Endr -->
+
+                            <!-- Menu 右上角button ========== Block Attribute Panel ======================================= -->
+                            <div class="attribute_panel clearfix" ng-show="css.footer.menubutton">
+                                <a href="" class="icon_setup" ng-click="slideshowfootersetting()"><i class="icon-gear"></i></a>
+                                <a href="" class="icon_space">space</a>
+                                <!--<a href="" class="icon_delete">delete</a>-->
+                            </div>
+
+                            <!-- 选择Theme -->
+                            <div class="theme_panel" ng-show="css.footer.navsetting">
+                                <a href="" ng-class="{select: 1 == css.footer.footerthemeindex}" ng-click="clickfootertheme(1);">
+                                    <img src="publisheradmin/app/img/footer_theme_01.jpg">
+                                </a>
+                                <a href="" ng-class="{select: 2 == css.footer.footerthemeindex}" ng-click="clickfootertheme(2);">
+                                    <img src="publisheradmin/app/img/footer_theme_02.jpg">
+                                </a>
+                                <a href="" ng-class="{select: 3 == css.footer.footerthemeindex}" ng-click="clickfootertheme(3);">
+                                    <img src="publisheradmin/app/img/footer_theme_03.jpg">
+                                </a>
+                                <a href="" ng-class="{select: 4 == css.footer.footerthemeindex}" ng-click="clickfootertheme(4);">
+                                    <img src="publisheradmin/app/img/footer_theme_04.jpg">
+                                </a>
+                            </div>
+                            <!-- 选择Theme //End -->
+
+                            <!-- Nav Link -->
+                            <div page-footer  maxmenus="5" class="footerlink_panel" ng-show="css.footer.navsetting" ng-animate="{show: 'fade-show', hide: ''}" >
+                            </div>
+                            <!-- Nav Link //End -->
+
+                    	</div>
+                        <!-- Footer Block 1 //End -->
+                    </div>
+                </div>
+                <!-- Page: Footer 1 //End -->
+
+        </div>
+        <!-- Page //End -->
+
+
+
+        <!-- SideBar:Page List -->
+		<div class="pagelist">
+            <ul class="pagelistbox" edit-page>
+                <li ng-cloak ng-repeat="page in pages | orderBy:'pagetype' | orderBy:'pageorder'">
+                    <a href="" class="pagelist_btn listpage_01"  ng-click="showPageBlock($index, page)" ng-class="{active: $index==defaultselectedpageindex, articlepage_btn:pagearticletype==page.type}" ng-click="editNewPage(page)">
+                        <i class="icon-gear" ng-click="showEditPage($index)"></i>
+                        <i class="drag"></i>
+                        <span>{{page.name}}</span>
+                    </a>
+
+                    <!-- ======================================= Page Attribute Panel ======================================= -->
+                    <div class="page_attri_panel" ng-cloak ng-show="selectedpageattributeindex == $index">
+                        <h1 class="PopupTitle"><a href="" class="TipBoxClose" ng-click="hideEditPage();">X</a>Page Data</h1>
+                        <div class="page_attri_cont">
+                            <form class="page_edit_form">
+                                <dl class="clearfix">
+                                    <dt>name</dt>
+                                    <div class="tipFormBox tipFormBox_wrong"><i class="icon-exclamation-sign"></i> <strong>Oh snap!</strong> Change a few things up and try.></div>
+
+                                    <dd>
+                                        <div class="control-group">
+                                            <div class="controls">
+                                                <input type="text" id="inputError" placeholder="Page Name" ng-model="page.name">
+                                            </div>
+                                        </div>
+                                    </dd>
+                                </dl>
+                                <dl class="clearfix">
+                                    <dt>title</dt>
+                                    <!--<dd class="tipFormBox tipFormBox_attention"><i class="icon-exclamation-sign"></i> <strong>Heads up!</strong> This alert needs your attention, but it's not super important.</dd>-->
+                                    <!--<dd class="tipFormBox tipFormBox_information"><i class="icon-question-sign"></i> This alert needs your attention.</dd>-->
+                                    <dd>
+                                        <div class="control-group error">
+                                            <div class="controls">
+                                                <input type="text" id="inputError2" placeholder="Page Title" ng-model="page.title">
+                                            </div>
+                                        </div>
+                                    </dd>
+                                </dl>
+                                <dl class="clearfix">
+                                    <dt>URL</dt>
+                                    <dd>
+                                        <div class="control-group">
+                                            <div class="controls">
+                                                <input type="text" id="inputError3" placeholder="Page Url" ng-model="page.url">
+                                            </div>
+                                        </div>
+                                    </dd>
+                                </dl>
+                                <div class="btn_box">
+                                    <button type="button" class="btn btn-save" ng-click="updatePage(page)">SAVE</button>
+                                    <button type="button" class="btn btn-delete" ng-click="delPage(page, $index)">DELETE</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </li>
+                <li ng-cloak ng-show="css.page.addinputbox" >
+                    <a href="" class="pagelist_btn newpage">
+                        <i class="drag"></i><input type="text" class="input_addnew" ng-model="newpage.name"  placeholder="NewPage" enter-Keypress="{enter: addPage()}"/>
+                    </a>
+                </li>
+            </ul>
+            <a href="" class="addpage_btn" ng-hide="css.page.addinputbox" ng-click="showAddPageInput()">+</a>
+        </div>
+        <!-- SideBar:Page List//End -->
+
+
+
+        <!-- Page Layout -->
+        <div class="pagelayout" >
+            <ul class="layout_list">
+                <li class="" ng-repeat="layout in layouts | filter:layoutfilterlisttype " ng-class="{ active: layout.id==current.page.layout.id } " ng-click="clickLayout(layout)"  >
+                    <img ng-src="{{layout.thumbnail_path}}">
+                </li>
+            </ul>
+            <div modal="cssshowdelmodal" options="cssmodalslide" style="width: 500px;">
+                <div class="modal-header">
+                    <button type="button" class="close" ng-click="closeLayoutForm()">&times;</button>
+                    <h3>Delete Article </h3>
+                </div>
+
+                <div class="modal-body">
+                    <h4>Reset Layout Will be lost all blocks !!!</h4>
+                </div>
+
+                <div class="modal-footer">
+                    <!-- <button class="btn" ng-click="closeDelModal()">Cancel</button> -->
+                    <button class="btn btn-delete"  ng-click="saveLayout()">Reset</button>
+                </div>
+            </div>
+        </div>
+        <!-- Page Layout//End -->
+
+
+</div>
+</div>
+
+
+

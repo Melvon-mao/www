@@ -1,0 +1,219 @@
+/* ======================================================================= */
+/*                         	  Custom: .form-box        	 	   	           */
+/* ======================================================================= */
+.#{$form-box} { font-size: $input-text-medium; margin-bottom: 15px;
+
+    label { display: inline-block; max-width: 100%; margin-bottom: 6px; color: $main-color;
+        &.form-small-label{ font-size: 14px; }
+        + img { display: block }
+    }
+
+    // Defalut ....
+    &.form-group { font-size: 0 !important;
+        .form-item {
+            display: inline-block; width: 75%; vertical-align: bottom;
+            @-moz-document url-prefix() { vertical-align:bottom; }
+
+            .form-text { margin: 0; padding:5px 4px 4px 4px; width: 100%; height: 31px; border: solid 1px #afb2b5; box-shadow: none; font-size: 15px; background-color: #fff; @include boxsizing(); }
+        }
+        .form-submit { display: inline-block; width: 25%; height: 31px; margin: 6px 0 0 0; padding:5px 10px 4px 10px; color: #fff; font-size: $input-text-medium; border: 0; text-indent: 0; overflow: hidden;  cursor: pointer; vertical-align: 0px; @include boxsizing();
+            @-moz-document url-prefix() { vertical-align:bottom; }
+        }
+    }
+
+
+
+    @at-root {
+        // in ct-search ...
+        .ct-search { margin-right: -1px;
+            .#{$form-box}.form-group { margin-bottom: 0;
+                .container-inline { position: relative; border:solid 1px #ccc;
+                    .form-item { display: block; width: 100%; background: #fff; @include boxsizing();}
+                    .form-type-textfield {
+                        label { display: none; }
+                        .form-text { padding-right: 30px; height: 31px; border:0; font-size: 12px;
+                            @include transition-property(border-color);
+                            @include transition-duration(.15s);
+                            @include transition-timing-function(ease-in-out);
+                            @include transition-property(box-shadow);
+                            @include transition-duration(.15s);
+                            @include transition-timing-function(ease-in-out);
+                            &:focus,
+                            &.active {
+                                outline: 0; border-color: #66afe9;
+                                @include box-shadow(inset 0 1px 1px rgba(0,0,0,0.075), 0 0 8px rgba(102,175,233,0.6));
+                            }
+                        }
+                    }
+                    .form-submit {
+                        display: block; width: 40px; height: 31px; margin: 0; padding:0; border: 0; font-size:0; overflow: hidden; cursor: pointer; @include boxsizing(); position: absolute; right: 0; top: 0;
+                        // for PC
+                        @if $forpc == true {
+                            background: url('../#{$image-default-patch}/sprite_icon.png') -322px -302px no-repeat;
+                        }
+                            // for Mobile
+                        @else{
+                            background: url("../#{$image-default-patch}/icon_search.png") no-repeat;
+                            background-size: 19px 19px;
+                            background-position: center center;
+                        }
+                    }
+                }
+            }
+            // for PC
+            @if $forpc == true {
+                @include media ( $media-ml ) { // 768px
+                    display: none;
+                }
+            }
+                // for Mobile
+            @else{
+                @include media ( $media-lm ) { //767px
+                    display: none;
+                }
+            }
+        }
+
+        // in Account Page ...
+        .account-page {
+            .form-box {
+                font-size: 16px; margin-bottom: 0;
+                label { }
+            }
+        }
+
+        // in header and footer ....
+        #Header,
+        #Footer {
+            .#{$form-box}.form-group { margin-bottom: 0;
+                .container-inline { position: relative;
+                    .form-item { display: block; width: 100%; padding-right: 30px; background: #fff; @include boxsizing();}
+                    .form-type-textfield {
+                        label { display: none; }
+                        .form-text { height: 25px; border:0; font-size: 12px; }
+                    }
+                    .form-submit {
+                        display: block; width: 30px; height: 25px; margin: 0; padding:0; border: 0; font-size:0; overflow: hidden; cursor: pointer; @include boxsizing(); position: absolute; right: 0; top: 0;
+                        // for PC
+                        @if $forpc == true {
+                            background: url('../#{$image-default-patch}/sprite_icon.png') -278px -304px no-repeat;
+                        }
+                        // for Mobile
+                        @else{
+                            background: url("../#{$image-default-patch}/icon_search.png") no-repeat;
+                            background-size: 16px 16px;
+                            background-position: center center;
+                        }
+
+                    }
+                }
+            }
+        }
+
+
+
+        // in footer ...
+        #Footer {
+            .#{$form-box}.form-group {
+                .form-item { width: 206px; margin-right: 2px;
+                    .form-text { height: 25px; font-size:12px; border:0; }
+                }
+                .form-submit { width: auto; height: 26px; font-size:13px; }
+            }
+        }
+
+
+
+        // in layout-page newsletter ...
+        .#{$layout}-page {
+            .newsletter{
+                .#{$form-box}.form-group { margin-bottom: 0; width: 232px;
+                    .form-item { width: 160px;
+                        .form-text { color:#B3B3B3; }
+                    }
+                    .form-submit { width: 72px; }
+
+                      // for PC
+                      @if $forpc == true {
+                          @include media ( $media-sm ) {
+                              width: 228px;
+                              .form-item {width: 155px;}
+                          }
+
+                          @include media ( 350px ) {
+                              width: 190px;
+                              .form-item {width: 127px;}
+                          }
+                      }
+                      // for Mobile
+                      @else{
+                          @include media ( $media-lm ) {
+                              width: 228px;
+                              .form-item {width: 155px;}
+                          }
+                      }
+                }
+            }
+        }
+
+
+        // in layout-side & layout-side-small newsletter ....
+        .#{$layout}-side.#{$layout}-side-small {
+            .newsletter{
+                .#{$form-box}.form-group { margin-bottom: 0; width: 266px;
+                    .form-item { width: 190px;
+                        .form-text { color:#B3B3B3; }
+                    }
+                    .form-submit { width: 72px; }
+                }
+                // for PC
+                @if $forpc == true {
+                    @include media ( $media-lg ) {
+                        .#{$form-box}.form-group { margin:0 auto; }
+                        .more, a.more { text-align: center; }
+                    }
+                }
+                    // for Mobile
+                @else{
+                    .#{$form-box}.form-group { margin:0 auto; }
+                    .more, a.more { text-align: center; }
+                }
+            }
+        }
+
+        // in layout-through-left
+        .#{ $layout}-through-left {
+            .#{$form-box}.form-group {
+                .form-item { width: 82px;
+                    .form-text { height: 26px; font-size:12px; color:#B3B3B3; }
+                }
+                .form-submit { width: 65px; height: 26px; font-size:13px;
+                    &:hover { background: $link-color; }
+                }
+                // for PC
+                @if $forpc == true {
+                    @include media ( $media-ml ) {
+                        .form-item { width: 75%; }
+                        .form-submit { width: 25%;}
+                    }
+                }
+                    // for Mobile
+                @else{
+                    @include media ( $media-lm ) {
+                        .form-item { width: 75%; }
+                        .form-submit { width: 25%;}
+                    }
+                }
+            }
+            .form-item.form-type-select { display: none; margin-bottom: 30px; }
+        }
+
+        // in fixed-nav
+        .nav-fixed {
+            .form-box { margin-bottom: 0; }
+        }
+
+    }
+
+
+}

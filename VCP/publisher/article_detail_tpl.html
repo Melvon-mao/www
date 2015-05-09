@@ -1,0 +1,232 @@
+<!-- Header -->
+<div page-nav current = '4'></div>
+<!--<header class="header">
+    <h1 class="logo"><a href="#">VCP</a></h1>
+    &lt;!&ndash; NAV &ndash;&gt;
+    <ul class="menu clearfix">
+        <li id="menuSite"><a href="#/site"><span>Site</span></a></li>
+        <li id="menuPage"><a href="#/page"><span>Page</span></a></li>
+        <li id="menuArticle"><a href="#/articlelist" class="current"><span>Article</span></a></li>
+        <li id="menuReports"><a href="#/report"><span>Report</span></a></li>
+        <li id="menuStore"><a href="#/store"><span>Store</span></a>
+        <li id="menuAppGenerate"><a href="#/download"><span>App</span></a></li>
+    </ul>
+    &lt;!&ndash; NAV: Preview &ndash;&gt;
+    <div class="dropdown dropdownPreview">
+        <a href="#" class="dropdown-toggle preview" data-toggle="dropdown">Preview</a>
+        <ul class="dropdown-menu pull-right">
+            <li><a href="#"><i class="icon-mobile-phone"></i>On Mobile</a></li>
+            <li><a href="#"><i class="icon-tablet"></i>On Pad</a></li>
+            <li><a href="../demo/index.html" target="_blank"><i class="icon-desktop"></i>On PC</a></li>
+        </ul>
+    </div>
+    &lt;!&ndash; NAV: User &ndash;&gt;
+    <div class="dropdown dropdownUser">
+        <a href="#" class="dropdown-toggle nav_user" data-toggle="dropdown">User</a>
+        <ul class="dropdown-menu pull-right">
+            <li><a href="#/user"><i class="icon-user"></i>Information</a></li>
+            <li><a href="#/user"><i class="icon-signout"></i>Log out</a></li>
+        </ul>
+    </div>
+</header>-->
+<!-- Header //End -->
+<div class="vcpbox">
+    <div class="alertBlock" ng-show="css.erroralert">
+        <div class="fullWidth clearfix">
+            <a href="###" class="closeAlertBlock">X</a>
+            <p>Please input title.</p>
+        </div>
+    </div>
+    <form name="ArticleForm">
+        <!-- Content -->
+        <div class="article" >
+
+            <div class="write_title">
+                <a href="#/articlelist" class="icon-list"></a>
+                <!--<h1 >{{articledata.title}} </h1>-->
+                <input type="text" class="title_input" required placeholder="Title" ng-model="articledata.title">
+            </div>
+
+            <div class="article-row">
+
+
+                <!-- Left  -->
+                <div class="article-span9">
+                    <div class="article-title">Preview
+                        <!--<i class="article-title-ico">520 Words</i>-->
+                    </div>
+                    <!-- 预览区 -->
+                    <div id="article-cont-preview" class="article-cont">
+                        <div class="article-templete CkeditorPreview">
+                            <div class="tagbox">
+                                {{ articledata.updated_at | date:'yyyy/MM/dd HH:mm' }}  |  Tag »
+                                <a href="#/{{tagdata.tag.id}}" ng-repeat="tagdata in articledata.tags">{{tagdata.tag.name}}</a>
+                            </div>
+                            <p  ng-bind-html-unsafe="articledata.body">
+
+                            </p>
+                        </div>
+                    </div>
+                    <!-- 预览区 //End-->
+                </div>
+                <!-- Left //End -->
+
+
+                <!-- Right -->
+                <div class="article-span9" ng-hide="cssTagsPanel">
+                    <div class="article-title">Editor
+                        <i class="article-title-ico">
+                            <a href="" class="icon-pencil" ng-click="cssTagsPanel = false"></a>
+                            <a href="" class="icon-gear" ng-click="cssTagsPanel = true"></a>
+                            <a href="" class="icon-trash" ng-click="showDeleteAlert()" ></a>
+                        </i>
+                        <div modal="css.deletealert" options="cssmodalslide" >
+                            <div class="modal-header">
+                                <button type="button" class="close" ng-click="hideDeleteAlert()">&times;</button>
+                                <h3 >Delete Article </h3>
+                            </div>
+
+                            <div class="modal-body">
+                                <h4>Are you sure delete  "{{articledata.title}}" ?</h4>
+                            </div>
+
+                            <div class="modal-footer">
+                                <!-- <button class="btn btn-cancel" ng-click="closeDelModal()">Cancel</button> -->
+                                <button class="btn btn-delete"  ng-click="deleteArticle()">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 编辑器 -->
+                    <div class="article-cont" >
+                        <textarea ck-editor cols="80" id="editor1" name="editor1" rows="10" ng-model="articledata.body"></textarea>
+                    </div>
+                    <!-- 编辑器 //End-->
+                </div>
+                <!-- Right //End -->
+
+                <!-- Right Hide Panel -->
+                <div class="article-span9" ng-show="cssTagsPanel">
+                    <!-- Tags & Category -->
+                    <div class="article-title">Article Data
+                        <i class="article-title-ico">
+                            <a href="" class="icon-pencil" ng-click="cssTagsPanel = false"></a>
+                            <a href="" class="icon-gear" ng-click="cssTagsPanel = true"></a>
+                            <a href="" class="icon-trash" ng-click="openDelModal()"></a>
+                        </i>
+                        <div modal="css.commitalert" options="cssmodalslide" >
+                            <div class="modal-header">
+                                <button type="button" class="close" ng-click="hideCommitAlert()">&times;</button>
+                                <h3 >Article Comment</h3>
+                            </div>
+
+                            <div class="modal-body">
+                                <!-- <input type="text" ng-model="articledata.versioncomment" /> -->
+                                <textarea rows="3" ng-model="comment" style="width:96%"></textarea>
+                            </div>
+
+                            <div class="modal-footer">
+                                <!--&lt;!&ndash; <button class="btn" ng-click="closecomments()">Cancel</button>&ndash;&gt;-->
+                                <input type="button" class="btn btn-save" ng-click="saveArticleData()" value="Save">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Article Arrtibute -->
+                    <div class="article-cont">
+                        <!-- Tags -->
+                        <div class="atricle_attribute_box">
+                            <h3>Tag</h3>
+                            <!-- 测试用，不用管这段 ->
+                            <input type="text" class="span3" style="margin: 0 auto;" data-provide="typeahead" data-items="4" data-source='["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Dakota","North Carolina","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"]'>
+                            -->
+                            <input name="tagsinput" id="tagsinput" class="tagsinput" value="" />
+                        </div>
+                        <!-- Tags //End -->
+
+
+                        <!-- Category -->
+                        <div class="atricle_attribute_box">
+                            <h3>Category</h3>
+                            <select ng-model="articledata.system_channel_id" ng-options="channel.id as channel.name for channel in category">
+                            </select>
+                        </div>
+                        <!-- Category End -->
+
+                        <!-- Description -->
+                        <div class="atricle_attribute_box">
+                            <h3>Description</h3>
+                            <textarea maxlength="70" ng-model="articledata.description" style="width:580px; font-family:Arial, Helvetica, sans-serif;"></textarea>
+                        </div>
+                        <!-- Description //End -->
+
+                        <!-- Social -->
+                        <div class="atricle_attribute_box clearfix">
+                            <h3>SNS Sync up</h3>
+                            <div class="article_share">
+                                <ul class="clearfix">
+                                    <!-- facebook -->
+                                    <li><label>
+                                        <input type="checkbox">
+                                        <img src="publisheradmin/app/img/sns-facebook.png">
+                                    </label>
+                                    </li>
+                                    <!-- twitter -->
+                                    <li><label>
+                                        <input type="checkbox">
+                                        <img src="publisheradmin/app/img/sns-twitter.png">
+                                    </label>
+                                    </li>
+                                    <!-- sky -->
+                                    <li><label>
+                                        <input type="checkbox">
+                                        <img src="publisheradmin/app/img/sns-skydrive.png">
+                                    </label>
+                                    </li>
+                                    <!-- evernote -->
+                                    <li><label>
+                                        <input type="checkbox">
+                                        <img src="publisheradmin/app/img/sns-evernote.png">
+                                    </label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Social //End -->
+
+                    </div>
+                    <!-- Tags & Category //End-->
+                </div>
+                <!-- Right Hide Panel //End -->
+
+
+            </div>
+        </div>
+        <!-- Content //End -->
+
+
+        <div class="article-footer">
+            <!-- 发布按钮 -->
+            <div class="article_btn">
+                <input type="button" value="Save" class="btn btn-save" ng-click="showCommitAlert()">
+                <!--<input type="submit" value="PUBLISH" class="btn-publish" style="display:none;" ng-click="publisharticle(ArticleForm)">-->
+            </div>
+
+            <!-- 版本节点 -->
+            <div class="vernode">
+                <div class="line">
+                    <a href="" class="node" rel="tooltip" ng-class="{last:$last, current:css.versionIndex == $index}" ng-click="displayVersionInfo(revision, $index);"
+                       ng-repeat="revision in articledetails.revisions | orderBy:orderrversion "  title="{{revision.editor_id}} {{revision.updated_at | date:'MM/dd/yyyy HH:mm:ss'}} {{revision.comment}}">
+                        {{revision.id}}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+
+
+
+
+
+

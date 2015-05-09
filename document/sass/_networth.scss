@@ -1,0 +1,383 @@
+// =========================================================================================== //
+//                                            Net Worth                                       //
+// =========================================================================================== //
+body.app { background-color:#fff; min-width:990px; position:relative; }
+
+
+// -------------------------- .app --------------------------- //
+.app {
+    img[height="1"]  { display:block; } /* fix wierd space on pixel targeting images */
+    h1 { margin-top:-12px; }
+    h3{ margin-bottom:10px; }
+    hr{ margin-top:0; }
+
+    .header{
+        .fl{ width:65%; }
+        .fr{ width:35%; text-align:right; }
+    }
+
+    .box {
+        .title {
+            .info { padding-top:5px; }
+        }
+    }
+
+    #MainForm{ margin-bottom:80px; }
+
+    &.no-sidebar {
+        #AppBody {margin-left:0;}
+        .drawer-tab { margin-left:-105px; }
+    }
+}
+
+
+
+
+
+
+
+
+
+// -------------------------- .app-brandbar --------------------------- //
+.app-brandbar{ background:#fff; border-bottom:solid 1px #aaa;
+    .fl,
+    .fr{ padding:12px 20px; }
+}
+
+
+
+
+
+
+
+
+// -------------------------- #AppHeader --------------------------- //
+#AppHeader { position:relative; overflow:visible; font-size: 12px;
+
+    .header-top { height:26px; box-shadow:1px 1px 1px #000; }
+    .header-btm { background-color:#0096e9; height:3px; padding:0; }
+
+    .app-main-nav { padding:1px 20px 1px 16px; background-color:#222;
+        .hlist { padding:0; height:auto;
+            li { color:#acacac; padding:5px 3px; height:16px;
+                a { color:#acacac; padding:5px 3px; height:16px;  }
+            }
+            &.log-in { color:#aaa;
+                a { padding-top:4px; color:#fff; display:inline-block; }
+            }
+            .Selected {
+                a { color:#fff; }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+// -------------------------- #AppFooter --------------------------- //
+#AppFooter {
+    background:#fff; position:absolute; width:100%; border-top:solid 1px #ccc; font-size:13px; line-height:18px; bottom:0; height:80px;
+    .inner { margin:20px; }
+    .logo-icon { float:left; margin-right:10px; }
+}
+
+
+
+
+
+
+
+// -------------------------- #AppSide --------------------------- //
+#AppSide { width:300px; float:left; overflow:hidden; min-height:100px;
+    .app-side-menu{
+        ul { margin:0; padding:0; border-width:0 1px 1px 0; border-style:solid; border-color:#aaa;
+            li { list-style:none; background-color:#fff;
+                a { border-bottom:solid 1px #ccc;
+                    &:hover { text-decoration:none !important; cursor:pointer; background-color:#DAF1FF;  }
+                }
+                a, span { display:block; padding:10px 0 10px 20px; color:#362f2d; }
+
+                &:last-child { border:none; }
+                &.selected {
+                    > a { color: $link-color; }
+                }
+
+                ul { border:none;
+                    li {
+                        a { padding-left:40px; background:#f6f6f6 url("../img/icon_submenuitem.png") 18px center no-repeat; font-size:13px; }
+                    }
+                }
+
+
+            }
+        }
+    }
+
+    .adUnit { text-align:center; }
+}
+
+
+
+
+
+
+
+// -------------------------- #AppContent --------------------------- //
+#AppContent { position:relative;
+    .leader { background:#fff; text-align:center; }
+    .leader > object,
+    .leader > iframe,
+    .leader > a,
+    .leader > img,
+    .leader > div,
+    .leader > span,
+    .leader > ins { margin:6px !important; display:inline-block !important; }
+
+    .box.fl { width:58%; }
+    .box.fr { width:38%; }
+
+    .brandbar { background:#fff; }
+    .logobar { padding: 15px 22px; float:left; }
+}
+
+
+
+
+
+
+
+
+// -------------------------- #AppNetWorth --------------------------- //
+#AppNetWorth {
+    #WelcomeDemoForm,
+    .networth-container {
+        max-width:1000px; margin:0 auto;
+    }
+
+    #WelcomeDemoForm {
+        p { margin-top:0; }
+        .ui-input-text,
+        .ui-select-menu { width:100%; }
+    }
+}
+
+
+
+
+
+
+
+
+
+// -------------------------- #AppPage --------------------------- //
+#AppPage { padding:20px; margin:0 auto;
+
+    .page-container {
+        &.med { width:560px; }
+        &.sml { width:400px; }
+        &.lrg { width:1000px; }
+        &.full { width:auto;  }
+        &.sml.nw-tabs { width:900px; }
+        .labelname { margin-bottom: 6px; font-size: 16px; color: #292f40; }
+    }
+
+    .actionbar  { margin:10px 0; padding:15px; border-top:solid 1px #ccc; text-align:center; }
+
+}
+
+
+
+
+
+
+// -------------------------- #AppBody --------------------------- //
+#AppBody { display:block; float:none; min-height:100px; overflow:hidden;
+    .box { margin-bottom:30px;
+        > hr { margin-bottom:20px; }
+        .title {
+            .info { font-size: 11px;  }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+// -------------------------- #AppNetWorth --------------------------- //
+#uvTab { display:none !important; }
+#AppNetWorth{
+
+    #DeleteOptions {
+        .ui-button-delete{
+            margin-top:10px; width:130px; text-align:center;
+        }
+        strong { font-weight: normal;}
+        .small-btn { margin-top: 10px;}
+    }
+
+    .new-category-container { height:0; overflow:hidden; margin-top:-16px; }
+
+    .new-category.pop {
+        td { vertical-align:bottom; }
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+// -------------------------- .drawer --------------------------- //
+.drawer {
+    padding:20px; background-color:#fff; border-width:0 0 1px 1px; border-style:solid; border-color:#aaa; margin:0 0 20px -1px;
+    &.tab { margin-bottom:70px; }
+    &.tabset { padding-bottom:0; }
+
+    .ui-tabset {
+        margin:16px auto 0 auto;
+        .nav { border-bottom:0;
+            li { border-color:#aaa;
+                &.selected { background-color:#fafafa !important; }
+            }
+        }
+    }
+
+    .drawer-tab {
+        position:absolute; left:50%; width:210px; background:#fff; border:solid 1px #aaa; border-top:none; border-radius:0 0 3px 3px; text-align:center; padding:0 0 6px 0; overflow:visible; margin:20px 0 0 45px;
+        .txtbtn { position:absolute; top:16px; padding-left:20px; cursor:pointer; display:none; color: #005b9d; }
+        .txtbtn-clear { left:-84px; background:url("../img/btn_ui_clear.png") center left no-repeat; }
+        .txtbtn-cancel { left:-84px; background:url("../img/btn_ui_reset.png") center left no-repeat; }
+        .txtbtn-close { right:-76px; background:url("../img/btn_ui_close.png") center left no-repeat; }
+        .txtbtn-continue { right:-95px; }
+    }
+}
+.drawer-content { margin:0 auto; height:0; overflow:hidden;
+    > .box.first { margin-top:20px; }
+    .fieldgroup {
+        .btn-del,
+        .btn-add { margin:1px 5px 0 5px; }
+    }
+}
+.shelf { margin:0 auto; }
+
+
+
+
+
+
+
+
+
+
+
+// -------------------------- .chart-info --------------------------- //
+.chart-info{
+    margin:0 0 15px 0; padding:0; text-align:left; font-size:13px;
+    #AppDrawerShelf &{
+        margin-bottom:0;
+    }
+    li{
+        display:inline-block;margin-right:20px;
+        .swatch{ display:inline-block; margin-right: 2px; vertical-align: middle; width:10px;height:10px;border-radius:100%;background:#ccc}
+    }
+}
+
+
+
+
+
+
+
+// -------------------------- .message --------------------------- //
+.no-data{position:relative;overflow:hidden;
+    .message{top:0;left:0;width:100%;height:100%;position:absolute;z-index:10;text-align:center;
+        .inner{background:#fff;border-radius:4px;padding:20px;box-shadow:1px 1px 3px rgba(0,0,0,0.2);display:inline-block;width:50%;margin-top:30px;border:solid 1px #ccc}
+    }
+}
+
+
+
+
+
+
+
+
+// -------------------------- Net worth form-item --------------------------- //
+.app {
+    /*
+    .form-item { margin-bottom:20px;
+        label { display: block; padding-bottom: 4px;}
+        select,
+        .form-text { width: 100%; height: auto; line-height: 1; border: solid 1px #5aa0d7; border-radius: 3px; box-shadow: inset 0 0 1px #aaa; padding: 3px;  font-size: 14px;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -o-box-sizing: border-box;
+            box-sizing: border-box;}
+    }
+
+    .form-item-birthdate,
+    .form-item-income,
+    .form-item-student { width: 46% !important; display:-moz-inline-stack; display:inline-block; vertical-align:middle; zoom:1; *display:inline;}
+    .form-item-birthdate { margin-right: 20px;}
+
+    .form-submit {
+        margin: 5px; padding: 5px 12px; text-align: center; font-size: 13px; color: #111; border-radius: 3px; border-width: 1px; border-style: solid;
+        display: inline-block;
+        box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        cursor: pointer;
+        position: relative;
+        background: #f0f0f0;
+        background: -moz-linear-gradient(top, #fafafa 0%, #ececec 100%);
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fafafa), color-stop(100%,#ececec));
+        background: -webkit-linear-gradient(top, #fafafa 0%,#ececec 100%);
+        background: -o-linear-gradient(top, #fafafa 0%,#ececec 100%);
+        background: -ms-linear-gradient(top, #fafafa 0%,#ececec 100%);
+        background: linear-gradient(top, #fafafa 0%,#ececec 100%);
+        border-color: #aaa;
+    }
+    */
+}
+
+
+
+
+
+
+
+
+// -------------------------- Net worth feature-pane --------------------------- //
+.feature-pane{
+    width:300px;display:inline-block;text-align:center;vertical-align:top;margin-bottom:20px;
+    .graphic{ width:100%;height:280px;border-radius:5px;box-shadow:1px 1px 3px #ddd;border:solid 1px #ccc;background:#fff;margin-bottom:20px;color:#999; }
+
+    &.f1 {
+        .graphic{background:url("../img/networth_feature_1.png") center center no-repeat; }
+    }
+    &.f2 {
+        .graphic{background:url("../img/networth_feature_2.png") center center no-repeat; }
+    }
+    &.f3 {
+        .graphic{background:url("../img/networth_feature_3.png") center center no-repeat; }
+    }
+    &.f4 {
+        .graphic{background:url("../img/networth_feature_4.png") center center no-repeat; }
+    }
+
+    ul li{margin-bottom:10px}
+}
+

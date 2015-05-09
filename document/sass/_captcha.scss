@@ -1,0 +1,45 @@
+// =========================================================================================== //
+//                               Main style _screen.scss                                       //
+// =========================================================================================== //
+.captcha {
+    padding: 0 30px; font-size: 16px; font-family: $section-font;
+
+    .reload-captcha-wrapper { padding: 8px;
+        a {  font-size: 16px; font-family: $section-font }
+    }
+
+    label { display: inline-block; max-width: 100%; margin-bottom: 6px; color: #292f40 }
+
+    .form-item { padding:8px;
+        img { display: block }
+        .form-text { width: 180px }
+        .description { color:#888 }
+    }
+
+    .tooltip { display: block; position: relative; zoom: 1; text-decoration: none }
+
+    // for PC
+    @if $forpc == true {
+        @include media ( $media-ml ) {    // max-width: 768px
+            padding: 0;
+            .form-item {
+                .form-text { width: 100% }
+            }
+        }
+    }
+    // for Mobile
+    @else{
+
+    }
+
+
+}
+
+
+
+
+
+
+
+
+

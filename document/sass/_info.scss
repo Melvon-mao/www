@@ -1,0 +1,72 @@
+// ======================================================================= //
+//                         			info   	          				       //
+// ======================================================================= //
+.info {
+    .title & { float: right; padding-top: 8px; text-align: right; text-transform:none; font-size: 14px; }
+    .layout-title & {
+        float: right; margin-top:20px; padding-top: 8px; text-align: right; text-transform:none; font-size:15px;
+    }
+    @at-root {
+        // for PC
+        @if $forpc == true {
+            @include media ( $media-lg ) { // 768px
+                .#{$title} {
+                    h2 { padding-right: 60px; }
+                    .info { position: absolute; right: 0; bottom: 7px; float:none;}
+                }
+            }
+        }
+        // for Mobile
+        @else{
+            .#{$title} {
+                h2 { padding-right: 60px; }
+                .info { position: absolute; right: 0; bottom: 7px; float:none;}
+            }
+        }
+
+        // in account-page ...
+        .account-page {
+            .layout-title {
+                .info { font-family: $global-font; margin-top: 14px;
+                    // for PC
+                    @if $forpc == true {
+                        @include media ( $media-md ) { //512px
+                            float: none; text-align: left;
+                        }
+                    }
+                        // for Mobile
+                    @else{
+                        @include media ( $media-lm ) { //767px
+                            float: none; text-align: left;
+                        }
+                    }
+                }
+            }
+        }
+
+        // in layout-side ....
+        .#{$layout}-side {
+            .title {
+                .info { padding-top: 0; 
+                    a { color: #fff;}
+                }
+            }
+        }
+    }
+}
+.info.info-img {
+    .title & {
+        padding-top: 0; margin-top: -4px;
+    }
+    // for PC
+    @if $forpc == true {
+        @include media ( $media-lg ) { // 768px
+            + h2 { padding-right: 110px; }
+        }
+    }
+    // for Mobile
+    @else{
+        + h2 { padding-right: 110px; }
+    }
+
+}

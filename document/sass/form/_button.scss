@@ -1,0 +1,192 @@
+// ======================================================================= //
+//                             Global button                               //
+// ======================================================================= //
+
+button {
+    -webkit-appearance:none; -moz-appearance:none; border-radius: 0;
+    @at-root {
+        #Footer,
+        .sharing,
+        .#{$layout}-page {
+            .newsletter {
+                button { display:inline-block; margin-left: -3px; border:none; border-radius:0; background-color: $button-bgcolor; color: $button-fontcolor; padding:5px 10px 4px 10px; font-size: $input-text-default; cursor:pointer; vertical-align:top; }
+            }
+        }
+        .sharing,
+        .#{$layout}-page {
+            .newsletter {
+                button { font-size: $input-text-medium; padding-bottom:5px; margin-top:6px; }
+            }
+        }
+        #Footer,
+        .#{$layout}-page {
+            .newsletter {
+                button { margin:0;
+                    &:hover{ background-color: $link-color; }
+                }
+            }
+        }
+        .newsletter {
+            button{
+                &:hover { background-color: $link-color; }
+            }
+        }
+    }
+}
+
+
+.small-btn { padding: 6px 10px !important;}
+
+
+
+
+
+
+
+
+
+
+// ======================================================================= //
+//                          Net worth button                               //
+// ======================================================================= //
+.ui-button {
+    position:relative;display:inline-block;margin:5px;padding:0;border-style:solid;border-width:1px;border-radius:3px;box-shadow:1px 1px 2px rgba(0,0,0,0.3);cursor:pointer;
+
+    &:hover{text-decoration:none}
+
+    .label{ display:inline-block; padding:5px 12px; font-size: 13px; text-align:center; }
+
+    .menu{
+        position:absolute;right:0;z-index:1;display:none;margin-top:6px;border:solid 1px #ccc;border-radius:3px;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,0.2);
+        .pointer{position:absolute;top:-20px;right:10px;border-color:transparent transparent #fff transparent;border-style:solid;border-width:10px}
+        .menuitem{padding:6px;border-bottom:solid 1px #ccc;
+            &:hover{background:#f4f4f4}
+        }
+    }
+
+    &.fat{
+        .label{ padding:10px 20px; min-width:144px }
+    }
+
+    &.large {
+        .label{ padding:10px 0 }
+    }
+
+    &.small {
+        .label{ padding:6px 10px;font-size:11px }
+    }
+
+    &.large {
+        .label{ padding:10px 18px;font-size:16px }
+    }
+
+    &:hover,
+    a:hover{ text-decoration:none!important; }
+
+    &.dropmenu {
+        > .label:after{display:inline-block; margin:4px 3px 0 10px; border-color:#aaa transparent transparent transparent; border-style:solid;border-width:6px;content:' ';vertical-align:middle; }
+    }
+
+}
+
+.ui-linkbutton{
+    display:inline-block;padding:2px 10px;border:solid 1px #bbb;border-radius:3px;background-color:#f6f6f6;color:#444;vertical-align:top;
+    &:hover{text-decoration:none; }
+}
+
+.ui-button-a {
+    border-color: #6e6a68;
+    background: #716760;
+    background: -moz-linear-gradient(top,#716760 0,#524941 100%);
+    background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#716760),color-stop(100%,#524941));
+    background: -webkit-linear-gradient(top,#716760 0,#524941 100%);
+    background: -o-linear-gradient(top,#716760 0,#524941 100%);
+    background: -ms-linear-gradient(top,#716760 0,#524941 100%);
+    background: linear-gradient(top,#716760 0,#524941 100%);
+    .label{ box-shadow:0 0 3px rgba(255,255,255,0.2) inset; color:#fff; }
+    &:hover{
+        border-color:#603913;
+        .label{ color:#ffe }
+    }
+}
+
+.ui-button-b {
+    border-color: #aaa !important;
+    background: #f0f0f0 !important;
+    background: -moz-linear-gradient(top,#fafafa 0,#ececec 100%) !important;
+    background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#fafafa),color-stop(100%,#ececec)) !important;
+    background: -webkit-linear-gradient(top,#fafafa 0,#ececec 100%) !important;
+    background: -o-linear-gradient(top,#fafafa 0,#ececec 100%) !important;
+    background: -ms-linear-gradient(top,#fafafa 0,#ececec 100%) !important;
+    background: linear-gradient(top,#fafafa 0,#ececec 100%) !important;
+    .label{ color:#333; }
+    &:hover{
+        border-color:#5aa0d7;
+        .label{ color:#1b4875 }
+    }
+}
+
+.ui-button-c {
+    border-color: #ccbfa0;
+    background: #f6f5e9;
+    background: -moz-linear-gradient(top,#f6f5e9 0,#f2f1df 100%);
+    background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#f6f5e9),color-stop(100%,#f2f1df));
+    background: -webkit-linear-gradient(top,#f6f5e9 0,#f2f1df 100%);
+    background: -o-linear-gradient(top,#f6f5e9 0,#f2f1df 100%);
+    background: -ms-linear-gradient(top,#f6f5e9 0,#f2f1df 100%);
+    background: linear-gradient(top,#f6f5e9 0,#f2f1df 100%);
+    &:hover{ border-color:#a28f84; }
+    .label{ color:#362f2d; }
+}
+
+.ui-button-d {
+    border-color: #5a9617;
+    background: #71b01f;
+    background: -moz-linear-gradient(top,#85bd31 0,#5a9617 100%);
+    background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#85bd31),color-stop(100%,#5a9617));
+    background: -webkit-linear-gradient(top,#85bd31 0,#5a9617 100%);
+    background: -o-linear-gradient(top,#85bd31 0,#5a9617 100%);
+    background: -ms-linear-gradient(top,#85bd31 0,#5a9617 100%);
+    background: linear-gradient(top,#85bd31 0,#5a9617 100%);
+    &:hover{ border-color:#464646; }
+    .label{ color:#fff; text-shadow:1px 1px 0 rgba(0,0,0,0.2); }
+}
+
+.ui-button-delete {
+    border: 1px solid #8e0000;
+    background: #bf2020;
+    background: -moz-linear-gradient(top,#bf2020 0,#b23131 100%);
+    background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#bf2020),color-stop(100%,#b23131));
+    background: -webkit-linear-gradient(top,#bf2020 0,#b23131 100%);
+    background: -o-linear-gradient(top,#bf2020 0,#b23131 100%);
+    background: -ms-linear-gradient(top,#bf2020 0,#b23131 100%);
+    background: linear-gradient(to bottom,#bf2020 0,#b23131 100%);
+    &:hover{ border-color:#686868; }
+    .label{ padding:6px 12px; color:#fff; }
+}
+
+.ui-button-flat{
+    border:0;border-radius:none;box-shadow:none;
+    .label{ color:#333; }
+}
+
+.ui-button-facebook{
+    border-color:#333;background:url('../img/bkg_facebook_btn.png') center left no-repeat;
+    .label{ margin-left:25px;padding-bottom:6px;color:#fff; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

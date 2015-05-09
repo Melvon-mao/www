@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="vcpmodule">
+  <head>
+    <meta charset="utf-8">
+    <title>VCP</title>
+    <link href="lib/bootstrap/bootstrap.css" rel="stylesheet">
+    <link href="app/style.css" rel="stylesheet" id="skinCss">
+    <link rel="shortcut icon" href="app/img/favicon.ico">
+    <link href="theme/site-theme_default/site-theme_default.css" rel="stylesheet" id="headerskinCss">
+  </head>
+
+<body class="vcpbody">
+<!-- Header -->
+<header class="header">
+	<h1 class="logo"><a href="index.html">VCP</a></h1>
+    <a href="###" class="preview">preview</a>
+    <div class="preview_Item">
+        <a href="#" class="forMobile">On Mobile</a>
+        <a href="#" class="forPad">On Pad</a>
+        <a href="../demo/index.html" class="forPC" target="_blank">On PC</a>
+    </div>
+    <a href="#/user" class="nav_user">User</a>
+    <ul class="menu clearfix">
+    	<li id="menuSite"><a href="site.html"><span>Site</span></a></li>
+        <li id="menuPage"><a href="page.html" class="current"><span>Page</span></a></li>
+        <li id="menuArticle"><a href="article_list_index.html"><span>Article</span></a></li>
+        <li id="menuReports"><a href="reports.html"><span>Report</span></a></li>
+        <li id="menuStore"><a href="store.html"><span>Store</span></a>
+        <li id="menuAppGenerate"><a href="app.html"><span>App</span></a></li>
+    </ul>
+</header>
+
+
+<!-- Container -->
+<div class="vcpbox">
+<div class="container">
+
+<!-- =======================================  tip_auto ======================================= -->
+<div class="tip_box tip_auto">
+    <h1 class="PopupTitle"><a href="###" class="TipBoxClose">X</a>Auto Block Data</h1>
+    <div class="tabbable tabs-below">
+        <div class="tab-content">
+            <!-- Tab1: Layout -->
+            <div class="tab-pane active" id="tab-layout">
+                <dl class="clearfix">
+                    <dt>Block name :</dt>
+                    <dd><div class="tipbox_filter"><input type="text"></div></dd>
+                </dl>
+                <dl class="clearfix">
+                    <dt>Layout :</dt>
+                    <dd><div class="tipbox_layout">
+                        <a href="#" class="selected"><img src="/publisheradmin/app/img/ico_layout_01.png" alt=""></a>
+                        <a href="#"><img src="/publisheradmin/app/img/ico_layout_02.png" alt=""></a>
+                        <a href="#"><img src="/publisheradmin/app/img/ico_layout_03.png" alt=""></a>
+                        <a href="#"><img src="/publisheradmin/app/img/ico_layout_04.png" alt=""></a>
+                        </div>
+                    </dd>
+                </dl>
+                <dl class="clearfix">
+                    <dt>Article Quantity :</dt>
+                    <dd><input type="text"></dd>
+                </dl>
+            </div>
+            <!-- Tab1: Layout //End -->
+            <!-- Tab2: Filter -->
+            <div class="tab-pane" id="tab-filter">
+                <dl class="clearfix">
+                    <dt>Category :</dt>
+                    <dd>
+                        <div class="tipbox_filter">
+                            <select ng-model="newblock.blockcategory" >
+                                <option selected="selected">All</option>
+                                <option>Cosmetics</option>
+                                <option>Insurance</option>
+                                <option>Healthcare</option>
+                                <option>Health and leisure</option>
+                                <option>Commercial</option>
+                                <option>Online service</option>
+                                <option>Entertainment</option>
+                                <option>Season</option>
+                                <option>Family</option>
+                                <option>Education</option>
+                                <option>Traveling</option>
+                                <option>Car</option>
+                                <option>Law</option>
+                                <option>Toys and games</option>
+                                <option>Law</option>
+                            </select>
+                        </div>
+                    </dd>
+                </dl>
+                <dl class="clearfix">
+                    <dt>Sort by :</dt>
+                    <dd>
+                        <div class="tipbox_sort">
+                            <label class="radio">
+                                <input type="radio" name="optionsRadios" ng-model="newblock.blocksortby" value="bydate" >Date
+                            </label>
+                            <label class="radio">
+                                <input type="radio" name="optionsRadios" ng-model="newblock.blocksortby" value="bypv">PV
+                            </label>
+                        </div>
+                    </dd>
+                </dl>
+                <dl class="clearfix">
+                    <dt>Tag :</dt>
+                    <dd>
+                        <div class="tipbox_filter">
+                            <input name="tagsinput"  id="tagsinput" class="tagsinput" value=""  />
+                        </div>
+                    </dd>
+                </dl>
+            </div>
+            <!-- Tab2: Filter //End -->
+            <!-- Tab3: Sort
+            <div class="tab-pane" id="tab-Sort">
+
+            </div>
+             Tab3: Sort //End -->
+        </div>
+        <ul class="nav nav-tabs">
+            <li id="layout" class="active"><a href="#tab-layout" data-toggle="tab">Block</a></li>
+            <li id="filter"><a href="#tab-filter" data-toggle="tab">Article Filter</a></li>
+        </ul>
+
+    </div>
+</div>
+
+
+
+
+		<!-- Page -->
+        <div class="pagewrap" style="margin-top:300px;">
+                <!-- Row -->
+                <div class="row-fluid">
+                    <div class="span9">
+
+
+
+
+                        
+
+                        <!-- 无数据 -->
+                        <div class="block_content blockempty">
+
+
+
+                            <div class="masklayer">
+                                <a href="#" class="icon-save">SAVE</a>
+                                <img src="app/img/temp/blocklayout_preview1.jpg" alt="">
+                            </div>
+
+
+                            <!-- ICO -->
+                            <div class="ico_box">
+                                <div class="ico_autoblock">Auto</div>
+                                <div class="ico_autoeditor">Pick</div>
+                                <br>
+                                <div class="ico_staticblock">T</div>
+                                <div class="ico_adblock">AD</div>
+                                <div class="ico_RSS">RSS</div>
+                            </div>
+                            <!-- ICO //End -->
+                        </div>
+                        <!-- 无数据 //End -->
+
+
+
+                    </div>
+                </div>
+            	<!-- Row //End -->
+        </div>
+        <!-- Page //End -->
+
+</div>
+</div>
+
+
+
+    
+    <!-- Load JS -->
+    <script src="lib/angular/1.1.5/angular.js"></script>
+    <script src="lib/angular/1.1.5/angular-resource.js"></script>
+    <script src="lib/angularui/ui-bootstrap-tpls-0.4.0.min.js"></script>
+    <script src="app/js/factory.js"></script>
+    <script src="app/js/directives.js"></script>
+    <script src="app/js/controller/pagecontroller.js"></script>
+
+
+    <script src="https://cdn.firebase.com/v0/firebase.js"></script>
+    <script src="lib/angularfire/angularfire.js"></script>
+
+    <script src="lib/underscore/underscore-min.js"></script>
+    <script src="lib/jquery/jquery-1.8.2.min.js"></script>
+    <script src="lib/jqueryui/jquery-ui-1.10.0.custom.min.js"></script>
+    <script src="lib/flatui/jquery.tagsinput.js"></script>
+
+    <!-- Bootstrap Plug -->
+    <script src="lib/bootstrap/bootstrap.js"></script>
+    
+    <!-- jQuery Plug: niceScroll -->
+    <script src="lib/jqueryplugin/jquery.nicescroll.min.js"></script>
+    
+    <script src="app/js/custom.js"></script>
+
+    <script>
+
+        $(function(){
+
+            //默认隐藏浮动层
+            $('.tip_box, .ico_box, .masklayer').hide();
+
+
+
+            //鼠标经过时出现5个图标
+            $(".block_content").hover(function(){
+                $('.ico_box').show();
+                $(this).addClass('blockempty_hover');
+            }, function() {
+                $(".ico_box").hide();
+                $(this).removeClass('blockempty_hover');
+           });
+
+
+
+            //点击 AutoBlock 图标弹出浮动层
+            $(".ico_autoblock").click(function(e) {
+                    e.preventDefault();
+                    $(this).addClass("ico_active");
+                    $parent = $(this).parent().parent();
+                    $parent.append($(".tip_auto"));
+                    $('.tip_box').css({
+                        position: 'absolute',
+                        display: 'block',
+                        left: '0',
+                        right: '0',
+                        bottom: '100%',
+                        margin: 'auto',
+                    });
+                    $('.masklayer').show();
+                    $('.ico_box').hide();
+                    $(".ico_autoeditor, .ico_staticblock, .ico_adblock").removeClass("ico_active");
+            });
+
+
+
+            //点击每一种Block的Theme
+            $(".tipbox_layout a").click(function(){
+                $(this).addClass("selected").siblings("a").removeClass("selected");
+           });
+
+
+            //关闭浮动层
+            $('.TipBoxClose').click(function(){
+                $('.tip_box, .ico_box, .masklayer').hide();
+                $(".ico_autoblock, .ico_autoeditor, .ico_staticblock, .ico_adblock").removeClass("ico_active");
+            });
+
+        });
+
+    </script>
+</body>
+</html>

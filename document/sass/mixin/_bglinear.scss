@@ -1,0 +1,15 @@
+// ======================================================================= //
+//                    		      transition           	                   //
+// ======================================================================= //
+
+@mixin bglinear ( $old-color, $start-color, $end-color ) {
+	background: $old-color;
+	background: -moz-linear-gradient(top, $start-color 0%, $end-color 100%); 
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $start-color), color-stop(100%, $end-color)); 
+	background: -webkit-linear-gradient(top, $start-color 0%, $end-color 100%); 
+	background: -o-linear-gradient(top, $start-color 0%, $end-color 100%); 
+	background: -ms-linear-gradient(top, $start-color 0%, $end-color 100%); 
+	background: linear-gradient(to bottom, $start-color 0%, $end-color 100%); 
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#323a4e', endColorstr='#262a39',GradientType=0 );
+}
+

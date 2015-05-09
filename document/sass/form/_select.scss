@@ -1,0 +1,127 @@
+/* ======================================================================= */
+/*                        	   	Drupal: Select      	 	  	           */
+/* ======================================================================= */
+
+select {
+    &[multiple],
+    &[size]  { height: auto; }
+    optgroup { font-style: inherit; font-size: inherit; font-family: inherit; }
+    #AppPage & { display: block;}
+}
+
+
+.form-type-select {
+    .selectmenu {
+        width: 100% !important; height: 32px; border: 1px solid #ccc; margin: 0; position: relative; cursor: pointer; font-size: 15px; z-index: 99; background: #fff;
+        .label{ position: relative; padding: 6px 8px; font-weight: 400; overflow: hidden; white-space: nowrap; text-align: left; height: 20px;
+            &:after { content: ''; display: block; position: absolute; right: 12px; top: 12px; width: 11px; height: 6px; overflow: hidden; background:url('../img/sprite_icon.png') -266px -352px no-repeat; }
+            .text{ overflow: hidden; line-height: 22px; margin-right: 30px; margin-top: 0px; font-family: $section-font; }
+        }
+        &:hover {
+            .label{ @include box-shadow(inset 0 0 10px rgba(0,0,0,0.085));
+                &:after { background-position: -287px -352px; }
+            }
+        }
+        input { position: absolute; left: -99999px; width: 10px; }
+        ul { position:absolute;top:0;left:0;display:none;overflow:auto;margin:32px 0 0 -1px;padding:0; width:100%;max-height:300px;border-style:solid;border-width:1px;border-color:#ccc; list-style:none; background-color: #fff; @include box-shadow(1px 4px 10px rgba(0,0,0,0.1));
+            li{ margin: 0; padding: 0; border-width: 0 0 1px; border-style: dashed; border-color:#ccc;
+                &:last-child { border-bottom: 0;}
+                a{ display: block; padding: 8px 10px; color:#444; font-family: $section-font;
+                    &:hover{ color:#fff; text-decoration:none; background-color:#292f40; }
+                    &.hover{ color:#fff; }
+                }
+            }
+        }
+    }
+    .nav-selectmenu{ width: 100%;
+
+        // for PC
+        @if $forpc == true {
+            @include media ( $media-ml ) { // 620px
+                display: block !important; width: 100% !important; margin-bottom: 20px !important;
+            }
+        }
+        @else{
+            // iphone
+            @include media ( $media-ml ) { // 620px
+                display: block !important; width: 100% !important; margin-bottom: 20px !important;
+            }
+        }
+    }
+    .form-select { display: none; }
+
+    @at-root {
+        // in converter ....
+        .converter-wrapper {
+            td { padding-top: 0; padding-bottom: 0; vertical-align: top;}
+            .form-item.form-type-select {
+                .selectmenu { min-width: 70px !important;
+                    // for PC
+                    @if $forpc == true {
+                        @include media ( $media-lg ) {
+                            width: 100% !important;
+                        }
+                    }
+                        // for Mobile
+                    @else{
+                        width: 100% !important;
+                    }
+                }
+
+            }
+            table {
+                td { vertical-align: top; padding:0;}
+            }
+        }
+        // in forex ...
+        .form-type-select {
+            .forex-flag-icon {
+                .label {
+                    .text {
+                        img { vertical-align: middle; margin-right: 6px;}
+                    }
+                }
+                ul {
+                    li {
+                        a {
+                            img { vertical-align: top; margin-right: 6px;}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+/* ======================================================================= */
+/*                          	Networth: select-menu      	  	           */
+/* ======================================================================= */
+.ui-select-menu {
+    display:inline-block;vertical-align:top;
+
+    select{ margin-bottom:10px; width:100%; height: 30px; border:solid 1px #bbb; font-size:15px;  @include boxsizing;
+        &:focus{outline:solid 1px #5aa0d7;border-radius:0 }
+    }
+
+    &.bold {
+        select{ border-width:2px }
+    }
+
+    >  label,
+    > .label { display:block;padding-bottom:4px }
+
+    &.inline {
+        &.inline {
+            >  label,
+            > .label { display:inline-block;margin-right:6px;text-align:right }
+        }
+    }
+
+    .warning{ clear:both; display:inline-block;border:solid 1px #ad0303!important;background:#fff url('../img/btn_ui_alert.png') center right no-repeat;zoom:1}
+
+}

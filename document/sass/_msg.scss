@@ -1,0 +1,19 @@
+// =========================================================================================== //
+//                                              Message box                                   //
+// =========================================================================================== //
+.msg-bar { padding:10px; }
+
+.msg-bar-content { padding:6px 10px; border-radius:3px; position:relative; padding-right:20px;
+    &.warning { background:#FFBD26; color:#452A01; }
+}
+
+.msg-bar-close { position:absolute; top:4px; right:6px; width:19px; height:19px; border-radius:100%; cursor:pointer; background:#fff url("../img/btn_ui_close.png") center center no-repeat; }
+
+
+
+
+
+
+
+
+

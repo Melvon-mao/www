@@ -1,0 +1,163 @@
+// ======================================================================= //
+//                                 Header                                  //
+// ======================================================================= //
+#Header {
+
+	// Midddle wrap ...
+	.mid { position: relative; z-index: 92;
+        // @include bglinear( $header-bgcolor-default, $header-bgcolor-start, $header-bgcolor-end );
+        background: #323a4e;
+        background: -moz-linear-gradient(top, #323a4e 0%, #262a39 100%);
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #323a4e), color-stop(100%, #262a39));
+        background: -webkit-linear-gradient(top, #323a4e 0%, #262a39 100%);
+        background: -o-linear-gradient(top, #323a4e 0%, #262a39 100%);
+        background: -ms-linear-gradient(top, #323a4e 0%, #262a39 100%);
+        background: linear-gradient(to bottom, #323a4e 0%,#262a39 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#323a4e', endColorstr='#262a39',GradientType=0);
+		// for PC
+		@if $forpc == true {
+			@include media ( $media-lg ) {	// 768px
+				border-top: 8px solid $header-bgcolor-end;
+			}
+		}
+		// for Mobile
+		@else{
+			border-top: 8px solid $header-bgcolor-end;	// iPad
+		}
+	} 
+
+    // Brands ...
+	.brand { padding: 6px 0 0 0; @include boxsizing;
+		.logo { 
+			@include logo-option;
+		}
+
+	}
+
+	.member{
+		float: right; padding: 14px 0; font-size: 11px; color: #ddd;
+		a { color: #ddd }
+		.user-nav { margin: 0; padding: 0; list-style: none; text-align: right; 
+			li { display: inline-block; margin: 0; padding: 0; 
+				&:after { content: "|" }
+				&:last-child {
+					a { padding-right: 0; margin-right: 0 }
+				}
+				&:last-child:after { content: " " }
+				a { margin: 0 6px; padding: 0 0 6px 0; display: inline-block }
+			}
+		}
+
+		// for PC
+		@if $forpc == true {
+			@include media ( $media-lg ) {	// max-width: 768px
+				display: none;
+			}
+		}
+		// for Mobile
+		@else{
+			display: none; // max-width: ipad
+		}
+
+	}
+
+	// Header search-bars
+	.search-bars { margin: 3px 0 0 0; float: right; font-size: 0 }
+	
+	// Header Social
+	.headicon { float: right; margin:9px 0 0 0; 
+		.footicon { width: 16px; height: 16px; margin: 5px 0 5px 9px }
+	}
+
+
+	// user-nav
+	@at-root .user-nav{
+		li{
+			&:last-child{
+				&:after{ content: "" }
+			}
+		}
+	}
+
+
+	// Responsive Navicon & Search
+	@at-root {
+
+		.m-nav-icon,
+		.m-search-icon{ display: none; 
+			// for PC
+			@if $forpc == true {
+				@include media ( $media-lg ) {	// max-width: 768px;
+					display: block;
+				}
+			}
+			// for Mobile
+			@else{
+				display: block;	// ipad
+			}
+		}
+
+		.m-nav-icon{ 
+			// for PC
+			@if $forpc == true {
+				@include media ( $media-lg ) {	// max-width: 768px;
+					float: left; margin:12px 10px 0 10px;
+				}
+			}
+			// for Mobile
+			@else{
+				float: left; margin:12px 10px 0 10px;	// ipad
+			}
+		}
+
+		.m-search-icon{ 
+			// for PC
+			@if $forpc == true {
+				@include media ( $media-lg ) {	// max-width: 768px;
+					float: right; margin:12px 10px 0 0;
+				}
+			}
+			// for Mobile
+			@else{
+				float: right; margin:12px 10px 0 0;
+			}
+		}
+
+		.m-search-box{ z-index: 90; display: none;
+			// for PC
+			@if $forpc == true {
+				@include media ( $media-lg ) {	// max-width: 768px;
+					position: relative; padding: 10px 20px; border-bottom: 1px solid #ddd; box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+					.input-text { width: 100%; height:31px; padding-right:80px; @include boxsizing  }
+					.search-btn { position: absolute; right: 20px; top: 14px; padding:0; width: 68px; height:31px; color: $button-fontcolor; background-color: $button-bgcolor; cursor: pointer; border:0; font-size: $global-size; text-align: center }
+				}
+			}
+			// for Mobile
+			@else{
+				@include transform(transform, 0.5s);
+				display: block; position:relative; margin-top: -60px; padding: 10px 20px; border-bottom: 1px solid #ddd; box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+				.input-text { width: 100%; height:31px; padding-right:80px; @include boxsizing  }
+				.search-btn { position: absolute; right: 20px; top: 14px; padding:0; width: 68px; height:31px; color: $button-fontcolor; background-color: $button-bgcolor; cursor: pointer; border:0; font-size: $global-size; text-align: center }
+			}
+		} 
+	}
+
+}
+
+
+
+// for PC
+@if $forpc == true {
+	@include media ( $media-lg ) {	// max-width: 768px;
+		.open-search { display: block }
+	}
+}
+// for Mobile
+@else{
+	// ipad
+	.open-content 								{ @include translate3d(200px, 0, 0) }
+	.open-search 								{ @include translate3d(0, 60px, 0) }
+	.open-content.open-search 					{ @include translate3d(200px, 60px, 0) }
+	.open-body 									{ padding-bottom: 60px }
+	.nav.open-nav 								{ @include translate3d(0, 0, 0) }
+}

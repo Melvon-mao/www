@@ -1,0 +1,258 @@
+<!-- Header -->
+<div page-nav current = '4'></div>
+<!--<header class="header">
+    <h1 class="logo"><a href="#">VCP</a></h1>
+    &lt;!&ndash; NAV &ndash;&gt;
+    <ul class="menu clearfix">
+        <li id="menuSite"><a href="#/site"><span>Site</span></a></li>
+        <li id="menuPage"><a href="#/page"><span>Page</span></a></li>
+        <li id="menuArticle"><a href="#/articlelist" class="current"><span>Article</span></a></li>
+        <li id="menuReports"><a href="#/report"><span>Report</span></a></li>
+        <li id="menuStore"><a href="#/store"><span>Store</span></a>
+        <li id="menuAppGenerate"><a href="#/download"><span>App</span></a></li>
+    </ul>
+    &lt;!&ndash; NAV: Preview &ndash;&gt;
+    <div class="dropdown dropdownPreview">
+        <a href="#" class="dropdown-toggle preview" data-toggle="dropdown">Preview</a>
+        <ul class="dropdown-menu pull-right">
+            <li><a href="#"><i class="icon-mobile-phone"></i>On Mobile</a></li>
+            <li><a href="#"><i class="icon-tablet"></i>On Pad</a></li>
+            <li><a href="../demo/index.html" target="_blank"><i class="icon-desktop"></i>On PC</a></li>
+        </ul>
+    </div>
+    &lt;!&ndash; NAV: User &ndash;&gt;
+    <div class="dropdown dropdownUser">
+        <a href="#" class="dropdown-toggle nav_user" data-toggle="dropdown">User</a>
+        <ul class="dropdown-menu pull-right">
+          <li><a href="#/user"><i class="icon-user"></i>Information</a></li>
+          <li><a href="#/user"><i class="icon-signout"></i>Log out</a></li>
+        </ul>
+    </div>
+</header>-->
+<!-- Header //End -->
+
+
+<!-- Container -->
+<div class="vcpbox">
+    <!-- Content -->
+    <div class="article" >
+
+        <div class="article-row">
+
+
+            <!-- Left -->
+            <div class="article-span9">
+                <div class="article-title">Preview<!--REVIEW by <b>{{articlepreviewdata.editor}}--></b>
+                    <i class="article-title-ico">
+                        <!-- <a href="#/detail/{{articlepreviewdata.id}}" class="ico-article-edit" rel="tooltip" title="Edit Article"></a>
+                        <a href="" class="ico-article-del" rel="tooltip" title="Delete Article"  ng-click="openModal()"></a>
+                        <a href="" class="ico-article-setup" rel="tooltip" title="Tag Category"></a> -->
+                    </i>
+
+
+                    <!-- Delete 弹窗 -->
+                    <div modal="cssshowdelmodal" options="cssmodalslide" >
+                        <div class="modal-header">
+                            <button type="button" class="close" ng-click="closeDeleteWarn()">&times;</button>
+                            <h3>Delete Article </h3>
+                        </div>
+
+                        <div class="modal-body">
+                            <h4>Are you sure delete "{{articlepreviewdata.title}}" ?</h4>
+                        </div>
+
+                        <div class="modal-footer">
+                            <!-- <button class="btn" ng-click="closeDelModal()">Cancel</button> -->
+                            <button class="btn btn-delete"  ng-click="deleteArticle()">Delete</button>
+                        </div>
+                    </div>
+
+                    <!-- Review 更改状态弹窗 -->
+                    <div class="modal" modal="css.statuscomment" options="cssmodalslide" >
+                        <div class="modal-header">
+                            <button type="button" class="close" ng-click="hideArticleStatus()">&times;</button>
+                            <h3>{{ nowstatus }} Comment</h3>
+                        </div>
+
+                        <div class="modal-body">
+
+                            <textarea rows="3" style="width:96%" ng-model="comment"></textarea>
+
+                            <table class="table table-condensed">
+                                <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Status</th>
+                                    <th>Version</th>
+                                    <th>User</th>
+                                    <th>Comment</th>
+                                </tr>
+                                </thead>
+
+                                <tbody>
+                                <tr ng-repeat="review in articleStatusData">
+                                    <td>{{ review.updated_at | date:'yyyy/MM/dd HH:mm' }}</td>
+                                    <td>{{ review.article_status == 10 ? 'Draft' : review.article_status == 20 ? 'Need Review' : 'Published' }}</td>
+                                    <td><span class="badge badge-success">{{ review.revision.id }}</span></td>
+                                    <td>{{ review.revision.editor.username }}</td>
+                                    <td>{{ review.statuscomment }}</td>
+                                </tr>
+
+
+                                </tbody>
+                            </table>
+
+                        </div>
+
+                        <div class="modal-footer">
+                            <!--<button class="btn" ng-click="closecomments()">Cancel</button>-->
+                            <button class="btn btn-save" ng-click="editArticleStatus()">Save</button>
+                        </div>
+                    </div>
+
+
+
+                </div>
+                <!-- 预览区 -->
+                <div id="article-cont-preview" class="article-cont" >
+                    <div ng-show="articlepreviewdata.title == undefined">
+
+                        <!-- Loading GIF -->
+                        <!--<div class="loading">
+                            <div class="loadingCont"><img src="publisheradmin/app/img/loading.gif"><h6>Loading...</h6></div>
+                        </div>-->
+                        <!-- Loading GIF //End -->
+
+                        <!-- <img src="app/img/temp/article_default_pic.jpg" alt=""> -->
+                    </div>
+                    <div class="article-templete CkeditorPreview" ng-hide="articlepreviewdata.title == undefined">
+
+                        <h1>{{articlepreviewdata.title}}</h1>
+
+                        <div class="tagbox">
+                            {{ articlepreviewdata.updated_at | date:'yyyy/MM/dd HH:mm' }}  |  Tag »
+                            <a href="#/{{tagdata.tag.id}}" ng-repeat="tagdata in articlepreviewdata.tags">{{tagdata.tag.name}}</a>
+                        </div>
+                        <p ng-bind-html-unsafe="articlepreviewdata.body">
+
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 预览区 //End-->
+            </div>
+            <!-- Left //End -->
+
+
+            <!-- Right -->
+            <div class="article-span9">
+
+                <div class="article-title">Article List
+                    <i class="article-title-ico clearfix">
+                        <!-- <pre>Model: {{selected| json}}</pre>-->
+                        <a href="#/newarticle" class="btn btn-addnew" rel="tooltip"></a>
+                        <div class="aiticleList_search_Wrap">
+                            <input class="aiticleList_search" type="text" ng-model="selected" ng-change="selectdata()" typeahead="state for state in states | filter:$viewValue">
+                            <a href="#" class="icon-search"></a>
+                        </div>
+                        <div class="ListSequence">
+                            <input ng-hide="cssshowupdate" class="ico-article-UP_default" type="button" value="Updated" ng-click="orderbytype('updated','desc')">
+                            <input ng-show="cssshowupdate" class="ico-article-DOWN_default" type="button" value="Updated" ng-click="orderbytype('updated','asc')">
+                            <input ng-hide="cssshowpublish" class="ico-article-UP_default" type="button" value="Published" ng-click="orderbytype('published','desc')">
+                            <input ng-show="cssshowpublish" class="ico-article-DOWN_default" type="button" value="Published" ng-click="orderbytype('published','asc')">
+                            <input ng-hide="cssshowclick" class="ico-article-UP_default" type="button" value="Click" ng-click="orderbytype('clickcount','desc')">
+                            <input ng-show="cssshowclick" class="ico-article-DOWN_default" type="button" value="Click" ng-click="orderbytype('clickcount','asc')">
+                        </div>
+                    </i>
+                </div>
+
+
+                <!-- Aritcles列表 -->
+                <div class="article-cont">
+
+                    <!-- Loading GIF -->
+                    <!--<div class="loading" ng-show="cssloading" ng-animate="'fade'">
+                        <div class="loadingCont"><img src="publisheradmin/app/img/loading.gif"><h6>Loading...</h6></div>
+                    </div>-->
+                    <!-- Loading GIF //End -->
+
+                    <ul class="article-list">
+
+                        <li ng-mouseenter="showEditIcon($index)"  ng-class="{active:$index == css.artilceindex}" ng-repeat="article in articlesdata" ng-click="clickArticle(article, $index)" >
+                            <div class="list-date">
+                                <h1><a href="" >{{article.revisions[0].title}}</a></h1>
+                                <dl>
+                                    <dd><p class="titlename">Created</p><p>{{article.revisions[0].created_at | date:'MM/dd/yyyy HH:mm:ss'}}</p></dd>
+                                    <dd><p class="titlename">Updated</p><p>{{article.revisions[0].updated_at | date:'MM/dd/yyyy HH:mm:ss'}}</p></dd>
+                                    <dd><p class="titlename">Published</p><p>{{(article.revisions[0].publishStatus.article_status == 30 ? article.revisions[0].publishStatus.updated_at : '--') | date:'MM/dd/yyyy HH:mm:ss' }}</p></dd>
+                                    <dd><p class="titlename">Author</p><p>{{article.revisions[0].author.username}}</p></dd>
+                                    <dd><p class="titlename">Editor</p><p>{{article.revisions[0].editor.username}}</p></dd>
+                                </dl>
+                            </div>
+                            <div class="list-count">
+                                <dl>
+                                    <dd style="padding-bottom: 20px;">
+                                        <i class="article-title-ico" ng-show="$index == css.editicon">
+                                            <a href="#/article/{{article.id }}" class="icon-pencil"></a>
+                                            <!--<a href="" class="icon-gear" ng-click="cssTagsPanel = true"></a>-->
+                                            <a class="icon-trash" ng-click="showDeleteWarn(article.id, $index)"></a>
+                                            <!-- <a href="" class="ico-article-setup" rel="tooltip" title="Tag Category"></a> -->
+                                        </i>
+                                    </dd>
+                                    <dd><span>{{0}}<b style="font-size:12px;padding-left:4px;">PV</b></span></dd>
+                                    <!-- Draft状态 -->
+                                    <dd ng-show="article.revisions[0].publishStatus.article_status == 10">
+                                        <div class="btn-group">
+                                            <button class="btn btn-info"  data-toggle="dropdown">Draft</button>
+                                            <ul class="dropdown-menu pull-right clearfix">
+                                                <li><input type="button" value="Need Review" class="btn btn-block btn-warning"
+                                                           ng-click="showArticleStatus(20, article.revisions[0], article.id, 'Need Review')"></li>
+                                            </ul>
+                                        </div>
+                                    </dd>
+                                    <!--  Need Review 状态-->
+                                    <dd ng-show="article.revisions[0].publishStatus.article_status == 20">
+                                        <div class="btn-group">
+                                            <button class="btn btn-warning"  data-toggle="dropdown">Need Review</button>
+                                            <ul class="dropdown-menu pull-right clearfix">
+                                                <li><input type="button" value="Draft" class="btn btn-block btn-info"
+                                                           ng-click="showArticleStatus(10, article.revisions[0], article.id, 'Draft')"></li>
+                                                <li><input type="button" value="Published" class="btn btn-block btn-success"
+                                                           ng-click="showArticleStatus(30, article.revisions[0], article.id, 'Published')"></li>
+                                            </ul>
+                                        </div>
+                                    </dd>
+                                    <!-- Published 状态-->
+                                    <dd ng-show="article.revisions[0].publishStatus.article_status == 30">
+                                        <div class="btn-group">
+                                            <button class="btn btn-success" data-toggle="dropdown">Published</button>
+                                            <!--<button class="btn dropdown-toggle" data-toggle="dropdown"></button>-->
+                                            <ul class="dropdown-menu pull-right clearfix">
+                                                <li><input type="button" value="Draft" class="btn btn-block btn-info"
+                                                           ng-click="showArticleStatus(10, article.revisions[0], article.id, 'Published')"></li>
+                                            </ul>
+                                        </div>
+                                    </dd>
+
+                                </dl>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                    <!-- 翻页 -->
+                    <div class="pagination pagination-centered" style="cursor: pointer;">
+                        <pagination num-pages="noOfPages" current-page="currentPage"></pagination>
+                    </div>
+                    <!-- 翻页 / End -->
+
+                </div>
+                <!-- 列表 //End-->
+
+            </div>
+        <!-- Right //End -->
+
+        </div>
+    </div>
+    <!-- Content //End -->
+</div>

@@ -1,0 +1,117 @@
+<ul class="nav_structure clearfix">
+    <li ng-repeat="head in data.header.list" class="classid" >
+        <!--header edit start-->
+        <a href="#" class="pagelink" ng-hide="css.header.editform==$index">{{head.name}}<i class="icon-gear" ng-click="showEditHeaderForm($index);"></i></a>
+        <form name="form" ng-show="css.header.editform==$index" method="get" class="newlink_panel">
+            <h1 class="PopupTitle"><a href="#" class="TipBoxClose" ng-click="hideEditHeaderForm();"></a>Link Data</h1>
+
+            <div class="newlink_panel_name">
+                <input type="text" class="input_newlink" maxlength="10" required ng-model="head.name" placeholder="Nav link name">
+            </div>
+            <div class="newlink_panel_form">
+                <label class="radio clearfix">
+                    <input type="radio" ng-model="head.type" value="20">
+                    <input type="url" ng-model="head.linkurl" class="input_url" placeholder="URL">
+                </label>
+                <label class="radio clearfix">
+                    <input type="radio" ng-model="head.type" value="10">
+                    <select style="width:110px;" ng-model="head.link_page_id" ng-options="page.pageid as page.pagename for page in pages">
+                    </select>
+                </label>
+
+                <div class="newlink_panel_btn">
+                    <span ng-show="cssshowediterror" style="color:red;font-size:12px;">Please delete all child menu.</span><br>
+                    <input type="submit" value="save" class="btn btn-save" ng-click="updateHeaderForm(head);">
+                    <input value="del" type="button" class="btn btn-delete" ng-click="deleteHeadermenu(head, $index)">
+                </div>
+            </div>
+        </form>
+        <!--head edit end-->
+        <ul>
+            <li ng-repeat="child in head.childdata">
+                <!--header child edit start-->
+                <a href="#" class="urllink" ng-hide="csseditheaderchildform">
+                    {{child.menuname}}<i class="icon-gear" ng-click="showEditHeaderChildForm(child,head.childdata);"></i>
+                </a>
+                <form name="form" ng-show="csseditheaderchildform" method="get" class="newlink_panel">
+                    <h1 class="PopupTitle"><a href="#" class="TipBoxClose" ng-click="hideEditHeaderChildForm();"></a>Link Data</h1>
+
+                    <div class="newlink_panel_name">
+                        <input type="text" class="input_newlink" maxlength="10" required ng-model="menuname" placeholder="Nav link name">
+                    </div>
+                    <div class="newlink_panel_form">
+                        <label class="radio clearfix">
+                            <input type="radio" ng-model="menutype" value="other">
+                            <input type="url" ng-model="linkedurl" class="input_url" placeholder="URL">
+                        </label>
+                        <label class="radio clearfix">
+                            <input type="radio" ng-model="menutype" value="local">
+                            <select style="width:110px;" ng-model="localurl" ng-options="page.pagename as page.pagename for page in pages">
+                            </select>
+                        </label>
+
+                        <div class="newlink_panel_btn">
+                            <input type="submit" value="save" class="btn btn-save" ng-click="saveEditHeaderChildForm(form);">
+                            <input value="del" type="button" class="btn btn-delete" ng-click="deleteHeaderChildNav();">
+                        </div>
+                    </div>
+                </form>
+                <!--header child edit end-->
+            </li>
+            <li>
+                <!--header child add start-->
+                <a ng-hide="cssaddheaderchildform" ng-class="{displaynone: head.childdata.length > 4}" href="#" class="sub_addlink" ng-click="showAddHeaderChildForm();">+</a>
+                <form ng-show="cssaddheaderchildform" name="form" method="get" class="newlink_panel">
+                    <h1 class="PopupTitle"><a href="#" class="TipBoxClose" ng-click="hideAddHeaderChildForm();"></a>Link Data</h1>
+
+                    <div class="newlink_panel_name">
+                        <input type="text" class="input_newlink" maxlength="10" required ng-model="menuname" placeholder="Nav link name">
+                    </div>
+                    <div class="newlink_panel_form">
+                        <label class="radio clearfix">
+                            <input type="radio" ng-model="menutype" value="other">
+                            <input type="url" ng-model="linkedurl" class="input_url" placeholder="URL">
+                        </label>
+                        <label class="radio clearfix">
+                            <input type="radio" ng-model="menutype" value="local">
+                            <select style="width:110px;" ng-model="localurl" ng-options="page.pagename as page.pagename for page in pages">
+                            </select>
+                        </label>
+
+                        <div class="newlink_panel_btn">
+                            <input type="submit" value="save" class="btn btn-save" ng-click="saveAddHeaderChildForm(form)">
+                        </div>
+                    </div>
+                </form>
+                <!--header child add end-->
+            </li>
+        </ul>
+    </li>
+    <li>
+    <!--add header start-->
+    <a ng-show="css.header.addbutton" href="#" class="sub_addlink" ng-click="showAddHeaderForm();">+</a>
+        <form ng-show="css.header.addform" name="form" method="get" class="newlink_panel">
+            <h1 class="PopupTitle"><a href="#" class="TipBoxClose" ng-click="hideAddHeaderForm();"></a>Link Data</h1>
+
+            <div class="newlink_panel_name">
+                <input type="text" class="input_newlink" maxlength="10" required ng-model="data.header.newmenu.name" placeholder="Nav link name">
+            </div>
+            <div class="newlink_panel_form">
+                <label class="radio clearfix">
+                    <input type="radio" ng-model="data.header.newmenu.type" value="20">
+                    <input type="url" ng-model="data.header.newmenu.linkurl" class="input_url" placeholder="URL">
+                </label>
+                <label class="radio clearfix">
+                    <input type="radio" ng-model="data.header.newmenu.type" value="10">
+                    <select style="width:110px;" ng-model="data.header.newmenu.link_page_id" ng-options="page.pageid as page.pagename for page in pages">
+                    </select>
+                </label>
+
+                <div class="newlink_panel_btn">
+                    <input type="submit" value="save" class="btn btn-save" ng-click="saveAddHeaderForm(form)">
+                </div>
+            </div>
+        </form>
+        <!--add header end-->
+    </li>
+</ul>

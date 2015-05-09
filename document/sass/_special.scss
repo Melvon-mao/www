@@ -1,0 +1,608 @@
+// ======================================================================= //
+//                             	 slideshow                  	           //
+// ======================================================================= //
+.asarticle{ font-size: 14px; }
+.slideshow{
+	padding-bottom: 0px; border: none; padding-top: 8px;
+	.slide-viewer{
+        height: auto;
+		img { width: 100%; }
+	}
+	.slide-btns{ float: right; margin: 15px 0 0 0; }
+	.next, .prev {  -moz-user-select: none; background-position: center center; background-repeat: no-repeat;
+	    cursor: pointer; display: inline-block; height: 24px; width: 24px; }
+	.prev:hover                 { background-image: url("../#{$image-default-patch}/btn_prevslide_on.png"); }
+	.prev, .prev.disabled:hover { background-image: url("../#{$image-default-patch}/btn_prevslide.png"); }
+	.next:hover                 { background-image: url("../#{$image-default-patch}/btn_nextslide_on.png"); }
+	.next, .next.disabled:hover { background-image: url("../#{$image-default-patch}/btn_nextslide.png"); }
+	.next.disabled, .prev.disabled { opacity: 0.5; }
+	.slide-nav {
+		 -moz-user-select: none; width:  80%; float: left;
+		 .slidepage{
+			border-bottom: 0px; margin: 10px 0 0 0;
+			li{
+				a:link { color: $main-color; cursor: pointer; text-decoration: none; margin: 2px 0; }
+				.btn {
+				    background-color: #eee; display: block; padding: 2px 25px;
+					// for PC
+					@if $forpc == true {
+						// max-width: 767px
+						@include media ( $media-lm) {
+							padding: 2px 20px;
+						}
+						// max-width: 512px
+						@include media ( $media-md ) {
+							padding: 2px 10px;
+						}
+					}
+					// for Mobile
+					@else{
+						
+						// max-width: 767px
+						@include media ( $media-lm) {
+							padding: 2px 20px;
+						}
+						// max-width: 512px
+						@include media ( $media-md ) {
+							padding: 2px 10px;
+						}
+					}				    
+
+				}
+				.btn:hover { background-color: $link-color; color: #fff; text-decoration: none; }
+			}
+			li.selected a { background-color: $link-color; color: #fff; text-decoration: none; }
+		  	
+		}
+		.content {
+            display: none; background: none repeat scroll 0 0 #fff; border: 1px solid #ccc; border-radius: 3px; bottom: 40px; box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); font-size: 11px; padding: 4px 10px 6px; position: absolute; text-align: center; width: 100px; z-index: 99;
+		    img {  width: 100%; }
+		}
+		.thumbtip { bottom: 34px; margin-left: -78px; padding: 2px; width: 150px; }
+		.pointer { background: url("../#{$image-default-patch}/pointer_tooltip.png") no-repeat scroll center center rgba(0, 0, 0, 0);
+		    bottom: -8px; height: 8px; width: 17px; }
+	}
+	.slide-title {
+		h2 { font-size: 35px; margin-bottom: 13px; font-family: $title-font; line-height: 1.1em; font-weight: normal; color: #666; }
+	}
+}
+
+
+.#{$layout}-body-slideshow{
+    margin-bottom: 0 !important;
+    .content-section:first-child{ margin-bottom: 8px; }
+    .content-img{ float: none; margin: 8px 0 20px; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ======================================================================= //
+//                              	 trading                  	           //
+// ======================================================================= //
+.layout-side {
+    .tradingshare{
+	    margin-bottom: 25px; text-align: right;
+	    .shareicon{ padding: 0 10px; }
+    }
+}
+.box .center {
+	a.area:link, a.area:active, a.area:visited{
+		background-color: #a62436;
+	    border: medium none;
+	    color: #fff;
+	    cursor: pointer;
+	    font-size: 18px;
+	    margin-bottom: 10px;
+	    padding: 6px 0px;
+	    -moz-appearance: none;
+		border-radius: 0;
+		width: 100%;
+		display: block;
+		font-family: "sourcesanspro-regular-webfont", Helvetica, Arial, Verdana, sans-serif;
+        // for PC
+        @if $forpc == true {
+            @include media ( $media-lg ) { // 768px
+                width: 350px;
+                margin: 0 auto 10px;
+            }
+            @include media ( $media-sm ) { // 480px
+                width: 100%;
+            }
+        }
+       // for Mobile
+        @else{
+            width: 350px;
+            margin: 0 auto 10px;
+            @include media ( $media-lm ) { // 767px
+                width: 100%;
+            }
+        }
+	}
+	a.area:hover{
+		background: #005b9d;
+		text-decoration: none;
+	}
+	
+}
+
+// ======================================================================= //
+//                                    faq                   	           //
+// ======================================================================= //
+.layout-title .searches{
+	border-color: #e4e5e7;
+    border-style: solid;
+    border-width: 1px 0;
+    font-size: 17px;
+    margin: 0 0 20px;
+    padding: 10px 0;
+	i {
+	    display: block;
+	    float: left;
+	    font-style: normal;
+	    margin: 4px 15px 0 0;
+	}
+	a {
+	    display: inline-block;
+	    margin: 0 15px 0 0;
+	    padding: 4px 0;
+	}
+	div {
+	    overflow: hidden;
+	} 	
+}
+.faqsection{
+	margin-bottom: 0px;
+	.layout-body-topbar{
+		padding-bottom: 0px;
+	}
+}
+.dropcap { float: left; font-size: 43px; margin: 16px 10px 0 0; font-family: $title-font;
+    @at-root {
+        .layout-col-right {
+            .dropcap{
+                float: left; font-size:inherit; margin: 0 4px 0 0; font-family: $global-font;
+            }
+        }
+    }
+}
+
+// ======================================================================= //
+//                                  commentary                 	           //
+// ======================================================================= //
+.content-author {
+    float: left;
+    margin: 4px 20px 4px 0;
+}
+.content-author-title {
+    background-color: #a62336;
+    color: #fff;
+    font-size: 10px;
+    padding: 2px 7px;
+    text-transform: uppercase;
+}
+
+// ======================================================================= //
+//                              article_print                 	           //
+// ======================================================================= //
+.print-home {
+	margin: 80px;
+}
+.print-footer {
+    border-top: 1px solid #ddd;
+    padding:10px 0;
+	span{
+		font-size: 15px;
+		color: #666;
+		margin-bottom: 50px;
+	}
+
+}
+ 
+.print-header {
+    border-bottom: 1px solid #e4e5e7;
+    margin: 0 auto 13px;
+    padding-bottom: 20px;
+    width: 980px;
+    z-index: 1;
+    position: relative;
+}
+
+.print-logo {
+    width: 300px;
+}
+.print-article {
+    border-bttom: 1px solid #e4e5e7;
+    margin-bottom: 20px;
+}
+
+.#{$layout}-body-slideshow.print-article{
+	.content-img{ 
+		float: none;;
+	}
+
+}
+
+.print-content {
+	margin-bottom: 65px;
+}
+
+
+// ======================================================================= //
+//                             free tools                    	           //
+// ======================================================================= //
+
+.free-form{
+	margin-top: 40px; padding-top: 10px!important;
+}
+
+
+// ======================================================================= //
+//                              markets Sectors                    	       //
+// ======================================================================= //
+
+.sectors-rank{
+	margin-bottom: 20px;
+	.row{
+		[class="column-6"]{ padding:0 8px 0 0; }
+	}
+}
+
+
+
+// ======================================================================= //
+//                              Forex converter                    	       //
+// ======================================================================= //
+
+.forex-converter{
+	table.converter-wrapper{
+		width: 60%; margin: 0 auto;
+		// for PC
+		@if $forpc == true {
+			// max-width: 512px
+			@include media ( $media-md ) {
+				width: 100%;
+			}
+
+		}
+		// for Mobile
+		@else{
+			// max-width: 767px
+			@include media ( $media-lm ) {
+				width: 100%;
+			}
+		}						
+	}
+
+}
+
+.conversion-result{
+	p{
+		font-size: 21px; color: #165799;
+	}
+}
+
+
+// ======================================================================= //
+//                              Forex calendar                    	       //
+// ======================================================================= //
+
+#fxec_filterform .fxec_button{
+	font-size: 13px;
+	padding:0; 
+	margin-bottom: 0;
+}
+
+
+
+// ======================================================================= //
+//                              Pairs                              	       //
+// ======================================================================= //
+
+.pairs{
+	&.box{
+		margin-bottom: 20px!important;
+	}
+	.row{
+		[class="column-6"]{ padding:0 8px 0 0; }
+	}
+}
+
+
+
+// ======================================================================= //
+//                              Quote pages                       	       //
+// ======================================================================= //
+
+
+.layout-title h1 .quote-rate {
+    font-size: 36px;
+}
+.layout-title h1 .quote-name {
+    font-size: 25px;
+}
+.layout-title h1 .quote-symbol {
+    font-size: 19px;
+}
+
+.quotesearch{
+	margin-bottom: 30px!important;
+	.datetime{
+		font-size: 12px;
+	}
+
+}
+
+.layout-page .quotesearch .form-group {
+	.form-submit{
+		font-size: 12px !important;
+		height: 26px;
+		width: auto;
+	}
+	.form-item {
+		width: 80px;
+		.form-text{
+		width: 80px;
+		font-size: 12px !important;
+		height:26px;
+		}
+	}
+	// for PC
+	@if $forpc == true {
+		// max-width: 620px
+		@include media ( $media-ml ) {
+			.form-submit{ width: 25%;}
+			.form-item{
+				width: 75%;
+				.form-text{
+					width:100%;
+				}
+			}
+		}
+	}
+	// for Mobile
+	@else{
+		// max-width: 620px
+		@include media ( $media-ml ) {
+			.form-submit{ width: 25%;}
+			.form-item{
+				width: 75%;
+				.form-text{
+					width:100%;
+				}
+			}
+		}
+	}
+
+}
+
+
+
+.layout-col-left {
+	.layout-col-left-list{
+		.#{$title} {
+			padding-bottom: 0;
+			h2{ font-size: 22px;}
+		}
+		&.quote-left{
+			h2{ font-size: 22px !important;}
+		}
+		.list .selected .item-title {
+	        font-family: $section-font-bold;
+			a:after {
+		    content: "\00bb";
+			}
+		}
+	}
+}
+
+.trend-analysis{
+	font-size: 14px; margin-bottom: 20px; font-family: $section-font;
+}
+
+.quoteform{
+	.row{
+
+		&:after{
+		clear: none;
+		}
+		span{
+			label{
+				margin-right: 20px;
+			}
+		}
+		.form-item{
+			margin-bottom: 7px;
+			label{
+				//display: inline-block; margin-right: 5px;
+			}			
+			.control-group{
+				display: inline-block;
+				.input-text{ width: 106px; font-size:16px; box-shadow: none; border:solid 1px #ccc; background: #fff; }
+				.form-control{
+					//width: 130px; vertical-align: middle; display: inline-block;
+				}
+			}
+		}
+		.column-6{
+			.form-box{
+				margin-bottom: 0;
+				.form-item{ margin-bottom: 0;}
+			}
+		}
+        .form-box{ font-size: 15px;
+            label { margin-right: 10px;}
+        }
+
+	}
+
+
+}
+
+.table2 th{
+	font-weight: normal; text-align: left; font-size: 12px;
+}
+
+.quote-option-wrap{
+	.form-box{
+		margin-bottom: 0;
+		vertical-align: middle;
+		display: inline-block;
+		.form-type-select{
+			.selectmenu{
+				width: auto !important;
+			}
+		}
+	}
+
+}
+
+
+// ======================================================================= //
+//                              currency-converter                 	       //
+// ======================================================================= //
+.currency-converter{
+	table{
+		width: 100%; border-spacing: 0;
+		td{
+			font-size: 16px; padding:0 0 20px 0; vertical-align: top; width: 64%;
+			&.coll{ width: 35%;}
+			.help-text{ font-size: 14px; color: #888; }
+		}
+
+	}
+	select{ width: 96%; padding: 5px; font-size: 15px; font-family: $section-font; }
+	.form-type-textfield{
+		padding-left: 10px;
+		label{ display: none;}
+		.form-text{ height: 34px;}
+	 }
+	input[type="submit"]{ width: 35.5%; float: left; margin-right: 10px;}
+
+
+	// for PC
+	@if $forpc == true {
+		// max-width: 480px
+		@include media ( $media-sm ) {
+			input[type="submit"]{ width: 100%; float: none; margin-right: 0px;}
+		}
+	}
+	// for Mobile
+	@else{
+		// max-width: 480px
+		@include media ( $media-sm ) {
+			input[type="submit"]{ width: 100%; float: none; margin-right: 0px;}
+		}
+	}
+
+}
+
+
+
+
+
+// ======================================================================= //
+//                             question of the week              	       //
+// ======================================================================= //
+
+.#{$layout}-body-pro-faqs{
+    .#{$box}.first{ padding-top: 0;}
+	//.separator{ display: none;}
+	.group{
+        .#{$title}{
+			border-bottom: 0;
+			h1{ color: $main-color; font-size: 46px; line-height: 1.1em; text-transform: none; font-family: $title-font;
+            }
+		}
+
+	}
+
+}
+
+
+
+.faq-answer,
+.faq-question { clear: both; padding: 0 0 20px; }
+.faq-question-group { display: inline-block; padding-bottom: 20px; }
+.faq-answer-icon,
+.faq-question-icon { float: left; padding: 6px 0; text-align: center; width: 15%;
+	// for PC
+	@if $forpc == true {
+	@include media ( $media-lm ) {
+		display: none;
+	}
+	}
+	// for Mobile
+	@else{
+		display: none;
+	}
+}
+.faq-answer-icon img,
+.faq-question-icon img { height: 45px; width: 60px; }
+.faq-answer-text,
+.faq-question-text { float: left; width: 85%; }
+.faq-question-text h1 { font-size: 18px; }
+.faq-answer-text { line-height: 20px; }
+.faq-ask-btn { padding: 20px 0; }
+
+
+
+
+
+// ======================================================================= //
+//                             reset detail page h2               	       //
+// ======================================================================= //
+
+.#{$layout}-body {
+    .gray-sub-title{
+        h2,h1{ font-weight: normal; text-transform: none; color: #666; font-size: 35px; margin-bottom: 13px; line-height: 1.1em; font-family: $title-font; }
+        .slide-title,
+        .content-subhead{
+            h2{ text-transform: none; color: #666; font-family: $title-font; }
+        }
+        .slide-viewer{
+            h2{ color: #666; text-transform: uppercase; font-size: 22px; font-weight: normal; margin-bottom: auto; font-family: $section-font; }
+        }
+        .#{$list} {
+            .#{$item} {
+                .#{$item}-title{ font-weight: normal; text-transform: none; font-family: $section-font; }
+            }
+        }
+    }
+}
+
+
+/* whitelist style */
+.un-whitelist{ font-size: 15px; }
+
+
+
+
+
+// ======================================================================= //
+//                                 Career page                   	       //
+// ======================================================================= //
+.inv-career {
+    width: $layout-size-width; margin:0 auto; padding: 0 20px; @include boxsizing;
+    // for PC
+    @if $forpc == true {
+        // max-width: 768px
+        @include media ( $media-lg ) {
+            width: 100%;
+        }
+    }
+        // for Mobile
+    @else{
+        // max-width: 767px
+            width: 100%;
+    }
+}

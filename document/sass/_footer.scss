@@ -1,0 +1,146 @@
+// ======================================================================= //
+//                                 Footer                                  //
+// ======================================================================= //
+#Footer {
+	clear: both; 
+
+	a { color: $footer-link-color }
+
+	// Logo
+	.logo { 
+		margin: $logo-footer-margin;
+		@include logo-option; 
+	}
+
+	.to-top { text-transform:uppercase; float:right; margin-top:-60px; color:#111; 
+		&:after { content:''; display:inline-block; border-width:8px; border-style:solid; border-color:transparent transparent $link-color transparent; margin-left:6px }
+	}
+
+	// middle
+	.mid { padding:30px 0;
+        // @include bglinear( $footer-bgcolor-default, $footer-bgcolor-start, $footer-bgcolor-end );
+        background: #24293a;
+        background: -moz-linear-gradient(top, #1a1d2b 0%, #2e3648 100%);
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #1a1d2b), color-stop(100%, #2e3648));
+        background: -webkit-linear-gradient(top, #1a1d2b 0%, #2e3648 100%);
+        background: -o-linear-gradient(top, #1a1d2b 0%, #2e3648 100%);
+        background: -ms-linear-gradient(top, #1a1d2b 0%, #2e3648 100%);
+        background: linear-gradient(to bottom, #1a1d2b 0%,#2e3648 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1a1d2b', endColorstr='#2e3648',GradientType=0 );
+		// for PC
+		@if $forpc == true {
+			@include media ( $media-lg ) { // max-width: 768px
+				display: none;
+			}
+		}
+		// for Mobile
+		@else{
+			display: none;
+		}
+	}
+
+	//search-bars
+	.search-bars { float: right; margin: 20px 0 0; font-size: 0 }
+
+	// DICTIONARY
+	.flist{ margin:28px 0 31px; padding: 0 0 6px 0; height: 34px; border-width:1px 0; border-style:solid; border-color:#404351; font-size:17px; text-align: justify; text-transform:uppercase;
+		&:after{ content:'';  display:inline-block; width:100%; height:1px }
+		li { display: inline-block; list-style: none outside none; text-align: center; padding-top:10px;
+			a { display: inline-block; padding:0 9px; font-size: 17px; outline: medium none }
+		}
+	  > li {
+			&:first-child{ color: $footer-title-color }
+		}
+	}
+
+	// Column list
+	.column-list { margin-bottom: 12px; width: 100%; font-size: 12px;
+		.col-l,
+		.col-r { float: left }
+		.col-l { width: 687px }
+		.col-r { width: 292px }
+		ul { margin: 0; padding: 0; 
+			li { list-style: none outside none; margin: 0; display:inline-block; padding:2px 20px 2px 0; font-size:13px; 
+				a { 
+					img { vertical-align: middle; width: 16px }
+				}
+				&.first { display:block; width:auto; color: $footer-title-color; font-size: $global-size; text-transform:uppercase }
+				&.last 	{ width: 212px }
+			}
+		}
+	}
+
+    .column-list + .column-list { margin-bottom: 31px }
+
+	// Bottom
+	.btm { color: $footer-btm-color; font-size: 14px; line-height: 20px; padding: 10px 0 30px 0; background: $footer-copyright-bgcolor; 
+		// for PC
+		@if $forpc == true {
+			@include media ( $media-lg ) { // max-width: 768px
+				padding: 10px 0;
+			}
+		}
+		// for Mobile
+		@else{
+			padding: 10px 0;
+		}
+	}
+
+	// Copyright
+	.copyright {
+		span {
+			a { display: inline-block; margin-right: 1px; padding-right: 3px; line-height: 14px; border-right: 1px solid #666;
+				&.legal { color: $footer-btm-color }
+				&.last { border:0 }
+			}
+		}
+		// for PC
+		@if $forpc == true {
+			@include media ( $media-lg ) { // max-width: 768px
+				> span { float: left; padding-left: 20px; 
+					a.last{ border:0 }
+				}
+				> span + span { float: right }
+				.fr { display: none }
+			}
+			@include media ( $media-md ) { // max-width: 512px
+				> span,
+				> span + span { display: block; float: none }
+			}
+		}
+		// for Mobile
+		@else{
+			// ipad 
+			> span { float: left; padding-left: 20px; 
+				a.last{ border:0 }
+			}
+			> span + span { float: right }
+			.fr { display: none }
+			@include media ( $media-lm ) { // max-width: 767px
+				> span,
+				> span + span { display: block; float: none }
+			}
+		}
+	}
+
+	// Partner
+	.partnericon { margin-left:20px; display:inline-block; vertical-align:middle;
+		img { height:25px }
+	}
+	.partnertext { margin-left:20px; display:inline-block; vertical-align:middle; background-size:contain; color:rgba(255,255,255,0.24); text-transform:uppercase }
+
+
+	// ---------- Social Icon & Newsletter---------- //
+	.footicon 					{ margin-top: 14px }
+	.newsletter 				{ margin-top: 11px }
+
+}
+
+
+
+
+
+
+
+
+
